@@ -1,4 +1,3 @@
-import React from "react";
 
 const RefundPolicy = () => (
   <div className="max-w-3xl mx-auto px-4 py-12">
@@ -10,7 +9,7 @@ const RefundPolicy = () => (
       <li>Refunds will be credited to your original payment method within 7-10 business days after approval.</li>
       <li>Shipping charges are non-refundable unless the product is defective or incorrect.</li>
     </ul>
-    <p className="mb-2">To request a refund, please contact our support team at <a href="mailto:care@ciyatake.com" className="text-[#8b7355] underline">care@ciyatake.com</a> with your order details.</p>
+    <p className="mb-2">To request a refund, please contact our support team at <a href="mailto:care@polohigh.com" className="text-[#8b7355] underline">care@polohigh.com</a> with your order details.</p>
     <p>If your refund is approved, you will receive a confirmation email with further instructions.</p>
   </div>
 );

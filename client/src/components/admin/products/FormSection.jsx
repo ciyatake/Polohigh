@@ -11,19 +11,19 @@ const FormSection = ({
     <section className="rounded-3xl border border-[#e6dccb] bg-white/80 shadow-sm transition hover:shadow-md">
       <header
         className={`flex items-start justify-between gap-4 border-b border-[#e6dccb]/60 px-5 py-4 ${
-          toggleable ? "cursor-pointer hover:bg-[#f2eae0]/50" : ""
+          toggleable ? "cursor-pointer hover:bg-[primary-100]/50" : ""
         }`}
         onClick={toggleable ? onToggle : undefined}
       >
         <div>
-          <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+          <h3 className="text-lg font-semibold text-neutralc-900">{title}</h3>
           {subtitle ? (
-            <p className="mt-1 text-sm text-slate-600">{subtitle}</p>
+            <p className="mt-1 text-sm text-neutralc-600">{subtitle}</p>
           ) : null}
         </div>
         {toggleable ? (
           <span
-            className={`mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#dec9a4] text-[#8f7843] transition ${
+            className={`mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#dec9a4] text-[primary-700] transition ${
               isOpen ? "rotate-180" : ""
             }`}
           >

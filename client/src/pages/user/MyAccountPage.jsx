@@ -625,7 +625,7 @@ const MyAccountPage = ({ isLoggedIn }) => {
   );
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-neutralc-900">
       <UserNavbar isLoggedIn={isLoggedIn} />
       <main className="mx-auto max-w-6xl space-y-10 px-4 py-12">
         <Breadcrumbs
@@ -633,17 +633,17 @@ const MyAccountPage = ({ isLoggedIn }) => {
         />
 
         <header className="space-y-3">
-          <h1 className="text-3xl font-semibold text-[#b8985b] md:text-4xl">
+          <h1 className="text-3xl font-semibold text-[primary-500] md:text-4xl">
             My account
           </h1>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-neutralc-600">
             Manage your personal details, orders, and how you hear from us.
           </p>
         </header>
 
         {isInitialAccountLoad ? (
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,1fr)]">
-            <div className="space-y-3 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-sm">
+            <div className="space-y-3 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm">
               <Skeleton className="h-6 w-44" />
               {Array.from({ length: 5 }).map((_, index) => (
                 <Skeleton
@@ -657,7 +657,7 @@ const MyAccountPage = ({ isLoggedIn }) => {
               {Array.from({ length: 3 }).map((_, index) => (
                 <div
                   key={`account-panel-skeleton-${index}`}
-                  className="space-y-3 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-sm"
+                  className="space-y-3 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm"
                 >
                   <Skeleton className="h-6 w-40" />
                   <Skeleton className="h-4 w-52" />
@@ -678,7 +678,7 @@ const MyAccountPage = ({ isLoggedIn }) => {
                 loadSummary();
                 loadAddresses();
               }}
-              className="inline-flex items-center justify-center rounded-full border border-[#b8985b] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#b8985b] transition hover:bg-[#F2EAE0]"
+              className="inline-flex items-center justify-center rounded-full border border-[primary-500] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-100]"
             >
               Retry
             </button>

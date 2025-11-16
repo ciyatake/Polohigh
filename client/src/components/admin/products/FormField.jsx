@@ -9,7 +9,7 @@ const FormField = ({
   return (
     <div className={`space-y-2 ${className}`}>
       {label ? (
-        <label className="block text-sm font-medium text-slate-700">
+        <label className="block text-sm font-medium text-neutralc-600">
           {label}
           {required ? <span className="ml-1 text-red-500">*</span> : null}
         </label>
@@ -25,7 +25,7 @@ const FormField = ({
           {error}
         </p>
       ) : helpText ? (
-        <p className="text-xs text-slate-500">{helpText}</p>
+        <p className="text-xs text-neutralc-400">{helpText}</p>
       ) : null}
     </div>
   );

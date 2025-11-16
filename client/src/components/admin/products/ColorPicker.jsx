@@ -70,12 +70,12 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
     <div className="space-y-4">
       {colors.length ? (
         <div className="space-y-2">
-          <p className="text-sm font-medium text-slate-700">Selected colors</p>
+          <p className="text-sm font-medium text-neutralc-600">Selected colors</p>
           <div className="flex flex-wrap gap-2">
             {colors.map((color) => (
               <div
                 key={color.id}
-                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 shadow-sm"
+                className="flex items-center gap-2 rounded-full border border-neutralc-200 bg-white px-3 py-1.5 text-sm text-neutralc-600 shadow-sm"
               >
                 <span
                   className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-white shadow-inner"
@@ -85,7 +85,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                 <button
                   type="button"
                   onClick={() => removeColor(color.id)}
-                  className="rounded-full p-1 text-slate-400 transition hover:text-red-500"
+                  className="rounded-full p-1 text-neutralc-400 transition hover:text-red-500"
                   aria-label={`Remove ${color.name}`}
                 >
                   <svg
@@ -110,7 +110,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
 
       {canAddMore ? (
         <div className="space-y-3">
-          <p className="text-sm font-medium text-slate-700">Quick add</p>
+          <p className="text-sm font-medium text-neutralc-600">Quick add</p>
           <div className="grid grid-cols-6 gap-2 sm:grid-cols-8">
             {DEFAULT_SWATCHES.map((swatch) => {
               const isSelected = usedHexes.has(swatch.hex);
@@ -122,7 +122,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                   onClick={() => addColor(swatch)}
                   className={`relative h-10 w-full rounded-lg border-2 transition ${
                     isSelected
-                      ? "cursor-not-allowed border-slate-200 opacity-60"
+                      ? "cursor-not-allowed border-neutralc-200 opacity-60"
                       : "border-transparent hover:scale-105 hover:border-[#cdae79]"
                   }`}
                   style={{ backgroundColor: swatch.hex }}
@@ -157,10 +157,10 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
       {canAddMore ? (
         <div className="space-y-3">
           {showCustom ? (
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <div className="rounded-2xl border border-neutralc-200 bg-neutralc-100 p-4">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
                 <label className="flex-1 text-sm">
-                  <span className="mb-1 block text-xs font-medium text-slate-600">
+                  <span className="mb-1 block text-xs font-medium text-neutralc-600">
                     Color name
                   </span>
                   <input
@@ -168,18 +168,18 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                     value={customName}
                     onChange={(event) => setCustomName(event.target.value)}
                     placeholder="e.g. Forest Green"
-                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#b8985b]/20"
+                    className="w-full rounded-lg border border-neutralc-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
                   />
                 </label>
                 <label className="flex items-center gap-2 text-sm">
-                  <span className="text-xs font-medium text-slate-600">
+                  <span className="text-xs font-medium text-neutralc-600">
                     Hex
                   </span>
                   <input
                     type="color"
                     value={customHex}
                     onChange={(event) => setCustomHex(event.target.value)}
-                    className="h-10 w-14 cursor-pointer rounded-md border border-slate-200"
+                    className="h-10 w-14 cursor-pointer rounded-md border border-neutralc-200"
                   />
                 </label>
                 <div className="flex gap-2">
@@ -187,14 +187,14 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                     type="button"
                     onClick={addCustomColor}
                     disabled={!customName.trim()}
-                    className="rounded-lg bg-[#b8985b] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#a9894f] disabled:cursor-not-allowed disabled:opacity-40"
+                    className="rounded-lg bg-[primary-500] px-4 py-2 text-sm font-medium text-white transition hover:bg-[primary-700] disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     Add color
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowCustom(false)}
-                    className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100"
+                    className="rounded-lg border border-neutralc-200 px-4 py-2 text-sm font-medium text-neutralc-600 transition hover:bg-neutralc-100"
                   >
                     Cancel
                   </button>
@@ -205,7 +205,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
             <button
               type="button"
               onClick={() => setShowCustom(true)}
-              className="text-sm font-medium text-[#8f7843] transition hover:text-[#6a542b]"
+              className="text-sm font-medium text-[primary-700] transition hover:text-[#6a542b]"
             >
               + Add custom color
             </button>

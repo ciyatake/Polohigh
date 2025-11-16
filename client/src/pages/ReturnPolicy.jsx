@@ -10,7 +10,7 @@ const ReturnPolicy = () => (
       <li>Some items (such as innerwear, beauty products, and customized items) are not eligible for return.</li>
       <li>Return shipping costs are the responsibility of the customer unless the item is defective or incorrect.</li>
     </ul>
-    <p className="mb-2">To initiate a return, please email <a href="mailto:care@ciyatake.com" className="text-[#8b7355] underline">care@ciyatake.com</a> with your order number and reason for return.</p>
+    <p className="mb-2">To initiate a return, please email <a href="mailto:care@polohigh.com" className="text-[#8b7355] underline">care@polohigh.com</a> with your order number and reason for return.</p>
     <p>Once your return is received and inspected, we will notify you regarding the approval or rejection of your return.</p>
   </div>
 );

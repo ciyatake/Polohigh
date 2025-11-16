@@ -184,7 +184,7 @@ const WishlistPage = ({ isLoggedIn = false }) => {
   }, [catalogProducts, items]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-neutralc-900">
       <UserNavbar isLoggedIn={isLoggedIn} />
       <main className="mx-auto max-w-6xl space-y-12 px-4 py-12">
         <Breadcrumbs
@@ -192,17 +192,17 @@ const WishlistPage = ({ isLoggedIn = false }) => {
         />
 
         <header className="space-y-3">
-          <h1 className="text-3xl font-semibold text-[#b8985b] md:text-4xl">
+          <h1 className="text-3xl font-semibold text-[primary-500] md:text-4xl">
             Wishlist
           </h1>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-neutralc-600">
             Save items you love and move them to your cart whenever you’re
             ready.
           </p>
           {isInitialWishlistLoad ? (
             <Skeleton className="h-6 w-32 rounded-full" rounded={false} />
           ) : (
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#DCECE9] bg-[#F2EAE0] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#b8985b]">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[neutralc-200] bg-[primary-100] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[primary-500]">
               <img src={heartIcon} alt="" className="h-4 w-4" aria-hidden />
               {wishlist.itemCount ?? items.length} saved
             </span>
@@ -225,7 +225,7 @@ const WishlistPage = ({ isLoggedIn = false }) => {
             Array.from({ length: 4 }).map((_, index) => (
               <div
                 key={`wishlist-item-skeleton-${index}`}
-                className="rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-sm"
+                className="rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm"
               >
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <Skeleton
@@ -266,7 +266,7 @@ const WishlistPage = ({ isLoggedIn = false }) => {
               ) : null}
             </>
           ) : (
-            <div className="rounded-3xl border border-dashed border-[#DCECE9] bg-[#DCECE9]/40 p-10 text-center text-sm text-slate-600">
+            <div className="rounded-3xl border border-dashed border-[neutralc-200] bg-[neutralc-200]/40 p-10 text-center text-sm text-neutralc-600">
               Your wishlist is empty. Browse products and tap the heart icon to
               save them here.
             </div>
@@ -276,10 +276,10 @@ const WishlistPage = ({ isLoggedIn = false }) => {
         {recommendedProducts.length ? (
           <section className="space-y-6">
             <div>
-              <h2 className="text-xl font-semibold text-[#b8985b]">
+              <h2 className="text-xl font-semibold text-[primary-500]">
                 You might also like
               </h2>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-neutralc-600">
                 Customers who saved these items also considered these picks.
               </p>
             </div>
@@ -298,7 +298,7 @@ const WishlistPage = ({ isLoggedIn = false }) => {
 
       {toastMessage ? (
         <div className="fixed inset-x-0 bottom-6 z-50 flex justify-center px-4">
-          <div className="max-w-sm rounded-full border border-[#b8985b]/50 bg-[#b8985b]/15 px-4 py-3 text-center text-sm font-medium text-[#b8985b] shadow-lg">
+          <div className="max-w-sm rounded-full border border-[primary-500]/50 bg-[primary-500]/15 px-4 py-3 text-center text-sm font-medium text-[primary-500] shadow-lg">
             {toastMessage}
           </div>
         </div>

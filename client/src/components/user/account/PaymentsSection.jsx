@@ -18,24 +18,24 @@ const PaymentsSection = ({ paymentMethods, walletBalance = 0 }) => {
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-[#c3dedd] bg-[#F2EAE0] p-6 text-sm text-slate-600">
+        <div className="rounded-2xl border border-dashed border-[#c3dedd] bg-[primary-100] p-6 text-sm text-neutralc-600">
           Save a payment method to check out faster and earn rewards.
         </div>
       )}
-      <div className="mt-4 rounded-2xl border border-[#c3dedd] bg-[#c3dedd]/20 p-4 text-sm text-slate-600">
+      <div className="mt-4 rounded-2xl border border-[#c3dedd] bg-[#c3dedd]/20 p-4 text-sm text-neutralc-600">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#4f7a7f]">
           Wallet balance
         </p>
-        <p className="mt-2 text-2xl font-semibold text-[#b8985b]">
+        <p className="mt-2 text-2xl font-semibold text-[primary-500]">
           {formatINR(walletBalance)}
         </p>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-neutralc-400">
           Earn more credits when you pay online.
         </p>
       </div>
       <button
         type="button"
-        className="mt-4 inline-flex items-center justify-center rounded-full border border-[#b8985b] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white"
+        className="mt-4 inline-flex items-center justify-center rounded-full border border-[primary-500] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
       >
         Add payment method
       </button>

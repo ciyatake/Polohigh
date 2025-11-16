@@ -258,7 +258,7 @@ const Careers = () => {
       name: "Priya Sharma",
       role: "Product Designer",
       quote:
-        "Ciyatake has given me the freedom to innovate and grow. The team culture is incredibly supportive and collaborative.",
+        "Polohigh has given me the freedom to innovate and grow. The team culture is incredibly supportive and collaborative.",
       image: "👩‍💼",
     },
     {
@@ -272,7 +272,7 @@ const Careers = () => {
       name: "Ananya Patel",
       role: "Marketing Lead",
       quote:
-        "The work-life balance and growth opportunities at Ciyatake are unmatched. I love coming to work every day.",
+        "The work-life balance and growth opportunities at Polohigh are unmatched. I love coming to work every day.",
       image: "👩‍🎨",
     },
   ];
@@ -286,7 +286,7 @@ const Careers = () => {
     {
       question: "Do you offer internship opportunities?",
       answer:
-        "Yes! We regularly offer internships across various departments. Check our job listings for current internship openings or send your resume to careers@ciyatake.com.",
+        "Yes! We regularly offer internships across various departments. Check our job listings for current internship openings or send your resume to careers@polohigh.com.",
     },
     {
       question: "Can I apply for multiple positions?",
@@ -360,9 +360,9 @@ const Careers = () => {
           <div className="flex justify-center mb-6">
             <Briefcase className="w-16 h-16" />
           </div>
-          <h1 className="mb-6 text-5xl font-bold">Join the Ciyatake Team</h1>
+          <h1 className="mb-6 text-5xl font-bold">Join the Polohigh Team</h1>
           <p className="max-w-3xl mx-auto text-xl leading-relaxed opacity-90">
-            At Ciyatake, we're building more than just an e-commerce platform.
+            At Polohigh, we're building more than just an e-commerce platform.
             We're creating a community where innovation meets passion, and every
             team member plays a vital role in helping our customers celebrate
             life's everyday moments in style.
@@ -475,7 +475,7 @@ const Careers = () => {
             Meet Our Team
           </h2>
           <p className="text-center text-[#8b7355] mb-12 max-w-2xl mx-auto">
-            Hear from the people who make Ciyatake special
+            Hear from the people who make Polohigh special
           </p>
           <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
@@ -525,11 +525,11 @@ const Careers = () => {
           </p>
           <div className="flex flex-col items-center justify-center gap-4 mb-8 sm:flex-row">
             <a
-              href="mailto:careers@ciyatake.com"
+              href="mailto:careers@polohigh.com"
               className="flex items-center gap-2 text-lg"
             >
               <Mail className="w-5 h-5" />
-              careers@ciyatake.com
+              careers@polohigh.com
             </a>
             <a
               href="tel:+919876543210"
@@ -553,7 +553,7 @@ const Careers = () => {
       {selectedJob && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-black bg-opacity-50">
           <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 flex items-start justify-between p-6 bg-white border-b border-gray-200">
+            <div className="sticky top-0 flex items-start justify-between p-6 bg-white border-b border-neutralc-200">
               <div>
                 <h2 className="text-3xl font-bold text-[#6b5847] mb-2">
                   {selectedJob.title}
@@ -664,7 +664,7 @@ const Careers = () => {
       {showApplicationForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-black bg-opacity-50">
           <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 flex items-center justify-between p-6 bg-white border-b border-gray-200">
+            <div className="sticky top-0 flex items-center justify-between p-6 bg-white border-b border-neutralc-200">
               <h2 className="text-3xl font-bold text-[#6b5847]">Apply Now</h2>
               <button
                 onClick={() => setShowApplicationForm(false)}
@@ -793,7 +793,7 @@ const Careers = () => {
                             ? formData.resume.name
                             : "Click to upload your resume"}
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-neutralc-400">
                           PDF, DOC, or DOCX (Max 5MB)
                         </p>
                       </label>

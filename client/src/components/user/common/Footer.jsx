@@ -20,24 +20,24 @@ const Footer = () => {
             <div className="flex items-center space-x-2 cursor-pointer" onClick={()=>navigate("/")}>
               <img
                 src="/ciyatakeLogo.png"
-                alt="Ciyatake"
+                alt="POLOHIGH"
                 className="h-8 w-auto"
               />
               <h3 className="text-2xl font-semibold text-[#8b7355]">
-                Ciyatake
+                Polohigh
               </h3>
             </div>
-            <p className="text-sm leading-relaxed text-gray-600">
+            <p className="text-sm leading-relaxed text-neutralc-600">
               Thoughtfully curated fashion and lifestyle essentials to help you
               celebrate everyday moments in style.
             </p>
             <div className="space-y-2">
               <a
-                href="mailto:care@ciyatake.com"
+                href="mailto:care@polohigh.com"
                 className="flex items-center text-sm text-[#a08968] hover:text-[#8b7355] transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                care@ciyatake.com
+                care@polohigh.com
               </a>
               <a
                 href="tel:+919876543210"
@@ -46,7 +46,7 @@ const Footer = () => {
                 <Phone className="w-4 h-4 mr-2" />
                 +91 98765 43210
               </a>
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-neutralc-600">
                 <Clock className="w-4 h-4 mr-2" />
                 Monday to Saturday, 9:00 AM – 6:00 PM IST
               </div>
@@ -211,7 +211,7 @@ const Footer = () => {
             </div>
 
             {/* Legal Links */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 md:justify-end">
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-neutralc-600 md:justify-end">
               <Link
                 to='/privacy-policy'
                 className="hover:text-[#8b7355] transition-colors"
@@ -236,8 +236,8 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-6 text-sm text-center text-gray-600">
-            © {new Date().getFullYear()} Ciyatake. All rights reserved.
+          <div className="mt-6 text-sm text-center text-neutralc-600">
+            © {new Date().getFullYear()} Polohigh. All rights reserved.
           </div>
         </div>
       </div>

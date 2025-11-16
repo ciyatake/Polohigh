@@ -187,27 +187,27 @@ const WriteReviewDialog = ({
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl rounded-3xl border border-[#DCECE9] bg-white p-6 text-slate-700 shadow-[0_36px_72px_rgba(15,23,42,0.12)]"
+        className="w-full max-w-2xl rounded-3xl border border-neutralc-200 bg-white p-6 text-neutralc-600 shadow-[0_36px_72px_rgba(15,23,42,0.12)]"
       >
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Share your experience
             </p>
             <h2
               id="write-review-title"
-              className="mt-2 text-2xl font-semibold text-slate-900"
+              className="mt-2 text-2xl font-semibold text-neutralc-900"
             >
               {dialogTitle}
             </h2>
             {productName ? (
-              <p className="mt-1 text-sm text-slate-500">{productName}</p>
+              <p className="mt-1 text-sm text-neutralc-400">{productName}</p>
             ) : null}
           </div>
           <button
             type="button"
             onClick={() => onClose?.()}
-            className="self-start rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 transition hover:border-[#b8985b] hover:text-[#b8985b]"
+            className="self-start rounded-full border border-neutralc-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-600 transition hover:border-primary-500 hover:text-primary-500"
           >
             Close
           </button>
@@ -215,7 +215,7 @@ const WriteReviewDialog = ({
 
         <div className="mt-6 space-y-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
+            <p className="text-xs uppercase tracking-[0.25em] text-neutralc-400">
               Rating
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -228,8 +228,8 @@ const WriteReviewDialog = ({
                     onClick={() => handleRatingChange(value)}
                     className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${
                       active
-                        ? "border-[#b8985b] bg-[#b8985b]/15 text-[#b8985b]"
-                        : "border-[#DCECE9] bg-white text-slate-500 hover:border-[#b8985b]/40"
+                        ? "border-primary-500 bg-primary-500/15 text-primary-500"
+                        : "border-neutralc-200 bg-white text-neutralc-400 hover:border-primary-500/40"
                     }`}
                     aria-label={`Rate ${value} star${value > 1 ? "s" : ""}`}
                   >
@@ -241,7 +241,7 @@ const WriteReviewDialog = ({
           </div>
 
           <label className="block text-sm">
-            <span className="mb-2 block text-slate-600">Review title</span>
+            <span className="mb-2 block text-neutralc-600">Review title</span>
             <input
               type="text"
               name="title"
@@ -249,12 +249,12 @@ const WriteReviewDialog = ({
               onChange={handleChange}
               maxLength={200}
               placeholder="A quick headline for your review (optional)"
-              className="w-full rounded-2xl border border-[#DCECE9] bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#b8985b]/20"
+              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
             />
           </label>
 
           <label className="block text-sm">
-            <span className="mb-2 block text-slate-600">Tell us more</span>
+            <span className="mb-2 block text-neutralc-600">Tell us more</span>
             <textarea
               name="comment"
               value={formValues.comment}
@@ -263,36 +263,36 @@ const WriteReviewDialog = ({
               minLength={10}
               maxLength={2000}
               placeholder="How does it fit, feel, and hold up in everyday use?"
-              className="w-full rounded-2xl border border-[#DCECE9] bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#b8985b]/20"
+              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               required
             />
-            <span className="mt-2 block text-xs text-slate-500">
+            <span className="mt-2 block text-xs text-neutralc-400">
               {formValues.comment.length} / 2000 characters
             </span>
           </label>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block text-sm">
-              <span className="mb-2 block text-slate-600">Size</span>
+              <span className="mb-2 block text-neutralc-600">Size</span>
               <input
                 type="text"
                 name="variantSize"
                 value={formValues.variantSize}
                 onChange={handleChange}
                 placeholder="Size you picked (optional)"
-                className="w-full rounded-2xl border border-[#DCECE9] bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#b8985b]/20"
+                className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               />
             </label>
 
             <label className="block text-sm">
-              <span className="mb-2 block text-slate-600">Colour</span>
+              <span className="mb-2 block text-neutralc-600">Colour</span>
               <input
                 type="text"
                 name="variantColor"
                 value={formValues.variantColor}
                 onChange={handleChange}
                 placeholder="Colour you chose (optional)"
-                className="w-full rounded-2xl border border-[#DCECE9] bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#b8985b]/20"
+                className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               />
             </label>
           </div>
@@ -308,14 +308,14 @@ const WriteReviewDialog = ({
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
           {defaultOrderId ? (
-            <span className="text-xs uppercase tracking-[0.25em] text-slate-500">
+            <span className="text-xs uppercase tracking-[0.25em] text-neutralc-400">
               Verified purchase
             </span>
           ) : null}
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-[#b8985b] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-primary-500 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
           >
             {saving ? "Saving..." : actionLabel}
           </button>

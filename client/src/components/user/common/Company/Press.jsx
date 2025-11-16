@@ -31,47 +31,47 @@ const Press = () => {
   const pressReleases = [
     {
       id: 1,
-      title: "Ciyatake Announces Record-Breaking Festive Season Sales",
+      title: "Polohigh Announces Record-Breaking Festive Season Sales",
       date: "October 15, 2025",
       category: "Company News",
       summary:
-        "Ciyatake reports a 150% increase in sales during the festive season, marking the company's strongest quarter to date. The growth was driven by expanded product categories and enhanced customer experience initiatives.",
+        "Polohigh reports a 150% increase in sales during the festive season, marking the company's strongest quarter to date. The growth was driven by expanded product categories and enhanced customer experience initiatives.",
     },
     {
       id: 2,
-      title: "Ciyatake Launches Sustainable Fashion Collection",
+      title: "Polohigh Launches Sustainable Fashion Collection",
       date: "September 28, 2025",
       category: "Product Launch",
       summary:
-        "In line with our commitment to sustainability, Ciyatake introduces an eco-friendly fashion line made from recycled materials and organic fabrics, partnering with local artisans and sustainable manufacturers.",
+        "In line with our commitment to sustainability, Polohigh introduces an eco-friendly fashion line made from recycled materials and organic fabrics, partnering with local artisans and sustainable manufacturers.",
     },
     {
       id: 3,
-      title: "Ciyatake Expands Operations to 50 New Cities",
+      title: "Polohigh Expands Operations to 50 New Cities",
       date: "August 12, 2025",
       category: "Expansion",
       summary:
-        "Ciyatake announces major expansion across India, bringing same-day delivery services to 50 additional cities. This expansion is expected to serve over 10 million new customers nationwide.",
+        "Polohigh announces major expansion across India, bringing same-day delivery services to 50 additional cities. This expansion is expected to serve over 10 million new customers nationwide.",
     },
     {
       id: 4,
-      title: 'Ciyatake Receives "Best E-commerce Platform" Award',
+      title: 'Polohigh Receives "Best E-commerce Platform" Award',
       date: "July 5, 2025",
       category: "Awards",
       summary:
-        'Ciyatake has been honored with the prestigious "Best E-commerce Platform of the Year" award at the India Digital Commerce Summit 2025, recognizing excellence in customer service and innovation.',
+        'Polohigh has been honored with the prestigious "Best E-commerce Platform of the Year" award at the India Digital Commerce Summit 2025, recognizing excellence in customer service and innovation.',
     },
     {
       id: 5,
-      title: "Ciyatake Partners with Leading Electronics Brands",
+      title: "Polohigh Partners with Leading Electronics Brands",
       date: "June 20, 2025",
       category: "Partnerships",
       summary:
-        "Ciyatake announces strategic partnerships with top electronics manufacturers, offering customers exclusive access to the latest technology products with special pricing and extended warranties.",
+        "Polohigh announces strategic partnerships with top electronics manufacturers, offering customers exclusive access to the latest technology products with special pricing and extended warranties.",
     },
     {
       id: 6,
-      title: "Ciyatake Launches AI-Powered Shopping Assistant",
+      title: "Polohigh Launches AI-Powered Shopping Assistant",
       date: "May 8, 2025",
       category: "Technology",
       summary:
@@ -83,20 +83,20 @@ const Press = () => {
     {
       id: 1,
       publication: "The Economic Times",
-      articleTitle: "How Ciyatake is Revolutionizing Online Shopping in India",
+      articleTitle: "How Polohigh is Revolutionizing Online Shopping in India",
       date: "October 10, 2025",
       excerpt:
-        "Ciyatake has emerged as a major player in India's e-commerce landscape, combining technology innovation with customer-centric service to create a shopping experience that stands out...",
+        "Polohigh has emerged as a major player in India's e-commerce landscape, combining technology innovation with customer-centric service to create a shopping experience that stands out...",
       link: "https://economictimes.com",
       logo: "📰",
     },
     {
       id: 2,
       publication: "Business Standard",
-      articleTitle: "E-commerce Boom: Ciyatake Reports 150% Growth",
+      articleTitle: "E-commerce Boom: Polohigh Reports 150% Growth",
       date: "October 5, 2025",
       excerpt:
-        "The festive season has proven particularly lucrative for Ciyatake, with the company reporting unprecedented growth figures that surpass industry averages...",
+        "The festive season has proven particularly lucrative for Polohigh, with the company reporting unprecedented growth figures that surpass industry averages...",
       link: "https://business-standard.com",
       logo: "📊",
     },
@@ -104,10 +104,10 @@ const Press = () => {
       id: 3,
       publication: "TechCrunch India",
       articleTitle:
-        "Ciyatake's AI Shopping Assistant Sets New Industry Standard",
+        "Polohigh's AI Shopping Assistant Sets New Industry Standard",
       date: "September 15, 2025",
       excerpt:
-        "With its newly launched AI-powered shopping assistant, Ciyatake demonstrates how artificial intelligence can enhance the online shopping experience through personalization...",
+        "With its newly launched AI-powered shopping assistant, Polohigh demonstrates how artificial intelligence can enhance the online shopping experience through personalization...",
       link: "https://techcrunch.com",
       logo: "💻",
     },
@@ -115,20 +115,20 @@ const Press = () => {
       id: 4,
       publication: "Forbes India",
       articleTitle:
-        "Sustainability Meets Style: Ciyatake's Green Fashion Initiative",
+        "Sustainability Meets Style: Polohigh's Green Fashion Initiative",
       date: "September 1, 2025",
       excerpt:
-        "Ciyatake's commitment to sustainable fashion represents a significant shift in how e-commerce platforms approach environmental responsibility...",
+        "Polohigh's commitment to sustainable fashion represents a significant shift in how e-commerce platforms approach environmental responsibility...",
       link: "https://forbesindia.com",
       logo: "🌍",
     },
     {
       id: 5,
       publication: "YourStory",
-      articleTitle: "From Startup to Market Leader: The Ciyatake Journey",
+      articleTitle: "From Startup to Market Leader: The Polohigh Journey",
       date: "August 20, 2025",
       excerpt:
-        "A deep dive into how Ciyatake transformed from a small startup to one of India's most trusted e-commerce platforms, focusing on customer satisfaction and innovation...",
+        "A deep dive into how Polohigh transformed from a small startup to one of India's most trusted e-commerce platforms, focusing on customer satisfaction and innovation...",
       link: "https://yourstory.com",
       logo: "🚀",
     },
@@ -136,10 +136,10 @@ const Press = () => {
       id: 6,
       publication: "India Today",
       articleTitle:
-        "Award-Winning Customer Service: Ciyatake's Success Formula",
+        "Award-Winning Customer Service: Polohigh's Success Formula",
       date: "July 10, 2025",
       excerpt:
-        "Following its recent award win, we explore what makes Ciyatake's customer service approach different and how it has contributed to the company's rapid growth...",
+        "Following its recent award win, we explore what makes Polohigh's customer service approach different and how it has contributed to the company's rapid growth...",
       link: "https://indiatoday.in",
       logo: "🏆",
     },
@@ -165,7 +165,7 @@ const Press = () => {
       id: 1,
       title: "Brand Logo Pack",
       description:
-        "High-resolution Ciyatake logos in various formats (PNG, SVG, EPS)",
+        "High-resolution Polohigh logos in various formats (PNG, SVG, EPS)",
       type: "Logos",
       fileSize: "2.5 MB",
       icon: Image,
@@ -215,7 +215,7 @@ const Press = () => {
 
   const quotes = [
     {
-      text: "Ciyatake has redefined what it means to provide exceptional customer service in the e-commerce space.",
+      text: "Polohigh has redefined what it means to provide exceptional customer service in the e-commerce space.",
       source: "The Economic Times",
     },
     {
@@ -223,7 +223,7 @@ const Press = () => {
       source: "Forbes India",
     },
     {
-      text: "The future of online shopping in India looks bright with innovators like Ciyatake leading the way.",
+      text: "The future of online shopping in India looks bright with innovators like Polohigh leading the way.",
       source: "TechCrunch India",
     },
   ];
@@ -292,10 +292,10 @@ const Press = () => {
           <div className="flex justify-center mb-6">
             <Newspaper className="w-16 h-16" />
           </div>
-          <h1 className="mb-6 text-5xl font-bold">Ciyatake in the News</h1>
+          <h1 className="mb-6 text-5xl font-bold">Polohigh in the News</h1>
           <p className="max-w-3xl mx-auto text-xl leading-relaxed opacity-90">
             Discover the latest news, press releases, and media coverage about
-            Ciyatake. We're proud to share our journey, achievements, and
+            Polohigh. We're proud to share our journey, achievements, and
             commitment to transforming the e-commerce landscape in India.
           </p>
         </div>
@@ -358,7 +358,7 @@ const Press = () => {
               Media Mentions
             </h2>
             <p className="text-[#8b7355] max-w-2xl mx-auto">
-              See what leading publications are saying about Ciyatake
+              See what leading publications are saying about Polohigh
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -556,7 +556,7 @@ const Press = () => {
                   </div>
                   <div>
                     <p className="mb-1 font-semibold">Media Relations Team</p>
-                    <p className="opacity-90">Ciyatake Communications</p>
+                    <p className="opacity-90">Polohigh Communications</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -566,10 +566,10 @@ const Press = () => {
                   <div>
                     <p className="mb-1 font-semibold">Email</p>
                     <a
-                      href="mailto:media@ciyatake.com"
+                      href="mailto:media@Polohigh.com"
                       className="transition-opacity opacity-90 hover:opacity-100"
                     >
-                      media@ciyatake.com
+                      media@Polohigh.com
                     </a>
                   </div>
                 </div>
@@ -718,7 +718,7 @@ const Press = () => {
         <div className="max-w-4xl mx-auto text-center">
           <TrendingUp className="w-12 h-12 mx-auto mb-6" />
           <h2 className="mb-6 text-4xl font-bold">
-            Working on a Story About Ciyatake?
+            Working on a Story About Polohigh?
           </h2>
           <p className="mb-8 text-xl leading-relaxed opacity-90">
             We're committed to providing accurate information and timely
@@ -727,7 +727,7 @@ const Press = () => {
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href="mailto:media@ciyatake.com"
+              href="mailto:media@Polohigh.com"
               className="bg-white text-[#6b5847] px-8 py-4 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
             >
               <Mail className="w-5 h-5" />

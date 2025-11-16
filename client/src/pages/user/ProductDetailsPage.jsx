@@ -702,13 +702,13 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-neutralc-900">
       <UserNavbar isLoggedIn={isLoggedIn} />
 
       <div className="mx-auto max-w-6xl space-y-12 px-4 pb-24 pt-8">
         {loading ? (
           <div className="space-y-10">
-            <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-neutralc-400">
               {Array.from({ length: 3 }).map((_, index) => (
                 <Skeleton
                   key={`product-breadcrumb-skeleton-${index}`}
@@ -734,7 +734,7 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
                 </div>
               </div>
 
-              <div className="space-y-4 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-sm">
+              <div className="space-y-4 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm">
                 <Skeleton className="h-6 w-28" />
                 <Skeleton className="h-8 w-3/4" />
                 <Skeleton className="h-5 w-1/2" />
@@ -751,7 +751,7 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-              <div className="space-y-3 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-sm">
+              <div className="space-y-3 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm">
                 {Array.from({ length: 6 }).map((_, index) => (
                   <Skeleton
                     key={`product-info-skeleton-${index}`}
@@ -759,7 +759,7 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
                   />
                 ))}
               </div>
-              <div className="space-y-3 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-sm">
+              <div className="space-y-3 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm">
                 {Array.from({ length: 4 }).map((_, index) => (
                   <Skeleton
                     key={`product-highlight-skeleton-${index}`}
@@ -855,7 +855,7 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
 
       {toastMessage ? (
         <div className="fixed inset-x-0 bottom-6 z-50 flex justify-center px-4">
-          <div className="max-w-sm rounded-full border border-[#b8985b]/50 bg-[#b8985b]/15 px-4 py-3 text-center text-sm font-medium text-[#b8985b] shadow-lg">
+          <div className="max-w-sm rounded-full border border-[primary-500]/50 bg-[primary-500]/15 px-4 py-3 text-center text-sm font-medium text-[primary-500] shadow-lg">
             {toastMessage}
           </div>
         </div>

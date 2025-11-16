@@ -30,20 +30,20 @@ const DEFAULT_CATEGORY_OPTIONS = [
 
 const posters = [
   {
-    img: "/Banner_1.png",
+    img: "/polohighbanner.png",
     link: "/product/hoodie-purple",
     cta: "Shop Now"
   },
-  {
-    img: "/Banner_2.png",
-    link: "/product/hoodie-brown",
-    cta: "Explore"
-  },
-  {
-    img: "/Banner.png",
-    // no link → no navigation
-    // no CTA button → hidden
-  }
+  // {
+  //   img: "/Banner_2.png",
+  //   link: "/product/hoodie-brown",
+  //   cta: "Explore"
+  // },
+  // {
+  //   img: "/Banner.png",
+  //   // no link → no navigation
+  //   // no CTA button → hidden
+  // }
 ];
 
 const HERO_HIGHLIGHTS = [
@@ -419,7 +419,7 @@ const HomePage = ({ isLoggedIn }) => {
   const isDefaultView = !hasActiveFilters && searchTerm.trim() === "";
 
   return (
-    <div className="min-h-screen bg-white pb-16 text-slate-900 sm:pb-0">
+    <div className="min-h-screen bg-white pb-16 text-neutralc-900 sm:pb-0">
       <UserNavbar
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
@@ -438,12 +438,12 @@ const HomePage = ({ isLoggedIn }) => {
                   onSearchSubmit?.(searchTerm);
                 }
               }}
-              className="w-full rounded-xl border border-[#DCECE9] bg-white px-4 py-3 pl-10 text-sm text-slate-700 placeholder:text-slate-400 transition focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#b8985b]/25"
+              className="w-full rounded-xl border border-[neutralc-200] bg-white px-4 py-3 pl-10 text-sm text-neutralc-600 placeholder:text-neutralc-400 transition focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[primary-500]/25"
             />
             <img
               src={searchIcon}
               alt=""
-              className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+              className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutralc-400"
               aria-hidden="true"
             />
           </div> */}
@@ -454,10 +454,10 @@ const HomePage = ({ isLoggedIn }) => {
 
         {/* Header Section */}
         <div className="mb-6 text-center sm:mb-10">
-          <h1 className="text-2xl font-bold tracking-tight text-[#b8985b] sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-[primary-500] sm:text-4xl">
             Products For You
           </h1>
-          <p className="mt-2 text-sm text-slate-600 sm:mt-3 sm:text-base">
+          <p className="mt-2 text-sm text-neutralc-600 sm:mt-3 sm:text-base">
             Discover our complete collection with advanced filters
           </p>
         </div>
@@ -474,7 +474,7 @@ const HomePage = ({ isLoggedIn }) => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 space-y-4 rounded-lg border border-[#DCECE9] bg-[#F2EAE0] p-3 shadow-sm sm:space-y-6 sm:rounded-2xl sm:p-6 sm:shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
+          <div className="flex-1 space-y-4 rounded-lg border border-[neutralc-200] bg-[primary-100] p-3 shadow-sm sm:space-y-6 sm:rounded-2xl sm:p-6 sm:shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
             {/* Mobile Filter and Sort Bar */}
             <div className="flex items-center justify-between gap-3 lg:hidden">
               <div className="flex flex-1 gap-2">
@@ -526,7 +526,7 @@ const HomePage = ({ isLoggedIn }) => {
                 >
                   <div className="relative flex h-full w-full bg-white">
                     {/* Sidebar Tabs */}
-                    <div className="flex flex-col w-28 bg-gray-50 border-r h-full">
+                    <div className="flex flex-col w-28 bg-neutralc-100 border-r h-full">
                       {[
                         "Category",
                         "Gender",
@@ -539,8 +539,8 @@ const HomePage = ({ isLoggedIn }) => {
                           key={tab}
                           className={`py-3 px-2 text-left text-xs sm:text-sm font-medium border-l-4 transition-colors ${
                             mobileFilterTab === tab
-                              ? "border-[#b8985b] bg-white text-[#b8985b]"
-                              : "border-transparent text-gray-700 hover:bg-gray-100"
+                              ? "border-[primary-500] bg-white text-[primary-500]"
+                              : "border-transparent text-gray-700 hover:bg-neutralc-100"
                           }`}
                           onClick={() => {
                             setMobileFilterTab(tab);
@@ -558,7 +558,7 @@ const HomePage = ({ isLoggedIn }) => {
                         <span className="font-semibold text-base">Filters</span>
                         <button
                           onClick={() => setShowMobileFilters(false)}
-                          className="text-gray-500 hover:text-gray-700 text-2xl"
+                          className="text-neutralc-400 hover:text-gray-700 text-2xl"
                         >
                           &times;
                         </button>
@@ -572,7 +572,7 @@ const HomePage = ({ isLoggedIn }) => {
                           onChange={(e) =>
                             setMobileFilterSearch(e.target.value)
                           }
-                          className="w-full rounded border border-gray-200 px-3 py-2 text-xs sm:text-sm focus:border-[#b8985b] focus:ring-[#b8985b]"
+                          className="w-full rounded border border-neutralc-200 px-3 py-2 text-xs sm:text-sm focus:border-[primary-500] focus:ring-[primary-500]"
                         />
                       </div>
                       {/* Options List */}
@@ -605,7 +605,7 @@ const HomePage = ({ isLoggedIn }) => {
                                         category: opt.value,
                                       }))
                                     }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-[#b8985b] focus:ring-[#b8985b]"
+                                    className="mr-3 h-4 w-4 border-gray-300 text-[primary-500] focus:ring-[primary-500]"
                                   />
                                   <span className="text-sm">{opt.label}</span>
                                 </label>
@@ -644,7 +644,7 @@ const HomePage = ({ isLoggedIn }) => {
                                         gender: opt.value,
                                       }))
                                     }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-[#b8985b] focus:ring-[#b8985b]"
+                                    className="mr-3 h-4 w-4 border-gray-300 text-[primary-500] focus:ring-[primary-500]"
                                   />
                                   <span className="text-sm">{opt.label}</span>
                                 </label>
@@ -694,7 +694,7 @@ const HomePage = ({ isLoggedIn }) => {
                                           : [...(draft.colors || []), opt.name],
                                       }))
                                     }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-[#b8985b] focus:ring-[#b8985b]"
+                                    className="mr-3 h-4 w-4 border-gray-300 text-[primary-500] focus:ring-[primary-500]"
                                   />
                                   <span className="text-sm capitalize">
                                     {opt.name}
@@ -731,7 +731,7 @@ const HomePage = ({ isLoggedIn }) => {
                                           : [...(draft.sizes || []), opt],
                                       }))
                                     }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-[#b8985b] focus:ring-[#b8985b]"
+                                    className="mr-3 h-4 w-4 border-gray-300 text-[primary-500] focus:ring-[primary-500]"
                                   />
                                   <span className="text-sm">{opt}</span>
                                 </label>
@@ -792,7 +792,7 @@ const HomePage = ({ isLoggedIn }) => {
                                           : [...(draft.priceRanges || []), opt],
                                       }))
                                     }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-[#b8985b] focus:ring-[#b8985b]"
+                                    className="mr-3 h-4 w-4 border-gray-300 text-[primary-500] focus:ring-[primary-500]"
                                   />
                                   <span className="text-sm">{opt.label}</span>
                                 </label>
@@ -830,7 +830,7 @@ const HomePage = ({ isLoggedIn }) => {
                                         minRating: opt.value,
                                       }))
                                     }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-[#b8985b] focus:ring-[#b8985b]"
+                                    className="mr-3 h-4 w-4 border-gray-300 text-[primary-500] focus:ring-[primary-500]"
                                   />
                                   <span className="text-sm">{opt.label}</span>
                                 </label>
@@ -841,7 +841,7 @@ const HomePage = ({ isLoggedIn }) => {
                       {/* Sticky Footer Buttons */}
                       <div className="sticky bottom-0 left-0 right-0 bg-white border-t flex items-center justify-between gap-2 px-4 py-3">
                         <button
-                          className="flex-1 rounded border border-[#b8985b] bg-white px-4 py-2 text-sm font-semibold text-[#b8985b]"
+                          className="flex-1 rounded border border-[primary-500] bg-white px-4 py-2 text-sm font-semibold text-[primary-500]"
                           onClick={() => {
                             setMobileFilterDraft(filters);
                             setMobileFilterSearch("");
@@ -850,7 +850,7 @@ const HomePage = ({ isLoggedIn }) => {
                           Clear Filters
                         </button>
                         <button
-                          className="flex-1 rounded bg-[#b8985b] px-4 py-2 text-sm font-semibold text-white"
+                          className="flex-1 rounded bg-[primary-500] px-4 py-2 text-sm font-semibold text-white"
                           onClick={() => {
                             setFilters(() => mobileFilterDraft);
                             setShowMobileFilters(false);
@@ -867,7 +867,7 @@ const HomePage = ({ isLoggedIn }) => {
 
             {/* Desktop Sort and Results Header */}
             <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:sm:flex-row lg:sm:items-center lg:sm:justify-between">
-              <div className="flex items-center gap-4 text-sm text-slate-600">
+              <div className="flex items-center gap-4 text-sm text-neutralc-600">
                 {isInitialProductLoad ? (
                   <Skeleton className="h-4 w-64" />
                 ) : (
@@ -882,7 +882,7 @@ const HomePage = ({ isLoggedIn }) => {
                   <button
                     type="button"
                     onClick={handleClearFilters}
-                    className="text-sm font-semibold text-[#b8985b] transition-colors hover:text-[#a0824a]"
+                    className="text-sm font-semibold text-[primary-500] transition-colors hover:text-[primary-700]"
                   >
                     Clear all filters
                   </button>
@@ -896,7 +896,7 @@ const HomePage = ({ isLoggedIn }) => {
                     id="homepage-sort"
                     value={sortOption}
                     onChange={(event) => setSortOption(event.target.value)}
-                    className="w-full rounded-lg border border-[#DCECE9] bg-white px-3 py-2 text-sm text-slate-700 focus:border-[#b8985b] focus:outline-none focus:ring-1 focus:ring-[#b8985b]"
+                    className="w-full rounded-lg border border-[neutralc-200] bg-white px-3 py-2 text-sm text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-1 focus:ring-[primary-500]"
                   >
                     {SORT_OPTIONS.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -941,7 +941,7 @@ const HomePage = ({ isLoggedIn }) => {
                 {Array.from({ length: 10 }).map((_, index) => (
                   <div
                     key={`homepage-product-skeleton-${index}`}
-                    className="space-y-3 rounded-3xl border border-[#DCECE9] bg-white p-3 shadow-sm"
+                    className="space-y-3 rounded-3xl border border-[neutralc-200] bg-white p-3 shadow-sm"
                   >
                     <Skeleton
                       className="h-44 w-full rounded-2xl"
@@ -971,14 +971,14 @@ const HomePage = ({ isLoggedIn }) => {
             ) : filteredProducts.length ? (
               <ProductGrid products={filteredProducts} />
             ) : (
-              <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-[#DCECE9] bg-white p-12 text-center">
-                <p className="text-slate-600">
+              <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-[neutralc-200] bg-white p-12 text-center">
+                <p className="text-neutralc-600">
                   No products match your current filters.
                 </p>
                 <button
                   type="button"
                   onClick={handleClearFilters}
-                  className="rounded-lg bg-[#b8985b] px-4 py-2 font-semibold text-white transition-colors hover:bg-[#a0824a]"
+                  className="rounded-lg bg-[primary-500] px-4 py-2 font-semibold text-white transition-colors hover:bg-[primary-700]"
                 >
                   Clear filters
                 </button>
@@ -999,7 +999,7 @@ const HomePage = ({ isLoggedIn }) => {
                   <button
                     type="button"
                     onClick={handleLoadMoreItems}
-                    className="inline-flex items-center justify-center rounded-lg bg-[#b8985b] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#a0824a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b8985b] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2EAE0]"
+                    className="inline-flex items-center justify-center rounded-lg bg-[primary-500] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[primary-700] focus:outline-none focus-visible:ring-2 focus-visible:ring-[primary-500] focus-visible:ring-offset-2 focus-visible:ring-offset-[primary-100]"
                   >
                     More Items
                   </button>
@@ -1013,7 +1013,7 @@ const HomePage = ({ isLoggedIn }) => {
           type="button"
           onClick={handleScrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-6 right-6 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#b8985b]/60 bg-[#b8985b] text-white shadow-[0_10px_30px_rgba(185,152,91,0.35)] transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DCECE9]"
+          className="fixed bottom-6 right-6 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[primary-500]/60 bg-[primary-500] text-white shadow-[0_10px_30px_rgba(185,152,91,0.35)] transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-[neutralc-200]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

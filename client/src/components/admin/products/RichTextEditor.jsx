@@ -47,15 +47,15 @@ const RichTextEditor = ({
   };
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 focus-within:border-[#b8985b] focus-within:ring-2 focus-within:ring-[#b8985b]/20">
-      <div className="flex items-center justify-between gap-2 border-b border-slate-200 bg-slate-50 px-3 py-2">
+    <div className="overflow-hidden rounded-2xl border border-neutralc-200 focus-within:border-[primary-500] focus-within:ring-2 focus-within:ring-[primary-500]/20">
+      <div className="flex items-center justify-between gap-2 border-b border-neutralc-200 bg-neutralc-100 px-3 py-2">
         <div className="flex items-center gap-1">
           {TOOLBAR_ACTIONS.map((tool) => (
             <button
               key={tool.command}
               type="button"
               onClick={() => handleExec(tool.command)}
-              className={`rounded-lg px-3 py-1 text-sm text-slate-600 transition hover:bg-slate-200 ${
+              className={`rounded-lg px-3 py-1 text-sm text-neutralc-600 transition hover:bg-neutralc-200 ${
                 tool.className ?? ""
               }`}
               title={tool.title}
@@ -69,8 +69,8 @@ const RichTextEditor = ({
           onClick={() => setPreview((prev) => !prev)}
           className={`rounded-lg px-3 py-1 text-xs font-medium transition ${
             preview
-              ? "bg-[#f2eae0] text-[#8f7843]"
-              : "text-slate-600 hover:bg-slate-200"
+              ? "bg-[primary-100] text-[primary-700]"
+              : "text-neutralc-600 hover:bg-neutralc-200"
           }`}
         >
           {preview ? "Edit" : "Preview"}
@@ -78,11 +78,11 @@ const RichTextEditor = ({
       </div>
 
       {preview ? (
-        <div className="prose prose-sm max-w-none px-4 py-3 text-sm text-slate-700">
+        <div className="prose prose-sm max-w-none px-4 py-3 text-sm text-neutralc-600">
           {value ? (
             <div dangerouslySetInnerHTML={{ __html: value }} />
           ) : (
-            <p className="italic text-slate-400">No description yet.</p>
+            <p className="italic text-neutralc-400">No description yet.</p>
           )}
         </div>
       ) : (
@@ -92,7 +92,7 @@ const RichTextEditor = ({
           suppressContentEditableWarning
           onInput={handleInput}
           onPaste={handlePaste}
-          className="min-h-[140px] px-4 py-3 text-sm text-slate-700 outline-none [&:empty]:before:content-[attr(data-placeholder)] [&:empty]:before:text-slate-400 [&:empty]:before:italic"
+          className="min-h-[140px] px-4 py-3 text-sm text-neutralc-600 outline-none [&:empty]:before:content-[attr(data-placeholder)] [&:empty]:before:text-neutralc-400 [&:empty]:before:italic"
           data-placeholder={placeholder}
         />
       )}

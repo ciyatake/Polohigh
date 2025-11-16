@@ -453,7 +453,7 @@ We encourage you to review this privacy policy regularly to stay informed about 
       </section>
 
       {/* Footer Note */}
-      <section className="px-4 py-8 bg-white border-t border-gray-200">
+      <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#8b7355] text-sm">
             By using Ciyatake, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.

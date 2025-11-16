@@ -44,22 +44,22 @@ const PreferencesSection = ({
       ))}
     </div>
 
-    <div className="mt-6 rounded-2xl border border-[#DCECE9] bg-white p-4 shadow-[0_12px_28px_rgba(15,23,42,0.08)]">
-      <h3 className="text-sm font-semibold text-slate-900">Security check</h3>
-      <dl className="mt-3 grid gap-3 text-sm text-slate-600 md:grid-cols-2">
+    <div className="mt-6 rounded-2xl border border-[neutralc-200] bg-white p-4 shadow-[0_12px_28px_rgba(15,23,42,0.08)]">
+      <h3 className="text-sm font-semibold text-neutralc-900">Security check</h3>
+      <dl className="mt-3 grid gap-3 text-sm text-neutralc-600 md:grid-cols-2">
         <div>
-          <dt className="text-xs uppercase tracking-[0.3em] text-slate-500">
+          <dt className="text-xs uppercase tracking-[0.3em] text-neutralc-400">
             Last password update
           </dt>
-          <dd className="mt-1 text-sm text-slate-800">
+          <dd className="mt-1 text-sm text-neutralc-900">
             {formatDate(security?.lastPasswordChange)}
           </dd>
         </div>
         <div>
-          <dt className="text-xs uppercase tracking-[0.3em] text-slate-500">
+          <dt className="text-xs uppercase tracking-[0.3em] text-neutralc-400">
             2-step verification
           </dt>
-          <dd className="mt-1 text-sm text-slate-800">
+          <dd className="mt-1 text-sm text-neutralc-900">
             {security?.twoFactorEnabled ? "Enabled" : "Not enabled"}
           </dd>
         </div>
@@ -68,31 +68,31 @@ const PreferencesSection = ({
       {Array.isArray(security?.trustedDevices) &&
       security.trustedDevices.length ? (
         <div className="mt-4 space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
             Trusted devices
           </p>
           {security.trustedDevices.map((device) => (
             <div
               key={device.id}
-              className="rounded-2xl border border-[#DCECE9] bg-[#F2EAE0] p-3 text-sm text-slate-600"
+              className="rounded-2xl border border-[neutralc-200] bg-[primary-100] p-3 text-sm text-neutralc-600"
             >
-              <p className="font-medium text-slate-800">
+              <p className="font-medium text-neutralc-900">
                 {device.device || "Trusted device"}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-neutralc-400">
                 {device.location || "Location unknown"}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-neutralc-400">
                 Last active: {formatDate(device.lastActive)}
               </p>
               {device.trusted ? (
-                <span className="mt-2 inline-flex rounded-full border border-[#b8985b]/60 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#b8985b]">
+                <span className="mt-2 inline-flex rounded-full border border-[primary-500]/60 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[primary-500]">
                   Trusted
                 </span>
               ) : (
                 <button
                   type="button"
-                  className="mt-2 inline-flex rounded-full border border-slate-300 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-slate-500 transition hover:border-[#b8985b] hover:text-[#b8985b]"
+                  className="mt-2 inline-flex rounded-full border border-neutralc-200 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-neutralc-400 transition hover:border-[primary-500] hover:text-[primary-500]"
                 >
                   Remove access
                 </button>
@@ -104,7 +104,7 @@ const PreferencesSection = ({
 
       <button
         type="button"
-        className="mt-4 inline-flex items-center justify-center rounded-full border border-[#b8985b] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white"
+        className="mt-4 inline-flex items-center justify-center rounded-full border border-[primary-500] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
       >
         Review security settings
       </button>

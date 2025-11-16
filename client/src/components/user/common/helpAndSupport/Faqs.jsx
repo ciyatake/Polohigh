@@ -74,7 +74,7 @@ const Faqs = () => {
     {
       question: "Can I modify or cancel my order?",
       answer:
-        "Yes, you can cancel or modify your order within 1 hour of placing it. Contact our support team immediately at care@ciyatake.com or call +91 98765 43210. Once the order is dispatched, modifications are not possible.",
+        "Yes, you can cancel or modify your order within 1 hour of placing it. Contact our support team immediately at care@Polohigh.com or call +91 98765 43210. Once the order is dispatched, modifications are not possible.",
     },
     {
       question: "What payment methods do you accept?",
@@ -191,7 +191,7 @@ const Faqs = () => {
     {
       question: "How do I delete my account?",
       answer:
-        "To delete your account, contact our support team at care@ciyatake.com. We'll process your request within 7 business days and delete all your personal information as per our privacy policy.",
+        "To delete your account, contact our support team at care@Polohigh.com. We'll process your request within 7 business days and delete all your personal information as per our privacy policy.",
     },
   ];
 
@@ -220,9 +220,9 @@ const Faqs = () => {
 
   const supportFAQs = [
     {
-      question: "How can I contact Ciyatake support?",
+      question: "How can I contact Polohigh support?",
       answer:
-        "You can reach us via email at care@ciyatake.com, call us at +91 98765 43210, or use the contact form on our website. We're here to help!",
+        "You can reach us via email at care@Polohigh.com, call us at +91 98765 43210, or use the contact form on our website. We're here to help!",
     },
     {
       question: "What are your support hours?",
@@ -238,7 +238,7 @@ const Faqs = () => {
 
   const privacySecurityFAQs = [
     {
-      question: "Is my personal information safe with Ciyatake?",
+      question: "Is my personal information safe with Polohigh?",
       answer:
         "Absolutely! We use industry-standard encryption and security measures to protect your data. We never share your information with third parties without consent. Read our Privacy Policy for details.",
     },
@@ -280,7 +280,7 @@ const Faqs = () => {
       <div className="max-w-5xl px-4 py-8 mx-auto">
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8 border-l-4 border-[#8b7355]">
           <p className="text-[#6b6b6b] leading-relaxed">
-            Welcome to Ciyatake's FAQ page! We've compiled answers to the most
+            Welcome to Polohigh's FAQ page! We've compiled answers to the most
             common questions our customers ask. Whether you're curious about
             orders, shipping, returns, or anything else, you'll find helpful
             information below. Can't find what you're looking for? Our support
@@ -348,10 +348,10 @@ const Faqs = () => {
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="mailto:care@ciyatake.com"
+              href="mailto:care@Polohigh.com"
               className="bg-white text-[#8b7355] px-6 py-3 rounded-lg font-semibold hover:bg-[#f5f1ed] transition-colors duration-200"
             >
-              Email: care@ciyatake.com
+              Email: care@Polohigh.com
             </a>
             <a
               href="tel:+919876543210"
@@ -369,7 +369,7 @@ const Faqs = () => {
       {/* Footer */}
       <footer className="bg-[#4a4a4a] text-[#d4cec7] py-8 px-4 mt-12">
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-sm">© 2025 Ciyatake. All rights reserved.</p>
+          <p className="text-sm">© 2025 Polohigh. All rights reserved.</p>
           <p className="mt-2 text-sm">
             Thoughtfully curated fashion and lifestyle essentials to help you
             celebrate everyday moments in style.

@@ -152,7 +152,7 @@ export const processPayment = async ({
         contact: customerDetails?.phone ?? "",
       },
       theme: {
-        color: "#b8985b", // Your brand color
+        color: "#B58A31", // Brand color - primary-500
       },
       notes: {
         address: "Ciyatake Corporate Office",

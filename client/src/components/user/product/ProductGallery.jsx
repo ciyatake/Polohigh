@@ -10,7 +10,7 @@ const ProductGallery = ({ images = [] }) => {
 
   return (
     <section className="space-y-4">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[#DCECE9] bg-white shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-neutralc-200 bg-white shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
         <div className="flex h-full w-full items-center justify-center">
           <img
             src={activeImage.src}
@@ -20,7 +20,7 @@ const ProductGallery = ({ images = [] }) => {
           />
         </div>
         {activeImage.tag ? (
-          <span className="absolute right-4 top-4 rounded-full bg-[#b8985b] px-3 py-1 text-xs font-semibold text-white">
+          <span className="absolute right-4 top-4 rounded-full bg-primary-500 px-3 py-1 text-xs font-semibold text-white">
             {activeImage.tag}
           </span>
         ) : null}
@@ -34,8 +34,8 @@ const ProductGallery = ({ images = [] }) => {
             onClick={() => setActiveIndex(index)}
             className={`overflow-hidden rounded-2xl border p-1 transition ${
               index === activeIndex
-                ? "border-[#b8985b] bg-[#b8985b]/15"
-                : "border-[#DCECE9] bg-white hover:border-[#b8985b]/50"
+                ? "border-primary-500 bg-primary-500/15"
+                : "border-neutralc-200 bg-white hover:border-primary-500/50"
             }`}
             aria-label={`View image ${index + 1}`}
           >

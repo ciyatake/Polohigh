@@ -71,7 +71,7 @@ const LoginSuccess = () => {
     <div className="flex min-h-screen items-center justify-center bg-[#f5f2ee]">
       <div className="space-y-3 text-center">
         <Loader label="Completing Google sign-in" />
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-neutralc-600">
           Please wait while we set up your account...
         </p>
       </div>

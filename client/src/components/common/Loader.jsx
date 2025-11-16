@@ -48,7 +48,7 @@ const Loader = ({
 
   return (
     <div
-      className={`flex flex-col items-center justify-center ${spacing} text-[#8f7843] ${className}`.trim()}
+      className={`flex flex-col items-center justify-center ${spacing} text-[primary-700] ${className}`.trim()}
       role="status"
       aria-live="polite"
     >

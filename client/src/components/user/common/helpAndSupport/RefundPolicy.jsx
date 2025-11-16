@@ -47,7 +47,7 @@ const RefundPolicy = () => {
                 Our Commitment to You
               </h2>
               <p className="text-[#6b6b6b] leading-relaxed">
-                At Ciyatake, your satisfaction is our priority. We understand
+                At Polohigh, your satisfaction is our priority. We understand
                 that sometimes products may not meet your expectations, and
                 we're here to make returns and refunds as smooth as possible.
                 This policy outlines everything you need to know about returning
@@ -322,7 +322,7 @@ const RefundPolicy = () => {
               <Mail className="flex-shrink-0 w-6 h-6 mt-1" />
               <div>
                 <h3 className="mb-1 font-semibold">Email</h3>
-                <p className="text-[#f5f1ed] text-sm">care@ciyatake.com</p>
+                <p className="text-[#f5f1ed] text-sm">care@Polohigh.com</p>
               </div>
             </div>
 
@@ -366,7 +366,7 @@ const RefundPolicy = () => {
       {/* Footer */}
       <footer className="bg-[#4a4a4a] text-[#d4cec7] py-8 px-4 mt-12">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm">© 2025 Ciyatake. All rights reserved.</p>
+          <p className="text-sm">© 2025 Polohigh. All rights reserved.</p>
           <p className="mt-2 text-sm">
             Thoughtfully curated fashion and lifestyle essentials to help you
             celebrate everyday moments in style.

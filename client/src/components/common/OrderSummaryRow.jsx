@@ -4,12 +4,12 @@ const OrderSummaryRow = ({ label, value, emphasis = false }) => {
   }
 
   const valueClasses = emphasis
-    ? "text-lg font-semibold text-[#b8985b]"
-    : "text-slate-700";
+    ? "text-lg font-semibold text-[primary-500]"
+    : "text-neutralc-600";
 
   return (
     <div className="flex items-center justify-between text-sm">
-      <span className="text-slate-500">{label}</span>
+      <span className="text-neutralc-400">{label}</span>
       <span className={valueClasses}>{value}</span>
     </div>
   );

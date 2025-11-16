@@ -67,7 +67,7 @@ const TrackOrder = () => {
   };
 
   const getStatusIcon = (status, completed) => {
-    const iconClass = completed ? "text-green-600" : "text-gray-400";
+    const iconClass = completed ? "text-green-600" : "text-neutralc-400";
     const size = "w-8 h-8";
 
     switch (status) {
@@ -122,7 +122,7 @@ const TrackOrder = () => {
         {/* Input Form */}
         {!showTracking && (
           <div className="p-6 bg-white shadow-md rounded-xl sm:p-8">
-            <p className="mb-6 text-gray-600">
+            <p className="mb-6 text-neutralc-600">
               Enter your order details to track your shipment status.
             </p>
 
@@ -184,7 +184,7 @@ const TrackOrder = () => {
               </h2>
 
               {/* Product Info */}
-              <div className="flex flex-col gap-4 pb-6 border-b border-gray-200 sm:flex-row sm:gap-6">
+              <div className="flex flex-col gap-4 pb-6 border-b border-neutralc-200 sm:flex-row sm:gap-6">
                 <img
                   src={mockOrderData.product.image}
                   alt={mockOrderData.product.name}
@@ -194,7 +194,7 @@ const TrackOrder = () => {
                   <h3 className="mb-2 text-lg font-semibold text-gray-800">
                     {mockOrderData.product.name}
                   </h3>
-                  <p className="mb-2 text-gray-600">
+                  <p className="mb-2 text-neutralc-600">
                     Quantity: {mockOrderData.product.quantity}
                   </p>
                   <p className="text-lg font-semibold text-[#8b7355]">
@@ -206,25 +206,25 @@ const TrackOrder = () => {
               {/* Order Details Grid */}
               <div className="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2 sm:gap-6">
                 <div>
-                  <p className="mb-1 text-sm text-gray-500">Order ID</p>
+                  <p className="mb-1 text-sm text-neutralc-400">Order ID</p>
                   <p className="font-semibold text-gray-800">
                     {mockOrderData.orderId}
                   </p>
                 </div>
                 <div>
-                  <p className="mb-1 text-sm text-gray-500">Placed Date</p>
+                  <p className="mb-1 text-sm text-neutralc-400">Placed Date</p>
                   <p className="font-semibold text-gray-800">
                     {mockOrderData.placedDate}
                   </p>
                 </div>
                 <div>
-                  <p className="mb-1 text-sm text-gray-500">Total Amount</p>
+                  <p className="mb-1 text-sm text-neutralc-400">Total Amount</p>
                   <p className="font-semibold text-[#8b7355] text-xl">
                     {mockOrderData.totalAmount}
                   </p>
                 </div>
                 <div>
-                  <p className="mb-1 text-sm text-gray-500">Payment Method</p>
+                  <p className="mb-1 text-sm text-neutralc-400">Payment Method</p>
                   <p className="font-semibold text-gray-800">
                     {mockOrderData.paymentMethod}
                   </p>
@@ -232,8 +232,8 @@ const TrackOrder = () => {
               </div>
 
               {/* Delivery Address */}
-              <div className="pt-6 mt-6 border-t border-gray-200">
-                <p className="mb-2 text-sm text-gray-500">Delivery Address</p>
+              <div className="pt-6 mt-6 border-t border-neutralc-200">
+                <p className="mb-2 text-sm text-neutralc-400">Delivery Address</p>
                 <p className="leading-relaxed text-gray-800">
                   {mockOrderData.deliveryAddress}
                 </p>
@@ -262,22 +262,22 @@ const TrackOrder = () => {
                     <div className="flex-1 pt-1">
                       <h3
                         className={`font-semibold text-lg mb-1 ${
-                          item.completed ? "text-green-600" : "text-gray-500"
+                          item.completed ? "text-green-600" : "text-neutralc-400"
                         }`}
                       >
                         {getStatusLabel(item.status)}
                       </h3>
                       {item.completed && (
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-neutralc-600">
                           {item.date} at {item.time}
                         </p>
                       )}
                       {!item.completed &&
                         item.status === "out_for_delivery" && (
-                          <p className="text-sm text-gray-500">Expected soon</p>
+                          <p className="text-sm text-neutralc-400">Expected soon</p>
                         )}
                       {!item.completed && item.status === "delivered" && (
-                        <p className="text-sm text-gray-500">Pending</p>
+                        <p className="text-sm text-neutralc-400">Pending</p>
                       )}
                     </div>
                   </div>
@@ -313,23 +313,23 @@ const TrackOrder = () => {
                       </div>
                       <h3
                         className={`font-semibold text-center mt-4 mb-1 ${
-                          item.completed ? "text-green-600" : "text-gray-500"
+                          item.completed ? "text-green-600" : "text-neutralc-400"
                         }`}
                       >
                         {getStatusLabel(item.status)}
                       </h3>
                       {item.completed && (
-                        <div className="text-sm text-center text-gray-600">
+                        <div className="text-sm text-center text-neutralc-600">
                           <p>{item.date}</p>
                           <p>{item.time}</p>
                         </div>
                       )}
                       {!item.completed &&
                         item.status === "out_for_delivery" && (
-                          <p className="text-sm text-gray-500">Expected soon</p>
+                          <p className="text-sm text-neutralc-400">Expected soon</p>
                         )}
                       {!item.completed && item.status === "delivered" && (
-                        <p className="text-sm text-gray-500">Pending</p>
+                        <p className="text-sm text-neutralc-400">Pending</p>
                       )}
                     </div>
                   ))}
@@ -347,7 +347,7 @@ const TrackOrder = () => {
                 <div className="flex items-start space-x-3">
                   <Truck className="w-6 h-6 text-[#8b7355] flex-shrink-0 mt-1" />
                   <div>
-                    <p className="mb-1 text-sm text-gray-500">
+                    <p className="mb-1 text-sm text-neutralc-400">
                       Courier Partner
                     </p>
                     <p className="font-semibold text-gray-800">
@@ -359,7 +359,7 @@ const TrackOrder = () => {
                 <div className="flex items-start space-x-3">
                   <Package className="w-6 h-6 text-[#8b7355] flex-shrink-0 mt-1" />
                   <div>
-                    <p className="mb-1 text-sm text-gray-500">
+                    <p className="mb-1 text-sm text-neutralc-400">
                       Tracking Number
                     </p>
                     <p className="font-semibold text-gray-800">
@@ -371,7 +371,7 @@ const TrackOrder = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-6 h-6 text-[#8b7355] flex-shrink-0 mt-1" />
                   <div>
-                    <p className="mb-1 text-sm text-gray-500">
+                    <p className="mb-1 text-sm text-neutralc-400">
                       Expected Delivery
                     </p>
                     <p className="font-semibold text-gray-800">
@@ -381,7 +381,7 @@ const TrackOrder = () => {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-gray-200">
+              <div className="pt-6 mt-6 border-t border-neutralc-200">
                 <div className="bg-[#f5f1e8] rounded-lg p-4">
                   <p className="text-sm leading-relaxed text-gray-700">
                     <span className="font-semibold">Note:</span> Delivery times

@@ -49,8 +49,8 @@ const Dashboard = () => {
   return (
     <main className="space-y-8">
       <header>
-        <h2 className="text-3xl font-bold text-slate-900">Dashboard</h2>
-        <p className="mt-2 text-base text-slate-500">
+        <h2 className="text-3xl font-bold text-neutralc-900">Dashboard</h2>
+        <p className="mt-2 text-base text-neutralc-400">
           Welcome back, Sarah. Here's a snapshot of your store performance
           today.
         </p>
@@ -62,32 +62,32 @@ const Dashboard = () => {
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           <article className="rounded-2xl border border-[#e6dccb] bg-gradient-to-br from-white to-[#f6eedb] p-6 shadow-lg">
-            <div className="text-sm font-medium uppercase tracking-[0.2em] text-[#b8985b]">
+            <div className="text-sm font-medium uppercase tracking-[0.2em] text-[primary-500]">
               Total Sales
             </div>
-            <div className="mt-4 text-4xl font-semibold text-[#8f7843]">
+            <div className="mt-4 text-4xl font-semibold text-[primary-700]">
               {loading ? "--" : formatINR(totalSales)}
             </div>
-            <p className="mt-3 text-sm text-slate-500">
+            <p className="mt-3 text-sm text-neutralc-400">
               {loading
                 ? "Updating..."
                 : `${Math.round(salesTrend * 100)}% vs last month`}
             </p>
           </article>
           <article className="rounded-2xl border border-[#e6dccb] bg-white p-6 shadow-lg">
-            <div className="text-sm font-medium uppercase tracking-[0.2em] text-[#b8985b]">
+            <div className="text-sm font-medium uppercase tracking-[0.2em] text-[primary-500]">
               New Orders
             </div>
-            <div className="mt-4 text-4xl font-semibold text-slate-900">
+            <div className="mt-4 text-4xl font-semibold text-neutralc-900">
               {loading ? "--" : newOrdersCount}
             </div>
-            <p className="mt-3 text-sm text-slate-500">
+            <p className="mt-3 text-sm text-neutralc-400">
               {loading
                 ? "Updating..."
                 : `${awaitingFulfilment} awaiting fulfilment`}
             </p>
           </article>
-          <article className="rounded-2xl border border-[#d9c6a4] bg-[#b8985b] p-6 shadow-lg text-white">
+          <article className="rounded-2xl border border-[#d9c6a4] bg-[primary-500] p-6 shadow-lg text-white">
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f5e8d3]">
               Top Product
             </div>

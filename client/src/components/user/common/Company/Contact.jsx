@@ -65,9 +65,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "care@ciyatake.com",
-      subContent: "support@ciyatake.com",
-      link: "mailto:care@ciyatake.com",
+      content: "care@polohigh.com",
+      subContent: "support@polohigh.com",
+      link: "mailto:care@polohigh.com",
     },
     {
       icon: Phone,
@@ -246,7 +246,7 @@ const Contact = () => {
                       className="block text-[#6b5847] font-semibold mb-2"
                     >
                       Phone Number{" "}
-                      <span className="text-sm text-gray-500">(Optional)</span>
+                      <span className="text-sm text-neutralc-400">(Optional)</span>
                     </label>
                     <input
                       type="tel"
@@ -472,7 +472,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
-              href="mailto:care@ciyatake.com"
+              href="mailto:care@polohigh.com"
               className="bg-white text-[#6b5847] px-8 py-4 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
             >
               <Mail className="w-5 h-5" />

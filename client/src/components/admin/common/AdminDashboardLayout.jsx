@@ -18,8 +18,8 @@ const AdminDashboardLayout = () => (
                   className={({ isActive }) =>
                     `flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold shadow transition ring-1 ring-[#e6dccb] ${
                       isActive
-                        ? "bg-[#b8985b] text-white shadow-[#b8985b]/30"
-                        : "bg-white/95 text-[#8f7843] hover:bg-[#f2eae0]"
+                        ? "bg-[primary-500] text-white shadow-[primary-500]/30"
+                        : "bg-white/95 text-[primary-700] hover:bg-[primary-100]"
                     }`
                   }
                 >
@@ -32,7 +32,7 @@ const AdminDashboardLayout = () => (
         </ul>
       </nav>
       <AdminSidebar />
-      <div className="custom-scrollbar mt-4 flex-1 overflow-y-auto rounded-2xl bg-white px-8 pb-10 pt-16 text-slate-900 shadow-xl ring-1 ring-[#e6dccb] scroll-pt-24 lg:mt-0 lg:max-h-[calc(100vh-7.5rem)] lg:pt-20">
+      <div className="custom-scrollbar mt-4 flex-1 overflow-y-auto rounded-2xl bg-white px-8 pb-10 pt-16 text-neutralc-900 shadow-xl ring-1 ring-[#e6dccb] scroll-pt-24 lg:mt-0 lg:max-h-[calc(100vh-7.5rem)] lg:pt-20">
         <Outlet />
       </div>
     </div>

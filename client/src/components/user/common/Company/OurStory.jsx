@@ -36,7 +36,7 @@ const OurStory = () => {
           <h1 className="mb-4 text-5xl font-bold">Our Story</h1>
           <p className="text-xl text-[#f5f1ed] leading-relaxed max-w-2xl mx-auto">
             From a small dream to your trusted shopping companion — discover how
-            Ciyatake became a part of thousands of lives across India
+            Polohigh became a part of thousands of lives across India
           </p>
         </div>
       </header>
@@ -65,7 +65,7 @@ const OurStory = () => {
                   cared — all seemed lost in the noise of massive marketplaces.
                 </p>
                 <p>
-                  That's when <strong>Ciyatake</strong> was born — not just as
+                  That's when <strong>Polohigh</strong> was born — not just as
                   another e-commerce platform, but as a promise to bring back
                   the human touch to online shopping.
                 </p>
@@ -74,13 +74,13 @@ const OurStory = () => {
           </div>
         </section>
 
-        {/* What Ciyatake Means */}
+        {/* What Polohigh Means */}
         <section className="bg-gradient-to-r from-[#faf8f6] to-[#f5f1ed] rounded-lg p-8 mb-8 border-l-4 border-[#8b7355]">
           <h2 className="text-2xl font-semibold text-[#4a4a4a] mb-4">
-            What "Ciyatake" Means
+            What "Polohigh" Means
           </h2>
           <p className="text-[#6b6b6b] leading-relaxed mb-4">
-            The name <strong>Ciyatake</strong> is inspired by the Japanese
+            The name <strong>Polohigh</strong> is inspired by the Japanese
             concept of <em>"miyatake"</em> — meaning{" "}
             <strong>"to cherish and choose carefully."</strong>
           </p>
@@ -163,7 +163,7 @@ const OurStory = () => {
                   Building the Future
                 </h3>
                 <p className="text-[#6b6b6b] leading-relaxed">
-                  Today, Ciyatake is more than a store. It's a community. We're
+                  Today, Polohigh is more than a store. It's a community. We're
                   constantly listening to your feedback, adding products you
                   love, and ensuring every interaction feels warm and genuine.
                   Our goal? To be your trusted companion for life's everyday
@@ -255,7 +255,7 @@ const OurStory = () => {
                   <p className="text-[#6b6b6b] italic mb-2">
                     "I ordered a gift for my mother's birthday late at night. It
                     was supposed to arrive the next day, but I realized I
-                    entered the wrong address. I called Ciyatake at 11 PM, and
+                    entered the wrong address. I called Polohigh at 11 PM, and
                     someone actually answered! They changed the address and made
                     sure it reached on time. My mom cried happy tears. Thank you
                     for caring."
@@ -278,7 +278,7 @@ const OurStory = () => {
                   </h4>
                   <p className="text-[#6b6b6b] italic mb-2">
                     "I'm a small business owner and don't have time for long
-                    shopping trips. Ciyatake has become my go-to for everything
+                    shopping trips. Polohigh has become my go-to for everything
                     — from work clothes to kitchen gadgets. The quality is
                     always great, and delivery is super fast. It feels like
                     having a trusted friend who shops for you."
@@ -301,7 +301,7 @@ const OurStory = () => {
                   </h4>
                   <p className="text-[#6b6b6b] italic mb-2">
                     "I received a damaged product once, and honestly, I was
-                    prepared for a long, frustrating process. But Ciyatake
+                    prepared for a long, frustrating process. But Polohigh
                     surprised me. They apologized sincerely, sent a replacement
                     the very next day, and followed up to make sure everything
                     was okay. This is how customer service should be."
@@ -328,7 +328,7 @@ const OurStory = () => {
                 caring, and keep earning your trust every single day.
               </p>
               <p className="text-lg font-semibold text-white">
-                Because at Ciyatake, you're not just a customer. You're part of
+                Because at Polohigh, you're not just a customer. You're part of
                 our story.
               </p>
             </div>
@@ -345,7 +345,7 @@ const OurStory = () => {
             chapter to our story. We'd be honored to be part of yours too.
           </p>
           <button className="bg-[#8b7355] hover:bg-[#6b5847] text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-            Start Shopping with Ciyatake
+            Start Shopping with Polohigh
           </button>
         </section>
 
@@ -354,12 +354,12 @@ const OurStory = () => {
           <div className="inline-block bg-[#faf8f6] rounded-lg p-6 border border-[#e8e2db]">
             <p className="text-[#6b6b6b] italic">
               "Thank you for taking the time to read our story. We hope it gives
-              you a glimpse of the heart behind Ciyatake. We're real people,
+              you a glimpse of the heart behind Polohigh. We're real people,
               just like you, trying to make shopping a little more joyful, a
               little more personal."
             </p>
             <p className="text-[#8b7355] font-semibold mt-4">
-              — The Ciyatake Team
+              — The Polohigh Team
             </p>
           </div>
         </section>
@@ -368,7 +368,7 @@ const OurStory = () => {
       {/* Footer */}
       <footer className="bg-[#4a4a4a] text-[#d4cec7] py-8 px-4 mt-12">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm">© 2025 Ciyatake. All rights reserved.</p>
+          <p className="text-sm">© 2025 Polohigh. All rights reserved.</p>
           <p className="mt-2 text-sm">
             Thoughtfully curated fashion and lifestyle essentials to help you
             celebrate everyday moments in style.

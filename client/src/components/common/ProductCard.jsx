@@ -80,15 +80,15 @@ const ProductCard = ({
   })();
 
   const cardContent = (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-50">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-neutralc-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+      <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutralc-100">
         {hasDiscount && (
-          <span className="absolute left-2 top-2 z-10 rounded bg-[#b8985b] px-2 py-1 text-xs font-medium text-white">
+          <span className="absolute left-2 top-2 z-10 rounded bg-primary-500 px-2 py-1 text-xs font-medium text-white">
             {roundedDiscount}% OFF
           </span>
         )}
         {merchandisingLabel && (
-          <span className="absolute right-2 top-2 z-10 rounded bg-[#f2eae0] px-2 py-1 text-xs font-medium text-[#8f7843]">
+          <span className="absolute right-2 top-2 z-10 rounded bg-primary-100 px-2 py-1 text-xs font-medium text-primary-700">
             {merchandisingLabel}
           </span>
         )}
@@ -100,13 +100,13 @@ const ProductCard = ({
             loading="lazy"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gray-100">
-            <span className="text-gray-400 text-xs">No Image</span>
+          <div className="flex h-full w-full items-center justify-center bg-neutralc-100">
+            <span className="text-neutralc-400 text-xs">No Image</span>
           </div>
         )}
         <button className="absolute right-2 bottom-2 rounded-full bg-white p-1.5 shadow-sm hover:shadow-md transition-shadow">
           <svg
-            className="h-4 w-4 text-gray-600"
+            className="h-4 w-4 text-neutralc-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -123,19 +123,19 @@ const ProductCard = ({
 
       <div className="flex flex-1 flex-col justify-between p-2 sm:p-3">
         <div className="space-y-1">
-          <h3 className="line-clamp-2 text-xs font-medium text-gray-900 sm:text-sm">
+          <h3 className="line-clamp-2 text-xs font-medium text-neutralc-900 sm:text-sm">
             {title}
           </h3>
-          {brand && <p className="text-xs text-gray-500">{brand}</p>}
+          {brand && <p className="text-xs text-neutralc-400">{brand}</p>}
         </div>
 
         <div className="mt-2 space-y-1">
           <div className="flex items-baseline gap-1">
-            <span className="text-sm font-bold text-gray-900 sm:text-base">
+            <span className="text-sm font-bold text-neutralc-900 sm:text-base">
               {formattedPrice}
             </span>
             {showOriginalPrice && (
-              <span className="text-xs text-gray-500 line-through sm:text-sm">
+              <span className="text-xs text-neutralc-400 line-through sm:text-sm">
                 {formattedMrp}
               </span>
             )}
@@ -143,7 +143,7 @@ const ProductCard = ({
 
           {numericRating ? (
             <div className="flex items-center gap-1">
-              <div className="flex items-center gap-1 rounded bg-[#b8985b] px-1.5 py-0.5">
+              <div className="flex items-center gap-1 rounded bg-primary-500 px-1.5 py-0.5">
                 <img
                   src={starIcon}
                   alt=""
@@ -154,14 +154,14 @@ const ProductCard = ({
                 </span>
               </div>
               {reviewLabel && (
-                <span className="text-xs text-gray-500">{reviewLabel}</span>
+                <span className="text-xs text-neutralc-400">{reviewLabel}</span>
               )}
             </div>
           ) : (
-            <div className="text-xs text-gray-600">New</div>
+            <div className="text-xs text-neutralc-600">New</div>
           )}
 
-          <div className="text-xs font-medium text-[#8f7843]">
+          <div className="text-xs font-medium text-primary-700">
             Free Delivery
           </div>
         </div>

@@ -224,7 +224,7 @@ const Register = () => {
           <div className="space-y-3">
             <label
               htmlFor={emailId}
-              className="block text-sm font-semibold text-slate-700"
+              className="block text-sm font-semibold text-neutralc-600"
             >
               Email address & OTP
               <span className="ml-1 text-rose-500">*</span>
@@ -283,7 +283,7 @@ const Register = () => {
                 <Button
                   type="button"
                   variant="outline"
-                  className="w-full h-11 border-2 border-[#b8985b] bg-white text-[#b8985b] hover:bg-[#b8985b]/10 disabled:border-[#DCECE9] disabled:text-slate-400 disabled:opacity-60 transition-all duration-200"
+                  className="w-full h-11 border-2 border-[primary-500] bg-white text-[primary-500] hover:bg-[primary-500]/10 disabled:border-[neutralc-200] disabled:text-neutralc-400 disabled:opacity-60 transition-all duration-200"
                   onClick={() => handleVerifyOtp(value, formData.otp ?? "")}
                   disabled={
                     !isOtpSent ||

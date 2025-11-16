@@ -10,7 +10,7 @@ const ShippingPolicy = () => {
       id: 1,
       icon: Package,
       title: "Shipping Overview",
-      content: `At Ciyatake, we strive to deliver your fashion essentials promptly and safely to your doorstep. Our shipping policy outlines the processes, timelines, and terms related to the delivery of your orders.
+      content: `At Polohigh, we strive to deliver your fashion essentials promptly and safely to your doorstep. Our shipping policy outlines the processes, timelines, and terms related to the delivery of your orders.
 
 **Our Commitment:**
 - Fast and reliable delivery across India
@@ -348,7 +348,7 @@ Received wrong product:
 
 **Customer Support:**
 For any shipping issues:
-- Email: shipping@ciyatake.com
+- Email: shipping@Polohigh.com
 - Phone: +91-XXXX-XXXXXX
 - WhatsApp: +91-XXXX-XXXXXX
 - Live Chat: Available on website`
@@ -468,7 +468,7 @@ If exchange not available:
       content: `Get help with your shipping queries:
 
 **Customer Service:**
-Email: shipping@ciyatake.com
+Email: shipping@Polohigh.com
 Phone: 1800-XXX-XXXX (Toll-Free)
 WhatsApp: +91-XXXX-XXXXXX
 Hours: Monday - Saturday, 9 AM - 7 PM IST
@@ -479,7 +479,7 @@ Monday - Saturday, 9 AM - 7 PM IST
 Average response time: 2-3 minutes
 
 **Order Tracking:**
-- Track through website: www.ciyatake.com/track
+- Track through website: www.Polohigh.com/track
 - Use order number or tracking ID
 - Email tracking link in shipping confirmation
 - SMS tracking updates
@@ -495,9 +495,9 @@ For questions about:
 
 **Social Media:**
 Connect with us:
-Instagram: @ciyatake
-Facebook: /ciyatake
-Twitter: @ciyatake
+Instagram: @Polohigh
+Facebook: /Polohigh
+Twitter: @Polohigh
 Response time: Within 24 hours
 
 **Feedback:**
@@ -722,8 +722,8 @@ We value your feedback and continuously work to improve our shipping services.
                   </div>
                 </div>
                 <h3 className="mb-2 font-semibold">Email Us</h3>
-                <a href="mailto:shipping@ciyatake.com" className="text-sm transition-opacity opacity-90 hover:opacity-100">
-                  shipping@ciyatake.com
+                <a href="mailto:shipping@Polohigh.com" className="text-sm transition-opacity opacity-90 hover:opacity-100">
+                  shipping@Polohigh.com
                 </a>
               </div>
               <div className="text-center">
@@ -733,14 +733,14 @@ We value your feedback and continuously work to improve our shipping services.
                   </div>
                 </div>
                 <h3 className="mb-2 font-semibold">Track Order</h3>
-                <p className="text-sm opacity-90">www.ciyatake.com/track</p>
+                <p className="text-sm opacity-90">www.Polohigh.com/track</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-8 bg-white border-t border-gray-200">
+      <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#8b7355] text-sm">
             This shipping policy is subject to change without prior notice. Please check this page regularly for updates. For any clarifications, contact our customer service team.

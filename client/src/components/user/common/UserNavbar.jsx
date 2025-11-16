@@ -86,7 +86,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
           <Link
             key={subcategory.slug}
             to={`/category/${subcategory.slug}`}
-            className="block py-0.5 text-xs text-slate-500 transition hover:text-[#b8985b]"
+            className="block py-0.5 text-xs text-neutralc-400 transition hover:text-[primary-500]"
             onClick={onClose}
           >
             {subcategory.name}
@@ -97,12 +97,12 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
       <div className="grid grid-cols-12 gap-6">
         {ethnicCategory && (
           <div className="col-span-8">
-            <h3 className="mb-4 border-b border-[#DCECE9] pb-1 text-sm font-semibold uppercase tracking-[0.25em] text-[#b8985b]">
+            <h3 className="mb-4 border-b border-[neutralc-200] pb-1 text-sm font-semibold uppercase tracking-[0.25em] text-[primary-500]">
               {ethnicCategory.title}
             </h3>
             <div className="grid grid-cols-6 gap-4">
               <div className="space-y-1">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-600">
                   Sarees
                 </h4>
                 {renderSubcategoryLinks(
@@ -111,7 +111,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                 )}
               </div>
               <div className="space-y-1">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-600">
                   Kurtis
                 </h4>
                 {renderSubcategoryLinks(
@@ -120,7 +120,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                 )}
               </div>
               <div className="space-y-1">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-600">
                   Kurta Sets
                 </h4>
                 {renderSubcategoryLinks(
@@ -131,7 +131,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                 )}
               </div>
               <div className="space-y-1">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-600">
                   Dupatta Sets
                 </h4>
                 {renderSubcategoryLinks(
@@ -142,7 +142,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                 )}
               </div>
               <div className="space-y-1">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-600">
                   Suits & Dress Material
                 </h4>
                 {renderSubcategoryLinks(
@@ -153,7 +153,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                 )}
               </div>
               <div className="space-y-1">
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-600">
                   Lehengas & Other Ethnic
                 </h4>
                 {renderSubcategoryLinks((sub) => {
@@ -173,7 +173,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
 
         {westernCategory && (
           <div className="col-span-4">
-            <h3 className="mb-4 border-b border-[#DCECE9] pb-1 text-sm font-semibold uppercase tracking-[0.25em] text-[#b8985b]">
+            <h3 className="mb-4 border-b border-[neutralc-200] pb-1 text-sm font-semibold uppercase tracking-[0.25em] text-[primary-500]">
               {westernCategory.title}
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -184,7 +184,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                     <Link
                       key={subcategory.slug}
                       to={`/category/${subcategory.slug}`}
-                      className="block py-0.5 text-xs text-slate-500 transition hover:text-[#b8985b]"
+                      className="block py-0.5 text-xs text-neutralc-400 transition hover:text-[primary-500]"
                       onClick={onClose}
                     >
                       {subcategory.name}
@@ -196,7 +196,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                   <Link
                     key={subcategory.slug}
                     to={`/category/${subcategory.slug}`}
-                    className="block py-0.5 text-xs text-slate-500 transition hover:text-[#b8985b]"
+                    className="block py-0.5 text-xs text-neutralc-400 transition hover:text-[primary-500]"
                     onClick={onClose}
                   >
                     {subcategory.name}
@@ -225,14 +225,14 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
             key={group.mainCategory?.slug || groupIndex}
             className="space-y-2"
           >
-            <h3 className="mb-2 border-b border-[#DCECE9] pb-1 text-sm font-semibold uppercase tracking-[0.25em] text-[#b8985b]">
+            <h3 className="mb-2 border-b border-[neutralc-200] pb-1 text-sm font-semibold uppercase tracking-[0.25em] text-[primary-500]">
               {group.title}
             </h3>
 
             <div className="space-y-1">
               <Link
                 to={`/category/${group.mainCategory?.slug}?gender=${gender}`}
-                className="block py-0.5 text-xs font-semibold text-slate-700 transition hover:text-[#b8985b]"
+                className="block py-0.5 text-xs font-semibold text-neutralc-600 transition hover:text-[primary-500]"
                 onClick={onClose}
               >
                 All {group.mainCategory?.name}
@@ -245,7 +245,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
                       <Link
                         key={subcategory.slug || subcategory.id}
                         to={`/category/${subcategory.slug}?gender=${gender}`}
-                        className="block py-0.5 text-xs text-slate-500 transition hover:text-[#b8985b]"
+                        className="block py-0.5 text-xs text-neutralc-400 transition hover:text-[primary-500]"
                         onClick={onClose}
                       >
                         {subcategory.name}
@@ -263,7 +263,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
   return (
     <div
       ref={dropdownRef}
-      className="absolute left-0 top-full z-50 mt-2 w-full rounded-3xl border border-[#DCECE9] bg-white shadow-[0_32px_72px_rgba(15,23,42,0.16)]"
+      className="absolute left-0 top-full z-50 mt-2 w-full rounded-3xl border border-[neutralc-200] bg-white shadow-[0_32px_72px_rgba(15,23,42,0.16)]"
       style={{
         width: "90%",
         minWidth: "1000px",
@@ -273,7 +273,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
     >
       <div className="px-8 py-6">
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-neutralc-900">
             {gender === "Women"
               ? "Women's Fashion"
               : gender === "Men"
@@ -282,7 +282,7 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
           </h2>
           <button
             onClick={onClose}
-            className="text-slate-400 transition hover:text-slate-600"
+            className="text-neutralc-400 transition hover:text-neutralc-600"
           >
             ✕
           </button>
@@ -290,17 +290,17 @@ const CategoryDropdown = ({ gender, categories, isVisible, onClose }) => {
 
         {gender === "Women" ? renderWomenDropdown() : renderStandardDropdown()}
 
-        <div className="mt-6 flex gap-4 border-t border-[#DCECE9] pt-4">
+        <div className="mt-6 flex gap-4 border-t border-[neutralc-200] pt-4">
           <Link
             to={`/${gender.toLowerCase()}`}
-            className="inline-block rounded-full border border-[#b8985b] px-6 py-2 text-center text-sm font-medium text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white"
+            className="inline-block rounded-full border border-[primary-500] px-6 py-2 text-center text-sm font-medium text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
             onClick={onClose}
           >
             Shop All {gender}'s Items
           </Link>
           <Link
             to="/offers"
-            className="inline-block rounded-full border border-[#b8985b] px-6 py-2 text-center text-sm font-medium text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white"
+            className="inline-block rounded-full border border-[primary-500] px-6 py-2 text-center text-sm font-medium text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
             onClick={onClose}
           >
             Special Offers
@@ -492,25 +492,25 @@ const UserNavbar = ({
   const actions = [...commonActions, ...authActions];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#DCECE9] bg-white/95 text-slate-900 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[neutralc-200] bg-white/95 text-neutralc-900 backdrop-blur">
       <nav className="relative mx-auto max-w-7xl px-4 py-4">
         <div className="flex items-center gap-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-lg font-semibold tracking-tight text-[#b8985b] transition hover:text-[#a9894f]"
+            className="inline-flex items-center gap-2 text-lg font-semibold tracking-tight text-[primary-500] transition hover:text-[primary-700]"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <img
               src="/ciyatakeLogo.png"
-              alt="Ciyatake"
+              alt="POLOHIGH"
               className="h-8 w-auto md:h-10"
             />
             <span className="text-base font-semibold tracking-tight md:text-lg">
-              Ciyatake
+              Polohigh
             </span>
           </Link>
 
-          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-neutralc-600 lg:flex">
             {genderLinks.map((link) => (
               <div
                 key={link.value}
@@ -519,7 +519,7 @@ const UserNavbar = ({
               >
                 <Link
                   to={link.to}
-                  className="px-2 py-2 transition hover:text-[#b8985b]"
+                  className="px-2 py-2 transition hover:text-[primary-500]"
                 >
                   {link.label}
                 </Link>
@@ -528,14 +528,14 @@ const UserNavbar = ({
 
             {/* <Link
               to="/accessories"
-              className="px-2 py-2 transition hover:text-[#b8985b]"
+              className="px-2 py-2 transition hover:text-[primary-500]"
             >
               Accessories
             </Link> */}
 
             {/* <Link
               to="/home-living"
-              className="px-2 py-2 transition hover:text-[#b8985b]"
+              className="px-2 py-2 transition hover:text-[primary-500]"
             >
               Home & Living
             </Link> */}
@@ -572,12 +572,12 @@ const UserNavbar = ({
                       onSearchSubmit?.(searchTerm);
                     }
                   }}
-                  className="w-full rounded-full border border-[#DCECE9] bg-white px-4 py-2 pl-10 text-sm text-slate-700 placeholder:text-slate-400 transition focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#b8985b]/25"
+                  className="w-full rounded-full border border-[neutralc-200] bg-white px-4 py-2 pl-10 text-sm text-neutralc-600 placeholder:text-neutralc-400 transition focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[primary-500]/25"
                 />
                 <img
                   src={searchIcon}
                   alt=""
-                  className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+                  className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutralc-400"
                   aria-hidden="true"
                 />
               </div>
@@ -595,7 +595,7 @@ const UserNavbar = ({
                       key={key}
                       to={action.to}
                       onClick={action.onClick}
-                      className="inline-flex items-center justify-center rounded-full border border-[#b8985b] px-4 py-2 text-sm font-semibold text-[#b8985b] transition hover:bg-[#F2EAE0]"
+                      className="inline-flex items-center justify-center rounded-full border border-[primary-500] px-4 py-2 text-sm font-semibold text-[primary-500] transition hover:bg-[primary-100]"
                     >
                       {action.label}
                     </Link>
@@ -608,7 +608,7 @@ const UserNavbar = ({
                       key={key}
                       to={action.to}
                       onClick={action.onClick}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#DCECE9] bg-white text-slate-600 transition hover:border-[#b8985b] hover:bg-[#F2EAE0]"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[neutralc-200] bg-white text-neutralc-600 transition hover:border-[primary-500] hover:bg-[primary-100]"
                       title={action.label}
                     >
                       <action.icon className="h-5 w-5" />
@@ -622,7 +622,7 @@ const UserNavbar = ({
                     type="button"
                     onClick={action.onClick}
                     disabled={isLoggingOut}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#DCECE9] bg-white text-slate-600 transition hover:border-[#b8985b] hover:bg-[#F2EAE0] disabled:cursor-not-allowed disabled:border-[#DCECE9] disabled:text-slate-400"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[neutralc-200] bg-white text-neutralc-600 transition hover:border-[primary-500] hover:bg-[primary-100] disabled:cursor-not-allowed disabled:border-[neutralc-200] disabled:text-neutralc-400"
                     title={isLoggingOut ? "Logging out..." : action.label}
                   >
                     <action.icon className="h-5 w-5" />
@@ -641,7 +641,7 @@ const UserNavbar = ({
                   type="button"
                   onClick={performLogout}
                   disabled={isLoggingOut}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8985b] bg-white text-slate-600 transition hover:border-[#a9894f] hover:bg-[#F2EAE0] disabled:cursor-not-allowed disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[primary-500] bg-white text-neutralc-600 transition hover:border-[primary-700] hover:bg-[primary-100] disabled:cursor-not-allowed disabled:opacity-50"
                   title={isLoggingOut ? "Logging out..." : "Log out"}
                   aria-label={isLoggingOut ? "Logging out..." : "Log out"}
                 >
@@ -656,7 +656,7 @@ const UserNavbar = ({
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen((previous) => !previous)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8985b] bg-white text-slate-600 transition hover:border-[#a9894f] hover:bg-[#F2EAE0]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[primary-500] bg-white text-neutralc-600 transition hover:border-[primary-700] hover:bg-[primary-100]"
                 aria-expanded={isMobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
@@ -684,12 +684,12 @@ const UserNavbar = ({
                   onSearchSubmit?.(searchTerm);
                 }
               }}
-              className="w-full rounded-xl border border-[#DCECE9] bg-white px-4 py-3 mt-4 pl-10 text-sm text-slate-700 placeholder:text-slate-400 transition focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#b8985b]/25"
+              className="w-full rounded-xl border border-[neutralc-200] bg-white px-4 py-3 mt-4 pl-10 text-sm text-neutralc-600 placeholder:text-neutralc-400 transition focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[primary-500]/25"
             />
             <img
               src={searchIcon}
               alt=""
-              className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 mt-2"
+              className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutralc-400 mt-2"
               aria-hidden="true"
             />
           </div>
@@ -711,23 +711,23 @@ const UserNavbar = ({
                   onSearchSubmit?.(searchTerm);
                 }
               }}
-              className="w-full rounded-xl border border-[#DCECE9] bg-white px-4 py-3 pl-10 text-sm text-slate-700 placeholder:text-slate-400 transition focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#b8985b]/25"
+              className="w-full rounded-xl border border-[neutralc-200] bg-white px-4 py-3 pl-10 text-sm text-neutralc-600 placeholder:text-neutralc-400 transition focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[primary-500]/25"
             />
             <img
               src={searchIcon}
               alt=""
-              className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+              className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutralc-400"
               aria-hidden="true"
             />
           </div> */}
 
-          <ul className="flex flex-col gap-3 text-sm font-medium text-slate-700">
+          <ul className="flex flex-col gap-3 text-sm font-medium text-neutralc-600">
             {genderLinks.map((link) => (
               <li key={link.value}>
                 <Link
                   to={link.to}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-between rounded-xl border border-[#DCECE9] bg-white px-3 py-2 transition hover:border-[#b8985b]/60 hover:bg-[#F2EAE0]"
+                  className="flex items-center justify-between rounded-xl border border-[neutralc-200] bg-white px-3 py-2 transition hover:border-[primary-500]/60 hover:bg-[primary-100]"
                 >
                   {link.label}
                   <span aria-hidden>→</span>
@@ -738,7 +738,7 @@ const UserNavbar = ({
               <Link
                 to="/accessories"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between rounded-xl border border-[#DCECE9] bg-white px-3 py-2 transition hover:border-[#b8985b]/60 hover:bg-[#F2EAE0]"
+                className="flex items-center justify-between rounded-xl border border-[neutralc-200] bg-white px-3 py-2 transition hover:border-[primary-500]/60 hover:bg-[primary-100]"
               >
                 Accessories
                 <span aria-hidden>→</span>
@@ -748,7 +748,7 @@ const UserNavbar = ({
               <Link
                 to="/home-living"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between rounded-xl border border-[#DCECE9] bg-white px-3 py-2 transition hover:border-[#b8985b]/60 hover:bg-[#F2EAE0]"
+                className="flex items-center justify-between rounded-xl border border-[neutralc-200] bg-white px-3 py-2 transition hover:border-[primary-500]/60 hover:bg-[primary-100]"
               >
                 Home & Living
                 <span aria-hidden>→</span>
@@ -767,7 +767,7 @@ const UserNavbar = ({
                     key={key}
                     to={action.to}
                     onClick={action.onClick}
-                    className="flex-1 rounded-full border border-[#b8985b] px-4 py-2 text-center text-sm font-semibold text-[#b8985b] transition hover:bg-[#F2EAE0]"
+                    className="flex-1 rounded-full border border-[primary-500] px-4 py-2 text-center text-sm font-semibold text-[primary-500] transition hover:bg-[primary-100]"
                   >
                     {action.label}
                   </Link>
@@ -780,7 +780,7 @@ const UserNavbar = ({
                     key={key}
                     to={action.to}
                     onClick={action.onClick}
-                    className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#DCECE9] bg-white text-slate-600 transition hover:border-[#b8985b] hover:bg-[#F2EAE0]"
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[neutralc-200] bg-white text-neutralc-600 transition hover:border-[primary-500] hover:bg-[primary-100]"
                     title={action.label}
                   >
                     <action.icon className="h-6 w-6" />
@@ -794,7 +794,7 @@ const UserNavbar = ({
                   type="button"
                   onClick={action.onClick}
                   disabled={isLoggingOut}
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#DCECE9] bg-white text-slate-600 transition hover:border-[#b8985b] hover:bg-[#F2EAE0] disabled:cursor-not-allowed disabled:border-[#DCECE9] disabled:text-slate-400"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[neutralc-200] bg-white text-neutralc-600 transition hover:border-[primary-500] hover:bg-[primary-100] disabled:cursor-not-allowed disabled:border-[neutralc-200] disabled:text-neutralc-400"
                   title={isLoggingOut ? "Logging out..." : action.label}
                 >
                   <action.icon className="h-6 w-6" />

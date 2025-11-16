@@ -6,12 +6,12 @@ const statusClassMap = {
   pending: "bg-amber-100 text-amber-700",
   confirmed: "bg-sky-100 text-sky-700",
   processing: "bg-amber-100 text-amber-700",
-  packed: "bg-slate-200 text-slate-700",
+  packed: "bg-neutralc-200 text-neutralc-600",
   shipped: "bg-blue-100 text-blue-700",
   "out-for-delivery": "bg-indigo-100 text-indigo-700",
   delivered: "bg-[#e6f1e6] text-[#4f7a5a]",
   cancelled: "bg-rose-100 text-rose-700",
-  refunded: "bg-slate-200 text-slate-700",
+  refunded: "bg-neutralc-200 text-neutralc-600",
 };
 
 const formatStatusLabel = (status) => {
@@ -84,7 +84,7 @@ const RecentOrders = () => {
 
   return (
     <section className="flex-1 rounded-2xl border border-[#e6dccb] bg-white shadow-xl">
-      <header className="flex items-center justify-between border-b border-[#e6dccb] bg-[#b8985b] px-6 py-4 text-white">
+      <header className="flex items-center justify-between border-b border-[#e6dccb] bg-[primary-500] px-6 py-4 text-white">
         <div>
           <h3 className="text-lg font-semibold">Recent Orders</h3>
           <p className="text-sm text-[#f5e8d3]">
@@ -96,8 +96,8 @@ const RecentOrders = () => {
         </span>
       </header>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-[#f2eae0] text-left text-sm text-slate-700">
-          <thead className="bg-[#f2eae0] text-xs font-semibold uppercase tracking-wide text-[#8f7843]">
+        <table className="min-w-full divide-y divide-[primary-100] text-left text-sm text-neutralc-600">
+          <thead className="bg-[primary-100] text-xs font-semibold uppercase tracking-wide text-[primary-700]">
             <tr>
               <th className="px-6 py-3">Order ID</th>
               <th className="px-6 py-3">Customer</th>
@@ -105,7 +105,7 @@ const RecentOrders = () => {
               <th className="px-6 py-3">Status</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#f2eae0]">
+          <tbody className="divide-y divide-[primary-100]">
             {error ? (
               <tr>
                 <td
@@ -119,7 +119,7 @@ const RecentOrders = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="px-6 py-6 text-center text-sm text-[#8f7843]"
+                  className="px-6 py-6 text-center text-sm text-[primary-700]"
                 >
                   Loading orders...
                 </td>
@@ -128,22 +128,22 @@ const RecentOrders = () => {
               orders.map((order, index) => (
                 <tr
                   key={order.id ?? order.orderNumber ?? `recent-order-${index}`}
-                  className="hover:bg-[#f2eae0]"
+                  className="hover:bg-[primary-100]"
                 >
-                  <td className="px-6 py-4 font-semibold text-[#8f7843]">
+                  <td className="px-6 py-4 font-semibold text-[primary-700]">
                     {order.orderNumber || order.id || "—"}
                     {typeof order.grandTotal === "number" && (
-                      <div className="text-xs font-normal text-slate-500">
+                      <div className="text-xs font-normal text-neutralc-400">
                         {formatCurrency(order.grandTotal)}
                       </div>
                     )}
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-medium text-slate-700">
+                    <div className="font-medium text-neutralc-600">
                       {order.customerName || "—"}
                     </div>
                     {order.customerEmail && (
-                      <div className="text-xs text-slate-500">
+                      <div className="text-xs text-neutralc-400">
                         {order.customerEmail}
                       </div>
                     )}
@@ -155,7 +155,7 @@ const RecentOrders = () => {
                     <span
                       className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${
                         statusClassMap[order.status] ??
-                        "bg-slate-200 text-slate-700"
+                        "bg-neutralc-200 text-neutralc-600"
                       }`}
                     >
                       {formatStatusLabel(order.status)}
@@ -167,7 +167,7 @@ const RecentOrders = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="px-6 py-6 text-center text-sm text-slate-500"
+                  className="px-6 py-6 text-center text-sm text-neutralc-400"
                 >
                   No recent orders yet.
                 </td>

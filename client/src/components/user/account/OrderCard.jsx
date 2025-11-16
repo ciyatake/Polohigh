@@ -5,18 +5,18 @@ import { formatDate, formatDateTime } from "./accountUtils.js";
 const getTimelineIndicatorClasses = (status) => {
   switch (status) {
     case "complete":
-      return "bg-[#8f7843] border-[#8f7843]";
+      return "bg-[primary-700] border-[primary-700]";
     case "current":
-      return "bg-[#b8985b] border-[#b8985b]";
+      return "bg-[primary-500] border-[primary-500]";
     default:
-      return "bg-white border-[#DCECE9]";
+      return "bg-white border-[neutralc-200]";
   }
 };
 
 const OrderTimeline = ({ timeline }) => {
   if (!Array.isArray(timeline) || !timeline.length) {
     return (
-      <p className="rounded-lg border border-dashed border-[#DCECE9] bg-[#F2EAE0] px-3 py-2 text-xs text-slate-600">
+      <p className="rounded-lg border border-dashed border-[neutralc-200] bg-[primary-100] px-3 py-2 text-xs text-neutralc-600">
         Tracking updates will appear here once your order moves to the next
         step.
       </p>
@@ -43,19 +43,19 @@ const OrderTimeline = ({ timeline }) => {
                 tone
               )}`}
             />
-            <div className="space-y-1 rounded-lg border border-[#F2EAE0] bg-white px-3 py-2 shadow-sm">
+            <div className="space-y-1 rounded-lg border border-[primary-100] bg-white px-3 py-2 shadow-sm">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
                   {entry.title || "Update"}
                 </span>
                 {entry.timestamp ? (
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-neutralc-400">
                     {formatDateTime(entry.timestamp)}
                   </span>
                 ) : null}
               </div>
               {entry.description ? (
-                <p className="text-xs text-slate-600">{entry.description}</p>
+                <p className="text-xs text-neutralc-600">{entry.description}</p>
               ) : null}
             </div>
           </li>
@@ -113,17 +113,17 @@ const OrderCard = ({ order }) => {
   );
   const returnMailto = `mailto:support@ciyatake.com?subject=${returnSubject}`;
   const returnButtonClasses = order.returnEligible
-    ? "border-[#b8985b] text-[#b8985b] hover:bg-[#b8985b] hover:text-white"
-    : "border-[#DCECE9] text-slate-400 pointer-events-none";
+    ? "border-[primary-500] text-[primary-500] hover:bg-[primary-500] hover:text-white"
+    : "border-[neutralc-200] text-neutralc-400 pointer-events-none";
 
   return (
-    <div className="rounded-2xl border border-[#DCECE9] bg-white p-5 shadow-[0_18px_36px_rgba(15,23,42,0.08)] transition hover:border-[#b8985b]/60">
+    <div className="rounded-2xl border border-[neutralc-200] bg-white p-5 shadow-[0_18px_36px_rgba(15,23,42,0.08)] transition hover:border-[primary-500]/60">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-sm font-semibold text-slate-900">
+          <p className="text-sm font-semibold text-neutralc-900">
             Order {order.orderNumber ?? order.id}
           </p>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-neutralc-400">
             Placed on {formatDate(order.placedOn)} · {itemsCount} item
             {itemsCount === 1 ? "" : "s"}
           </p>
@@ -135,28 +135,28 @@ const OrderCard = ({ order }) => {
         </span>
       </div>
 
-      <div className="mt-4 grid gap-4 text-sm text-slate-600 md:grid-cols-3">
+      <div className="mt-4 grid gap-4 text-sm text-neutralc-600 md:grid-cols-3">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.2em] text-neutralc-400">
             Total amount
           </p>
-          <p className="mt-1 text-sm font-medium text-slate-800">
+          <p className="mt-1 text-sm font-medium text-neutralc-900">
             {formatINR(order.total)}
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.2em] text-neutralc-400">
             Payment method
           </p>
-          <p className="mt-1 text-sm font-medium text-slate-800">
+          <p className="mt-1 text-sm font-medium text-neutralc-900">
             {order.paymentMethod}
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-xs uppercase tracking-[0.2em] text-neutralc-400">
             Delivery
           </p>
-          <p className="mt-1 text-sm font-medium text-slate-800">
+          <p className="mt-1 text-sm font-medium text-neutralc-900">
             {deliveryLabel}
           </p>
         </div>
@@ -164,7 +164,7 @@ const OrderCard = ({ order }) => {
 
       <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,0.62fr)_minmax(0,0.38fr)]">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
             Delivery timeline
           </p>
           <div className="mt-3 space-y-3">
@@ -172,20 +172,20 @@ const OrderCard = ({ order }) => {
           </div>
         </div>
         <div className="space-y-3">
-          <div className="rounded-xl border border-[#F2EAE0] bg-[#Fefbf6] px-4 py-3 text-sm text-slate-700">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <div className="rounded-xl border border-[primary-100] bg-[#Fefbf6] px-4 py-3 text-sm text-neutralc-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Tracking details
             </p>
             <div className="mt-2 space-y-1">
               <p>
-                <span className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                <span className="text-xs uppercase tracking-[0.2em] text-neutralc-400">
                   Tracking no.
                 </span>
                 <br />
                 {order.trackingNumber || "Not assigned yet"}
               </p>
               <p>
-                <span className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                <span className="text-xs uppercase tracking-[0.2em] text-neutralc-400">
                   Courier
                 </span>
                 <br />
@@ -195,15 +195,15 @@ const OrderCard = ({ order }) => {
           </div>
 
           {order.shipping ? (
-            <div className="rounded-xl border border-[#F2EAE0] bg-[#Fefbf6] px-4 py-3 text-sm text-slate-700">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <div className="rounded-xl border border-[primary-100] bg-[#Fefbf6] px-4 py-3 text-sm text-neutralc-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
                 Ship to
               </p>
-              <div className="mt-2 space-y-1 text-sm text-slate-700">
-                <p className="font-medium text-slate-800">
+              <div className="mt-2 space-y-1 text-sm text-neutralc-600">
+                <p className="font-medium text-neutralc-900">
                   {order.shipping.recipient ?? "—"}
                 </p>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-neutralc-400">
                   {[order.shipping.city, order.shipping.state]
                     .filter(Boolean)
                     .join(", ") || "—"}
@@ -212,11 +212,11 @@ const OrderCard = ({ order }) => {
             </div>
           ) : null}
 
-          <div className="rounded-xl border border-[#F2EAE0] bg-[#f9f1e3] px-4 py-3 text-sm text-slate-700">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <div className="rounded-xl border border-[primary-100] bg-[#f9f1e3] px-4 py-3 text-sm text-neutralc-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Returns
             </p>
-            <p className="mt-2 text-xs text-slate-600">{returnMessage}</p>
+            <p className="mt-2 text-xs text-neutralc-600">{returnMessage}</p>
             <a
               href={returnMailto}
               className={`mt-3 inline-flex w-full items-center justify-center rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] transition ${returnButtonClasses}`}

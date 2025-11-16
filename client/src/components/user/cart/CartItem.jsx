@@ -21,12 +21,12 @@ const CartItem = ({ item, onQuantityChange, onRemove, onSaveForLater }) => {
   };
 
   return (
-    <article className="space-y-4 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-[0_24px_56px_rgba(15,23,42,0.08)]">
+    <article className="space-y-4 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_24px_56px_rgba(15,23,42,0.08)]">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex gap-4">
           <Link
             to={`/products/${item.productId ?? item.id}`}
-            className="block h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[#DCECE9] bg-[#F2EAE0]"
+            className="block h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-neutralc-200 bg-primary-100"
           >
             {item.imageUrl ? (
               <img
@@ -39,14 +39,14 @@ const CartItem = ({ item, onQuantityChange, onRemove, onSaveForLater }) => {
           </Link>
           <div className="space-y-2">
             <div>
-              <h3 className="text-base font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-neutralc-900">
                 {item.title}
               </h3>
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-xs uppercase tracking-[0.2em] text-neutralc-400">
                 Size {item.size}
               </p>
             </div>
-            <p className="text-sm font-semibold text-[#b8985b]">
+            <p className="text-sm font-semibold text-primary-500">
               {formatINR(item.price)}
             </p>
           </div>
@@ -65,11 +65,11 @@ const CartItem = ({ item, onQuantityChange, onRemove, onSaveForLater }) => {
 
       <Divider className="my-2" />
 
-      <div className="flex flex-col gap-3 text-sm font-medium text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 text-sm font-medium text-neutralc-600 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="button"
           onClick={handleRemove}
-          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-left text-slate-500 transition hover:text-[#b8985b]"
+          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-left text-neutralc-400 transition hover:text-primary-500"
         >
           <img src={trashIcon} alt="" aria-hidden className="h-4 w-4" />
           Remove
@@ -77,7 +77,7 @@ const CartItem = ({ item, onQuantityChange, onRemove, onSaveForLater }) => {
         <button
           type="button"
           onClick={handleSaveForLater}
-          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-left text-slate-500 transition hover:text-[#b8985b]"
+          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-left text-neutralc-400 transition hover:text-primary-500"
         >
           <img src={heartIcon} alt="" aria-hidden className="h-4 w-4" />
           Save for later

@@ -36,7 +36,7 @@ const EMPTY_ADDRESS_FORM = {
 };
 
 const TEXTAREA_FIELD_CLASSES =
-  "w-full rounded-2xl border border-[#DCECE9] bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#b8985b]/25 transition";
+  "w-full rounded-2xl border border-[neutralc-200] bg-white px-4 py-3 text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[primary-500]/25 transition";
 
 const computePricing = (cart) => {
   const subtotalFromTotals = Number(cart?.totals?.subtotal);
@@ -620,7 +620,7 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-neutralc-900">
       <UserNavbar />
       <main className="mx-auto max-w-6xl space-y-6 sm:space-y-10 px-3 sm:px-4 py-8 sm:py-12">
         <Breadcrumbs
@@ -632,16 +632,16 @@ const CheckoutPage = () => {
         />
 
         <header className="space-y-1 sm:space-y-2">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#b8985b]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[primary-500]">
             Checkout
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600">
+          <p className="text-xs sm:text-sm text-neutralc-600">
             Complete your purchase in a few simple steps.
           </p>
         </header>
 
         {isInitialCheckoutLoad ? (
-          <div className="flex flex-wrap gap-2 sm:gap-3 rounded-2xl sm:rounded-3xl border border-[#DCECE9] bg-white p-4 sm:p-6 shadow-sm">
+          <div className="flex flex-wrap gap-2 sm:gap-3 rounded-2xl sm:rounded-3xl border border-[neutralc-200] bg-white p-4 sm:p-6 shadow-sm">
             {Array.from({ length: 3 }).map((_, index) => (
               <Skeleton
                 key={`checkout-progress-skeleton-${index}`}
@@ -661,7 +661,7 @@ const CheckoutPage = () => {
         <section className="grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           {isInitialCheckoutLoad ? (
             <>
-              <div className="space-y-3 sm:space-y-4 rounded-2xl sm:rounded-3xl border border-[#DCECE9] bg-white p-4 sm:p-6 shadow-sm">
+              <div className="space-y-3 sm:space-y-4 rounded-2xl sm:rounded-3xl border border-[neutralc-200] bg-white p-4 sm:p-6 shadow-sm">
                 <Skeleton className="h-5 sm:h-6 w-36 sm:w-44" />
                 <Skeleton className="h-3 sm:h-4 w-48 sm:w-64" />
                 <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
@@ -690,7 +690,7 @@ const CheckoutPage = () => {
                 </div>
                 <Skeleton className="h-20 sm:h-24 w-full rounded-2xl" rounded={false} />
               </div>
-              <div className="space-y-2 sm:space-y-3 rounded-2xl sm:rounded-3xl border border-[#DCECE9] bg-white p-4 sm:p-6 shadow-sm">
+              <div className="space-y-2 sm:space-y-3 rounded-2xl sm:rounded-3xl border border-[neutralc-200] bg-white p-4 sm:p-6 shadow-sm">
                 <Skeleton className="h-4 sm:h-5 w-28 sm:w-32" />
                 <Skeleton className="h-3 sm:h-4 w-24 sm:w-28" />
                 <Skeleton className="h-3 sm:h-4 w-20 sm:w-24" />
@@ -769,19 +769,19 @@ const CheckoutPage = () => {
                       continue.
                     </div>
                     <div className="flex flex-col items-center justify-center bg-gradient-to-br from-amber-50 to-amber-100 p-3 sm:p-4 rounded-xl sm:rounded-2xl">
-                      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-[#b8985b] p-4 sm:p-8 w-full max-w-md text-center">
-                        <h1 className="text-lg sm:text-2xl font-bold text-[#b8985b] mb-4 sm:mb-6">Save Address Navigation Guide</h1>
+                      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-[primary-500] p-4 sm:p-8 w-full max-w-md text-center">
+                        <h1 className="text-lg sm:text-2xl font-bold text-[primary-500] mb-4 sm:mb-6">Save Address Navigation Guide</h1>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 text-xs sm:text-sm font-medium">
-                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-[#b8985b] bg-[#b8985b] text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
+                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-[primary-500] bg-[primary-500] text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
                             <span>Account</span>
                           </div>
-                          <span className="text-[#b8985b] rotate-90 sm:rotate-0">→</span>
-                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-[#b8985b] bg-[#b8985b] text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
+                          <span className="text-[primary-500] rotate-90 sm:rotate-0">→</span>
+                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-[primary-500] bg-[primary-500] text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
                             <span>Address</span>
                           </div>
-                          <span className="text-[#b8985b] rotate-90 sm:rotate-0">→</span>
-                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-[#b8985b] bg-[#b8985b] text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
+                          <span className="text-[primary-500] rotate-90 sm:rotate-0">→</span>
+                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-[primary-500] bg-[primary-500] text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
                             <span>Add New Address</span>
                           </div>
                         </div>
@@ -792,7 +792,7 @@ const CheckoutPage = () => {
 
                     </>
                   )}
-                <button disabled={isSavingAddress} onClick={()=>navigate('/account')} className="bg-[#b8985b] text-white font-semibold rounded-2xl sm:rounded-3xl py-2 cursor-pointer text-xs sm:text-sm w-full sm:w-auto px-4 sm:px-6">Go Save address</button>
+                <button disabled={isSavingAddress} onClick={()=>navigate('/account')} className="bg-[primary-500] text-white font-semibold rounded-2xl sm:rounded-3xl py-2 cursor-pointer text-xs sm:text-sm w-full sm:w-auto px-4 sm:px-6">Go Save address</button>
                 </CheckoutSection>
               </form>
 
@@ -811,7 +811,7 @@ const CheckoutPage = () => {
                   />
                 </div>
               ) : (
-                <div className="rounded-2xl sm:rounded-3xl border border-[#DCECE9] bg-[#F2EAE0] p-4 sm:p-6 text-xs sm:text-sm text-[#b8985b]">
+                <div className="rounded-2xl sm:rounded-3xl border border-[neutralc-200] bg-[primary-100] p-4 sm:p-6 text-xs sm:text-sm text-[primary-500]">
                   No items in your order yet.
                 </div>
               )}

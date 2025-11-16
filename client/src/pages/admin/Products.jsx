@@ -364,8 +364,8 @@ const Products = () => {
     <section className="space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900">Products</h2>
-          <p className="mt-1 text-slate-600">
+          <h2 className="text-3xl font-bold text-neutralc-900">Products</h2>
+          <p className="mt-1 text-neutralc-600">
             Manage your catalog, inventory, and merchandising from a single
             place.
           </p>
@@ -374,7 +374,7 @@ const Products = () => {
         <div className="flex flex-wrap gap-3">
           <Link
             to="/admin/products/upload"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#b8985b] px-6 py-3 font-medium text-white shadow-lg shadow-[#b8985b]/30 transition hover:bg-[#a9894f] hover:shadow-xl"
+            className="inline-flex items-center gap-2 rounded-xl bg-[primary-500] px-6 py-3 font-medium text-white shadow-lg shadow-[primary-500]/30 transition hover:bg-[primary-700] hover:shadow-xl"
           >
             <svg
               className="h-5 w-5"
@@ -395,7 +395,7 @@ const Products = () => {
           <button
             type="button"
             onClick={openCreateDrawer}
-            className="inline-flex items-center gap-2 rounded-xl border border-[#dec9a4] bg-white px-4 py-3 font-medium text-[#8f7843] shadow-sm transition hover:border-[#cdae79] hover:text-[#6a542b] hover:shadow"
+            className="inline-flex items-center gap-2 rounded-xl border border-[#dec9a4] bg-white px-4 py-3 font-medium text-[primary-700] shadow-sm transition hover:border-[#cdae79] hover:text-[#6a542b] hover:shadow"
           >
             <svg
               className="h-5 w-5"
@@ -455,7 +455,7 @@ const Products = () => {
           className={`rounded-2xl border p-4 text-sm shadow-sm ${
             actionNotice.type === "error"
               ? "border-rose-200 bg-rose-50 text-rose-700"
-              : "border-[#e6dccb] bg-[#f7f1e4] text-[#8f7843]"
+              : "border-[#e6dccb] bg-[#f7f1e4] text-[primary-700]"
           }`}
         >
           {actionNotice.message}
@@ -539,8 +539,8 @@ const MetricCard = ({ label, value, tone = "gold", icon = "box" }) => {
     gold: {
       background: "from-[#fbf4e6] to-[#f2e3c8]",
       border: "border-[#e6dccb]",
-      icon: "text-[#b8985b]",
-      badge: "bg-[#f2e3c8] text-[#8f7843]",
+      icon: "text-[primary-500]",
+      badge: "bg-[#f2e3c8] text-[primary-700]",
     },
     blue: {
       background: "from-blue-50 to-blue-100/50",
@@ -578,8 +578,8 @@ const MetricCard = ({ label, value, tone = "gold", icon = "box" }) => {
     >
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-600">{label}</p>
-          <p className="text-2xl font-bold text-slate-900">{value}</p>
+          <p className="text-sm font-medium text-neutralc-600">{label}</p>
+          <p className="text-2xl font-bold text-neutralc-900">{value}</p>
         </div>
         <div
           className={`flex h-10 w-10 items-center justify-center rounded-lg ${toneStyles.badge}`}
@@ -616,14 +616,14 @@ const ProductCard = ({
   if (loading) {
     return (
       <div className="animate-pulse rounded-xl border border-[#e6dccb]/70 bg-gradient-to-br from-white to-[#f6eedb]/40 p-5">
-        <div className="mb-4 h-32 w-full rounded-lg bg-slate-200" />
-        <div className="mb-2 h-4 rounded bg-slate-200" />
-        <div className="mb-4 h-3 w-3/5 rounded bg-slate-200" />
+        <div className="mb-4 h-32 w-full rounded-lg bg-neutralc-200" />
+        <div className="mb-2 h-4 rounded bg-neutralc-200" />
+        <div className="mb-4 h-3 w-3/5 rounded bg-neutralc-200" />
         <div className="mb-4 flex justify-between">
-          <div className="h-3 w-1/3 rounded bg-slate-200" />
-          <div className="h-3 w-1/4 rounded bg-slate-200" />
+          <div className="h-3 w-1/3 rounded bg-neutralc-200" />
+          <div className="h-3 w-1/4 rounded bg-neutralc-200" />
         </div>
-        <div className="h-9 rounded bg-slate-200" />
+        <div className="h-9 rounded bg-neutralc-200" />
       </div>
     );
   }
@@ -636,7 +636,7 @@ const ProductCard = ({
 
   return (
     <div className="group rounded-xl border border-[#e6dccb] bg-gradient-to-br from-white to-[#f6eedb]/50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-      <div className="relative mb-4 overflow-hidden rounded-lg bg-slate-100">
+      <div className="relative mb-4 overflow-hidden rounded-lg bg-neutralc-100">
         <div className="aspect-square">
           <img
             src={product.image ?? FALLBACK_IMAGE}
@@ -649,12 +649,12 @@ const ProductCard = ({
         </div>
         <span
           className={`absolute left-4 top-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-white shadow ${
-            statusIsActive ? "bg-[#b8985b]" : "bg-slate-500"
+            statusIsActive ? "bg-[primary-500]" : "bg-neutralc-400"
           }`}
         >
           <span
             className={`h-2 w-2 rounded-full ${
-              statusIsActive ? "bg-[#f2e3c8]" : "bg-slate-200"
+              statusIsActive ? "bg-[#f2e3c8]" : "bg-neutralc-200"
             }`}
           />
           {product.status}
@@ -663,27 +663,27 @@ const ProductCard = ({
 
       <div className="space-y-3">
         <div>
-          <h3 className="text-lg font-semibold text-slate-900">
+          <h3 className="text-lg font-semibold text-neutralc-900">
             {product.name}
           </h3>
-          <p className="text-sm text-[#8f7843]">{product.category}</p>
+          <p className="text-sm text-[primary-700]">{product.category}</p>
         </div>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div>
-              <p className="text-xs text-slate-500">Price</p>
-              <p className="font-semibold text-[#8f7843]">
+              <p className="text-xs text-neutralc-400">Price</p>
+              <p className="font-semibold text-[primary-700]">
                 {formatPrice(product.price)}
               </p>
             </div>
             <div>
-              <p className="text-xs text-slate-500">Stock</p>
+              <p className="text-xs text-neutralc-400">Stock</p>
               <p
                 className={`font-semibold ${
                   (product.stock ?? 0) < 20
                     ? "text-amber-600"
-                    : "text-slate-700"
+                    : "text-neutralc-600"
                 }`}
               >
                 {product.stock ?? 0}
@@ -695,8 +695,8 @@ const ProductCard = ({
             type="button"
             onClick={onToggle}
             disabled={isBusy}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition focus:outline-none focus:ring-2 focus:ring-[#b8985b] focus:ring-offset-2 ${
-              statusIsActive ? "bg-[#b8985b]" : "bg-slate-300"
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition focus:outline-none focus:ring-2 focus:ring-[primary-500] focus:ring-offset-2 ${
+              statusIsActive ? "bg-[primary-500]" : "bg-neutralc-200"
             } ${isBusy ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
           >
             <span
@@ -734,8 +734,8 @@ const ActionButton = ({
   busy = false,
 }) => {
   const variants = {
-    default: "border border-[#dec9a4] text-[#8f7843] hover:bg-[#f2eae0]",
-    primary: "bg-[#b8985b] text-white hover:bg-[#a9894f]",
+    default: "border border-[#dec9a4] text-[primary-700] hover:bg-[primary-100]",
+    primary: "bg-[primary-500] text-white hover:bg-[primary-700]",
     danger: "border border-red-200 text-red-600 hover:bg-red-50",
   };
 
@@ -760,7 +760,7 @@ const Spinner = () => (
 
 const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-    <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
+    <div className="w-full max-w-md rounded-2xl border border-neutralc-200 bg-white p-6 shadow-2xl">
       <div className="mb-4 flex items-center gap-3">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
           <svg
@@ -778,16 +778,16 @@ const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
           </svg>
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-slate-900">
+          <h3 className="text-lg font-semibold text-neutralc-900">
             Delete product
           </h3>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-neutralc-600">
             This action cannot be undone.
           </p>
         </div>
       </div>
 
-      <div className="mb-6 rounded-xl bg-slate-50 p-4">
+      <div className="mb-6 rounded-xl bg-neutralc-100 p-4">
         <div className="flex items-center gap-3">
           <img
             src={product.image ?? FALLBACK_IMAGE}
@@ -798,8 +798,8 @@ const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
             }}
           />
           <div>
-            <p className="font-medium text-slate-900">{product.name}</p>
-            <p className="text-sm text-slate-500">{product.category}</p>
+            <p className="font-medium text-neutralc-900">{product.name}</p>
+            <p className="text-sm text-neutralc-400">{product.category}</p>
           </div>
         </div>
       </div>
@@ -809,7 +809,7 @@ const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
           type="button"
           onClick={onCancel}
           disabled={busy}
-          className="flex-1 rounded-lg border border-slate-200 px-4 py-2 font-medium text-slate-600 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex-1 rounded-lg border border-neutralc-200 px-4 py-2 font-medium text-neutralc-600 transition hover:bg-neutralc-100 disabled:cursor-not-allowed disabled:opacity-60"
         >
           Cancel
         </button>
@@ -835,15 +835,15 @@ const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
 
 const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-    <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
-      <header className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-4">
-        <h3 className="text-xl font-semibold text-slate-900">
+    <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-neutralc-200 bg-white shadow-2xl">
+      <header className="flex items-center justify-between border-b border-neutralc-200 bg-white px-6 py-4">
+        <h3 className="text-xl font-semibold text-neutralc-900">
           Product details
         </h3>
         <button
           type="button"
           onClick={onClose}
-          className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100"
+          className="rounded-full p-2 text-neutralc-400 transition hover:bg-neutralc-100"
         >
           <svg
             className="h-5 w-5"
@@ -863,7 +863,7 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
 
       <div className="grid gap-6 p-6 md:grid-cols-2">
         <div className="space-y-4">
-          <div className="overflow-hidden rounded-xl bg-slate-100">
+          <div className="overflow-hidden rounded-xl bg-neutralc-100">
             <img
               src={product.image ?? FALLBACK_IMAGE}
               alt={product.name}
@@ -876,13 +876,13 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
           <span
             className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium ${
               product.status === "Active"
-                ? "bg-[#f2eae0] text-[#8f7843]"
-                : "bg-slate-100 text-slate-600"
+                ? "bg-[primary-100] text-[primary-700]"
+                : "bg-neutralc-100 text-neutralc-600"
             }`}
           >
             <span
               className={`h-2 w-2 rounded-full ${
-                product.status === "Active" ? "bg-[#d6c3a4]" : "bg-slate-400"
+                product.status === "Active" ? "bg-[#d6c3a4]" : "bg-neutralc-400"
               }`}
             />
             {product.status}
@@ -891,29 +891,29 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
 
         <div className="space-y-6">
           <div>
-            <h4 className="text-2xl font-bold text-slate-900">
+            <h4 className="text-2xl font-bold text-neutralc-900">
               {product.name}
             </h4>
-            <p className="text-[#8f7843]">{product.category}</p>
+            <p className="text-[primary-700]">{product.category}</p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg bg-[#f7f1e4] p-4">
-              <p className="text-sm font-medium text-[#8f7843]">Price</p>
+              <p className="text-sm font-medium text-[primary-700]">Price</p>
               <p className="text-2xl font-bold text-[#6a542b]">
                 {formatPrice(product.price)}
               </p>
             </div>
             <div
               className={`${
-                (product.stock ?? 0) < 20 ? "bg-amber-50" : "bg-slate-50"
+                (product.stock ?? 0) < 20 ? "bg-amber-50" : "bg-neutralc-100"
               } rounded-lg p-4`}
             >
               <p
                 className={`text-sm font-medium ${
                   (product.stock ?? 0) < 20
                     ? "text-amber-600"
-                    : "text-slate-600"
+                    : "text-neutralc-600"
                 }`}
               >
                 Stock remaining
@@ -922,7 +922,7 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
                 className={`text-2xl font-bold ${
                   (product.stock ?? 0) < 20
                     ? "text-amber-800"
-                    : "text-slate-800"
+                    : "text-neutralc-900"
                 }`}
               >
                 {product.stock ?? 0}
@@ -930,7 +930,7 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
             </div>
           </div>
 
-          <dl className="space-y-3 text-sm text-slate-600">
+          <dl className="space-y-3 text-sm text-neutralc-600">
             <div className="flex justify-between">
               <dt>SKU</dt>
               <dd className="font-medium">#{product.id}</dd>
@@ -941,22 +941,22 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
             </div>
           </dl>
 
-          <div className="rounded-lg bg-slate-50 p-4">
-            <h5 className="mb-2 font-medium text-slate-900">
+          <div className="rounded-lg bg-neutralc-100 p-4">
+            <h5 className="mb-2 font-medium text-neutralc-900">
               Quick description
             </h5>
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-neutralc-600">
               High-quality {product.name.toLowerCase()} from our curated
               selection. Crafted for everyday wear with attention to detail and
               durability.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 border-t border-slate-200 pt-4">
+          <div className="flex flex-wrap gap-3 border-t border-neutralc-200 pt-4">
             <button
               type="button"
               onClick={onEdit}
-              className="flex-1 rounded-lg bg-[#b8985b] px-4 py-2 font-medium text-white shadow-md transition hover:bg-[#a9894f]"
+              className="flex-1 rounded-lg bg-[primary-500] px-4 py-2 font-medium text-white shadow-md transition hover:bg-[primary-700]"
             >
               Edit product
             </button>
@@ -983,10 +983,10 @@ const CreateDrawer = ({ children, mode = "create", onClose }) => {
       <div className="relative flex h-full w-full max-w-3xl flex-col overflow-y-auto border-l border-[#e6dccb] bg-gradient-to-b from-white via-white to-[#f6eedb] shadow-2xl">
         <header className="sticky top-0 flex items-center justify-between border-b border-[#e6dccb] bg-white/90 px-6 py-4 backdrop-blur">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-lg font-semibold text-neutralc-900">
               {isEdit ? "Edit product" : "Quick create"}
             </h3>
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-neutralc-600">
               {isEdit
                 ? "Update product information without leaving this page."
                 : "Fill out the form below to add a new product without leaving this page."}
@@ -995,7 +995,7 @@ const CreateDrawer = ({ children, mode = "create", onClose }) => {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100"
+            className="rounded-full p-2 text-neutralc-400 transition hover:bg-neutralc-100"
           >
             <svg
               className="h-5 w-5"

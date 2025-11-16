@@ -110,13 +110,13 @@ const Customers = () => {
   }, [tierDistribution]);
 
   return (
-    <section className="space-y-7 text-slate-800">
+    <section className="space-y-7 text-neutralc-900">
       <header className="space-y-2">
-        <h2 className="text-3xl font-bold text-slate-900">Customers</h2>
-        <p className="text-base text-slate-500">
+        <h2 className="text-3xl font-bold text-neutralc-900">Customers</h2>
+        <p className="text-base text-neutralc-400">
           View customer details and recent engagement.
         </p>
-        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-neutralc-400">
           {loading ? (
             <Skeleton className="h-4 w-56" />
           ) : (
@@ -125,15 +125,15 @@ const Customers = () => {
             </span>
           )}
           {leadingTier && !loading ? (
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#f2eae0] px-3 py-1 text-xs font-semibold text-[#8f7843]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[primary-100] px-3 py-1 text-xs font-semibold text-[primary-700]">
               Top tier: {leadingTier.label} · {leadingTier.count}
             </span>
           ) : null}
         </div>
       </header>
       <div className="overflow-hidden rounded-2xl border border-[#e6dccb] bg-white shadow-2xl">
-        <table className="min-w-full divide-y divide-[#f2eae0]">
-          <thead className="bg-[#b8985b] text-left text-xs font-semibold uppercase tracking-wide text-white">
+        <table className="min-w-full divide-y divide-[primary-100]">
+          <thead className="bg-[primary-500] text-left text-xs font-semibold uppercase tracking-wide text-white">
             <tr>
               <th className="px-6 py-4">Customer</th>
               <th className="px-6 py-4">Contact</th>
@@ -142,7 +142,7 @@ const Customers = () => {
               <th className="px-6 py-4">Activity</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#f2eae0] text-sm">
+          <tbody className="divide-y divide-[primary-100] text-sm">
             {error ? (
               <tr>
                 <td
@@ -186,49 +186,49 @@ const Customers = () => {
               customers.map((customer, index) => (
                 <tr
                   key={customer.id ?? customer.userId ?? `customer-${index}`}
-                  className="hover:bg-[#f2eae0]"
+                  className="hover:bg-[primary-100]"
                 >
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-[#8f7843]">
+                    <div className="font-semibold text-[primary-700]">
                       {customer.name || "—"}
                     </div>
-                    <div className="text-xs text-slate-400">
+                    <div className="text-xs text-neutralc-400">
                       ID: {customer.userId ?? customer.id ?? "—"}
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="text-sm text-slate-600">
+                    <div className="text-sm text-neutralc-600">
                       {customer.email || "—"}
                     </div>
                     {customer.phone && (
-                      <div className="text-xs text-slate-500">
+                      <div className="text-xs text-neutralc-400">
                         {customer.phone}
                       </div>
                     )}
                   </td>
                   <td className="px-6 py-4">
-                    <span className="inline-flex items-center rounded-full bg-[#f2eae0] px-3 py-1 text-xs font-semibold text-[#8f7843]">
+                    <span className="inline-flex items-center rounded-full bg-[primary-100] px-3 py-1 text-xs font-semibold text-[primary-700]">
                       {formatTierLabel(customer.membershipTier)}
                     </span>
                     {customer.isVerified ? (
-                      <span className="ml-2 text-xs font-medium text-[#8f7843]">
+                      <span className="ml-2 text-xs font-medium text-[primary-700]">
                         Verified
                       </span>
                     ) : null}
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-slate-700">
+                    <div className="font-semibold text-neutralc-600">
                       {formatNumber(customer.totalOrders)} orders
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-xs text-neutralc-400">
                       {formatCurrency(customer.totalSpent)} spent
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-slate-500">
+                  <td className="px-6 py-4 text-neutralc-400">
                     <div>
                       Last active: {formatDateLabel(customer.lastUpdated)}
                     </div>
-                    <div className="text-xs text-slate-400">
+                    <div className="text-xs text-neutralc-400">
                       Joined {formatDateLabel(customer.joinedAt)}
                     </div>
                   </td>
@@ -238,7 +238,7 @@ const Customers = () => {
               <tr>
                 <td
                   colSpan={5}
-                  className="px-6 py-6 text-center text-sm text-slate-500"
+                  className="px-6 py-6 text-center text-sm text-neutralc-400"
                 >
                   No customers yet.
                 </td>

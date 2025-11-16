@@ -24,9 +24,9 @@ const RangeSlider = ({
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between text-sm font-medium text-slate-600">
+      <div className="flex items-center justify-between text-sm font-medium text-neutralc-600">
         <span>{label ?? "Price Range"}</span>
-        <span className="text-[#b8985b]">
+        <span className="text-[primary-500]">
           {formatINR(minValue)} - {formatINR(maxValue)}
         </span>
       </div>
@@ -49,9 +49,9 @@ const RangeSlider = ({
           onChange={handleMaxChange}
           className="absolute left-0 top-1/2 h-1 w-full -translate-y-1/2 appearance-none bg-transparent"
         />
-        <div className="absolute left-0 right-0 top-1/2 h-1 -translate-y-1/2 rounded-full bg-[#DCECE9]" />
+        <div className="absolute left-0 right-0 top-1/2 h-1 -translate-y-1/2 rounded-full bg-[neutralc-200]" />
         <div
-          className="absolute top-1/2 h-1 -translate-y-1/2 rounded-full bg-[#b8985b]"
+          className="absolute top-1/2 h-1 -translate-y-1/2 rounded-full bg-[primary-500]"
           style={{
             left: `${((minValue - min) / (max - min)) * 100}%`,
             right: `${(1 - (maxValue - min) / (max - min)) * 100}%`,

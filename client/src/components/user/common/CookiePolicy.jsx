@@ -500,7 +500,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
             </p>
             <div className="space-y-6">
               {cookieCategories.map((category) => (
-                <div key={category.name} className="p-6 border border-gray-200 rounded-lg">
+                <div key={category.name} className="p-6 border border-neutralc-200 rounded-lg">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-start flex-1 gap-4">
                       <div className="bg-[#f5f1ed] p-3 rounded-lg">
@@ -638,7 +638,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
       </section>
 
       {/* Footer Note */}
-      <section className="px-4 py-8 bg-white border-t border-gray-200">
+      <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#8b7355] text-sm">
             By continuing to use Ciyatake, you consent to our use of cookies as described in this Cookie Policy.

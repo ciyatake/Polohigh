@@ -59,3 +59,30 @@
 .animate-slide-in-from-top-2 {
   animation: slide-in-from-top-2 0.3s ease-out;
 }
+
+
+@theme {
+  --color-primary-50:  #F9F6EF;
+  --color-primary-100: #F3EDE0;
+  --color-primary-300: #E8DFCF;
+  --color-primary-500: #B58A31;
+  --color-primary-700: #9A6F21;
+
+  --color-neutralc-900: #3B3A37;
+  --color-neutralc-600: #5B5853;
+  --color-neutralc-400: #8C8983;
+  --color-neutralc-200: #E6E6E6;
+  --color-neutralc-100: #F5F5F5;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --font-brand: "Poppins", sans-serif;
+  --font-heading: "Playfair Display", serif;
+}
+
+/* Optional global styles */
+body {
+  @apply bg-primary-50 text-neutralc-900 font-brand;
+}

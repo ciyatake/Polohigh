@@ -21,18 +21,18 @@ const OrderSummary = ({
   const hasCoupon = Boolean(couponCode);
 
   return (
-    <aside className="space-y-6 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.12)]">
+    <aside className="space-y-6 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.12)]">
       <div>
-        <h2 className="text-lg font-semibold text-slate-900">Order Summary</h2>
+        <h2 className="text-lg font-semibold text-neutralc-900">Order Summary</h2>
       </div>
 
       {/* Show product details with quantities */}
       {cartItems.length > 0 && (
-        <div className="space-y-3 border-b border-[#DCECE9] pb-4">
+        <div className="space-y-3 border-b border-neutralc-200 pb-4">
           {cartItems.map((item) => (
             <div key={item.id} className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 overflow-hidden rounded-lg border border-[#DCECE9]">
+                <div className="h-10 w-10 overflow-hidden rounded-lg border border-neutralc-200">
                   {item.imageUrl && (
                     <img
                       src={item.imageUrl}
@@ -42,13 +42,13 @@ const OrderSummary = ({
                   )}
                 </div>
                 <div>
-                  <p className="font-medium text-slate-900">{item.title}</p>
-                  <p className="text-xs text-slate-500">Size {item.size}</p>
+                  <p className="font-medium text-neutralc-900">{item.title}</p>
+                  <p className="text-xs text-neutralc-400">Size {item.size}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="font-semibold text-[#b8985b]">×{item.quantity}</p>
-                <p className="text-xs text-slate-600">{formatINR(item.price)}</p>
+                <p className="font-semibold text-primary-500">×{item.quantity}</p>
+                <p className="text-xs text-neutralc-600">{formatINR(item.price)}</p>
               </div>
             </div>
           ))}
@@ -67,7 +67,7 @@ const OrderSummary = ({
         {hasDiscount ? (
           <OrderSummaryRow
             label={
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b8985b]">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary-500">
                 Coupon {couponCode ? `(${couponCode})` : ""}
               </span>
             }
@@ -78,7 +78,7 @@ const OrderSummary = ({
 
       <OrderSummaryRow
         label={
-          <span className="text-sm font-semibold text-[#b8985b]">Total</span>
+          <span className="text-sm font-semibold text-primary-500">Total</span>
         }
         value={formatINR(total)}
         emphasis
@@ -88,7 +88,7 @@ const OrderSummary = ({
         <button
           type="button"
           onClick={onRemoveCoupon}
-          className="w-full rounded-full border border-[#b8985b] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white"
+          className="w-full rounded-full border border-primary-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
         >
           Remove coupon
         </button>
@@ -96,7 +96,7 @@ const OrderSummary = ({
 
       <Link
         to={checkoutPath}
-        className="flex w-full items-center justify-center gap-2 rounded-full bg-[#b8985b] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#b8985b]/30 transition hover:bg-[#a9894f]"
+        className="flex w-full items-center justify-center gap-2 rounded-full bg-primary-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-700"
       >
         Proceed to Checkout
         <img src={arrowRightIcon} alt="" aria-hidden className="h-4 w-4" />

@@ -14,14 +14,14 @@ const OrdersSection = ({ orders }) => {
           {orders.map((order) => (
             <OrderCard key={order.id} order={order} />
           ))}
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-neutralc-400">
             Return requests stay open for {orders?.[0]?.returnWindowDays ?? 7}{" "}
             days after delivery. Use the request button inside each order if you
             need a pickup.
           </p>
         </>
       ) : (
-        <div className="rounded-2xl border border-dashed border-[#c3dedd] bg-[#F2EAE0] p-6 text-sm text-slate-600">
+        <div className="rounded-2xl border border-dashed border-[#c3dedd] bg-[primary-100] p-6 text-sm text-neutralc-600">
           You haven&apos;t placed any orders yet. Once you do, they&apos;ll show
           up here for quick access.
         </div>

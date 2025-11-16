@@ -49,7 +49,7 @@ const MobileBottomNav = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white px-2 py-1 sm:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-neutralc-200 bg-white px-2 py-1 sm:hidden">
       <div className="flex items-center justify-around">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
@@ -60,10 +60,10 @@ const MobileBottomNav = () => {
               className={`flex flex-col items-center justify-center px-3 py-2 text-xs transition-colors ${
                 isActive
                   ? "text-pink-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  : "text-neutralc-600 hover:text-neutralc-900"
               }`}
             >
-              <div className={isActive ? "text-pink-600" : "text-gray-600"}>
+              <div className={isActive ? "text-pink-600" : "text-neutralc-600"}>
                 {item.icon}
               </div>
               <span className="mt-1 text-xs font-medium">{item.label}</span>

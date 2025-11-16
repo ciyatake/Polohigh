@@ -70,8 +70,8 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
         <div
           className={`rounded-2xl border-2 border-dashed px-6 py-8 text-center transition ${
             dragActive
-              ? "border-[#b8985b] bg-[#f2eae0]"
-              : "border-slate-300 hover:border-[#cdae79] hover:bg-[#f2eae0]/70"
+              ? "border-[primary-500] bg-[primary-100]"
+              : "border-neutralc-200 hover:border-[#cdae79] hover:bg-[primary-100]/70"
           } cursor-pointer`}
           onClick={() => document.getElementById(inputId)?.click()}
           onDragOver={(event) => {
@@ -86,7 +86,7 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
           }}
           onDrop={handleDrop}
         >
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#f2eae0] text-[#8f7843]">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[primary-100] text-[primary-700]">
             <svg
               className="h-6 w-6"
               viewBox="0 0 24 24"
@@ -101,16 +101,16 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
               />
             </svg>
           </div>
-          <p className="text-lg font-medium text-slate-700">
+          <p className="text-lg font-medium text-neutralc-600">
             Drag video here or click to upload
           </p>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-neutralc-400">
             MP4, WebM, MOV up to {maxSizeMB}MB.
           </p>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <div className="relative aspect-video bg-slate-100">
+        <div className="overflow-hidden rounded-2xl border border-neutralc-200 bg-white shadow-sm">
+          <div className="relative aspect-video bg-neutralc-100">
             <video
               src={video.preview}
               className="h-full w-full object-cover"
@@ -139,8 +139,8 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
           </div>
           <div className="flex items-center justify-between px-4 py-3 text-sm">
             <div>
-              <p className="font-medium text-slate-800">{video.name}</p>
-              <p className="text-slate-500">{formatSize(video.size)}</p>
+              <p className="font-medium text-neutralc-900">{video.name}</p>
+              <p className="text-neutralc-400">{formatSize(video.size)}</p>
             </div>
             <button
               type="button"
@@ -164,7 +164,7 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
       {error ? (
         <p className="text-sm text-red-600">{error}</p>
       ) : (
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-neutralc-400">
           Recommended to keep videos short for faster load times.
         </p>
       )}

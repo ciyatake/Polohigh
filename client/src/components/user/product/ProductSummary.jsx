@@ -271,16 +271,16 @@ const ProductSummary = ({
     : "Write a review";
 
   return (
-    <section className="space-y-6 rounded-3xl border border-[#DCECE9] bg-white p-6 shadow-[0_36px_72px_rgba(15,23,42,0.12)]">
+    <section className="space-y-6 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_36px_72px_rgba(15,23,42,0.12)]">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <header className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
             {product.category}
           </p>
-          <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+          <h1 className="text-3xl font-semibold text-neutralc-900 sm:text-4xl">
             {product.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-neutralc-600">
             <RatingDisplay rating={ratingValue} count={reviewCountValue} />
             {onRequestReview ? (
               <button
@@ -288,7 +288,7 @@ const ProductSummary = ({
                 onClick={() =>
                   onRequestReview(hasExistingReview ? "edit" : "create")
                 }
-                className="rounded-full border border-[#b8985b] px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white"
+                className="rounded-full border border-primary-500 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
               >
                 {reviewButtonLabel}
               </button>
@@ -303,9 +303,9 @@ const ProductSummary = ({
             disabled={wishlistButtonDisabled}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] transition ${
               wishlistState?.inWishlist
-                ? "border-[#b8985b] bg-[#b8985b]/15 text-[#b8985b]"
-                : "border-slate-300 bg-white text-slate-500 hover:border-[#b8985b] hover:text-[#b8985b]"
-            } disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-400`}
+                ? "border-primary-500 bg-primary-500/15 text-primary-500"
+                : "border-neutralc-200 bg-white text-neutralc-400 hover:border-primary-500 hover:text-primary-500"
+            } disabled:cursor-not-allowed disabled:border-neutralc-200 disabled:text-neutralc-400`}
           >
             <img
               src={heartIcon}
@@ -321,17 +321,17 @@ const ProductSummary = ({
       </div>
 
       <div
-        className="text-sm leading-relaxed text-slate-600"
+        className="text-sm leading-relaxed text-neutralc-600"
         dangerouslySetInnerHTML={{ __html: summaryText }}
       />
 
-      <div className="rounded-2xl border border-[#DCECE9] bg-[#F2EAE0] p-4 text-lg font-semibold text-[#b8985b]">
-        <span className="text-sm uppercase tracking-[0.2em] text-slate-600">
+      <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-4 text-lg font-semibold text-primary-500">
+        <span className="text-sm uppercase tracking-[0.2em] text-neutralc-600">
           Price
         </span>
-        <p className="text-3xl text-[#b8985b]">{formatINR(displayedPrice)}</p>
+        <p className="text-3xl text-primary-500">{formatINR(displayedPrice)}</p>
         {product.discount ? (
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-neutralc-600">
             {product.discount}% off today
           </p>
         ) : null}
@@ -339,13 +339,13 @@ const ProductSummary = ({
 
       {sizeOptions.length ? (
         <div className="space-y-3">
-          <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-400">
             <span>Size</span>
             {product.sizeGuide ? (
               <button
                 type="button"
                 onClick={() => product.onOpenSizeGuide?.()}
-                className="text-[#b8985b] transition hover:text-[#a9894f]"
+                className="text-primary-500 transition hover:text-primary-700"
               >
                 Size Guide
               </button>
@@ -357,7 +357,7 @@ const ProductSummary = ({
 
       {colorOptions.length ? (
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-400">
             Color
           </p>
           <ColorSwatchGroup
@@ -369,7 +369,7 @@ const ProductSummary = ({
       ) : null}
 
       <div className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutralc-400">
           Quantity
         </p>
         <QuantitySelector
@@ -384,7 +384,7 @@ const ProductSummary = ({
           type="button"
           onClick={handleAddToCart}
           disabled={addButtonDisabled}
-          className="inline-flex flex-1 items-center justify-center rounded-full border border-[#b8985b] bg-[#F2EAE0] px-4 py-3 text-sm font-semibold text-[#b8985b] transition hover:bg-[#b8985b] hover:text-white disabled:cursor-not-allowed disabled:border-[#DCECE9] disabled:bg-white disabled:text-slate-400"
+          className="inline-flex flex-1 items-center justify-center rounded-full border border-primary-500 bg-primary-100 px-4 py-3 text-sm font-semibold text-primary-500 transition hover:bg-primary-500 hover:text-white disabled:cursor-not-allowed disabled:border-neutralc-200 disabled:bg-white disabled:text-neutralc-400"
         >
           {isProcessing && actionStatus?.context !== "buy"
             ? "Adding…"
@@ -394,7 +394,7 @@ const ProductSummary = ({
           type="button"
           onClick={handleBuyNow}
           disabled={isProcessing}
-          className="inline-flex flex-1 items-center justify-center rounded-full border border-transparent bg-[#b8985b] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#b8985b]/25 transition hover:bg-[#a9894f] disabled:cursor-not-allowed disabled:bg-[#b8985b]/60 disabled:text-white/80"
+          className="inline-flex flex-1 items-center justify-center rounded-full border border-transparent bg-primary-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:bg-primary-500/60 disabled:text-white/80"
         >
           {isProcessing && actionStatus?.context === "buy"
             ? "Processing…"
@@ -403,16 +403,16 @@ const ProductSummary = ({
       </div>
 
       {benefits.length ? (
-        <ul className="space-y-3 rounded-2xl border border-[#DCECE9] bg-[#F2EAE0] p-4 text-sm text-slate-700">
+        <ul className="space-y-3 rounded-2xl border border-neutralc-200 bg-primary-100 p-4 text-sm text-neutralc-600">
           {benefits.map((benefit, index) => (
             <li key={`${benefit.title}-${index}`} className="flex gap-3">
-              <span aria-hidden className="mt-1 text-[#b8985b]">
+              <span aria-hidden className="mt-1 text-primary-500">
                 •
               </span>
               <div>
-                <p className="font-semibold text-slate-900">{benefit.title}</p>
+                <p className="font-semibold text-neutralc-900">{benefit.title}</p>
                 {benefit.description ? (
-                  <p className="text-slate-600">{benefit.description}</p>
+                  <p className="text-neutralc-600">{benefit.description}</p>
                 ) : null}
               </div>
             </li>

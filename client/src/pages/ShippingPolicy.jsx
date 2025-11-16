@@ -11,7 +11,7 @@ const ShippingPolicy = () => (
       <li>We currently ship across India. For international shipping, please contact our support team.</li>
     </ul>
     <p className="mb-2">You will receive a tracking number via email once your order has shipped.</p>
-    <p>For any shipping-related queries, contact us at <a href="mailto:care@ciyatake.com" className="text-[#8b7355] underline">care@ciyatake.com</a>.</p>
+    <p>For any shipping-related queries, contact us at <a href="mailto:care@polohigh.com" className="text-[#8b7355] underline">care@polohigh.com</a>.</p>
   </div>
 );
 

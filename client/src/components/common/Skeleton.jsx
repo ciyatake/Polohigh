@@ -2,7 +2,7 @@ const Skeleton = ({ className = "", rounded = true }) => (
   <div
     className={`${
       rounded ? "rounded-md" : ""
-    } shimmer bg-[#f2eae0] ${className}`.trim()}
+    } shimmer bg-[primary-100] ${className}`.trim()}
     aria-hidden="true"
   />
 );

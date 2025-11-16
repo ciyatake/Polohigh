@@ -39,10 +39,10 @@ const Reports = () => {
   }, []);
 
   return (
-    <section className="space-y-7 text-slate-800">
+    <section className="space-y-7 text-neutralc-900">
       <header className="space-y-2">
-        <h2 className="text-3xl font-bold text-slate-900">Reports</h2>
-        <p className="text-base text-slate-500">
+        <h2 className="text-3xl font-bold text-neutralc-900">Reports</h2>
+        <p className="text-base text-neutralc-400">
           Review performance metrics and actionable insights.
         </p>
       </header>
@@ -56,15 +56,15 @@ const Reports = () => {
             (report, index) => (
               <li
                 key={report?.id ?? index}
-                className="rounded-2xl border border-[#e6dccb] bg-white/95 p-6 shadow-2xl ring-1 ring-[#f2eae0] transition hover:-translate-y-1 hover:shadow-[#dec9a4]"
+                className="rounded-2xl border border-[#e6dccb] bg-white/95 p-6 shadow-2xl ring-1 ring-[primary-100] transition hover:-translate-y-1 hover:shadow-[#dec9a4]"
               >
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl font-semibold text-neutralc-900">
                   {loading ? "Loading..." : report.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                <p className="mt-3 text-sm leading-relaxed text-neutralc-600">
                   {loading ? "--" : report.summary}
                 </p>
-                <button className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#8f7843] transition hover:text-[#6a542b]">
+                <button className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[primary-700] transition hover:text-[#6a542b]">
                   View full report
                   <span aria-hidden>→</span>
                 </button>

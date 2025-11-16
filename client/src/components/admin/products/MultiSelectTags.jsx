@@ -56,15 +56,15 @@ const MultiSelectTags = ({
   return (
     <div className="relative">
       <div
-        className={`flex min-h-[2.75rem] flex-wrap items-center gap-2 rounded-2xl border px-3 py-2 transition focus-within:border-[#b8985b] focus-within:ring-2 focus-within:ring-[#b8985b]/20 ${
-          remainingSlots > 0 ? "border-slate-200" : "border-amber-300"
+        className={`flex min-h-[2.75rem] flex-wrap items-center gap-2 rounded-2xl border px-3 py-2 transition focus-within:border-[primary-500] focus-within:ring-2 focus-within:ring-[primary-500]/20 ${
+          remainingSlots > 0 ? "border-neutralc-200" : "border-amber-300"
         }`}
         onClick={() => document.getElementById(inputId)?.focus()}
       >
         {value.map((tag) => (
           <span
             key={tag}
-            className="inline-flex items-center gap-1 rounded-full bg-[#f2eae0] px-3 py-1 text-sm font-medium text-[#8f7843]"
+            className="inline-flex items-center gap-1 rounded-full bg-[primary-100] px-3 py-1 text-sm font-medium text-[primary-700]"
           >
             {tag}
             <button
@@ -73,7 +73,7 @@ const MultiSelectTags = ({
                 event.stopPropagation();
                 removeTag(tag);
               }}
-              className="rounded-full p-1 text-[#8f7843] transition hover:bg-[#f2eae0]/70"
+              className="rounded-full p-1 text-[primary-700] transition hover:bg-[primary-100]/70"
               aria-label={`Remove ${tag}`}
             >
               <svg
@@ -111,17 +111,17 @@ const MultiSelectTags = ({
       </div>
 
       {open && (filtered.length || (allowCustom && inputValue.trim())) ? (
-        <div className="absolute z-10 mt-2 max-h-48 w-full overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-lg">
+        <div className="absolute z-10 mt-2 max-h-48 w-full overflow-y-auto rounded-2xl border border-neutralc-200 bg-white shadow-lg">
           {filtered.map((option) => (
             <button
               type="button"
               key={option}
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => addTag(option)}
-              className="flex w-full justify-between rounded-2xl px-3 py-2 text-left text-sm text-slate-700 transition hover:bg-[#f2eae0]"
+              className="flex w-full justify-between rounded-2xl px-3 py-2 text-left text-sm text-neutralc-600 transition hover:bg-[primary-100]"
             >
               <span>{option}</span>
-              <span className="text-xs text-slate-500">Add</span>
+              <span className="text-xs text-neutralc-400">Add</span>
             </button>
           ))}
           {!filtered.length && allowCustom ? (
@@ -129,7 +129,7 @@ const MultiSelectTags = ({
               type="button"
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => addTag(inputValue.trim())}
-              className="w-full rounded-2xl px-3 py-2 text-left text-sm text-[#8f7843] transition hover:bg-[#f2eae0]"
+              className="w-full rounded-2xl px-3 py-2 text-left text-sm text-[primary-700] transition hover:bg-[primary-100]"
             >
               Add "{inputValue.trim()}"
             </button>
@@ -137,7 +137,7 @@ const MultiSelectTags = ({
         </div>
       ) : null}
 
-      <div className="mt-1 flex items-center justify-between text-xs text-slate-500">
+      <div className="mt-1 flex items-center justify-between text-xs text-neutralc-400">
         <span>
           {allowCustom
             ? "Press Enter to add custom tags"

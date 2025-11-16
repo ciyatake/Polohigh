@@ -73,7 +73,7 @@ const resolveErrorMessage = (error, fallback) => {
 
 const getStatusToken = (coupon) => {
   if (!coupon) {
-    return { label: "--", tone: "bg-slate-200 text-slate-700" };
+    return { label: "--", tone: "bg-neutralc-200 text-neutralc-600" };
   }
 
   if (coupon.isExpired) {
@@ -93,8 +93,8 @@ const getStatusToken = (coupon) => {
   return {
     label: coupon.isActive ? "Active" : "Inactive",
     tone: coupon.isActive
-      ? "bg-[#f2eae0] text-[#8f7843]"
-      : "bg-slate-200 text-slate-700",
+      ? "bg-[primary-100] text-[primary-700]"
+      : "bg-neutralc-200 text-neutralc-600",
   };
 };
 
@@ -404,8 +404,8 @@ const Coupons = () => {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#c9b084]">
             Promotions
           </p>
-          <h1 className="text-3xl font-semibold text-slate-900">Coupons</h1>
-          <p className="text-sm text-slate-600">
+          <h1 className="text-3xl font-semibold text-neutralc-900">Coupons</h1>
+          <p className="text-sm text-neutralc-600">
             Monitor coupon performance and keep your offers fresh.
           </p>
         </div>
@@ -413,14 +413,14 @@ const Coupons = () => {
           <button
             type="button"
             onClick={() => setShowCreateModal(true)}
-            className="rounded-full bg-[#b8985b] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-[#a9894f]"
+            className="rounded-full bg-[primary-500] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-[primary-700]"
           >
             New coupon
           </button>
           <button
             type="button"
             onClick={handleRefresh}
-            className="rounded-full border border-[#dec9a4] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-[#8f7843] transition hover:border-[#cdae79] hover:text-[#6a542b]"
+            className="rounded-full border border-[#dec9a4] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-[primary-700] transition hover:border-[#cdae79] hover:text-[#6a542b]"
             disabled={isRefreshing || loading}
           >
             {isRefreshing ? "Refreshing..." : "Refresh"}
@@ -428,7 +428,7 @@ const Coupons = () => {
           <button
             type="button"
             onClick={handleResetFilters}
-            className="rounded-full border border-slate-300 px-4 py-2 font-semibold uppercase tracking-[0.25em] text-slate-600 transition hover:border-slate-400 hover:text-slate-800"
+            className="rounded-full border border-neutralc-200 px-4 py-2 font-semibold uppercase tracking-[0.25em] text-neutralc-600 transition hover:border-neutralc-400 hover:text-neutralc-900"
           >
             Reset filters
           </button>
@@ -437,7 +437,7 @@ const Coupons = () => {
 
       <section className="grid gap-4 md:grid-cols-4">
         <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8f7843]">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[primary-700]">
             Total coupons
           </p>
           <p className="text-2xl font-semibold text-[#5c4a2c]">
@@ -445,7 +445,7 @@ const Coupons = () => {
           </p>
         </div>
         <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8f7843]">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[primary-700]">
             Active now
           </p>
           <p className="text-2xl font-semibold text-[#5c4a2c]">
@@ -472,16 +472,16 @@ const Coupons = () => {
 
       <form
         onSubmit={handleSearchSubmit}
-        className="grid gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm md:grid-cols-[repeat(3,minmax(0,1fr))_minmax(0,1.2fr)]"
+        className="grid gap-4 rounded-2xl border border-neutralc-200 bg-white px-6 py-5 shadow-sm md:grid-cols-[repeat(3,minmax(0,1fr))_minmax(0,1.2fr)]"
       >
-        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
           Status
           <select
             value={filters.status}
             onChange={(event) =>
               handleFilterChange("status", event.target.value)
             }
-            className="rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
           >
             {statusOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -490,14 +490,14 @@ const Coupons = () => {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
           Discount type
           <select
             value={filters.discountType}
             onChange={(event) =>
               handleFilterChange("discountType", event.target.value)
             }
-            className="rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
           >
             {discountTypeOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -506,14 +506,14 @@ const Coupons = () => {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
           Campaign
           <select
             value={filters.campaignType}
             onChange={(event) =>
               handleFilterChange("campaignType", event.target.value)
             }
-            className="rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
           >
             {campaignTypeOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -522,7 +522,7 @@ const Coupons = () => {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
           Search
           <div className="flex gap-3">
             <input
@@ -530,11 +530,11 @@ const Coupons = () => {
               name="couponSearch"
               defaultValue={filters.search}
               placeholder="Search by code or description"
-              className="flex-1 rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 focus:border-[#b8985b] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+              className="flex-1 rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
             />
             <button
               type="submit"
-              className="rounded-xl bg-[#b8985b] px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[#a9894f]"
+              className="rounded-xl bg-[primary-500] px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[primary-700]"
             >
               Search
             </button>
@@ -543,7 +543,7 @@ const Coupons = () => {
       </form>
 
       {actionMessage ? (
-        <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-4 py-3 text-sm text-[#8f7843]">
+        <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-4 py-3 text-sm text-[primary-700]">
           {actionMessage}
         </div>
       ) : null}
@@ -554,18 +554,18 @@ const Coupons = () => {
         </div>
       ) : null}
 
-      <section className="rounded-3xl border border-slate-200 bg-white shadow-sm">
-        <header className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-6 py-4">
+      <section className="rounded-3xl border border-neutralc-200 bg-white shadow-sm">
+        <header className="flex flex-wrap items-center justify-between gap-3 border-b border-neutralc-200 px-6 py-4">
           <div>
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-neutralc-900">
               Coupon list
             </h2>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutralc-400">
               Showing page {paginationMeta.page} of {paginationMeta.totalPages}.
             </p>
           </div>
           {loading ? (
-            <span className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <span className="rounded-full border border-neutralc-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Loading...
             </span>
           ) : null}
@@ -576,13 +576,13 @@ const Coupons = () => {
             {resolveErrorMessage(error, "Unable to load coupons right now.")}
           </div>
         ) : loading ? (
-          <div className="px-6 py-10 text-center text-sm text-slate-500">
+          <div className="px-6 py-10 text-center text-sm text-neutralc-400">
             Fetching coupons...
           </div>
         ) : coupons.length ? (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-slate-200 text-sm">
-              <thead className="bg-slate-50 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+            <table className="min-w-full divide-y divide-neutralc-200 text-sm">
+              <thead className="bg-neutralc-100 text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
                 <tr>
                   <th className="px-6 py-3 text-left">Coupon</th>
                   <th className="px-6 py-3 text-left">Discount</th>
@@ -592,7 +592,7 @@ const Coupons = () => {
                   <th className="px-6 py-3 text-left">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-slate-700">
+              <tbody className="divide-y divide-neutralc-100 text-neutralc-600">
                 {coupons.map((coupon) => {
                   const statusToken = getStatusToken(coupon);
                   const discountLabel =
@@ -617,7 +617,7 @@ const Coupons = () => {
                       <td className="px-6 py-4 align-top">
                         <div className="space-y-1">
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-sm font-semibold tracking-[0.35em] text-slate-900">
+                            <span className="text-sm font-semibold tracking-[0.35em] text-neutralc-900">
                               {coupon.code}
                             </span>
                             <span
@@ -627,11 +627,11 @@ const Coupons = () => {
                             </span>
                           </div>
                           {coupon.description ? (
-                            <p className="text-xs text-slate-500">
+                            <p className="text-xs text-neutralc-400">
                               {coupon.description}
                             </p>
                           ) : null}
-                          <div className="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">
+                          <div className="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-neutralc-400">
                             <span>{coupon.campaignType || "General"}</span>
                             <span>{minOrderLabel}</span>
                           </div>
@@ -639,18 +639,18 @@ const Coupons = () => {
                       </td>
                       <td className="px-6 py-4 align-top">
                         <div className="space-y-1">
-                          <p className="font-medium text-slate-900">
+                          <p className="font-medium text-neutralc-900">
                             {discountLabel}
                           </p>
                           {coupon.maxDiscount ? (
-                            <p className="text-xs text-slate-500">
+                            <p className="text-xs text-neutralc-400">
                               Cap {formatINR(coupon.maxDiscount)}
                             </p>
                           ) : null}
                         </div>
                       </td>
                       <td className="px-6 py-4 align-top">
-                        <div className="space-y-1 text-xs text-slate-500">
+                        <div className="space-y-1 text-xs text-neutralc-400">
                           <p>
                             Starts {formatDateLabel(coupon.validity?.start)}
                           </p>
@@ -658,7 +658,7 @@ const Coupons = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4 align-top">
-                        <div className="space-y-1 text-xs text-slate-500">
+                        <div className="space-y-1 text-xs text-neutralc-400">
                           <p>{usageSummary}</p>
                           {remaining !== null && remaining !== undefined ? (
                             <p>Remaining: {remaining}</p>
@@ -670,7 +670,7 @@ const Coupons = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4 align-top">
-                        <div className="space-y-1 text-xs text-slate-500">
+                        <div className="space-y-1 text-xs text-neutralc-400">
                           <p>{coupon.isEnabled ? "Enabled" : "Disabled"}</p>
                           <p>{coupon.isActive ? "Active now" : "Not active"}</p>
                         </div>
@@ -680,7 +680,7 @@ const Coupons = () => {
                           <button
                             type="button"
                             onClick={() => handleToggleStatus(coupon.id)}
-                            className="rounded-full border border-[#dec9a4] px-3 py-1 text-[#8f7843] transition hover:border-[#cdae79] hover:text-[#6a542b]"
+                            className="rounded-full border border-[#dec9a4] px-3 py-1 text-[primary-700] transition hover:border-[#cdae79] hover:text-[#6a542b]"
                           >
                             {coupon.isEnabled ? "Disable" : "Enable"}
                           </button>
@@ -701,12 +701,12 @@ const Coupons = () => {
             </table>
           </div>
         ) : (
-          <div className="px-6 py-10 text-center text-sm text-slate-500">
+          <div className="px-6 py-10 text-center text-sm text-neutralc-400">
             No coupons found for the selected filters.
           </div>
         )}
 
-        <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 px-6 py-4 text-sm text-slate-600">
+        <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-neutralc-200 px-6 py-4 text-sm text-neutralc-600">
           <span>
             Page {paginationMeta.page} of {paginationMeta.totalPages} ·{" "}
             {paginationMeta.total} total
@@ -716,7 +716,7 @@ const Coupons = () => {
               type="button"
               onClick={() => handleChangePage(-1)}
               disabled={paginationMeta.page <= 1}
-              className="rounded-full border border-slate-200 px-3 py-1 font-semibold uppercase tracking-[0.25em] text-slate-600 transition hover:border-slate-300 hover:text-slate-800 disabled:cursor-not-allowed disabled:border-slate-100 disabled:text-slate-300"
+              className="rounded-full border border-neutralc-200 px-3 py-1 font-semibold uppercase tracking-[0.25em] text-neutralc-600 transition hover:border-neutralc-200 hover:text-neutralc-900 disabled:cursor-not-allowed disabled:border-neutralc-100 disabled:text-neutralc-200"
             >
               Previous
             </button>
@@ -724,7 +724,7 @@ const Coupons = () => {
               type="button"
               onClick={() => handleChangePage(1)}
               disabled={paginationMeta.page >= paginationMeta.totalPages}
-              className="rounded-full border border-slate-200 px-3 py-1 font-semibold uppercase tracking-[0.25em] text-slate-600 transition hover:border-slate-300 hover:text-slate-800 disabled:cursor-not-allowed disabled:border-slate-100 disabled:text-slate-300"
+              className="rounded-full border border-neutralc-200 px-3 py-1 font-semibold uppercase tracking-[0.25em] text-neutralc-600 transition hover:border-neutralc-200 hover:text-neutralc-900 disabled:cursor-not-allowed disabled:border-neutralc-100 disabled:text-neutralc-200"
             >
               Next
             </button>
@@ -732,16 +732,16 @@ const Coupons = () => {
         </footer>
       </section>
 
-      <section className="rounded-3xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
+      <section className="rounded-3xl border border-neutralc-200 bg-white px-6 py-5 shadow-sm">
         <header className="flex items-center justify-between gap-3">
           <div>
-            <h2 className="text-lg font-semibold text-slate-900">Analytics</h2>
-            <p className="text-sm text-slate-500">
+            <h2 className="text-lg font-semibold text-neutralc-900">Analytics</h2>
+            <p className="text-sm text-neutralc-400">
               Insights generated from coupon usage.
             </p>
           </div>
           {analyticsLoading ? (
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Loading...
             </span>
           ) : null}
@@ -756,42 +756,42 @@ const Coupons = () => {
           </div>
         ) : analytics ? (
           <div className="mt-5 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <div className="rounded-2xl border border-neutralc-200 bg-neutralc-100 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
                 Total usage
               </p>
-              <p className="text-2xl font-semibold text-slate-900">
+              <p className="text-2xl font-semibold text-neutralc-900">
                 {analytics.totalUsage}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-neutralc-400">
                 Across all coupons within the selected view.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <div className="rounded-2xl border border-neutralc-200 bg-neutralc-100 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
                 Total savings
               </p>
-              <p className="text-2xl font-semibold text-slate-900">
+              <p className="text-2xl font-semibold text-neutralc-900">
                 {formatINR(analytics.totalDiscountGiven)}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-neutralc-400">
                 Discount total passed on to customers.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+            <div className="rounded-2xl border border-neutralc-200 bg-neutralc-100 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
                 Avg per coupon
               </p>
-              <p className="text-2xl font-semibold text-slate-900">
+              <p className="text-2xl font-semibold text-neutralc-900">
                 {formatINR(analytics.averageDiscountPerCoupon)}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-neutralc-400">
                 Based on total discount distributed.
               </p>
             </div>
           </div>
         ) : (
-          <div className="mt-5 text-sm text-slate-500">
+          <div className="mt-5 text-sm text-neutralc-400">
             No analytics available for the selected filters yet.
           </div>
         )}
@@ -969,53 +969,53 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl rounded-3xl border border-[#e6dccb] bg-white p-6 text-slate-800 shadow-2xl"
+        className="w-full max-w-2xl rounded-3xl border border-[#e6dccb] bg-white p-6 text-neutralc-900 shadow-2xl"
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#b8985b]">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[primary-500]">
               New coupon
             </p>
             <h2
               id="create-coupon-title"
-              className="mt-1 text-2xl font-semibold text-slate-900"
+              className="mt-1 text-2xl font-semibold text-neutralc-900"
             >
               Create coupon
             </h2>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutralc-400">
               Configure the discount details before sharing with customers.
             </p>
           </div>
           <button
             type="button"
             onClick={() => !saving && onClose?.()}
-            className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 transition hover:border-slate-300 hover:text-slate-700"
+            className="rounded-full border border-neutralc-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400 transition hover:border-neutralc-200 hover:text-neutralc-600"
           >
             Close
           </button>
         </div>
 
         <div className="mt-6 grid gap-5 sm:grid-cols-2">
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Coupon code
             <input
               type="text"
               name="code"
               value={formValues.code}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-slate-800 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-neutralc-900 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               placeholder="SAVE25"
               required
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Campaign
             <select
               name="campaignType"
               value={formValues.campaignType}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
             >
               {filteredCampaignOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -1025,25 +1025,25 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
             </select>
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700 sm:col-span-2">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600 sm:col-span-2">
             Description
             <textarea
               name="description"
               value={formValues.description}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               rows={3}
               placeholder="Optional details customers should know"
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Discount type
             <select
               name="discountType"
               value={formValues.discountType}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
             >
               {discountTypeOptions
                 .filter((option) => option.value !== "all")
@@ -1055,14 +1055,14 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
             </select>
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Discount value
             <input
               type="number"
               name="discountValue"
               value={formValues.discountValue}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb] disabled:cursor-not-allowed disabled:bg-slate-100"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb] disabled:cursor-not-allowed disabled:bg-neutralc-100"
               placeholder={discountDisabled ? "0" : "e.g. 20"}
               min="0"
               step="0.01"
@@ -1071,89 +1071,89 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Max discount (optional)
             <input
               type="number"
               name="maxDiscount"
               value={formValues.maxDiscount}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               placeholder="Cap in INR"
               min="0"
               step="0.01"
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Minimum order (optional)
             <input
               type="number"
               name="minOrderAmount"
               value={formValues.minOrderAmount}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               placeholder="Amount in INR"
               min="0"
               step="0.01"
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Start date
             <input
               type="date"
               name="startDate"
               value={formValues.startDate}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               required
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             End date
             <input
               type="date"
               name="endDate"
               value={formValues.endDate}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               required
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Total usage limit (optional)
             <input
               type="number"
               name="usageLimitTotal"
               value={formValues.usageLimitTotal}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               min="1"
             />
           </label>
 
-          <label className="space-y-2 text-sm font-medium text-slate-700">
+          <label className="space-y-2 text-sm font-medium text-neutralc-600">
             Per-user limit (optional)
             <input
               type="number"
               name="usageLimitPerUser"
               value={formValues.usageLimitPerUser}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#b8985b] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
               min="1"
             />
           </label>
 
-          <label className="flex items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 sm:col-span-2">
+          <label className="flex items-center gap-3 rounded-2xl border border-neutralc-200 px-4 py-3 text-sm font-medium text-neutralc-600 sm:col-span-2">
             <input
               type="checkbox"
               name="isActive"
               checked={formValues.isActive}
               onChange={handleFieldChange}
-              className="h-4 w-4 rounded border-slate-300 text-[#b8985b] focus:ring-[#b8985b]"
+              className="h-4 w-4 rounded border-neutralc-200 text-[primary-500] focus:ring-[primary-500]"
             />
             Enable coupon immediately
           </label>
@@ -1162,13 +1162,13 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
         {error ? <p className="mt-4 text-sm text-rose-600">{error}</p> : null}
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-neutralc-400">
             All fields can be edited later from the coupon list.
           </p>
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex min-w-[9rem] items-center justify-center rounded-full bg-[#b8985b] px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white shadow-sm transition hover:bg-[#a9894f] disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex min-w-[9rem] items-center justify-center rounded-full bg-[primary-500] px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white shadow-sm transition hover:bg-[primary-700] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {saving ? "Creating..." : "Create coupon"}
           </button>
