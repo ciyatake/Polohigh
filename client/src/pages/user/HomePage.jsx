@@ -31,8 +31,7 @@ const DEFAULT_CATEGORY_OPTIONS = [
 const posters = [
   {
     img: "/polohighbanner.png",
-    link: "/product/hoodie-purple",
-    cta: "Shop Now"
+    link: "/product/hoodie-purple"
   },
   // {
   //   img: "/Banner_2.png",
@@ -92,7 +91,6 @@ const HomePage = ({ isLoggedIn }) => {
   const [hasApiCategories, setHasApiCategories] = useState(false);
   const [categoryLoading, setCategoryLoading] = useState(false);
   const [categoryError, setCategoryError] = useState(null);
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   // Prevent background scroll when mobile filter modal is open
@@ -211,22 +209,7 @@ const HomePage = ({ isLoggedIn }) => {
     };
   }, [loadCategories]);
 
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return undefined;
-    }
 
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 240);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const loadProducts = useCallback(
     async ({ signal } = {}) => {
@@ -389,13 +372,6 @@ const HomePage = ({ isLoggedIn }) => {
 
   const handleLoadMoreItems = () => {
     setProductsLimit((previous) => previous + 24);
-  };
-
-  const handleScrollToTop = () => {
-    if (typeof window === "undefined") {
-      return;
-    }
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleSearchSubmit = (value) => {
@@ -1008,29 +984,6 @@ const HomePage = ({ isLoggedIn }) => {
           </div>
         </div>
       </main>
-      {showScrollTop && (
-        <button
-          type="button"
-          onClick={handleScrollToTop}
-          aria-label="Back to top"
-          className="fixed bottom-6 right-6 inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary-500/60 bg-primary-500 text-white shadow-[0_10px_30px_rgba(185,152,91,0.35)] transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutralc-200"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5"
-          >
-            <path d="M5 11l7-7 7 7" />
-            <path d="M12 18V4" />
-          </svg>
-        </button>
-      )}
-
     </div>
   );
 };

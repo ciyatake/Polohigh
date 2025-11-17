@@ -14,7 +14,7 @@ const CheckoutProgress = ({ steps }) => {
     >
       <ol className="grid gap-3 sm:gap-4 md:grid-cols-3">
         {steps.map((step, index) => {
-          const variant = statusStyles[step.status] ?? statusStyles.upcoming;
+          const variant = stepStyles[step.status] ?? stepStyles.upcoming;
           const isComplete = step.status === "complete";
           const isCurrent = step.status === "current";
 
