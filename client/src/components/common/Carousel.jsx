@@ -21,7 +21,7 @@ function ImageWithSkeleton({ slide, navigate }) {
     >
       {/* Skeleton Loader */}
       {!loaded && (
-        <div className="absolute top-0 left-0 w-full h-full bg-[#ececec] animate-pulse"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[var(--color-neutralc-200)] animate-pulse"></div>
       )}
 
       {/* Lazy Loaded Image */}

@@ -278,12 +278,12 @@ const Press = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-20 px-4">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-20 px-4">
         <a
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-black hover:shadow-xl hover:scale-105 group"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-neutralc-900 hover:shadow-xl hover:scale-105 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Home</span>
@@ -305,10 +305,10 @@ const Press = () => {
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-[#6b5847] mb-4">
+            <h2 className="text-4xl font-bold text-[var(--color-primary-700)] mb-4">
               Press Releases
             </h2>
-            <p className="text-[#8b7355] max-w-2xl mx-auto">
+            <p className="text-neutralc-900 max-w-2xl mx-auto">
               Stay updated with our latest announcements, product launches, and
               company milestones
             </p>
@@ -320,26 +320,26 @@ const Press = () => {
                 className="p-6 transition-shadow bg-white rounded-lg shadow-sm hover:shadow-md"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <span className="bg-[#f5f1ed] text-[#6b5847] px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-white text-[var(--color-primary-700)] px-3 py-1 rounded-full text-sm font-semibold">
                     {release.category}
                   </span>
-                  <div className="flex items-center text-[#8b7355] text-sm">
+                  <div className="flex items-center text-neutralc-900 text-sm">
                     <Calendar className="w-4 h-4 mr-1" />
                     {release.date}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-3">
                   {release.title}
                 </h3>
-                <p className="text-[#8b7355] mb-4 leading-relaxed">
+                <p className="text-neutralc-900 mb-4 leading-relaxed">
                   {release.summary}
                 </p>
                 <div className="flex gap-3">
-                  <button className="text-[#8b7355] hover:text-[#6b5847] font-semibold text-sm flex items-center gap-1 transition-colors">
+                  <button className="text-neutralc-900 hover:text-[var(--color-primary-700)] font-semibold text-sm flex items-center gap-1 transition-colors">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </button>
-                  <button className="text-[#8b7355] hover:text-[#6b5847] font-semibold text-sm flex items-center gap-1 transition-colors">
+                  <button className="text-neutralc-900 hover:text-[var(--color-primary-700)] font-semibold text-sm flex items-center gap-1 transition-colors">
                     <Download className="w-4 h-4" />
                     Download PDF
                   </button>
@@ -354,10 +354,10 @@ const Press = () => {
       <section className="px-4 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-[#6b5847] mb-4">
+            <h2 className="text-4xl font-bold text-[var(--color-primary-700)] mb-4">
               Media Mentions
             </h2>
-            <p className="text-[#8b7355] max-w-2xl mx-auto">
+            <p className="text-neutralc-900 max-w-2xl mx-auto">
               See what leading publications are saying about Polohigh
             </p>
           </div>
@@ -365,33 +365,33 @@ const Press = () => {
             {mediaMentions.map((mention) => (
               <div
                 key={mention.id}
-                className="bg-[#f5f1ed] p-6 rounded-lg hover:shadow-md transition-shadow"
+                className="bg-white p-6 rounded-lg hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <div className="text-4xl">{mention.logo}</div>
                     <div>
-                      <p className="font-semibold text-[#6b5847]">
+                      <p className="font-semibold text-[var(--color-primary-700)]">
                         {mention.publication}
                       </p>
-                      <p className="text-sm text-[#8b7355] flex items-center gap-1">
+                      <p className="text-sm text-neutralc-900 flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         {mention.date}
                       </p>
                     </div>
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-lg font-semibold text-[var(--color-primary-700)] mb-3">
                   {mention.articleTitle}
                 </h3>
-                <p className="text-[#8b7355] text-sm mb-4 leading-relaxed">
+                <p className="text-neutralc-900 text-sm mb-4 leading-relaxed">
                   {mention.excerpt}
                 </p>
                 <a
                   href={mention.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#8b7355] hover:text-[#6b5847] font-semibold text-sm flex items-center gap-1 transition-colors"
+                  className="text-neutralc-900 hover:text-[var(--color-primary-700)] font-semibold text-sm flex items-center gap-1 transition-colors"
                 >
                   Read Full Article
                   <ExternalLink className="w-4 h-4" />
@@ -406,10 +406,10 @@ const Press = () => {
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-[#6b5847] mb-4">
+            <h2 className="text-4xl font-bold text-[var(--color-primary-700)] mb-4">
               As Featured In
             </h2>
-            <p className="text-[#8b7355] max-w-2xl mx-auto">
+            <p className="text-neutralc-900 max-w-2xl mx-auto">
               Trusted and recognized by leading media outlets across India
             </p>
           </div>
@@ -420,7 +420,7 @@ const Press = () => {
                 className="flex flex-col items-center justify-center p-6 transition-shadow bg-white rounded-lg hover:shadow-md"
               >
                 <div className="mb-2 text-4xl">{logo.emoji}</div>
-                <p className="text-[#6b5847] text-sm font-semibold text-center">
+                <p className="text-[var(--color-primary-700)] text-sm font-semibold text-center">
                   {logo.name}
                 </p>
               </div>
@@ -433,19 +433,19 @@ const Press = () => {
       <section className="px-4 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
-            <Quote className="w-12 h-12 text-[#8b7355] mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-[#6b5847] mb-4">
+            <Quote className="w-12 h-12 text-neutralc-900 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold text-[var(--color-primary-700)] mb-4">
               What They're Saying
             </h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {quotes.map((quote, index) => (
-              <div key={index} className="bg-[#f5f1ed] p-8 rounded-lg relative">
-                <Quote className="w-8 h-8 text-[#8b7355] opacity-50 mb-4" />
-                <p className="text-[#6b5847] text-lg italic mb-6 leading-relaxed">
+              <div key={index} className="bg-white p-8 rounded-lg relative">
+                <Quote className="w-8 h-8 text-neutralc-900 opacity-50 mb-4" />
+                <p className="text-[var(--color-primary-700)] text-lg italic mb-6 leading-relaxed">
                   "{quote.text}"
                 </p>
-                <p className="text-[#8b7355] font-semibold">— {quote.source}</p>
+                <p className="text-neutralc-900 font-semibold">— {quote.source}</p>
               </div>
             ))}
           </div>
@@ -456,11 +456,11 @@ const Press = () => {
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
-            <Award className="w-12 h-12 text-[#8b7355] mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-[#6b5847] mb-4">
+            <Award className="w-12 h-12 text-neutralc-900 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold text-[var(--color-primary-700)] mb-4">
               Awards & Recognition
             </h2>
-            <p className="text-[#8b7355] max-w-2xl mx-auto">
+            <p className="text-neutralc-900 max-w-2xl mx-auto">
               Honored to be recognized for our commitment to excellence and
               innovation
             </p>
@@ -471,17 +471,17 @@ const Press = () => {
                 key={index}
                 className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-sm"
               >
-                <div className="bg-[#f5f1ed] p-3 rounded-lg flex-shrink-0">
-                  <Award className="w-8 h-8 text-[#8b7355]" />
+                <div className="bg-white p-3 rounded-lg flex-shrink-0">
+                  <Award className="w-8 h-8 text-neutralc-900" />
                 </div>
                 <div>
-                  <div className="text-sm text-[#8b7355] font-semibold mb-1">
+                  <div className="text-sm text-neutralc-900 font-semibold mb-1">
                     {award.year}
                   </div>
-                  <h3 className="text-xl font-semibold text-[#6b5847] mb-1">
+                  <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-1">
                     {award.title}
                   </h3>
-                  <p className="text-[#8b7355]">{award.organization}</p>
+                  <p className="text-neutralc-900">{award.organization}</p>
                 </div>
               </div>
             ))}
@@ -493,10 +493,10 @@ const Press = () => {
       <section className="px-4 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-[#6b5847] mb-4">
+            <h2 className="text-4xl font-bold text-[var(--color-primary-700)] mb-4">
               Media Kit & Resources
             </h2>
-            <p className="text-[#8b7355] max-w-2xl mx-auto">
+            <p className="text-neutralc-900 max-w-2xl mx-auto">
               Download our brand assets, company information, and
               high-resolution images for your coverage
             </p>
@@ -505,23 +505,23 @@ const Press = () => {
             {mediaResources.map((resource) => (
               <div
                 key={resource.id}
-                className="bg-[#f5f1ed] p-6 rounded-lg hover:shadow-md transition-shadow group"
+                className="bg-white p-6 rounded-lg hover:shadow-md transition-shadow group"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-3 bg-white rounded-lg">
-                    <resource.icon className="w-8 h-8 text-[#8b7355]" />
+                    <resource.icon className="w-8 h-8 text-neutralc-900" />
                   </div>
-                  <span className="text-sm text-[#8b7355] font-semibold">
+                  <span className="text-sm text-neutralc-900 font-semibold">
                     {resource.fileSize}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-2">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">
                   {resource.title}
                 </h3>
-                <p className="text-[#8b7355] text-sm mb-4">
+                <p className="text-neutralc-900 text-sm mb-4">
                   {resource.description}
                 </p>
-                <button className="bg-[#8b7355] text-white px-4 py-2 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-sm flex items-center gap-2 w-full justify-center group-hover:scale-105">
+                <button className="bg-neutralc-900 text-white px-4 py-2 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-sm flex items-center gap-2 w-full justify-center group-hover:scale-105">
                   <Download className="w-4 h-4" />
                   Download {resource.type}
                 </button>
@@ -529,7 +529,7 @@ const Press = () => {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <button className="bg-[#8b7355] text-white px-8 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg inline-flex items-center gap-2">
+            <button className="bg-neutralc-900 text-white px-8 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg inline-flex items-center gap-2">
               <Download className="w-5 h-5" />
               Download Complete Media Kit
             </button>
@@ -542,7 +542,7 @@ const Press = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Information */}
-            <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white p-8 rounded-lg">
+            <div className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white p-8 rounded-lg">
               <h2 className="mb-6 text-3xl font-bold">Media Contact</h2>
               <p className="mb-8 leading-relaxed opacity-90">
                 For press inquiries, interviews, or additional information,
@@ -603,20 +603,20 @@ const Press = () => {
 
             {/* Contact Form */}
             <div className="p-8 bg-white rounded-lg shadow-sm">
-              <h2 className="text-3xl font-bold text-[#6b5847] mb-2">
+              <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-2">
                 Media Inquiry Form
               </h2>
-              <p className="text-[#8b7355] mb-6">
+              <p className="text-neutralc-900 mb-6">
                 Send us your inquiry and we'll respond promptly
               </p>
 
               {submitted ? (
                 <div className="py-12 text-center">
                   <CheckCircle className="w-16 h-16 mx-auto mb-4 text-green-500" />
-                  <h3 className="text-2xl font-semibold text-[#6b5847] mb-2">
+                  <h3 className="text-2xl font-semibold text-[var(--color-primary-700)] mb-2">
                     Inquiry Received!
                   </h3>
-                  <p className="text-[#8b7355]">
+                  <p className="text-neutralc-900">
                     Thank you for your interest. Our media team will contact you
                     soon.
                   </p>
@@ -626,7 +626,7 @@ const Press = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Your Name *
                     </label>
@@ -637,7 +637,7 @@ const Press = () => {
                       required
                       value={contactForm.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="Full name"
                     />
                   </div>
@@ -645,7 +645,7 @@ const Press = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Email Address *
                     </label>
@@ -656,7 +656,7 @@ const Press = () => {
                       required
                       value={contactForm.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="your.email@publication.com"
                     />
                   </div>
@@ -664,7 +664,7 @@ const Press = () => {
                   <div>
                     <label
                       htmlFor="publication"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Publication / Organization *
                     </label>
@@ -675,7 +675,7 @@ const Press = () => {
                       required
                       value={contactForm.publication}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="Publication name"
                     />
                   </div>
@@ -683,7 +683,7 @@ const Press = () => {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Message *
                     </label>
@@ -694,14 +694,14 @@ const Press = () => {
                       value={contactForm.message}
                       onChange={handleInputChange}
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355] resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)] resize-none"
                       placeholder="Tell us about your inquiry..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#8b7355] text-white px-6 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg flex items-center justify-center gap-2"
+                    className="w-full bg-neutralc-900 text-white px-6 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
                   >
                     Submit Inquiry
                     <ArrowRight className="w-5 h-5" />
@@ -714,7 +714,7 @@ const Press = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <TrendingUp className="w-12 h-12 mx-auto mb-6" />
           <h2 className="mb-6 text-4xl font-bold">
@@ -728,12 +728,12 @@ const Press = () => {
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="mailto:media@Polohigh.com"
-              className="bg-white text-[#6b5847] px-8 py-4 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
+              className="bg-white text-[var(--color-primary-700)] px-8 py-4 rounded-lg hover:bg-white transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
             >
               <Mail className="w-5 h-5" />
               Email Media Team
             </a>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[#6b5847] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2">
+            <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[var(--color-primary-700)] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2">
               <Download className="w-5 h-5" />
               Download Media Kit
             </button>

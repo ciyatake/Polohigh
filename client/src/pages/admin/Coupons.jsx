@@ -93,7 +93,7 @@ const getStatusToken = (coupon) => {
   return {
     label: coupon.isActive ? "Active" : "Inactive",
     tone: coupon.isActive
-      ? "bg-[primary-100] text-[primary-700]"
+      ? "bg-primary-100 text-primary-700"
       : "bg-neutralc-200 text-neutralc-600",
   };
 };
@@ -401,7 +401,7 @@ const Coupons = () => {
     <div className="space-y-10">
       <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="space-y-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#c9b084]">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-primary-300)]">
             Promotions
           </p>
           <h1 className="text-3xl font-semibold text-neutralc-900">Coupons</h1>
@@ -413,14 +413,14 @@ const Coupons = () => {
           <button
             type="button"
             onClick={() => setShowCreateModal(true)}
-            className="rounded-full bg-[primary-500] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-[primary-700]"
+            className="rounded-full bg-primary-500 px-4 py-2 font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-primary-700"
           >
             New coupon
           </button>
           <button
             type="button"
             onClick={handleRefresh}
-            className="rounded-full border border-[#dec9a4] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-[primary-700] transition hover:border-[#cdae79] hover:text-[#6a542b]"
+            className="rounded-full border border-[var(--color-primary-200)] px-4 py-2 font-semibold uppercase tracking-[0.25em] text-primary-700 transition hover:border-[var(--color-primary-300)] hover:text-[var(--color-primary-800)]"
             disabled={isRefreshing || loading}
           >
             {isRefreshing ? "Refreshing..." : "Refresh"}
@@ -436,19 +436,19 @@ const Coupons = () => {
       </header>
 
       <section className="grid gap-4 md:grid-cols-4">
-        <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[primary-700]">
+        <div className="rounded-2xl border border-[var(--color-primary-200)] bg-[var(--color-primary-100)] px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700">
             Total coupons
           </p>
-          <p className="text-2xl font-semibold text-[#5c4a2c]">
+          <p className="text-2xl font-semibold text-[var(--color-primary-800)]">
             {metrics.total}
           </p>
         </div>
-        <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[primary-700]">
+        <div className="rounded-2xl border border-[var(--color-primary-200)] bg-[var(--color-primary-100)] px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700">
             Active now
           </p>
-          <p className="text-2xl font-semibold text-[#5c4a2c]">
+          <p className="text-2xl font-semibold text-[var(--color-primary-800)]">
             {metrics.active}
           </p>
         </div>
@@ -481,7 +481,7 @@ const Coupons = () => {
             onChange={(event) =>
               handleFilterChange("status", event.target.value)
             }
-            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-200)]"
           >
             {statusOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -497,7 +497,7 @@ const Coupons = () => {
             onChange={(event) =>
               handleFilterChange("discountType", event.target.value)
             }
-            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-200)]"
           >
             {discountTypeOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -513,7 +513,7 @@ const Coupons = () => {
             onChange={(event) =>
               handleFilterChange("campaignType", event.target.value)
             }
-            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+            className="rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-200)]"
           >
             {campaignTypeOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -530,11 +530,11 @@ const Coupons = () => {
               name="couponSearch"
               defaultValue={filters.search}
               placeholder="Search by code or description"
-              className="flex-1 rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e6dccb]"
+              className="flex-1 rounded-xl border border-neutralc-200 px-3 py-2 text-sm font-medium text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-200)]"
             />
             <button
               type="submit"
-              className="rounded-xl bg-[primary-500] px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[primary-700]"
+              className="rounded-xl bg-primary-500 px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-primary-700"
             >
               Search
             </button>
@@ -543,7 +543,7 @@ const Coupons = () => {
       </form>
 
       {actionMessage ? (
-        <div className="rounded-2xl border border-[#e6dccb] bg-[#f7f1e4] px-4 py-3 text-sm text-[primary-700]">
+        <div className="rounded-2xl border border-[var(--color-primary-200)] bg-[var(--color-primary-100)] px-4 py-3 text-sm text-primary-700">
           {actionMessage}
         </div>
       ) : null}
@@ -680,7 +680,7 @@ const Coupons = () => {
                           <button
                             type="button"
                             onClick={() => handleToggleStatus(coupon.id)}
-                            className="rounded-full border border-[#dec9a4] px-3 py-1 text-[primary-700] transition hover:border-[#cdae79] hover:text-[#6a542b]"
+                            className="rounded-full border border-[var(--color-primary-200)] px-3 py-1 text-primary-700 transition hover:border-[var(--color-primary-300)] hover:text-[var(--color-primary-800)]"
                           >
                             {coupon.isEnabled ? "Disable" : "Enable"}
                           </button>
@@ -961,7 +961,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutralc-900/60 p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="create-coupon-title"
@@ -969,11 +969,11 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl rounded-3xl border border-[#e6dccb] bg-white p-6 text-neutralc-900 shadow-2xl"
+        className="w-full max-w-2xl rounded-3xl border border-[var(--color-primary-200)] bg-white p-6 text-neutralc-900 shadow-2xl"
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[primary-500]">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary-500">
               New coupon
             </p>
             <h2
@@ -1003,7 +1003,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="code"
               value={formValues.code}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-neutralc-900 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               placeholder="SAVE25"
               required
             />
@@ -1015,7 +1015,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="campaignType"
               value={formValues.campaignType}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
             >
               {filteredCampaignOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -1031,7 +1031,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="description"
               value={formValues.description}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               rows={3}
               placeholder="Optional details customers should know"
             />
@@ -1043,7 +1043,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="discountType"
               value={formValues.discountType}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
             >
               {discountTypeOptions
                 .filter((option) => option.value !== "all")
@@ -1062,7 +1062,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="discountValue"
               value={formValues.discountValue}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb] disabled:cursor-not-allowed disabled:bg-neutralc-100"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)] disabled:cursor-not-allowed disabled:bg-neutralc-100"
               placeholder={discountDisabled ? "0" : "e.g. 20"}
               min="0"
               step="0.01"
@@ -1078,7 +1078,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="maxDiscount"
               value={formValues.maxDiscount}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               placeholder="Cap in INR"
               min="0"
               step="0.01"
@@ -1092,7 +1092,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="minOrderAmount"
               value={formValues.minOrderAmount}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               placeholder="Amount in INR"
               min="0"
               step="0.01"
@@ -1106,7 +1106,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="startDate"
               value={formValues.startDate}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               required
             />
           </label>
@@ -1118,7 +1118,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="endDate"
               value={formValues.endDate}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               required
             />
           </label>
@@ -1130,7 +1130,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="usageLimitTotal"
               value={formValues.usageLimitTotal}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               min="1"
             />
           </label>
@@ -1142,7 +1142,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="usageLimitPerUser"
               value={formValues.usageLimitPerUser}
               onChange={handleFieldChange}
-              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[#e6dccb]"
+              className="w-full rounded-2xl border border-neutralc-200 px-4 py-3 text-sm text-neutralc-600 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-[var(--color-primary-200)]"
               min="1"
             />
           </label>
@@ -1153,7 +1153,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
               name="isActive"
               checked={formValues.isActive}
               onChange={handleFieldChange}
-              className="h-4 w-4 rounded border-neutralc-200 text-[primary-500] focus:ring-[primary-500]"
+              className="h-4 w-4 rounded border-neutralc-200 text-primary-500 focus:ring-primary-500"
             />
             Enable coupon immediately
           </label>
@@ -1168,7 +1168,7 @@ const CreateCouponModal = ({ open, onClose, onSubmit }) => {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex min-w-[9rem] items-center justify-center rounded-full bg-[primary-500] px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white shadow-sm transition hover:bg-[primary-700] disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex min-w-[9rem] items-center justify-center rounded-full bg-primary-500 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white shadow-sm transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {saving ? "Creating..." : "Create coupon"}
           </button>

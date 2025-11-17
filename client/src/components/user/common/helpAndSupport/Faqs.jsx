@@ -24,33 +24,33 @@ const FAQSection = ({ title, icon, faqs }) => {
   };
 
   return (
-    <div className="p-6 mb-6 bg-white rounded-lg shadow-sm">
-      <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#8b7355]">
-        <div className="text-[#8b7355]">{icon}</div>
-        <h2 className="text-2xl font-semibold text-[#4a4a4a]">{title}</h2>
+    <div className="p-6 mb-6 bg-white rounded-lg shadow-sm border border-neutralc-200">
+      <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-neutralc-900">
+        <div className="text-neutralc-900">{icon}</div>
+        <h2 className="text-2xl font-semibold text-neutralc-900">{title}</h2>
       </div>
       <div className="space-y-3">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border border-[#e8e2db] rounded-lg overflow-hidden"
+            className="border border-neutralc-200 rounded-lg overflow-hidden"
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex items-center justify-between p-4 text-left hover:bg-[#faf8f6] transition-colors duration-200"
+              className="w-full flex items-center justify-between p-4 text-left hover:bg-neutralc-100 transition-colors duration-200"
             >
-              <span className="font-medium text-[#4a4a4a] pr-4">
+              <span className="font-medium text-neutralc-900 pr-4">
                 {faq.question}
               </span>
               {openIndex === index ? (
-                <ChevronUp className="w-5 h-5 text-[#8b7355] flex-shrink-0" />
+                <ChevronUp className="w-5 h-5 text-neutralc-900 flex-shrink-0" />
               ) : (
-                <ChevronDown className="w-5 h-5 text-[#8b7355] flex-shrink-0" />
+                <ChevronDown className="w-5 h-5 text-neutralc-900 flex-shrink-0" />
               )}
             </button>
             {openIndex === index && (
-              <div className="px-4 pb-4 pt-2 bg-[#faf8f6] border-t border-[#e8e2db]">
-                <p className="text-[#6b6b6b] leading-relaxed">{faq.answer}</p>
+              <div className="px-4 pb-4 pt-2 bg-neutralc-100 border-t border-neutralc-200">
+                <p className="text-neutralc-600 leading-relaxed">{faq.answer}</p>
               </div>
             )}
           </div>
@@ -255,12 +255,12 @@ const Faqs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-[#8b7355] text-white py-8 px-4 shadow-md">
+      <header className="bg-neutralc-900 text-white py-8 px-4 shadow-md border-b-2 border-white">
         <a
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-black hover:shadow-xl hover:scale-105 group"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:bg-white hover:text-neutralc-900 hover:shadow-xl hover:scale-105 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Home</span>
@@ -270,7 +270,7 @@ const Faqs = () => {
           <h1 className="mb-3 text-4xl font-bold">
             Frequently Asked Questions
           </h1>
-          <p className="text-[#f5f1ed] text-lg">
+          <p className="text-neutralc-400 text-lg">
             Quick answers to help you shop with confidence
           </p>
         </div>
@@ -278,8 +278,8 @@ const Faqs = () => {
 
       {/* Introduction */}
       <div className="max-w-5xl px-4 py-8 mx-auto">
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-8 border-l-4 border-[#8b7355]">
-          <p className="text-[#6b6b6b] leading-relaxed">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-8 border-l-4 border-neutralc-900">
+          <p className="text-neutralc-600 leading-relaxed">
             Welcome to Polohigh's FAQ page! We've compiled answers to the most
             common questions our customers ask. Whether you're curious about
             orders, shipping, returns, or anything else, you'll find helpful
@@ -338,36 +338,36 @@ const Faqs = () => {
         />
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white rounded-lg shadow-lg p-8 text-center">
+        <div className="bg-gradient-to-br from-black to-neutralc-800 text-white rounded-lg shadow-lg p-8 text-center border-2 border-white">
           <HeadphonesIcon className="w-12 h-12 mx-auto mb-4" />
           <h2 className="mb-3 text-2xl font-semibold">
             Didn't Find Your Answer?
           </h2>
-          <p className="text-[#f5f1ed] mb-6">
+          <p className="text-neutralc-300 mb-6">
             Our friendly support team is here to help you. Reach out anytime!
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="mailto:care@Polohigh.com"
-              className="bg-white text-[#8b7355] px-6 py-3 rounded-lg font-semibold hover:bg-[#f5f1ed] transition-colors duration-200"
+              className="bg-white text-neutralc-900 px-6 py-3 rounded-lg font-semibold hover:bg-neutralc-200 transition-colors duration-200"
             >
               Email: care@Polohigh.com
             </a>
             <a
               href="tel:+919876543210"
-              className="bg-white text-[#8b7355] px-6 py-3 rounded-lg font-semibold hover:bg-[#f5f1ed] transition-colors duration-200"
+              className="bg-white text-neutralc-900 px-6 py-3 rounded-lg font-semibold hover:bg-neutralc-200 transition-colors duration-200"
             >
               Call: +91 98765 43210
             </a>
           </div>
-          <p className="text-[#f5f1ed] text-sm mt-4">
+          <p className="text-neutralc-300 text-sm mt-4">
             Monday to Saturday, 9:00 AM - 6:00 PM IST
           </p>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#4a4a4a] text-[#d4cec7] py-8 px-4 mt-12">
+      <footer className="bg-neutralc-900 text-neutralc-400 py-8 px-4 mt-12 border-t border-neutralc-800">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-sm">© 2025 Polohigh. All rights reserved.</p>
           <p className="mt-2 text-sm">

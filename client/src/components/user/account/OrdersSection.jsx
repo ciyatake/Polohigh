@@ -21,7 +21,7 @@ const OrdersSection = ({ orders }) => {
           </p>
         </>
       ) : (
-        <div className="rounded-2xl border border-dashed border-[#c3dedd] bg-[primary-100] p-6 text-sm text-neutralc-600">
+        <div className="rounded-2xl border border-dashed border-[var(--color-primary-200)] bg-primary-100 p-6 text-sm text-neutralc-600">
           You haven&apos;t placed any orders yet. Once you do, they&apos;ll show
           up here for quick access.
         </div>

@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { formatINR } from "../../../utils/currency.js";
 
 const statusColors = {
-  active: "text-[#2f4a55] bg-[#c3dedd]",
-  expired: "text-[#8a4b3c] bg-[#F6C7B3]",
+  active: "text-[var(--color-primary-800)] bg-[var(--color-primary-200)]",
+  expired: "text-[var(--color-primary-700)] bg-[var(--color-primary-300)]",
   inactive: "text-neutralc-600 bg-primary-100",
 };
 
@@ -82,7 +82,7 @@ const CouponPanel = ({
           <p className="text-sm text-neutralc-600">Apply a coupon to save more.</p>
         </div>
         {appliedCoupon ? (
-          <span className="rounded-full border border-[#c3dedd] bg-[#c3dedd]/30 px-3 py-1 text-xs font-medium uppercase tracking-[0.25em] text-[#2f4a55]">
+          <span className="rounded-full border border-[var(--color-primary-200)] bg-[var(--color-primary-200)]/30 px-3 py-1 text-xs font-medium uppercase tracking-[0.25em] text-[var(--color-primary-800)]">
             {statusLabel}
           </span>
         ) : null}
@@ -125,10 +125,10 @@ const CouponPanel = ({
           </div>
         ) : null}
         {appliedCoupon ? (
-          <div className="rounded-xl border border-[#c3dedd] bg-[#c3dedd]/20 px-4 py-3 text-xs text-[#2f4a55]">
+          <div className="rounded-xl border border-[var(--color-primary-200)] bg-[var(--color-primary-200)]/20 px-4 py-3 text-xs text-[var(--color-primary-800)]">
             <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="space-y-1">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2f4a55]">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-primary-800)]">
                   Coupon applied
                 </p>
                 <div className="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.25em] text-neutralc-600">

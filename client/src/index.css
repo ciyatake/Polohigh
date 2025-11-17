@@ -21,9 +21,9 @@
 .shimmer {
   background-image: linear-gradient(
     90deg,
-    rgba(242, 234, 224, 0.4) 0%,
-    rgba(222, 201, 164, 0.6) 50%,
-    rgba(242, 234, 224, 0.4) 100%
+    rgba(232, 234, 237, 0.4) 0%,
+    rgba(176, 190, 197, 0.6) 50%,
+    rgba(232, 234, 237, 0.4) 100%
   );
   background-size: 200% 100%;
   animation: shimmer 1.6s ease-in-out infinite;
@@ -62,17 +62,20 @@
 
 
 @theme {
-  --color-primary-50:  #F9F6EF;
-  --color-primary-100: #F3EDE0;
-  --color-primary-300: #E8DFCF;
-  --color-primary-500: #B58A31;
-  --color-primary-700: #9A6F21;
+  --color-primary-50:  #f7f7f7;
+  --color-primary-100: #e8eaed;
+  --color-primary-300: #b0bec5;
+  --color-primary-500: #78909c;
+  --color-primary-700: #455a64;
+  --color-primary-900: #263238;
 
-  --color-neutralc-900: #3B3A37;
-  --color-neutralc-600: #5B5853;
-  --color-neutralc-400: #8C8983;
-  --color-neutralc-200: #E6E6E6;
-  --color-neutralc-100: #F5F5F5;
+  --color-neutralc-900: #263238;
+  --color-neutralc-800: #455a64;
+  --color-neutralc-600: #607d8b;
+  --color-neutralc-400: #90a4ae;
+  --color-neutralc-200: #e8eaed;
+  --color-neutralc-100: #f7f7f7;
+  --color-neutralc-50: #ffffff;
 
   --radius-lg: 20px;
   --radius-md: 14px;
@@ -84,5 +87,5 @@
 
 /* Optional global styles */
 body {
-  @apply bg-primary-50 text-neutralc-900 font-brand;
+  @apply bg-white text-neutralc-900 font-brand;
 }

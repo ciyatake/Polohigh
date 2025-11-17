@@ -480,9 +480,9 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-16 px-4">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Scale className="w-16 h-16" />
@@ -506,7 +506,7 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
               <a
                 key={section.id}
                 href={`#section-${section.id}`}
-                className="text-sm text-[#8b7355] hover:text-[#6b5847] hover:bg-[#f5f1ed] px-4 py-2 rounded-lg transition-colors"
+                className="text-sm text-neutralc-900 hover:text-[var(--color-primary-700)] hover:bg-white px-4 py-2 rounded-lg transition-colors"
               >
                 {section.title}
               </a>
@@ -521,9 +521,9 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
           <div className="grid gap-6 md:grid-cols-4">
             {quickFacts.map((fact, index) => (
               <div key={index} className="p-6 text-center bg-white rounded-lg">
-                <fact.icon className="w-10 h-10 text-[#8b7355] mx-auto mb-3" />
-                <h3 className="font-semibold text-[#6b5847] mb-2">{fact.title}</h3>
-                <p className="text-sm text-[#8b7355]">{fact.description}</p>
+                <fact.icon className="w-10 h-10 text-neutralc-900 mx-auto mb-3" />
+                <h3 className="font-semibold text-[var(--color-primary-700)] mb-2">{fact.title}</h3>
+                <p className="text-sm text-neutralc-900">{fact.description}</p>
               </div>
             ))}
           </div>
@@ -540,12 +540,12 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
               className="p-8 bg-white rounded-lg shadow-sm scroll-mt-24"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-[#f5f1ed] p-3 rounded-lg flex-shrink-0">
-                  <section.icon className="w-8 h-8 text-[#8b7355]" />
+                <div className="bg-white p-3 rounded-lg flex-shrink-0">
+                  <section.icon className="w-8 h-8 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-[#6b5847] mb-4">{section.title}</h2>
-                  <div className="text-[#6b5847] leading-relaxed whitespace-pre-line">
+                  <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-4">{section.title}</h2>
+                  <div className="text-[var(--color-primary-700)] leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 </div>
@@ -558,12 +558,12 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
       {/* Important Notice */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#fff3cd] border-l-4 border-[#8b7355] p-6 rounded-lg">
+          <div className="bg-[#fff3cd] border-l-4 border-[var(--color-primary-700)] p-6 rounded-lg">
             <div className="flex items-start gap-4">
-              <AlertTriangle className="w-8 h-8 text-[#8b7355] flex-shrink-0" />
+              <AlertTriangle className="w-8 h-8 text-neutralc-900 flex-shrink-0" />
               <div>
-                <h3 className="text-xl font-bold text-[#6b5847] mb-2">Important Notice</h3>
-                <p className="text-[#6b5847] leading-relaxed">
+                <h3 className="text-xl font-bold text-[var(--color-primary-700)] mb-2">Important Notice</h3>
+                <p className="text-[var(--color-primary-700)] leading-relaxed">
                   These Terms of Service constitute a legally binding agreement. By using Ciyatake, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree to these terms, please do not use our services. For any questions or concerns, please contact our legal team at legal@ciyatake.com.
                 </p>
               </div>
@@ -575,7 +575,7 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
       {/* Contact Section */}
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white p-8 rounded-lg text-center">
+          <div className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white p-8 rounded-lg text-center">
             <h2 className="mb-4 text-3xl font-bold">Questions About These Terms?</h2>
             <p className="mb-6 opacity-90">
               If you have any questions or concerns about these Terms of Service, please don't hesitate to contact us.
@@ -583,14 +583,14 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a
                 href="mailto:legal@ciyatake.com"
-                className="bg-white text-[#6b5847] px-6 py-3 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold inline-flex items-center justify-center gap-2"
+                className="bg-white text-[var(--color-primary-700)] px-6 py-3 rounded-lg hover:bg-white transition-colors font-semibold inline-flex items-center justify-center gap-2"
               >
                 <FileText className="w-5 h-5" />
                 legal@ciyatake.com
               </a>
               <a
                 href="mailto:care@ciyatake.com"
-                className="bg-transparent border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#6b5847] transition-colors font-semibold inline-flex items-center justify-center gap-2"
+                className="bg-transparent border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[var(--color-primary-700)] transition-colors font-semibold inline-flex items-center justify-center gap-2"
               >
                 <User className="w-5 h-5" />
                 Customer Service
@@ -603,7 +603,7 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
       {/* Footer Note */}
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#8b7355] text-sm">
+          <p className="text-neutralc-900 text-sm">
             By continuing to use Ciyatake, you acknowledge your acceptance of these Terms of Service and any future modifications.<br />
             This website is owned by Sudarshan Singh.
           </p>

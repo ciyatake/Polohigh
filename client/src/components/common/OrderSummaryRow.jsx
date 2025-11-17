@@ -4,7 +4,7 @@ const OrderSummaryRow = ({ label, value, emphasis = false }) => {
   }
 
   const valueClasses = emphasis
-    ? "text-lg font-semibold text-[primary-500]"
+    ? "text-lg font-semibold text-primary-500"
     : "text-neutralc-600";
 
   return (

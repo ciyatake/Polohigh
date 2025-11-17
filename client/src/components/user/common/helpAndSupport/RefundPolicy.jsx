@@ -17,20 +17,20 @@ const RefundPolicy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
 
       {/* Header */}
-      <header className="bg-[#8b7355] text-white py-6 px-4 shadow-md">
+      <header className="bg-neutralc-900 text-white py-6 px-4 shadow-md">
           <a
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-black hover:shadow-xl hover:scale-105 group"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-neutralc-900 hover:shadow-xl hover:scale-105 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Home</span>
         </a>
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold">Returns & Refund Policy</h1>
-          <p className="text-[#f5f1ed] mt-2">
+          <p className="text-[var(--color-primary-100)] mt-2">
             Clear, simple, and customer-friendly
           </p>
         </div>
@@ -39,14 +39,14 @@ const RefundPolicy = () => {
       {/* Main Content */}
       <main className="max-w-4xl px-4 py-12 mx-auto">
         {/* Introduction */}
-        <section className="bg-white rounded-lg shadow-sm p-8 mb-8 border-l-4 border-[#8b7355]">
+        <section className="bg-white rounded-lg shadow-sm p-8 mb-8 border-l-4 border-[var(--color-primary-700)]">
           <div className="flex items-start gap-4">
-            <ShieldCheck className="w-8 h-8 text-[#8b7355] flex-shrink-0 mt-1" />
+            <ShieldCheck className="w-8 h-8 text-neutralc-900 flex-shrink-0 mt-1" />
             <div>
-              <h2 className="text-2xl font-semibold text-[#4a4a4a] mb-4">
+              <h2 className="text-2xl font-semibold text-neutralc-900 mb-4">
                 Our Commitment to You
               </h2>
-              <p className="text-[#6b6b6b] leading-relaxed">
+              <p className="text-neutralc-600 leading-relaxed">
                 At Polohigh, your satisfaction is our priority. We understand
                 that sometimes products may not meet your expectations, and
                 we're here to make returns and refunds as smooth as possible.
@@ -60,37 +60,37 @@ const RefundPolicy = () => {
         {/* Eligibility for Returns */}
         <section className="p-8 mb-8 bg-white rounded-lg shadow-sm">
           <div className="flex items-start gap-4 mb-6">
-            <Package className="w-8 h-8 text-[#8b7355] flex-shrink-0" />
-            <h2 className="text-2xl font-semibold text-[#4a4a4a]">
+            <Package className="w-8 h-8 text-neutralc-900 flex-shrink-0" />
+            <h2 className="text-2xl font-semibold text-neutralc-900">
               Eligibility for Returns
             </h2>
           </div>
-          <p className="text-[#6b6b6b] mb-4">
+          <p className="text-neutralc-600 mb-4">
             We accept returns within <strong>10 days</strong> of delivery. To be
             eligible for a return, items must meet the following conditions:
           </p>
-          <ul className="space-y-3 text-[#6b6b6b] ml-6">
+          <ul className="space-y-3 text-neutralc-600 ml-6">
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 Item must be <strong>unused and unworn</strong>
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 All original tags, labels, and packaging must be intact
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 Product should be in its original condition with no signs of
                 wear or damage
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 Proof of purchase (order number or invoice) is required
               </span>
@@ -101,46 +101,45 @@ const RefundPolicy = () => {
         {/* Non-returnable Items */}
         <section className="p-8 mb-8 bg-white rounded-lg shadow-sm">
           <div className="flex items-start gap-4 mb-6">
-            <AlertCircle className="w-8 h-8 text-[#c17a5b] flex-shrink-0" />
-            <h2 className="text-2xl font-semibold text-[#4a4a4a]">
+            <AlertCircle className="w-8 h-8 text-[var(--color-primary-500)] flex-shrink-0" />
+            <h2 className="text-2xl font-semibold text-neutralc-900">
               Non-Returnable Items
             </h2>
           </div>
-          <p className="text-[#6b6b6b] mb-4">
+          <p className="text-neutralc-600 mb-4">
             For hygiene and quality reasons, the following items cannot be
             returned:
           </p>
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="bg-[#faf8f6] p-4 rounded-lg border border-[#e8e2db]">
-              <h3 className="font-semibold text-[#4a4a4a] mb-2">
-                Hygiene Products
+                        <div className="bg-neutralc-100 p-4 rounded-lg border border-neutralc-200">
+              <h3 className="font-semibold text-neutralc-900 mb-2">
+                Custom Orders
               </h3>
-              <p className="text-sm text-[#6b6b6b]">
-                Undergarments, swimwear, beauty products, and personal care
-                items
+              <p className="text-sm text-neutralc-600">
+                Personalized or made-to-order items are final sale
               </p>
             </div>
-            <div className="bg-[#faf8f6] p-4 rounded-lg border border-[#e8e2db]">
-              <h3 className="font-semibold text-[#4a4a4a] mb-2">
-                Customized Items
+            <div className="bg-neutralc-100 p-4 rounded-lg border border-neutralc-200">
+              <h3 className="font-semibold text-neutralc-900 mb-2">
+                Gift Cards
               </h3>
-              <p className="text-sm text-[#6b6b6b]">
+              <p className="text-sm text-neutralc-600">
                 Personalized or made-to-order products
               </p>
             </div>
-            <div className="bg-[#faf8f6] p-4 rounded-lg border border-[#e8e2db]">
-              <h3 className="font-semibold text-[#4a4a4a] mb-2">
+            <div className="bg-neutralc-50 p-4 rounded-lg border border-[var(--color-primary-200)]">
+              <h3 className="font-semibold text-neutralc-900 mb-2">
                 Digital Products
               </h3>
-              <p className="text-sm text-[#6b6b6b]">
+              <p className="text-sm text-neutralc-600">
                 Gift cards, downloadable content, or digital subscriptions
               </p>
             </div>
-            <div className="bg-[#faf8f6] p-4 rounded-lg border border-[#e8e2db]">
-              <h3 className="font-semibold text-[#4a4a4a] mb-2">
+            <div className="bg-neutralc-50 p-4 rounded-lg border border-[var(--color-primary-200)]">
+              <h3 className="font-semibold text-neutralc-900 mb-2">
                 Final Sale Items
               </h3>
-              <p className="text-sm text-[#6b6b6b]">
+              <p className="text-sm text-neutralc-600">
                 Products marked as clearance or final sale
               </p>
             </div>
@@ -150,26 +149,26 @@ const RefundPolicy = () => {
         {/* Refund Process */}
         <section className="p-8 mb-8 bg-white rounded-lg shadow-sm">
           <div className="flex items-start gap-4 mb-6">
-            <RefreshCw className="w-8 h-8 text-[#8b7355] flex-shrink-0" />
-            <h2 className="text-2xl font-semibold text-[#4a4a4a]">
+            <RefreshCw className="w-8 h-8 text-neutralc-900 flex-shrink-0" />
+            <h2 className="text-2xl font-semibold text-neutralc-900">
               How Refunds Work
             </h2>
           </div>
-          <p className="text-[#6b6b6b] mb-6">
+          <p className="text-neutralc-600 mb-6">
             Once we receive and inspect your returned item, we'll process your
             refund. Here's what to expect:
           </p>
 
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#8b7355] text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-10 h-10 bg-neutralc-900 text-white rounded-full flex items-center justify-center font-bold">
                 1
               </div>
               <div>
-                <h3 className="font-semibold text-[#4a4a4a] mb-2">
+                <h3 className="font-semibold text-neutralc-900 mb-2">
                   Initiate Return Request
                 </h3>
-                <p className="text-[#6b6b6b]">
+                <p className="text-neutralc-600">
                   Contact our support team with your order number and reason for
                   return
                 </p>
@@ -177,14 +176,14 @@ const RefundPolicy = () => {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#8b7355] text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-10 h-10 bg-neutralc-900 text-white rounded-full flex items-center justify-center font-bold">
                 2
               </div>
               <div>
-                <h3 className="font-semibold text-[#4a4a4a] mb-2">
-                  Ship the Item Back
+                <h3 className="font-semibold text-neutralc-900 mb-2">
+                  Pack the Item
                 </h3>
-                <p className="text-[#6b6b6b]">
+                <p className="text-neutralc-600">
                   Pack the item securely and send it to our returns address
                   (we'll provide pickup or shipping details)
                 </p>
@@ -192,14 +191,14 @@ const RefundPolicy = () => {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#8b7355] text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-10 h-10 bg-neutralc-900 text-white rounded-full flex items-center justify-center font-bold">
                 3
               </div>
               <div>
-                <h3 className="font-semibold text-[#4a4a4a] mb-2">
+                <h3 className="font-semibold text-neutralc-900 mb-2">
                   Inspection & Approval
                 </h3>
-                <p className="text-[#6b6b6b]">
+                <p className="text-neutralc-600">
                   We'll inspect the item within 2-3 business days of receiving
                   it
                 </p>
@@ -207,14 +206,14 @@ const RefundPolicy = () => {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#8b7355] text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-10 h-10 bg-neutralc-900 text-white rounded-full flex items-center justify-center font-bold">
                 4
               </div>
               <div>
-                <h3 className="font-semibold text-[#4a4a4a] mb-2">
-                  Refund Processed
+                <h3 className="font-semibold text-neutralc-900 mb-2">
+                  Receive Your Refund
                 </h3>
-                <p className="text-[#6b6b6b]">
+                <p className="text-neutralc-600">
                   Your refund will be processed within{" "}
                   <strong>5-7 business days</strong> to your original payment
                   method
@@ -223,11 +222,11 @@ const RefundPolicy = () => {
             </div>
           </div>
 
-          <div className="mt-6 bg-[#faf8f6] p-4 rounded-lg border border-[#e8e2db]">
-            <p className="text-sm text-[#6b6b6b]">
-              <strong>Note:</strong> Depending on your bank or card issuer, it
-              may take an additional 2-5 business days for the refund to appear
-              in your account.
+                    <div className="mt-6 bg-neutralc-100 p-4 rounded-lg border border-neutralc-200">
+            <p className="text-sm text-neutralc-600">
+              <strong className="text-neutralc-900">Note:</strong> Refund processing time may vary depending on
+              your bank or payment provider. Most refunds are completed within
+              5-7 business days.
             </p>
           </div>
         </section>
@@ -235,38 +234,38 @@ const RefundPolicy = () => {
         {/* Exchange Policy */}
         <section className="p-8 mb-8 bg-white rounded-lg shadow-sm">
           <div className="flex items-start gap-4 mb-6">
-            <RefreshCw className="w-8 h-8 text-[#8b7355] flex-shrink-0" />
-            <h2 className="text-2xl font-semibold text-[#4a4a4a]">
+            <RefreshCw className="w-8 h-8 text-neutralc-900 flex-shrink-0" />
+            <h2 className="text-2xl font-semibold text-neutralc-900">
               Exchange Policy
             </h2>
           </div>
-          <p className="text-[#6b6b6b] mb-4">
+          <p className="text-neutralc-600 mb-4">
             We're happy to exchange items in the following situations:
           </p>
-          <ul className="space-y-3 text-[#6b6b6b] ml-6 mb-6">
+          <ul className="space-y-3 text-neutralc-600 ml-6 mb-6">
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 <strong>Defective or damaged items:</strong> We'll replace them
                 at no extra cost
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 <strong>Wrong size or color:</strong> Exchange for the correct
                 variant (subject to availability)
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#8b7355] font-bold mt-1">•</span>
+              <span className="text-neutralc-900 font-bold mt-1">•</span>
               <span>
                 <strong>Incorrect item shipped:</strong> We'll send the right
                 product immediately
               </span>
             </li>
           </ul>
-          <p className="text-[#6b6b6b]">
+          <p className="text-neutralc-600">
             Exchanges follow the same timeline as returns. If the replacement
             item is unavailable, we'll process a full refund instead.
           </p>
@@ -275,18 +274,18 @@ const RefundPolicy = () => {
         {/* Return Pickup & Shipping */}
         <section className="p-8 mb-8 bg-white rounded-lg shadow-sm">
           <div className="flex items-start gap-4 mb-6">
-            <Truck className="w-8 h-8 text-[#8b7355] flex-shrink-0" />
-            <h2 className="text-2xl font-semibold text-[#4a4a4a]">
+            <Truck className="w-8 h-8 text-neutralc-900 flex-shrink-0" />
+            <h2 className="text-2xl font-semibold text-neutralc-900">
               Return Pickup & Shipping
             </h2>
           </div>
 
           <div className="space-y-4">
-            <div className="bg-[#e8f5e9] border-l-4 border-[#66bb6a] p-4 rounded-r-lg">
-              <h3 className="font-semibold text-[#2e7d32] mb-2">
+            <div className="bg-[var(--color-primary-100)] border-l-4 border-[var(--color-primary-500)] p-4 rounded-r-lg">
+              <h3 className="font-semibold text-[var(--color-primary-700)] mb-2">
                 Free Reverse Pickup
               </h3>
-              <p className="text-[#6b6b6b]">
+              <p className="text-neutralc-600">
                 For most locations, we offer{" "}
                 <strong>free reverse pickup</strong> for returns. Our courier
                 partner will collect the package from your address at a
@@ -294,11 +293,11 @@ const RefundPolicy = () => {
               </p>
             </div>
 
-            <div className="bg-[#fff8e1] border-l-4 border-[#ffa726] p-4 rounded-r-lg">
-              <h3 className="font-semibold text-[#e65100] mb-2">
-                Self-Ship Option
+                        <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+              <h3 className="font-semibold text-orange-800 mb-2">
+                Customer-Paid Shipping
               </h3>
-              <p className="text-[#6b6b6b]">
+              <p className="text-neutralc-600">
                 If pickup service is unavailable in your area, you can ship the
                 item back to us. In this case, shipping charges may apply unless
                 the return is due to a defect or error on our part.
@@ -308,11 +307,11 @@ const RefundPolicy = () => {
         </section>
 
         {/* Contact Information */}
-        <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white rounded-lg shadow-lg p-8 mb-8">
+        <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="mb-6 text-2xl font-semibold">
             Need Help with Your Return?
           </h2>
-          <p className="mb-6 text-[#f5f1ed]">
+          <p className="mb-6 text-[var(--color-primary-100)]">
             Our customer support team is here to assist you. Reach out to us
             through any of the following channels:
           </p>
@@ -322,7 +321,7 @@ const RefundPolicy = () => {
               <Mail className="flex-shrink-0 w-6 h-6 mt-1" />
               <div>
                 <h3 className="mb-1 font-semibold">Email</h3>
-                <p className="text-[#f5f1ed] text-sm">care@Polohigh.com</p>
+                <p className="text-[var(--color-primary-100)] text-sm">care@Polohigh.com</p>
               </div>
             </div>
 
@@ -330,7 +329,7 @@ const RefundPolicy = () => {
               <Phone className="flex-shrink-0 w-6 h-6 mt-1" />
               <div>
                 <h3 className="mb-1 font-semibold">Phone</h3>
-                <p className="text-[#f5f1ed] text-sm">+91 98765 43210</p>
+                <p className="text-[var(--color-primary-100)] text-sm">+91 98765 43210</p>
               </div>
             </div>
 
@@ -338,7 +337,7 @@ const RefundPolicy = () => {
               <Clock className="flex-shrink-0 w-6 h-6 mt-1" />
               <div>
                 <h3 className="mb-1 font-semibold">Working Hours</h3>
-                <p className="text-[#f5f1ed] text-sm">
+                <p className="text-[var(--color-primary-100)] text-sm">
                   Mon-Sat: 9:00 AM - 6:00 PM IST
                 </p>
               </div>
@@ -347,8 +346,8 @@ const RefundPolicy = () => {
         </section>
 
         {/* Policy Update Note */}
-        <section className="bg-white rounded-lg shadow-sm p-6 mb-8 border border-[#e8e2db]">
-          <p className="text-sm text-[#6b6b6b] text-center">
+        <section className="bg-white rounded-lg shadow-sm p-6 mb-8 border border-[var(--color-primary-200)]">
+          <p className="text-sm text-neutralc-600 text-center">
             <strong>Policy Updates:</strong> We reserve the right to update this
             Returns & Refund Policy at any time. Changes will be effective
             immediately upon posting on our website. Last updated: October 2025.
@@ -357,14 +356,14 @@ const RefundPolicy = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="bg-[#8b7355] hover:bg-[#6b5847] text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+          <button className="bg-neutralc-900 hover:bg-neutralc-800 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
             Start a Return Request
           </button>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#4a4a4a] text-[#d4cec7] py-8 px-4 mt-12">
+      <footer className="bg-neutralc-900 text-neutralc-400 py-8 px-4 mt-12 border-t border-neutralc-800">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm">© 2025 Polohigh. All rights reserved.</p>
           <p className="mt-2 text-sm">

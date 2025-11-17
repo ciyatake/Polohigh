@@ -51,10 +51,10 @@ const RATING_OPTIONS = [
 ];
 
 const FilterSection = ({ title, children, isOpen, onToggle }) => (
-  <div className="border-b border-[neutralc-200] pb-4 last:border-b-0">
+  <div className="border-b border-neutralc-200 pb-4 last:border-b-0">
     <button
       onClick={onToggle}
-      className="flex w-full items-center justify-between py-3 text-left text-sm font-semibold text-neutralc-600 transition-colors hover:text-[primary-500]"
+      className="flex w-full items-center justify-between py-3 text-left text-sm font-semibold text-neutralc-600 transition-colors hover:text-primary-500"
     >
       {title}
       <svg
@@ -216,14 +216,14 @@ const AdvancedFilters = ({
   return (
     <div className="w-full lg:w-80">
       <div className="sticky top-4">
-        <div className="rounded-xl border border-[neutralc-200] bg-white shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
-          <div className="border-b border-[neutralc-200] p-6">
+        <div className="rounded-xl border border-neutralc-200 bg-white shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
+          <div className="border-b border-neutralc-200 p-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-[primary-500]">FILTERS</h2>
+              <h2 className="text-lg font-bold text-primary-500">FILTERS</h2>
               {hasActiveFilters && (
                 <button
                   onClick={onClearFilters}
-                  className="text-sm font-medium text-[primary-500] transition-colors hover:text-[primary-700]"
+                  className="text-sm font-medium text-primary-500 transition-colors hover:text-primary-700"
                 >
                   Clear All
                 </button>
@@ -241,8 +241,8 @@ const AdvancedFilters = ({
                 onClick={() => onClearFilters()}
                 className={`w-full rounded-lg py-3 px-4 text-left font-semibold transition-all ${
                   !hasActiveFilters
-                    ? "bg-[primary-500] text-white shadow-md hover:bg-[primary-700]"
-                    : "bg-[primary-100] text-[primary-500] hover:bg-[neutralc-200]"
+                    ? "bg-primary-500 text-white shadow-md hover:bg-primary-700"
+                    : "bg-primary-100 text-primary-500 hover:bg-neutralc-200"
                 }`}
               >
                 All Products
@@ -267,9 +267,9 @@ const AdvancedFilters = ({
                       value={gender.value}
                       checked={filters.gender === gender.value}
                       onChange={(e) => updateFilter("gender", e.target.value)}
-                      className="mr-3 h-4 w-4 cursor-pointer border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                      className="mr-3 h-4 w-4 cursor-pointer border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                       {gender.label}
                     </span>
                   </label>
@@ -284,7 +284,7 @@ const AdvancedFilters = ({
               onToggle={() => toggleSection("category")}
             >
               {loadingCategories ? (
-                <p className="text-sm text-[primary-500]">Loading categories...</p>
+                <p className="text-sm text-primary-500">Loading categories...</p>
               ) : (
                 <div className="space-y-2">
                   <label className="flex items-center cursor-pointer group">
@@ -294,9 +294,9 @@ const AdvancedFilters = ({
                       value="all"
                       checked={filters.category === "all"}
                       onChange={(e) => updateFilter("category", e.target.value)}
-                      className="mr-3 h-4 w-4 cursor-pointer border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                      className="mr-3 h-4 w-4 cursor-pointer border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                       All Categories
                     </span>
                   </label>
@@ -313,9 +313,9 @@ const AdvancedFilters = ({
                         onChange={(e) =>
                           updateFilter("category", e.target.value)
                         }
-                        className="mr-3 h-4 w-4 cursor-pointer border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                        className="mr-3 h-4 w-4 cursor-pointer border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                       />
-                      <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                      <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                         {category.label}
                       </span>
                     </label>
@@ -343,9 +343,9 @@ const AdvancedFilters = ({
                         onChange={(e) =>
                           updateFilter("subcategory", e.target.value)
                         }
-                        className="mr-3 h-4 w-4 cursor-pointer border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                        className="mr-3 h-4 w-4 cursor-pointer border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                       />
-                      <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                      <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                         All Subcategories
                       </span>
                     </label>
@@ -362,9 +362,9 @@ const AdvancedFilters = ({
                           onChange={(e) =>
                             updateFilter("subcategory", e.target.value)
                           }
-                          className="mr-3 h-4 w-4 cursor-pointer border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                          className="mr-3 h-4 w-4 cursor-pointer border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                         />
-                        <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                        <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                           {subcategory.label}
                         </span>
                       </label>
@@ -386,8 +386,8 @@ const AdvancedFilters = ({
                     onClick={() => toggleArrayFilter("colors", color.name)}
                     className={`group relative flex h-12 w-12 items-center justify-center rounded-lg border-2 transition-all hover:scale-105 ${
                       filters.colors?.includes(color.name)
-                        ? "border-[primary-500] ring-2 ring-[primary-500]/30"
-                        : "border-[neutralc-200] hover:border-[primary-500]/60"
+                        ? "border-primary-500 ring-2 ring-primary-500/30"
+                        : "border-neutralc-200 hover:border-primary-500/60"
                     }`}
                     title={
                       color.name.charAt(0).toUpperCase() + color.name.slice(1)
@@ -396,8 +396,8 @@ const AdvancedFilters = ({
                     <div
                       className={`h-8 w-8 rounded-md ${
                         color.name === "white"
-                          ? "border-2 border-[neutralc-200]"
-                          : "border border-[neutralc-200]"
+                          ? "border-2 border-neutralc-200"
+                          : "border border-neutralc-200"
                       }`}
                       style={{ backgroundColor: color.hex }}
                     />
@@ -436,8 +436,8 @@ const AdvancedFilters = ({
                     onClick={() => toggleArrayFilter("sizes", size)}
                     className={`rounded-lg border py-2.5 px-3 text-sm font-semibold transition-all hover:scale-105 ${
                       filters.sizes?.includes(size)
-                        ? "border-[primary-500] bg-[primary-500]/10 text-[primary-500] shadow-sm"
-                        : "border-[neutralc-200] text-neutralc-600 hover:border-[primary-500] hover:bg-[primary-100]"
+                        ? "border-primary-500 bg-primary-500/10 text-primary-500 shadow-sm"
+                        : "border-neutralc-200 text-neutralc-600 hover:border-primary-500 hover:bg-primary-100"
                     }`}
                   >
                     {size}
@@ -480,9 +480,9 @@ const AdvancedFilters = ({
                           );
                         }
                       }}
-                      className="mr-3 h-4 w-4 cursor-pointer rounded border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                      className="mr-3 h-4 w-4 cursor-pointer rounded border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                       {range.label}
                     </span>
                   </label>
@@ -510,9 +510,9 @@ const AdvancedFilters = ({
                       onChange={(e) =>
                         updateFilter("minRating", Number(e.target.value))
                       }
-                      className="mr-3 h-4 w-4 cursor-pointer border-[neutralc-200] bg-white text-[primary-500] focus:ring-[primary-500]"
+                      className="mr-3 h-4 w-4 cursor-pointer border-neutralc-200 bg-white text-primary-500 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-[primary-500]">
+                    <span className="text-sm text-neutralc-600 transition-colors group-hover:text-primary-500">
                       {rating.label}
                     </span>
                   </label>

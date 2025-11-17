@@ -47,7 +47,7 @@ const RichTextEditor = ({
   };
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-neutralc-200 focus-within:border-[primary-500] focus-within:ring-2 focus-within:ring-[primary-500]/20">
+    <div className="overflow-hidden rounded-2xl border border-neutralc-200 focus-within:border-primary-500 focus-within:ring-2 focus-within:ring-primary-500/20">
       <div className="flex items-center justify-between gap-2 border-b border-neutralc-200 bg-neutralc-100 px-3 py-2">
         <div className="flex items-center gap-1">
           {TOOLBAR_ACTIONS.map((tool) => (
@@ -69,7 +69,7 @@ const RichTextEditor = ({
           onClick={() => setPreview((prev) => !prev)}
           className={`rounded-lg px-3 py-1 text-xs font-medium transition ${
             preview
-              ? "bg-[primary-100] text-[primary-700]"
+              ? "bg-primary-100 text-primary-700"
               : "text-neutralc-600 hover:bg-neutralc-200"
           }`}
         >

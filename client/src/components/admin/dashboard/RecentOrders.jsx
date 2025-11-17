@@ -9,7 +9,7 @@ const statusClassMap = {
   packed: "bg-neutralc-200 text-neutralc-600",
   shipped: "bg-blue-100 text-blue-700",
   "out-for-delivery": "bg-indigo-100 text-indigo-700",
-  delivered: "bg-[#e6f1e6] text-[#4f7a5a]",
+  delivered: "bg-[var(--color-primary-100)] text-[var(--color-primary-700)]",
   cancelled: "bg-rose-100 text-rose-700",
   refunded: "bg-neutralc-200 text-neutralc-600",
 };
@@ -83,11 +83,11 @@ const RecentOrders = () => {
   }, []);
 
   return (
-    <section className="flex-1 rounded-2xl border border-[#e6dccb] bg-white shadow-xl">
-      <header className="flex items-center justify-between border-b border-[#e6dccb] bg-[primary-500] px-6 py-4 text-white">
+    <section className="flex-1 rounded-2xl border border-[var(--color-primary-200)] bg-white shadow-xl">
+      <header className="flex items-center justify-between border-b border-[var(--color-primary-200)] bg-primary-500 px-6 py-4 text-white">
         <div>
           <h3 className="text-lg font-semibold">Recent Orders</h3>
-          <p className="text-sm text-[#f5e8d3]">
+          <p className="text-sm text-[var(--color-primary-100)]">
             Latest orders awaiting action
           </p>
         </div>
@@ -96,8 +96,8 @@ const RecentOrders = () => {
         </span>
       </header>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-[primary-100] text-left text-sm text-neutralc-600">
-          <thead className="bg-[primary-100] text-xs font-semibold uppercase tracking-wide text-[primary-700]">
+        <table className="min-w-full divide-y divide-primary-100 text-left text-sm text-neutralc-600">
+          <thead className="bg-primary-100 text-xs font-semibold uppercase tracking-wide text-primary-700">
             <tr>
               <th className="px-6 py-3">Order ID</th>
               <th className="px-6 py-3">Customer</th>
@@ -105,7 +105,7 @@ const RecentOrders = () => {
               <th className="px-6 py-3">Status</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[primary-100]">
+          <tbody className="divide-y divide-primary-100">
             {error ? (
               <tr>
                 <td
@@ -119,7 +119,7 @@ const RecentOrders = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="px-6 py-6 text-center text-sm text-[primary-700]"
+                  className="px-6 py-6 text-center text-sm text-primary-700"
                 >
                   Loading orders...
                 </td>
@@ -128,9 +128,9 @@ const RecentOrders = () => {
               orders.map((order, index) => (
                 <tr
                   key={order.id ?? order.orderNumber ?? `recent-order-${index}`}
-                  className="hover:bg-[primary-100]"
+                  className="hover:bg-primary-100"
                 >
-                  <td className="px-6 py-4 font-semibold text-[primary-700]">
+                  <td className="px-6 py-4 font-semibold text-primary-700">
                     {order.orderNumber || order.id || "—"}
                     {typeof order.grandTotal === "number" && (
                       <div className="text-xs font-normal text-neutralc-400">

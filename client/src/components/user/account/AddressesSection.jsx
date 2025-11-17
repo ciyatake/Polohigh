@@ -3,7 +3,7 @@ import AddressCard from "./AddressCard.jsx";
 
 const toneClassMap = {
   info: "text-neutralc-600",
-  success: "text-[#4f7a7f]",
+  success: "text-[var(--color-primary-700)]",
   error: "text-rose-500",
 };
 
@@ -29,7 +29,7 @@ const AddressesSection = ({
       description="Manage where you want your orders to arrive."
     >
       {loading ? (
-        <div className="rounded-2xl border border-[neutralc-200] bg-[primary-100] p-6 text-sm text-neutralc-600">
+        <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-6 text-sm text-neutralc-600">
           Loading your addresses...
         </div>
       ) : error ? (
@@ -61,7 +61,7 @@ const AddressesSection = ({
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-[#c3dedd] bg-[#F6C7B3]/20 p-6 text-sm text-neutralc-600">
+        <div className="rounded-2xl border border-dashed border-[var(--color-primary-200)] bg-[var(--color-primary-300)]/20 p-6 text-sm text-neutralc-600">
           Add a shipping address to speed up checkout.
         </div>
       )}

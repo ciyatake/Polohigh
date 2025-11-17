@@ -410,7 +410,7 @@ const CartPage = ({ isLoggedIn = false }) => {
         />
 
         <header className="space-y-2">
-          <h1 className="text-3xl font-semibold text-[primary-500] md:text-4xl">
+          <h1 className="text-3xl font-semibold text-primary-500 md:text-4xl">
             Shopping Cart
           </h1>
           <p className="text-sm text-neutralc-600">
@@ -435,7 +435,7 @@ const CartPage = ({ isLoggedIn = false }) => {
               Array.from({ length: 3 }).map((_, index) => (
                 <div
                   key={`cart-item-skeleton-${index}`}
-                  className="rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm"
+                  className="rounded-3xl border border-neutralc-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex flex-col gap-4 sm:flex-row">
                     <Skeleton
@@ -478,14 +478,14 @@ const CartPage = ({ isLoggedIn = false }) => {
                 ) : null}
               </>
             ) : (
-              <div className="rounded-3xl border border-dashed border-[neutralc-200] bg-[neutralc-200]/40 p-10 text-center text-sm text-neutralc-600">
+              <div className="rounded-3xl border border-dashed border-neutralc-200 bg-neutralc-200/40 p-10 text-center text-sm text-neutralc-600">
                 Your cart is empty. Browse products to add them here.
               </div>
             )}
           </div>
 
           {isInitialCartLoad ? (
-            <div className="space-y-4 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-sm">
+            <div className="space-y-4 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-sm">
               <Skeleton className="h-5 w-32" />
               <Skeleton className="h-4 w-24" />
               <Skeleton className="h-4 w-28" />
@@ -528,10 +528,10 @@ const CartPage = ({ isLoggedIn = false }) => {
           </div>
         ) : null}
 
-        <section className="rounded-3xl border border-[neutralc-200] bg-[primary-100] p-6 shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
+        <section className="rounded-3xl border border-neutralc-200 bg-primary-100 p-6 shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-[primary-500]">
+              <h2 className="text-xl font-semibold text-primary-500">
                 Saved for later
               </h2>
               <p className="text-sm text-neutralc-600">
@@ -539,7 +539,7 @@ const CartPage = ({ isLoggedIn = false }) => {
               </p>
             </div>
             {savedItems.length ? (
-              <span className="rounded-full border border-[primary-500] px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-[primary-500]">
+              <span className="rounded-full border border-primary-500 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-primary-500">
                 {savedItems.length} item{savedItems.length > 1 ? "s" : ""}
               </span>
             ) : null}
@@ -550,7 +550,7 @@ const CartPage = ({ isLoggedIn = false }) => {
               Array.from({ length: 2 }).map((_, index) => (
                 <div
                   key={`saved-item-skeleton-${index}`}
-                  className="rounded-2xl border border-[neutralc-200] bg-white p-6 shadow-sm"
+                  className="rounded-2xl border border-neutralc-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-center gap-4">
                     <Skeleton
@@ -578,7 +578,7 @@ const CartPage = ({ isLoggedIn = false }) => {
                 />
               ))
             ) : (
-              <div className="rounded-2xl border border-dashed border-[neutralc-200] bg-white p-8 text-center text-sm text-neutralc-600">
+              <div className="rounded-2xl border border-dashed border-neutralc-200 bg-white p-8 text-center text-sm text-neutralc-600">
                 No items saved for later yet. Tap "Save for later" on any
                 product to add it here.
               </div>

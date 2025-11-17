@@ -18,8 +18,8 @@ const formatDate = (value) => {
 };
 
 const statusStyles = {
-  approved: "bg-[#c3dedd] text-[#2f4a55]",
-  pending: "bg-[#F6C7B3] text-[#8a4b3c]",
+  approved: "bg-[var(--color-primary-200)] text-[var(--color-primary-800)]",
+  pending: "bg-[var(--color-primary-300)] text-[var(--color-primary-700)]",
   rejected: "bg-rose-100 text-rose-600",
 };
 
@@ -35,12 +35,12 @@ const MyReviewsSection = ({
 }) => {
   const renderReview = (review) => {
     const statusStyle =
-      statusStyles[review.status] ?? "bg-[neutralc-200] text-neutralc-600";
+      statusStyles[review.status] ?? "bg-neutralc-200 text-neutralc-600";
 
     return (
       <article
         key={review.id}
-        className="rounded-3xl border border-[neutralc-200] bg-white p-5 shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
+        className="rounded-3xl border border-neutralc-200 bg-white p-5 shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
       >
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="space-y-3">
@@ -71,7 +71,7 @@ const MyReviewsSection = ({
                 {review.status}
               </span>
               {review.isVerifiedPurchase ? (
-                <span className="rounded-full border border-[primary-500]/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[primary-500]">
+                <span className="rounded-full border border-primary-500/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary-500">
                   Verified purchase
                 </span>
               ) : null}
@@ -99,7 +99,7 @@ const MyReviewsSection = ({
             </p>
 
             {review.adminResponse?.message ? (
-              <div className="rounded-2xl border border-[neutralc-200] bg-[primary-100] p-3 text-xs text-neutralc-600">
+              <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-3 text-xs text-neutralc-600">
                 <p className="font-semibold text-neutralc-900">Ciyatake team</p>
                 <p className="mt-1 leading-relaxed">
                   {review.adminResponse.message}
@@ -119,7 +119,7 @@ const MyReviewsSection = ({
             <button
               type="button"
               onClick={() => onEdit?.(review)}
-              className="rounded-full border border-[primary-500] px-3 py-1 transition hover:bg-[primary-500] hover:text-white"
+              className="rounded-full border border-primary-500 px-3 py-1 transition hover:bg-primary-500 hover:text-white"
             >
               Edit review
             </button>
@@ -137,7 +137,7 @@ const MyReviewsSection = ({
   };
 
   return (
-    <section className="rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
+    <section className="rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-neutralc-400">
@@ -150,7 +150,7 @@ const MyReviewsSection = ({
         <button
           type="button"
           onClick={onRefresh}
-          className="rounded-full border border-[primary-500] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
+          className="rounded-full border border-primary-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
         >
           Refresh
         </button>
@@ -161,7 +161,7 @@ const MyReviewsSection = ({
           {Array.from({ length: 2 }).map((_, index) => (
             <div
               key={index}
-              className="animate-pulse rounded-3xl border border-[neutralc-200] bg-[primary-100]/70 p-5"
+              className="animate-pulse rounded-3xl border border-neutralc-200 bg-primary-100/70 p-5"
             >
               <div className="mb-3 h-4 w-1/4 rounded bg-white/60" />
               <div className="mb-2 h-4 rounded bg-white/60" />
@@ -185,7 +185,7 @@ const MyReviewsSection = ({
       ) : null}
 
       {!loading && !error && !reviews.length ? (
-        <div className="mt-6 rounded-3xl border border-dashed border-[#c3dedd] bg-[primary-100] p-6 text-center text-sm text-neutralc-600">
+        <div className="mt-6 rounded-3xl border border-dashed border-[var(--color-primary-200)] bg-primary-100 p-6 text-center text-sm text-neutralc-600">
           You haven't shared any reviews yet. Head to a product page to write
           one.
         </div>
@@ -201,7 +201,7 @@ const MyReviewsSection = ({
             type="button"
             onClick={onLoadMore}
             disabled={loading}
-            className="inline-flex items-center justify-center rounded-full border border-[primary-500] px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex items-center justify-center rounded-full border border-primary-500 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? "Loading..." : "Load more"}
           </button>

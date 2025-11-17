@@ -425,7 +425,7 @@ const ProductSummary = ({
           className={`rounded-2xl border px-4 py-3 text-sm ${
             actionStatus.status === "error"
               ? "border-rose-200 bg-rose-50 text-rose-600"
-              : "border-[#c3dedd] bg-[#c3dedd]/20 text-[#2f4a55]"
+              : "border-[var(--color-primary-200)] bg-[var(--color-primary-200)]/20 text-[var(--color-primary-800)]"
           }`}
         >
           {actionStatus.message}

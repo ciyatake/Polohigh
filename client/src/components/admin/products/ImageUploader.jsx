@@ -79,8 +79,8 @@ const ImageUploader = ({
       <div
         className={`rounded-2xl border-2 border-dashed px-6 py-8 text-center transition ${
           dragActive
-            ? "border-[primary-500] bg-[primary-100]"
-            : "border-neutralc-200 hover:border-[#cdae79] hover:bg-[primary-100]/70"
+            ? "border-primary-500 bg-primary-100"
+            : "border-neutralc-200 hover:border-[var(--color-primary-300)] hover:bg-primary-100/70"
         } ${canAddMore ? "cursor-pointer" : "cursor-not-allowed opacity-70"}`}
         onClick={() =>
           canAddMore ? document.getElementById(inputId)?.click() : undefined
@@ -97,7 +97,7 @@ const ImageUploader = ({
         }}
         onDrop={canAddMore ? handleDrop : undefined}
       >
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[primary-100] text-[primary-700]">
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-700">
           <svg
             className="h-6 w-6"
             viewBox="0 0 24 24"
@@ -143,7 +143,7 @@ const ImageUploader = ({
               key={image.id}
               className={`group relative overflow-hidden rounded-2xl border bg-white shadow-sm transition ${
                 primaryImageIndex === index
-                  ? "border-[primary-500]"
+                  ? "border-primary-500"
                   : "border-neutralc-200"
               }`}
             >
@@ -154,12 +154,12 @@ const ImageUploader = ({
               />
 
               {primaryImageIndex === index ? (
-                <span className="absolute left-3 top-3 rounded-full bg-[primary-500]/90 px-3 py-1 text-xs font-semibold text-white shadow">
+                <span className="absolute left-3 top-3 rounded-full bg-primary-500/90 px-3 py-1 text-xs font-semibold text-white shadow">
                   Primary
                 </span>
               ) : null}
 
-              <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 transition group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-center justify-center gap-2 bg-neutralc-900/50 opacity-0 transition group-hover:opacity-100">
                 {primaryImageIndex !== index ? (
                   <button
                     type="button"

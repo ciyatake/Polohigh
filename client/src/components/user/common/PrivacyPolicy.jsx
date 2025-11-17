@@ -324,9 +324,9 @@ We encourage you to review this privacy policy regularly to stay informed about 
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-16 px-4">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Shield className="w-16 h-16" />
@@ -350,7 +350,7 @@ We encourage you to review this privacy policy regularly to stay informed about 
               <a
                 key={section.id}
                 href={`#section-${section.id}`}
-                className="text-sm text-[#8b7355] hover:text-[#6b5847] hover:bg-[#f5f1ed] px-4 py-2 rounded-lg transition-colors"
+                className="text-sm text-neutralc-900 hover:text-[var(--color-primary-700)] hover:bg-white px-4 py-2 rounded-lg transition-colors"
               >
                 {section.title}
               </a>
@@ -369,12 +369,12 @@ We encourage you to review this privacy policy regularly to stay informed about 
               className="p-8 bg-white rounded-lg shadow-sm scroll-mt-24"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-[#f5f1ed] p-3 rounded-lg flex-shrink-0">
-                  <section.icon className="w-8 h-8 text-[#8b7355]" />
+                <div className="bg-white p-3 rounded-lg flex-shrink-0">
+                  <section.icon className="w-8 h-8 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-[#6b5847] mb-4">{section.title}</h2>
-                  <div className="text-[#6b5847] leading-relaxed whitespace-pre-line">
+                  <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-4">{section.title}</h2>
+                  <div className="text-[var(--color-primary-700)] leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 </div>
@@ -387,33 +387,33 @@ We encourage you to review this privacy policy regularly to stay informed about 
       {/* Key Points Summary */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#6b5847] text-center mb-12">Key Privacy Points</h2>
+          <h2 className="text-3xl font-bold text-[var(--color-primary-700)] text-center mb-12">Key Privacy Points</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">We Protect Your Data</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">We Protect Your Data</h3>
+              <p className="text-neutralc-900">
                 Industry-standard security measures, encryption, and secure servers to safeguard your information.
               </p>
             </div>
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Transparent Practices</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Transparent Practices</h3>
+              <p className="text-neutralc-900">
                 Clear information about what data we collect, how we use it, and who we share it with.
               </p>
             </div>
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Your Control</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Your Control</h3>
+              <p className="text-neutralc-900">
                 You can access, update, or delete your data anytime. Exercise your privacy rights easily.
               </p>
             </div>
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">No Data Selling</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">No Data Selling</h3>
+              <p className="text-neutralc-900">
                 We never sell your personal information to third parties for marketing purposes.
               </p>
             </div>
@@ -424,7 +424,7 @@ We encourage you to review this privacy policy regularly to stay informed about 
       {/* Contact Section */}
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white p-8 rounded-lg">
+          <div className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white p-8 rounded-lg">
             <h2 className="mb-4 text-3xl font-bold text-center">Questions About Privacy?</h2>
             <p className="mb-8 text-center opacity-90">
               If you have questions or concerns about this privacy policy or our data practices, please contact us:
@@ -455,7 +455,7 @@ We encourage you to review this privacy policy regularly to stay informed about 
       {/* Footer Note */}
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#8b7355] text-sm">
+          <p className="text-neutralc-900 text-sm">
             By using Ciyatake, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
           </p>
         </div>

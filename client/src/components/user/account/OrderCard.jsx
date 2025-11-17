@@ -5,18 +5,18 @@ import { formatDate, formatDateTime } from "./accountUtils.js";
 const getTimelineIndicatorClasses = (status) => {
   switch (status) {
     case "complete":
-      return "bg-[primary-700] border-[primary-700]";
+      return "bg-primary-700 border-primary-700";
     case "current":
-      return "bg-[primary-500] border-[primary-500]";
+      return "bg-primary-500 border-primary-500";
     default:
-      return "bg-white border-[neutralc-200]";
+      return "bg-white border-neutralc-200";
   }
 };
 
 const OrderTimeline = ({ timeline }) => {
   if (!Array.isArray(timeline) || !timeline.length) {
     return (
-      <p className="rounded-lg border border-dashed border-[neutralc-200] bg-[primary-100] px-3 py-2 text-xs text-neutralc-600">
+      <p className="rounded-lg border border-dashed border-neutralc-200 bg-primary-100 px-3 py-2 text-xs text-neutralc-600">
         Tracking updates will appear here once your order moves to the next
         step.
       </p>
@@ -36,14 +36,14 @@ const OrderTimeline = ({ timeline }) => {
             className="relative pl-6"
           >
             {index !== timeline.length - 1 ? (
-              <span className="absolute left-[6px] top-3 h-full w-px bg-[#E6DCCB]" />
+              <span className="absolute left-[6px] top-3 h-full w-px bg-[var(--color-primary-200)]" />
             ) : null}
             <span
               className={`absolute left-0 top-[6px] h-3 w-3 rounded-full border ${getTimelineIndicatorClasses(
                 tone
               )}`}
             />
-            <div className="space-y-1 rounded-lg border border-[primary-100] bg-white px-3 py-2 shadow-sm">
+            <div className="space-y-1 rounded-lg border border-primary-100 bg-white px-3 py-2 shadow-sm">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-neutralc-400">
                   {entry.title || "Update"}
@@ -113,11 +113,11 @@ const OrderCard = ({ order }) => {
   );
   const returnMailto = `mailto:support@ciyatake.com?subject=${returnSubject}`;
   const returnButtonClasses = order.returnEligible
-    ? "border-[primary-500] text-[primary-500] hover:bg-[primary-500] hover:text-white"
-    : "border-[neutralc-200] text-neutralc-400 pointer-events-none";
+    ? "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white"
+    : "border-neutralc-200 text-neutralc-400 pointer-events-none";
 
   return (
-    <div className="rounded-2xl border border-[neutralc-200] bg-white p-5 shadow-[0_18px_36px_rgba(15,23,42,0.08)] transition hover:border-[primary-500]/60">
+    <div className="rounded-2xl border border-neutralc-200 bg-white p-5 shadow-[0_18px_36px_rgba(15,23,42,0.08)] transition hover:border-primary-500/60">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-neutralc-900">
@@ -172,7 +172,7 @@ const OrderCard = ({ order }) => {
           </div>
         </div>
         <div className="space-y-3">
-          <div className="rounded-xl border border-[primary-100] bg-[#Fefbf6] px-4 py-3 text-sm text-neutralc-600">
+          <div className="rounded-xl border border-primary-100 bg-[var(--color-primary-50)] px-4 py-3 text-sm text-neutralc-600">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Tracking details
             </p>
@@ -195,7 +195,7 @@ const OrderCard = ({ order }) => {
           </div>
 
           {order.shipping ? (
-            <div className="rounded-xl border border-[primary-100] bg-[#Fefbf6] px-4 py-3 text-sm text-neutralc-600">
+            <div className="rounded-xl border border-primary-100 bg-[var(--color-primary-50)] px-4 py-3 text-sm text-neutralc-600">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
                 Ship to
               </p>
@@ -212,7 +212,7 @@ const OrderCard = ({ order }) => {
             </div>
           ) : null}
 
-          <div className="rounded-xl border border-[primary-100] bg-[#f9f1e3] px-4 py-3 text-sm text-neutralc-600">
+          <div className="rounded-xl border border-primary-100 bg-[var(--color-primary-100)] px-4 py-3 text-sm text-neutralc-600">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
               Returns
             </p>

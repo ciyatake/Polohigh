@@ -12,9 +12,9 @@ import { fetchOrderById } from "../../api/orders.js";
 
 const StatusBadge = ({ status }) => {
   const styles = {
-    complete: "bg-[primary-500]/15 text-[primary-500] border-[primary-500]/40",
-    current: "bg-[neutralc-200] text-[primary-500] border-[primary-500]/40",
-    upcoming: "bg-white text-neutralc-400 border-[neutralc-200]",
+    complete: "bg-primary-500/15 text-primary-500 border-primary-500/40",
+    current: "bg-neutralc-200 text-primary-500 border-primary-500/40",
+    upcoming: "bg-white text-neutralc-400 border-neutralc-200",
   };
 
   return (
@@ -38,23 +38,23 @@ const TimelineStep = ({ step, index, isLast }) => (
       <div
         className={`flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold ${
           step.status === "complete"
-            ? "border-[primary-500]/60 bg-[primary-500]/15 text-[primary-500]"
+            ? "border-primary-500/60 bg-primary-500/15 text-primary-500"
             : step.status === "current"
-            ? "border-[primary-500]/60 bg-[primary-100] text-[primary-500]"
-            : "border-[neutralc-200] bg-white text-neutralc-400"
+            ? "border-primary-500/60 bg-primary-100 text-primary-500"
+            : "border-neutralc-200 bg-white text-neutralc-400"
         }`}
       >
         {index + 1}
       </div>
       {isLast ? null : (
         <div
-          className="mt-1 h-full w-px flex-1 bg-gradient-to-b from-[neutralc-200] to-transparent"
+          className="mt-1 h-full w-px flex-1 bg-gradient-to-b from-neutralc-200 to-transparent"
           aria-hidden
         />
       )}
     </div>
     <div className="space-y-1">
-      <h3 className="text-sm font-semibold text-[primary-500]">{step.title}</h3>
+      <h3 className="text-sm font-semibold text-primary-500">{step.title}</h3>
       <p className="text-xs text-neutralc-400">{step.description}</p>
       <StatusBadge status={step.status} />
     </div>
@@ -62,9 +62,9 @@ const TimelineStep = ({ step, index, isLast }) => (
 );
 
 const InfoBlock = ({ title, children, description }) => (
-  <section className="space-y-4 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
+  <section className="space-y-4 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
     <header className="space-y-1">
-      <h2 className="text-lg font-semibold text-[primary-500]">{title}</h2>
+      <h2 className="text-lg font-semibold text-primary-500">{title}</h2>
       {description ? (
         <p className="text-sm text-neutralc-600">{description}</p>
       ) : null}
@@ -207,7 +207,7 @@ const ConfirmationPage = () => {
         />
 
         {isInitialConfirmationLoad ? (
-          <section className="space-y-6 rounded-3xl border border-[neutralc-200] bg-white p-8 shadow-[0_26px_60px_rgba(0,0,0,0.1)]">
+          <section className="space-y-6 rounded-3xl border border-neutralc-200 bg-white p-8 shadow-[0_26px_60px_rgba(0,0,0,0.1)]">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-4">
                 <Skeleton className="h-14 w-14 rounded-full" rounded={false} />
@@ -218,7 +218,7 @@ const ConfirmationPage = () => {
                   <Skeleton className="h-4 w-56 max-w-full" />
                 </div>
               </div>
-              <div className="space-y-3 rounded-3xl border border-[primary-500]/40 bg-[primary-100] p-4">
+              <div className="space-y-3 rounded-3xl border border-primary-500/40 bg-primary-100 p-4">
                 <Skeleton className="h-3 w-20 rounded-full" rounded={false} />
                 <Skeleton className="h-6 w-40" />
                 <Skeleton className="h-3 w-32 rounded-full" rounded={false} />
@@ -238,17 +238,17 @@ const ConfirmationPage = () => {
             </button>
           </section>
         ) : (
-          <section className="space-y-6 rounded-3xl border border-[neutralc-200] bg-white p-8 shadow-[0_26px_60px_rgba(0,0,0,0.1)]">
+          <section className="space-y-6 rounded-3xl border border-neutralc-200 bg-white p-8 shadow-[0_26px_60px_rgba(0,0,0,0.1)]">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[primary-500]/15 text-3xl text-[primary-500] shadow-inner">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-500/15 text-3xl text-primary-500 shadow-inner">
                   ✓
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-neutralc-400">
                     Order confirmed
                   </p>
-                  <h1 className="text-3xl font-semibold text-[primary-500] md:text-4xl">
+                  <h1 className="text-3xl font-semibold text-primary-500 md:text-4xl">
                     Thank you, {greetingName}! Your order is on its way.
                   </h1>
                   <p className="text-sm text-neutralc-600">
@@ -259,11 +259,11 @@ const ConfirmationPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="rounded-3xl border border-[primary-500]/40 bg-[primary-100] p-4 text-sm text-[primary-500]">
+              <div className="rounded-3xl border border-primary-500/40 bg-primary-100 p-4 text-sm text-primary-500">
                 <p className="text-xs uppercase tracking-[0.3em] text-neutralc-400">
                   Order ID
                 </p>
-                <p className="mt-1 text-xl font-semibold text-[primary-500]">
+                <p className="mt-1 text-xl font-semibold text-primary-500">
                   {order.id}
                 </p>
                 {placedOnLabel ? (
@@ -274,7 +274,7 @@ const ConfirmationPage = () => {
                 {order.transactionId ? (
                   <p className="mt-3 text-xs text-neutralc-400">
                     Transaction ID:{" "}
-                    <span className="text-[primary-500]">
+                    <span className="text-primary-500">
                       {order.transactionId}
                     </span>
                   </p>
@@ -288,7 +288,7 @@ const ConfirmationPage = () => {
           {isInitialConfirmationLoad ? (
             <>
               <div className="space-y-6">
-                <div className="space-y-5 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
+                <div className="space-y-5 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
                   <Skeleton className="h-5 w-40" />
                   <Skeleton className="h-4 w-64" />
                   <div className="space-y-5">
@@ -314,7 +314,7 @@ const ConfirmationPage = () => {
                   </div>
                 </div>
 
-                <div className="space-y-4 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
+                <div className="space-y-4 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
                   <Skeleton className="h-5 w-48" />
                   <Skeleton className="h-4 w-64" />
                   <div className="grid gap-6 sm:grid-cols-2">
@@ -339,14 +339,14 @@ const ConfirmationPage = () => {
                   />
                 </div>
 
-                <div className="space-y-3 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
+                <div className="space-y-3 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
                   <Skeleton className="h-5 w-40" />
                   <Skeleton className="h-4 w-56" />
                   <Skeleton className="h-9 w-40 rounded-full" rounded={false} />
                 </div>
               </div>
 
-              <aside className="space-y-6 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+              <aside className="space-y-6 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
                 <div className="space-y-2">
                   <Skeleton className="h-3 w-28 rounded-full" rounded={false} />
                   <Skeleton className="h-5 w-40" />
@@ -355,7 +355,7 @@ const ConfirmationPage = () => {
                   {Array.from({ length: 2 }).map((_, index) => (
                     <div
                       key={`confirmation-item-skeleton-${index}`}
-                      className="space-y-3 rounded-2xl border border-[neutralc-200] p-4"
+                      className="space-y-3 rounded-2xl border border-neutralc-200 p-4"
                     >
                       <Skeleton className="h-4 w-3/4" />
                       <Skeleton className="h-3 w-2/3" />
@@ -363,7 +363,7 @@ const ConfirmationPage = () => {
                     </div>
                   ))}
                 </div>
-                <div className="space-y-3 border-t border-[neutralc-200] pt-4">
+                <div className="space-y-3 border-t border-neutralc-200 pt-4">
                   {Array.from({ length: 3 }).map((_, index) => (
                     <div
                       key={`confirmation-summary-skeleton-${index}`}
@@ -433,7 +433,7 @@ const ConfirmationPage = () => {
                         Shipping address
                       </p>
                       <div className="space-y-1 text-sm text-neutralc-600">
-                        <p className="font-semibold text-[primary-500]">
+                        <p className="font-semibold text-primary-500">
                           {customer.name}
                         </p>
                         {shipping.addressLines?.map((line) => (
@@ -452,9 +452,9 @@ const ConfirmationPage = () => {
                           "Pending"}
                       </p>
                       {order.placedOn ? (
-                        <div className="rounded-2xl border border-[neutralc-200] bg-[primary-100] p-4 text-xs text-neutralc-600">
+                        <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-4 text-xs text-neutralc-600">
                           The receipt has been sent to{" "}
-                          <span className="text-[primary-500]">
+                          <span className="text-primary-500">
                             {customer.email}
                           </span>
                           .
@@ -464,7 +464,7 @@ const ConfirmationPage = () => {
                   </div>
 
                   {shipping.instructions ? (
-                    <div className="rounded-2xl border border-dashed border-[primary-500]/40 bg-[primary-100] p-4 text-xs text-neutralc-600">
+                    <div className="rounded-2xl border border-dashed border-primary-500/40 bg-primary-100 p-4 text-xs text-neutralc-600">
                       Delivery note: {shipping.instructions}
                     </div>
                   ) : null}
@@ -477,13 +477,13 @@ const ConfirmationPage = () => {
                   <div className="space-y-3 text-sm text-neutralc-600">
                     <p>
                       Email us at{" "}
-                      <span className="text-[primary-500]">{support.email}</span> or
+                      <span className="text-primary-500">{support.email}</span> or
                       call {support.phone} if there's anything you need.
                     </p>
                     <button
                       type="button"
                       onClick={handleEmailSupport}
-                      className="inline-flex items-center gap-2 rounded-full border border-[primary-500]/50 bg-[primary-500]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[primary-500] transition hover:border-[primary-500] hover:bg-[primary-500]/20"
+                      className="inline-flex items-center gap-2 rounded-full border border-primary-500/50 bg-primary-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary-500 transition hover:border-primary-500 hover:bg-primary-500/20"
                     >
                       Contact support
                       <img
@@ -497,12 +497,12 @@ const ConfirmationPage = () => {
                 </InfoBlock>
               </div>
 
-              <aside className="space-y-6 rounded-3xl border border-[neutralc-200] bg-white p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+              <aside className="space-y-6 rounded-3xl border border-neutralc-200 bg-white p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
                 <header className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-neutralc-400">
                     Order details
                   </p>
-                  <h2 className="text-lg font-semibold text-[primary-500]">
+                  <h2 className="text-lg font-semibold text-primary-500">
                     Items in this order
                   </h2>
                 </header>
@@ -513,7 +513,7 @@ const ConfirmationPage = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3 border-t border-[neutralc-200] pt-4 text-sm text-neutralc-600">
+                <div className="space-y-3 border-t border-neutralc-200 pt-4 text-sm text-neutralc-600">
                   <OrderSummaryRow
                     label="Subtotal"
                     value={formatINR(subtotal)}
@@ -531,7 +531,7 @@ const ConfirmationPage = () => {
                   <button
                     type="button"
                     onClick={handleContinueShopping}
-                    className="flex w-full items-center justify-center gap-2 rounded-full bg-[primary-500] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[primary-700]"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-primary-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-700"
                   >
                     Continue shopping
                     <img
@@ -544,7 +544,7 @@ const ConfirmationPage = () => {
                   <button
                     type="button"
                     onClick={handleEmailSupport}
-                    className="flex w-full items-center justify-center gap-2 rounded-full border border-[neutralc-200] px-5 py-3 text-sm font-semibold text-[primary-500] transition hover:bg-[primary-100]"
+                    className="flex w-full items-center justify-center gap-2 rounded-full border border-neutralc-200 px-5 py-3 text-sm font-semibold text-primary-500 transition hover:bg-primary-100"
                   >
                     Need help with this order?
                   </button>
@@ -553,7 +553,7 @@ const ConfirmationPage = () => {
                 {order.transactionId ? (
                   <p className="text-center text-[0.7rem] text-neutralc-400">
                     Payment reference{" "}
-                    <span className="text-[primary-500]">
+                    <span className="text-primary-500">
                       {order.transactionId}
                     </span>
                   </p>

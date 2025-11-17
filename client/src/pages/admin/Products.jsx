@@ -374,7 +374,7 @@ const Products = () => {
         <div className="flex flex-wrap gap-3">
           <Link
             to="/admin/products/upload"
-            className="inline-flex items-center gap-2 rounded-xl bg-[primary-500] px-6 py-3 font-medium text-white shadow-lg shadow-[primary-500]/30 transition hover:bg-[primary-700] hover:shadow-xl"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-6 py-3 font-medium text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-700 hover:shadow-xl"
           >
             <svg
               className="h-5 w-5"
@@ -395,7 +395,7 @@ const Products = () => {
           <button
             type="button"
             onClick={openCreateDrawer}
-            className="inline-flex items-center gap-2 rounded-xl border border-[#dec9a4] bg-white px-4 py-3 font-medium text-[primary-700] shadow-sm transition hover:border-[#cdae79] hover:text-[#6a542b] hover:shadow"
+            className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 font-medium text-primary-700 shadow-sm transition hover:border-[var(--color-primary-300)] hover:text-[var(--color-primary-800)] hover:shadow"
           >
             <svg
               className="h-5 w-5"
@@ -455,16 +455,16 @@ const Products = () => {
           className={`rounded-2xl border p-4 text-sm shadow-sm ${
             actionNotice.type === "error"
               ? "border-rose-200 bg-rose-50 text-rose-700"
-              : "border-[#e6dccb] bg-[#f7f1e4] text-[primary-700]"
+              : "border-[var(--color-primary-200)] bg-[var(--color-primary-100)] text-primary-700"
           }`}
         >
           {actionNotice.message}
         </div>
       ) : null}
 
-      <div className="overflow-hidden rounded-2xl border border-[#e6dccb] bg-white shadow-sm">
-        <div className="border-b border-[#e6dccb] bg-gradient-to-r from-[#f9f4e8] to-[#f4ead7] px-6 py-4">
-          <h3 className="text-lg font-semibold text-[#5c4a2c]">
+      <div className="overflow-hidden rounded-2xl border border-[var(--color-primary-200)] bg-white shadow-sm">
+        <div className="border-b border-[var(--color-primary-200)] bg-gradient-to-r from-[var(--color-primary-50)] to-[var(--color-primary-100)] px-6 py-4">
+          <h3 className="text-lg font-semibold text-[var(--color-primary-800)]">
             Product catalog
           </h3>
         </div>
@@ -537,10 +537,10 @@ const Products = () => {
 const MetricCard = ({ label, value, tone = "gold", icon = "box" }) => {
   const tones = {
     gold: {
-      background: "from-[#fbf4e6] to-[#f2e3c8]",
-      border: "border-[#e6dccb]",
-      icon: "text-[primary-500]",
-      badge: "bg-[#f2e3c8] text-[primary-700]",
+      background: "from-[#fbf4e6] to-[var(--color-primary-100)]",
+      border: "border-[var(--color-primary-200)]",
+      icon: "text-primary-500",
+      badge: "bg-[var(--color-primary-100)] text-primary-700",
     },
     blue: {
       background: "from-blue-50 to-blue-100/50",
@@ -615,7 +615,7 @@ const ProductCard = ({
 }) => {
   if (loading) {
     return (
-      <div className="animate-pulse rounded-xl border border-[#e6dccb]/70 bg-gradient-to-br from-white to-[#f6eedb]/40 p-5">
+      <div className="animate-pulse rounded-xl border border-[var(--color-primary-200)]/70 bg-gradient-to-br from-white to-[var(--color-primary-100)]/40 p-5">
         <div className="mb-4 h-32 w-full rounded-lg bg-neutralc-200" />
         <div className="mb-2 h-4 rounded bg-neutralc-200" />
         <div className="mb-4 h-3 w-3/5 rounded bg-neutralc-200" />
@@ -635,7 +635,7 @@ const ProductCard = ({
   const statusIsActive = product.status === "Active";
 
   return (
-    <div className="group rounded-xl border border-[#e6dccb] bg-gradient-to-br from-white to-[#f6eedb]/50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+    <div className="group rounded-xl border border-[var(--color-primary-200)] bg-gradient-to-br from-white to-[var(--color-primary-100)]/50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <div className="relative mb-4 overflow-hidden rounded-lg bg-neutralc-100">
         <div className="aspect-square">
           <img
@@ -649,12 +649,12 @@ const ProductCard = ({
         </div>
         <span
           className={`absolute left-4 top-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-white shadow ${
-            statusIsActive ? "bg-[primary-500]" : "bg-neutralc-400"
+            statusIsActive ? "bg-primary-500" : "bg-neutralc-400"
           }`}
         >
           <span
             className={`h-2 w-2 rounded-full ${
-              statusIsActive ? "bg-[#f2e3c8]" : "bg-neutralc-200"
+              statusIsActive ? "bg-[var(--color-primary-100)]" : "bg-neutralc-200"
             }`}
           />
           {product.status}
@@ -666,14 +666,14 @@ const ProductCard = ({
           <h3 className="text-lg font-semibold text-neutralc-900">
             {product.name}
           </h3>
-          <p className="text-sm text-[primary-700]">{product.category}</p>
+          <p className="text-sm text-primary-700">{product.category}</p>
         </div>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div>
               <p className="text-xs text-neutralc-400">Price</p>
-              <p className="font-semibold text-[primary-700]">
+              <p className="font-semibold text-primary-700">
                 {formatPrice(product.price)}
               </p>
             </div>
@@ -695,8 +695,8 @@ const ProductCard = ({
             type="button"
             onClick={onToggle}
             disabled={isBusy}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition focus:outline-none focus:ring-2 focus:ring-[primary-500] focus:ring-offset-2 ${
-              statusIsActive ? "bg-[primary-500]" : "bg-neutralc-200"
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+              statusIsActive ? "bg-primary-500" : "bg-neutralc-200"
             } ${isBusy ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
           >
             <span
@@ -734,8 +734,8 @@ const ActionButton = ({
   busy = false,
 }) => {
   const variants = {
-    default: "border border-[#dec9a4] text-[primary-700] hover:bg-[primary-100]",
-    primary: "bg-[primary-500] text-white hover:bg-[primary-700]",
+    default: "border border-[var(--color-primary-200)] text-primary-700 hover:bg-primary-100",
+    primary: "bg-primary-500 text-white hover:bg-primary-700",
     danger: "border border-red-200 text-red-600 hover:bg-red-50",
   };
 
@@ -759,7 +759,7 @@ const Spinner = () => (
 );
 
 const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-neutralc-900/50 p-4">
     <div className="w-full max-w-md rounded-2xl border border-neutralc-200 bg-white p-6 shadow-2xl">
       <div className="mb-4 flex items-center gap-3">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
@@ -834,7 +834,7 @@ const DeleteModal = ({ product, busy, onCancel, onConfirm }) => (
 );
 
 const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-neutralc-900/50 p-4">
     <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-neutralc-200 bg-white shadow-2xl">
       <header className="flex items-center justify-between border-b border-neutralc-200 bg-white px-6 py-4">
         <h3 className="text-xl font-semibold text-neutralc-900">
@@ -876,13 +876,13 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
           <span
             className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium ${
               product.status === "Active"
-                ? "bg-[primary-100] text-[primary-700]"
+                ? "bg-primary-100 text-primary-700"
                 : "bg-neutralc-100 text-neutralc-600"
             }`}
           >
             <span
               className={`h-2 w-2 rounded-full ${
-                product.status === "Active" ? "bg-[#d6c3a4]" : "bg-neutralc-400"
+                product.status === "Active" ? "bg-[var(--color-primary-300)]" : "bg-neutralc-400"
               }`}
             />
             {product.status}
@@ -894,13 +894,13 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
             <h4 className="text-2xl font-bold text-neutralc-900">
               {product.name}
             </h4>
-            <p className="text-[primary-700]">{product.category}</p>
+            <p className="text-primary-700">{product.category}</p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-[#f7f1e4] p-4">
-              <p className="text-sm font-medium text-[primary-700]">Price</p>
-              <p className="text-2xl font-bold text-[#6a542b]">
+            <div className="rounded-lg bg-[var(--color-primary-100)] p-4">
+              <p className="text-sm font-medium text-primary-700">Price</p>
+              <p className="text-2xl font-bold text-[var(--color-primary-800)]">
                 {formatPrice(product.price)}
               </p>
             </div>
@@ -956,7 +956,7 @@ const ViewModal = ({ product, onClose, onEdit, onDelete }) => (
             <button
               type="button"
               onClick={onEdit}
-              className="flex-1 rounded-lg bg-[primary-500] px-4 py-2 font-medium text-white shadow-md transition hover:bg-[primary-700]"
+              className="flex-1 rounded-lg bg-primary-500 px-4 py-2 font-medium text-white shadow-md transition hover:bg-primary-700"
             >
               Edit product
             </button>
@@ -979,9 +979,9 @@ const CreateDrawer = ({ children, mode = "create", onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex">
-      <div className="hidden flex-1 bg-black/20 md:block" onClick={onClose} />
-      <div className="relative flex h-full w-full max-w-3xl flex-col overflow-y-auto border-l border-[#e6dccb] bg-gradient-to-b from-white via-white to-[#f6eedb] shadow-2xl">
-        <header className="sticky top-0 flex items-center justify-between border-b border-[#e6dccb] bg-white/90 px-6 py-4 backdrop-blur">
+      <div className="hidden flex-1 bg-neutralc-900/20 md:block" onClick={onClose} />
+      <div className="relative flex h-full w-full max-w-3xl flex-col overflow-y-auto border-l border-[var(--color-primary-200)] bg-gradient-to-b from-white via-white to-[var(--color-primary-100)] shadow-2xl">
+        <header className="sticky top-0 flex items-center justify-between border-b border-[var(--color-primary-200)] bg-white/90 px-6 py-4 backdrop-blur">
           <div>
             <h3 className="text-lg font-semibold text-neutralc-900">
               {isEdit ? "Edit product" : "Quick create"}

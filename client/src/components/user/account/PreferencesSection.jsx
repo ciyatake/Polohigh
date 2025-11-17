@@ -21,7 +21,7 @@ const PreferencesSection = ({
       </div>
     ) : null}
     {preferenceMessage ? (
-      <div className="rounded-2xl border border-[#c3dedd] bg-[#c3dedd]/25 p-4 text-sm text-[#2f4a55]">
+      <div className="rounded-2xl border border-[var(--color-primary-200)] bg-[var(--color-primary-200)]/25 p-4 text-sm text-[var(--color-primary-800)]">
         {preferenceMessage}
       </div>
     ) : null}
@@ -44,7 +44,7 @@ const PreferencesSection = ({
       ))}
     </div>
 
-    <div className="mt-6 rounded-2xl border border-[neutralc-200] bg-white p-4 shadow-[0_12px_28px_rgba(15,23,42,0.08)]">
+    <div className="mt-6 rounded-2xl border border-neutralc-200 bg-white p-4 shadow-[0_12px_28px_rgba(15,23,42,0.08)]">
       <h3 className="text-sm font-semibold text-neutralc-900">Security check</h3>
       <dl className="mt-3 grid gap-3 text-sm text-neutralc-600 md:grid-cols-2">
         <div>
@@ -74,7 +74,7 @@ const PreferencesSection = ({
           {security.trustedDevices.map((device) => (
             <div
               key={device.id}
-              className="rounded-2xl border border-[neutralc-200] bg-[primary-100] p-3 text-sm text-neutralc-600"
+              className="rounded-2xl border border-neutralc-200 bg-primary-100 p-3 text-sm text-neutralc-600"
             >
               <p className="font-medium text-neutralc-900">
                 {device.device || "Trusted device"}
@@ -86,13 +86,13 @@ const PreferencesSection = ({
                 Last active: {formatDate(device.lastActive)}
               </p>
               {device.trusted ? (
-                <span className="mt-2 inline-flex rounded-full border border-[primary-500]/60 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[primary-500]">
+                <span className="mt-2 inline-flex rounded-full border border-primary-500/60 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-primary-500">
                   Trusted
                 </span>
               ) : (
                 <button
                   type="button"
-                  className="mt-2 inline-flex rounded-full border border-neutralc-200 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-neutralc-400 transition hover:border-[primary-500] hover:text-[primary-500]"
+                  className="mt-2 inline-flex rounded-full border border-neutralc-200 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-neutralc-400 transition hover:border-primary-500 hover:text-primary-500"
                 >
                   Remove access
                 </button>
@@ -104,7 +104,7 @@ const PreferencesSection = ({
 
       <button
         type="button"
-        className="mt-4 inline-flex items-center justify-center rounded-full border border-[primary-500] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
+        className="mt-4 inline-flex items-center justify-center rounded-full border border-primary-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
       >
         Review security settings
       </button>

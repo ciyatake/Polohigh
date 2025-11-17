@@ -1,7 +1,7 @@
 const SectionHeading = ({ title, eyebrow }) => (
   <div className="mb-6 space-y-2">
     {eyebrow ? (
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[primary-500]">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
         {eyebrow}
       </p>
     ) : null}

@@ -1,7 +1,5 @@
 import { defineConfig } from "tailwindcss";
 
-const baseGold = "#b8985b";
-
 export default defineConfig({
   content: [
     "./index.html",
@@ -10,6 +8,32 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
+        // New blue-gray palette
+        primary: {
+          50: "#f7f7f7",
+          100: "#e8eaed",
+          200: "#d1d5db",
+          300: "#b0bec5",
+          400: "#90a4ae",
+          500: "#78909c",
+          600: "#607d8b",
+          700: "#546e7a",
+          800: "#455a64",
+          900: "#263238",
+        },
+        neutralc: {
+          50: "#ffffff",
+          100: "#f7f7f7",
+          200: "#e8eaed",
+          300: "#b0bec5",
+          400: "#90a4ae",
+          500: "#78909c",
+          600: "#607d8b",
+          700: "#546e7a",
+          800: "#455a64",
+          900: "#263238",
+        },
+        // Keep some accent colors for states (success, error, etc.)
         emerald: {
           50: "#ecfdf5",
           100: "#d1fae5",

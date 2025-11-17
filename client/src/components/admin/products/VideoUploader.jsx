@@ -70,8 +70,8 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
         <div
           className={`rounded-2xl border-2 border-dashed px-6 py-8 text-center transition ${
             dragActive
-              ? "border-[primary-500] bg-[primary-100]"
-              : "border-neutralc-200 hover:border-[#cdae79] hover:bg-[primary-100]/70"
+              ? "border-primary-500 bg-primary-100"
+              : "border-neutralc-200 hover:border-[var(--color-primary-300)] hover:bg-primary-100/70"
           } cursor-pointer`}
           onClick={() => document.getElementById(inputId)?.click()}
           onDragOver={(event) => {
@@ -86,7 +86,7 @@ const VideoUploader = ({ video, onChange, maxSizeMB = 50 }) => {
           }}
           onDrop={handleDrop}
         >
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[primary-100] text-[primary-700]">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-700">
             <svg
               className="h-6 w-6"
               viewBox="0 0 24 24"

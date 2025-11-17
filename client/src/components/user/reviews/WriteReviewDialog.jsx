@@ -179,7 +179,7 @@ const WriteReviewDialog = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutralc-900/45 p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="write-review-title"
@@ -297,7 +297,7 @@ const WriteReviewDialog = ({
             </label>
           </div>
 
-          <p className="rounded-2xl border border-[#c3dedd] bg-[#c3dedd]/30 px-4 py-3 text-xs text-[#2f4a55]">
+          <p className="rounded-2xl border border-[var(--color-primary-200)] bg-[var(--color-primary-200)]/30 px-4 py-3 text-xs text-[var(--color-primary-800)]">
             Reviews help other shoppers make confident decisions. Keep your
             feedback honest, constructive, and focused on the product
             experience.

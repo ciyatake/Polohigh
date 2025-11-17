@@ -153,12 +153,12 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-20 px-4">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-20 px-4">
         <a
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-black hover:shadow-xl hover:scale-105 group"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-neutralc-900 hover:shadow-xl hover:scale-105 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Home</span>
@@ -182,10 +182,10 @@ const Contact = () => {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Form */}
             <div className="p-8 bg-white rounded-lg shadow-sm">
-              <h2 className="text-3xl font-bold text-[#6b5847] mb-2">
+              <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-2">
                 Send Us a Message
               </h2>
-              <p className="text-[#8b7355] mb-6">
+              <p className="text-neutralc-900 mb-6">
                 Fill out the form below and we'll get back to you within 24
                 hours.
               </p>
@@ -193,10 +193,10 @@ const Contact = () => {
               {submitted ? (
                 <div className="py-12 text-center">
                   <CheckCircle className="w-16 h-16 mx-auto mb-4 text-green-500" />
-                  <h3 className="text-2xl font-semibold text-[#6b5847] mb-2">
+                  <h3 className="text-2xl font-semibold text-[var(--color-primary-700)] mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-[#8b7355]">
+                  <p className="text-neutralc-900">
                     Thank you for reaching out. We'll respond to you shortly.
                   </p>
                 </div>
@@ -205,7 +205,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Full Name *
                     </label>
@@ -216,7 +216,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="Your full name"
                     />
                   </div>
@@ -224,7 +224,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Email Address *
                     </label>
@@ -235,7 +235,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -243,7 +243,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Phone Number{" "}
                       <span className="text-sm text-neutralc-400">(Optional)</span>
@@ -254,7 +254,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -262,7 +262,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Subject *
                     </label>
@@ -272,7 +272,7 @@ const Contact = () => {
                       required
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                     >
                       <option value="">Select a subject</option>
                       {subjectOptions.map((option, index) => (
@@ -286,7 +286,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Message *
                     </label>
@@ -297,7 +297,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="Tell us how we can help you..."
                     />
                   </div>
@@ -305,7 +305,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#8b7355] text-white px-6 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-neutralc-900 text-white px-6 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>Sending...</>
@@ -323,7 +323,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-3xl font-bold text-[#6b5847] mb-6">
+                <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-6">
                   Contact Information
                 </h2>
                 <div className="space-y-4">
@@ -333,24 +333,24 @@ const Contact = () => {
                       className="p-6 transition-shadow bg-white rounded-lg shadow-sm hover:shadow-md"
                     >
                       <div className="flex items-start gap-4">
-                        <div className="bg-[#f5f1ed] p-3 rounded-lg">
-                          <info.icon className="w-6 h-6 text-[#8b7355]" />
+                        <div className="bg-white p-3 rounded-lg">
+                          <info.icon className="w-6 h-6 text-neutralc-900" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-[#6b5847] mb-1">
+                          <h3 className="text-lg font-semibold text-[var(--color-primary-700)] mb-1">
                             {info.title}
                           </h3>
                           {info.link ? (
                             <a
                               href={info.link}
-                              className="text-[#8b7355] hover:text-[#6b5847] block"
+                              className="text-neutralc-900 hover:text-[var(--color-primary-700)] block"
                             >
                               {info.content}
                             </a>
                           ) : (
-                            <p className="text-[#8b7355]">{info.content}</p>
+                            <p className="text-neutralc-900">{info.content}</p>
                           )}
-                          <p className="text-[#8b7355] text-sm">
+                          <p className="text-neutralc-900 text-sm">
                             {info.subContent}
                           </p>
                         </div>
@@ -362,7 +362,7 @@ const Contact = () => {
 
               {/* Social Media */}
               <div className="p-6 bg-white rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-4">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-4">
                   Connect With Us
                 </h3>
                 <div className="flex gap-4">
@@ -372,7 +372,7 @@ const Contact = () => {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#f5f1ed] p-3 rounded-lg hover:bg-[#8b7355] hover:text-white transition-colors"
+                      className="bg-white p-3 rounded-lg hover:bg-neutralc-900 hover:text-white transition-colors"
                       aria-label={social.label}
                     >
                       <social.icon className="w-6 h-6" />
@@ -382,7 +382,7 @@ const Contact = () => {
               </div>
 
               {/* Live Chat CTA */}
-              <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white p-6 rounded-lg">
                 <div className="flex items-start gap-4">
                   <MessageSquare className="flex-shrink-0 w-8 h-8" />
                   <div>
@@ -393,7 +393,7 @@ const Contact = () => {
                       Chat with our customer support team for immediate
                       assistance.
                     </p>
-                    <button className="bg-white text-[#6b5847] px-6 py-2 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold">
+                    <button className="bg-white text-[var(--color-primary-700)] px-6 py-2 rounded-lg hover:bg-white transition-colors font-semibold">
                       Start Live Chat
                     </button>
                   </div>
@@ -407,10 +407,10 @@ const Contact = () => {
       {/* Quick Help Links */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-4">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-4">
             Quick Help
           </h2>
-          <p className="text-center text-[#8b7355] mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-neutralc-900 mb-12 max-w-2xl mx-auto">
             Looking for something specific? These links might help you find what
             you need faster.
           </p>
@@ -419,16 +419,16 @@ const Contact = () => {
               <a
                 key={index}
                 href={link.link}
-                className="bg-[#f5f1ed] p-6 rounded-lg hover:shadow-md transition-all hover:-translate-y-1 group"
+                className="bg-white p-6 rounded-lg hover:shadow-md transition-all hover:-translate-y-1 group"
               >
-                <link.icon className="w-10 h-10 text-[#8b7355] mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-2">
+                <link.icon className="w-10 h-10 text-neutralc-900 mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">
                   {link.title}
                 </h3>
-                <p className="text-[#8b7355] text-sm mb-3">
+                <p className="text-neutralc-900 text-sm mb-3">
                   {link.description}
                 </p>
-                <span className="text-[#8b7355] font-semibold text-sm flex items-center gap-1">
+                <span className="text-neutralc-900 font-semibold text-sm flex items-center gap-1">
                   Learn More
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -441,12 +441,12 @@ const Contact = () => {
       {/* Map Section */}
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-12">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-12">
             Find Us
           </h2>
           <div className="p-4 overflow-hidden bg-white rounded-lg shadow-sm">
-            <div className="w-full h-96 bg-[#f5f1ed] rounded-lg flex items-center justify-center">
-              <div className="text-center text-[#8b7355]">
+            <div className="w-full h-96 bg-white rounded-lg flex items-center justify-center">
+              <div className="text-center text-neutralc-900">
                 <MapPin className="w-12 h-12 mx-auto mb-4" />
                 <p className="font-semibold">
                   123 Fashion Street, Andheri East
@@ -462,7 +462,7 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="mb-6 text-4xl font-bold">We're Here to Help</h2>
           <p className="mb-8 text-xl leading-relaxed opacity-90">
@@ -473,14 +473,14 @@ const Contact = () => {
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="mailto:care@polohigh.com"
-              className="bg-white text-[#6b5847] px-8 py-4 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
+              className="bg-white text-[var(--color-primary-700)] px-8 py-4 rounded-lg hover:bg-white transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
             >
               <Mail className="w-5 h-5" />
               Email Us
             </a>
             <a
               href="tel:+919876543210"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[#6b5847] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
+              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[var(--color-primary-700)] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
             >
               <Phone className="w-5 h-5" />
               Call Us
@@ -492,17 +492,17 @@ const Contact = () => {
       {/* FAQ Teaser */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <HelpCircle className="w-12 h-12 text-[#8b7355] mx-auto mb-4" />
-          <h2 className="text-3xl font-bold text-[#6b5847] mb-4">
+          <HelpCircle className="w-12 h-12 text-neutralc-900 mx-auto mb-4" />
+          <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#8b7355] mb-8">
+          <p className="text-neutralc-900 mb-8">
             Many questions can be answered quickly in our FAQ section. Check it
             out before reaching out!
           </p>
           <a
             href="/faqs"
-            className="bg-[#8b7355] text-white px-8 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg inline-flex items-center gap-2"
+            className="bg-neutralc-900 text-white px-8 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg inline-flex items-center gap-2"
           >
             Visit FAQ Center
             <ArrowRight className="w-5 h-5" />

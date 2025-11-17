@@ -283,7 +283,7 @@ const Register = () => {
                 <Button
                   type="button"
                   variant="outline"
-                  className="w-full h-11 border-2 border-[primary-500] bg-white text-[primary-500] hover:bg-[primary-500]/10 disabled:border-[neutralc-200] disabled:text-neutralc-400 disabled:opacity-60 transition-all duration-200"
+                  className="w-full h-11 border-2 border-primary-500 bg-white text-primary-500 hover:bg-primary-500/10 disabled:border-neutralc-200 disabled:text-neutralc-400 disabled:opacity-60 transition-all duration-200"
                   onClick={() => handleVerifyOtp(value, formData.otp ?? "")}
                   disabled={
                     !isOtpSent ||
@@ -571,7 +571,7 @@ const Register = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f2ee] via-[#faf8f5] to-[#f0ede8]">
+    <div className="min-h-screen bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-primary-50)] to-[var(--color-primary-100)]">
       <UserNavbar />
       <AuthForm
         title="Create New Account"

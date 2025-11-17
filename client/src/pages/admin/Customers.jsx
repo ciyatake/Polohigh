@@ -125,15 +125,15 @@ const Customers = () => {
             </span>
           )}
           {leadingTier && !loading ? (
-            <span className="inline-flex items-center gap-1 rounded-full bg-[primary-100] px-3 py-1 text-xs font-semibold text-[primary-700]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700">
               Top tier: {leadingTier.label} · {leadingTier.count}
             </span>
           ) : null}
         </div>
       </header>
-      <div className="overflow-hidden rounded-2xl border border-[#e6dccb] bg-white shadow-2xl">
-        <table className="min-w-full divide-y divide-[primary-100]">
-          <thead className="bg-[primary-500] text-left text-xs font-semibold uppercase tracking-wide text-white">
+      <div className="overflow-hidden rounded-2xl border border-[var(--color-primary-200)] bg-white shadow-2xl">
+        <table className="min-w-full divide-y divide-primary-100">
+          <thead className="bg-primary-500 text-left text-xs font-semibold uppercase tracking-wide text-white">
             <tr>
               <th className="px-6 py-4">Customer</th>
               <th className="px-6 py-4">Contact</th>
@@ -142,7 +142,7 @@ const Customers = () => {
               <th className="px-6 py-4">Activity</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[primary-100] text-sm">
+          <tbody className="divide-y divide-primary-100 text-sm">
             {error ? (
               <tr>
                 <td
@@ -186,10 +186,10 @@ const Customers = () => {
               customers.map((customer, index) => (
                 <tr
                   key={customer.id ?? customer.userId ?? `customer-${index}`}
-                  className="hover:bg-[primary-100]"
+                  className="hover:bg-primary-100"
                 >
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-[primary-700]">
+                    <div className="font-semibold text-primary-700">
                       {customer.name || "—"}
                     </div>
                     <div className="text-xs text-neutralc-400">
@@ -207,11 +207,11 @@ const Customers = () => {
                     )}
                   </td>
                   <td className="px-6 py-4">
-                    <span className="inline-flex items-center rounded-full bg-[primary-100] px-3 py-1 text-xs font-semibold text-[primary-700]">
+                    <span className="inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700">
                       {formatTierLabel(customer.membershipTier)}
                     </span>
                     {customer.isVerified ? (
-                      <span className="ml-2 text-xs font-medium text-[primary-700]">
+                      <span className="ml-2 text-xs font-medium text-primary-700">
                         Verified
                       </span>
                     ) : null}

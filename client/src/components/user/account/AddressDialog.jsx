@@ -149,7 +149,7 @@ const AddressDialog = ({
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl my-auto rounded-3xl border-2 border-neutralc-200/50 bg-gradient-to-br from-white to-[#FCFAF7] p-4 sm:p-8 text-neutralc-600 shadow-[0_40px_80px_rgba(184,152,91,0.15)] transform transition-all duration-300 ease-out relative"
+        className="w-full max-w-2xl my-auto rounded-3xl border-2 border-neutralc-200/50 bg-gradient-to-br from-white to-[var(--color-primary-50)] p-4 sm:p-8 text-neutralc-600 shadow-[0_40px_80px_rgba(184,152,91,0.15)] transform transition-all duration-300 ease-out relative"
       >
         <div className="flex flex-wrap items-start justify-between gap-2 sm:gap-4 pb-4 sm:pb-6 border-b border-neutralc-200/50">
           <div className="space-y-1">
@@ -181,7 +181,7 @@ const AddressDialog = ({
         <div className="mt-5 sm:mt-6 grid gap-4 sm:gap-5 md:grid-cols-2">
           <label className="group text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
               </svg>
               Label
@@ -192,14 +192,14 @@ const AddressDialog = ({
               value={formValues.label}
               onChange={handleChange}
               placeholder="Home, Office..."
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
 
           <label className="group text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               Recipient
@@ -210,14 +210,14 @@ const AddressDialog = ({
               value={formValues.recipient}
               onChange={handleChange}
               placeholder="Full name"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
 
           <label className="group text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               Phone
@@ -230,14 +230,14 @@ const AddressDialog = ({
               value={formValues.phone}
               onChange={handleChange}
               placeholder="10-digit mobile"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
 
           <label className="group text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
               Type
@@ -265,7 +265,7 @@ const AddressDialog = ({
 
           <label className="md:col-span-2 text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               Address line 1
@@ -276,7 +276,7 @@ const AddressDialog = ({
               value={formValues.addressLine1}
               onChange={handleChange}
               placeholder="Flat, house no., building"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
@@ -294,13 +294,13 @@ const AddressDialog = ({
               value={formValues.addressLine2}
               onChange={handleChange}
               placeholder="Area, landmark (optional)"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
             />
           </label>
 
           <label className="text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
               City
@@ -311,14 +311,14 @@ const AddressDialog = ({
               value={formValues.city}
               onChange={handleChange}
               placeholder="e.g., Mumbai"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
 
           <label className="text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>
               State
@@ -329,14 +329,14 @@ const AddressDialog = ({
               value={formValues.state}
               onChange={handleChange}
               placeholder="e.g., Maharashtra"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
 
           <label className="text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               PIN code
@@ -349,14 +349,14 @@ const AddressDialog = ({
               maxLength={6}
               pattern="\d{6}"
               placeholder="6-digit PIN"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
               required
             />
           </label>
 
           <label className="text-xs sm:text-sm">
             <span className="mb-2 flex items-center gap-1.5 text-neutralc-600 font-semibold">
-              <svg className="w-3.5 h-3.5 text-[primary-500]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Country
@@ -366,7 +366,7 @@ const AddressDialog = ({
               name="country"
               value={formValues.country}
               onChange={handleChange}
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white"
             />
           </label>
 
@@ -383,7 +383,7 @@ const AddressDialog = ({
               onChange={handleChange}
               rows={3}
               placeholder="Share any notes for the courier (optional)"
-              className="w-full rounded-2xl border-2 border-[neutralc-200] bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-[primary-500] focus:bg-white focus:ring-4 focus:ring-[primary-500]/10 hover:border-[neutralc-200]/80 hover:bg-white resize-none"
+              className="w-full rounded-2xl border-2 border-neutralc-200 bg-white/50 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutralc-900 outline-none transition-all duration-300 focus:border-primary-500 focus:bg-white focus:ring-4 focus:ring-primary-500/10 hover:border-neutralc-200/80 hover:bg-white resize-none"
             />
           </label>
 
@@ -423,7 +423,7 @@ const AddressDialog = ({
           </div>
         ) : null}
 
-        <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t-2 border-[neutralc-200]/50 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-between gap-4">
+        <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t-2 border-neutralc-200/50 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-between gap-4">
           <div className="flex items-start gap-2 text-[0.65rem] sm:text-xs text-neutralc-400 order-2 sm:order-1">
             <svg className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

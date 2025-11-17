@@ -345,12 +345,12 @@ const Careers = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-20 px-4">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-20 px-4">
         <a
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-black hover:shadow-xl hover:scale-105 group"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-6 font-semibold transition-all duration-200 border-2 border-white rounded-lg shadow-md sm:mb-8 hover:text-neutralc-900 hover:shadow-xl hover:scale-105 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Home</span>
@@ -373,7 +373,7 @@ const Careers = () => {
       {/* Why Work With Us */}
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-12">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-12">
             Why Work With Us
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -382,11 +382,11 @@ const Careers = () => {
                 key={index}
                 className="p-8 transition-shadow bg-white rounded-lg shadow-sm hover:shadow-md"
               >
-                <benefit.icon className="w-12 h-12 text-[#8b7355] mb-4" />
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-2">
+                <benefit.icon className="w-12 h-12 text-neutralc-900 mb-4" />
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-[#8b7355]">{benefit.description}</p>
+                <p className="text-neutralc-900">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -396,22 +396,22 @@ const Careers = () => {
       {/* Company Values */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-4">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-4">
             Our Values
           </h2>
-          <p className="text-center text-[#8b7355] mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-neutralc-900 mb-12 max-w-2xl mx-auto">
             These principles guide everything we do and shape our culture
           </p>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f5f1ed] rounded-full mb-4">
-                  <value.icon className="w-8 h-8 text-[#8b7355]" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4">
+                  <value.icon className="w-8 h-8 text-neutralc-900" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-2">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">
                   {value.title}
                 </h3>
-                <p className="text-[#8b7355]">{value.description}</p>
+                <p className="text-neutralc-900">{value.description}</p>
               </div>
             ))}
           </div>
@@ -421,10 +421,10 @@ const Careers = () => {
       {/* Open Positions */}
       <section className="px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-4">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-4">
             Open Positions
           </h2>
-          <p className="text-center text-[#8b7355] mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-neutralc-900 mb-12 max-w-2xl mx-auto">
             Discover your next career opportunity with us
           </p>
           <div className="grid gap-6">
@@ -435,10 +435,10 @@ const Careers = () => {
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-[#6b5847] mb-2">
+                    <h3 className="text-2xl font-semibold text-[var(--color-primary-700)] mb-2">
                       {job.title}
                     </h3>
-                    <div className="flex flex-wrap gap-4 text-[#8b7355] mb-3">
+                    <div className="flex flex-wrap gap-4 text-neutralc-900 mb-3">
                       <span className="flex items-center gap-1">
                         <Briefcase className="w-4 h-4" />
                         {job.department}
@@ -452,11 +452,11 @@ const Careers = () => {
                         {job.type}
                       </span>
                     </div>
-                    <p className="text-[#8b7355]">{job.description}</p>
+                    <p className="text-neutralc-900">{job.description}</p>
                   </div>
                   <button
                     onClick={() => setSelectedJob(job)}
-                    className="bg-[#8b7355] text-white px-6 py-3 rounded-lg hover:bg-[#6b5847] transition-colors flex items-center gap-2 justify-center"
+                    className="bg-neutralc-900 text-white px-6 py-3 rounded-lg hover:bg-neutralc-800 transition-colors flex items-center gap-2 justify-center"
                   >
                     View Details
                     <ArrowRight className="w-4 h-4" />
@@ -471,24 +471,24 @@ const Careers = () => {
       {/* Testimonials */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-4">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-4">
             Meet Our Team
           </h2>
-          <p className="text-center text-[#8b7355] mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-neutralc-900 mb-12 max-w-2xl mx-auto">
             Hear from the people who make Polohigh special
           </p>
           <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-[#f5f1ed] p-8 rounded-lg">
+              <div key={index} className="bg-white p-8 rounded-lg">
                 <div className="mb-4 text-6xl">{testimonial.image}</div>
-                <p className="text-[#6b5847] mb-6 italic">
+                <p className="text-[var(--color-primary-700)] mb-6 italic">
                   "{testimonial.quote}"
                 </p>
                 <div>
-                  <p className="font-semibold text-[#6b5847]">
+                  <p className="font-semibold text-[var(--color-primary-700)]">
                     {testimonial.name}
                   </p>
-                  <p className="text-[#8b7355] text-sm">{testimonial.role}</p>
+                  <p className="text-neutralc-900 text-sm">{testimonial.role}</p>
                 </div>
               </div>
             ))}
@@ -499,16 +499,16 @@ const Careers = () => {
       {/* FAQs */}
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#6b5847] text-center mb-12">
+          <h2 className="text-4xl font-bold text-[var(--color-primary-700)] text-center mb-12">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="p-6 bg-white rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-[#8b7355] leading-relaxed">{faq.answer}</p>
+                <p className="text-neutralc-900 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -516,7 +516,7 @@ const Careers = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 px-4 bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="mb-6 text-4xl font-bold">Ready to Join Us?</h2>
           <p className="mb-8 text-xl opacity-90">
@@ -541,7 +541,7 @@ const Careers = () => {
           </div>
           <button
             onClick={() => setShowApplicationForm(true)}
-            className="bg-white text-[#6b5847] px-8 py-4 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold text-lg inline-flex items-center gap-2"
+            className="bg-white text-[var(--color-primary-700)] px-8 py-4 rounded-lg hover:bg-white transition-colors font-semibold text-lg inline-flex items-center gap-2"
           >
             Apply Now
             <ArrowRight className="w-5 h-5" />
@@ -551,14 +551,14 @@ const Careers = () => {
 
       {/* Job Details Modal */}
       {selectedJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-neutralc-900 bg-opacity-50">
           <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 flex items-start justify-between p-6 bg-white border-b border-neutralc-200">
               <div>
-                <h2 className="text-3xl font-bold text-[#6b5847] mb-2">
+                <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-2">
                   {selectedJob.title}
                 </h2>
-                <div className="flex flex-wrap gap-4 text-[#8b7355]">
+                <div className="flex flex-wrap gap-4 text-neutralc-900">
                   <span className="flex items-center gap-1">
                     <Briefcase className="w-4 h-4" />
                     {selectedJob.department}
@@ -575,7 +575,7 @@ const Careers = () => {
               </div>
               <button
                 onClick={() => setSelectedJob(null)}
-                className="text-[#8b7355] hover:text-[#6b5847] transition-colors"
+                className="text-neutralc-900 hover:text-[var(--color-primary-700)] transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -583,25 +583,25 @@ const Careers = () => {
 
             <div className="p-6 space-y-6">
               <div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-3">
                   About the Role
                 </h3>
-                <p className="text-[#8b7355] leading-relaxed">
+                <p className="text-neutralc-900 leading-relaxed">
                   {selectedJob.description}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-3">
                   Responsibilities
                 </h3>
                 <ul className="space-y-2">
                   {selectedJob.responsibilities.map((resp, index) => (
                     <li
                       key={index}
-                      className="flex items-start gap-2 text-[#8b7355]"
+                      className="flex items-start gap-2 text-neutralc-900"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#8b7355] flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-neutralc-900 flex-shrink-0 mt-0.5" />
                       <span>{resp}</span>
                     </li>
                   ))}
@@ -609,16 +609,16 @@ const Careers = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-3">
                   Requirements
                 </h3>
                 <ul className="space-y-2">
                   {selectedJob.requirements.map((req, index) => (
                     <li
                       key={index}
-                      className="flex items-start gap-2 text-[#8b7355]"
+                      className="flex items-start gap-2 text-neutralc-900"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#8b7355] flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-neutralc-900 flex-shrink-0 mt-0.5" />
                       <span>{req}</span>
                     </li>
                   ))}
@@ -626,16 +626,16 @@ const Careers = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-[#6b5847] mb-3">
+                <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-3">
                   What We Offer
                 </h3>
                 <ul className="space-y-2">
                   {selectedJob.benefits.map((benefit, index) => (
                     <li
                       key={index}
-                      className="flex items-start gap-2 text-[#8b7355]"
+                      className="flex items-start gap-2 text-neutralc-900"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#8b7355] flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-neutralc-900 flex-shrink-0 mt-0.5" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -649,7 +649,7 @@ const Careers = () => {
                     setShowApplicationForm(true);
                     setSelectedJob(null);
                   }}
-                  className="w-full bg-[#8b7355] text-white px-6 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg flex items-center justify-center gap-2"
+                  className="w-full bg-neutralc-900 text-white px-6 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
                 >
                   Apply for this Position
                   <ArrowRight className="w-5 h-5" />
@@ -662,13 +662,13 @@ const Careers = () => {
 
       {/* Application Form Modal */}
       {showApplicationForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-neutralc-900 bg-opacity-50">
           <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 flex items-center justify-between p-6 bg-white border-b border-neutralc-200">
-              <h2 className="text-3xl font-bold text-[#6b5847]">Apply Now</h2>
+              <h2 className="text-3xl font-bold text-[var(--color-primary-700)]">Apply Now</h2>
               <button
                 onClick={() => setShowApplicationForm(false)}
-                className="text-[#8b7355] hover:text-[#6b5847] transition-colors"
+                className="text-neutralc-900 hover:text-[var(--color-primary-700)] transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -678,10 +678,10 @@ const Careers = () => {
               {submitted ? (
                 <div className="py-12 text-center">
                   <CheckCircle className="w-16 h-16 mx-auto mb-4 text-green-500" />
-                  <h3 className="text-2xl font-semibold text-[#6b5847] mb-2">
+                  <h3 className="text-2xl font-semibold text-[var(--color-primary-700)] mb-2">
                     Application Submitted!
                   </h3>
-                  <p className="text-[#8b7355]">
+                  <p className="text-neutralc-900">
                     Thank you for applying. We'll review your application and
                     get back to you soon.
                   </p>
@@ -691,7 +691,7 @@ const Careers = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Full Name *
                     </label>
@@ -702,7 +702,7 @@ const Careers = () => {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="Your full name"
                     />
                   </div>
@@ -710,7 +710,7 @@ const Careers = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Email Address *
                     </label>
@@ -721,7 +721,7 @@ const Careers = () => {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -729,7 +729,7 @@ const Careers = () => {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Phone Number *
                     </label>
@@ -740,7 +740,7 @@ const Careers = () => {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -748,7 +748,7 @@ const Careers = () => {
                   <div>
                     <label
                       htmlFor="position"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Position Applying For *
                     </label>
@@ -758,7 +758,7 @@ const Careers = () => {
                       required
                       value={formData.position}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                     >
                       <option value="">Select a position</option>
                       {jobs.map((job) => (
@@ -772,11 +772,11 @@ const Careers = () => {
                   <div>
                     <label
                       htmlFor="resume"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Resume / CV *
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#8b7355] transition-colors">
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[var(--color-primary-700)] transition-colors">
                       <input
                         type="file"
                         id="resume"
@@ -787,8 +787,8 @@ const Careers = () => {
                         className="hidden"
                       />
                       <label htmlFor="resume" className="cursor-pointer">
-                        <Upload className="w-8 h-8 text-[#8b7355] mx-auto mb-2" />
-                        <p className="text-[#8b7355] font-semibold mb-1">
+                        <Upload className="w-8 h-8 text-neutralc-900 mx-auto mb-2" />
+                        <p className="text-neutralc-900 font-semibold mb-1">
                           {formData.resume
                             ? formData.resume.name
                             : "Click to upload your resume"}
@@ -803,7 +803,7 @@ const Careers = () => {
                   <div>
                     <label
                       htmlFor="coverLetter"
-                      className="block text-[#6b5847] font-semibold mb-2"
+                      className="block text-[var(--color-primary-700)] font-semibold mb-2"
                     >
                       Cover Letter
                     </label>
@@ -813,14 +813,14 @@ const Careers = () => {
                       value={formData.coverLetter}
                       onChange={handleInputChange}
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8b7355]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-700)]"
                       placeholder="Tell us why you're interested in this position and what makes you a great fit..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#8b7355] text-white px-6 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg flex items-center justify-center gap-2"
+                    className="w-full bg-neutralc-900 text-white px-6 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
                   >
                     Submit Application
                     <ArrowRight className="w-5 h-5" />

@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <footer className="bg-[#f5f1e8] text-gray-800">
+    <footer className="bg-neutralc-900 text-white border-t border-neutralc-800">
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand Section */}
@@ -21,32 +21,33 @@ const Footer = () => {
               <img
                 src="/ciyatakeLogo.png"
                 alt="POLOHIGH"
-                className="h-8 w-auto"
+                className="h-8 w-auto filter brightness-0 invert"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
-              <h3 className="text-2xl font-semibold text-[#8b7355]">
+              <h3 className="text-2xl font-semibold text-white">
                 Polohigh
               </h3>
             </div>
-            <p className="text-sm leading-relaxed text-neutralc-600">
+            <p className="text-sm leading-relaxed text-neutralc-300">
               Thoughtfully curated fashion and lifestyle essentials to help you
               celebrate everyday moments in style.
             </p>
             <div className="space-y-2">
               <a
                 href="mailto:care@polohigh.com"
-                className="flex items-center text-sm text-[#a08968] hover:text-[#8b7355] transition-colors"
+                className="flex items-center text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 care@polohigh.com
               </a>
               <a
                 href="tel:+919876543210"
-                className="flex items-center text-sm text-[#a08968] hover:text-[#8b7355] transition-colors"
+                className="flex items-center text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 +91 98765 43210
               </a>
-              <div className="flex items-center text-sm text-neutralc-600">
+              <div className="flex items-center text-sm text-neutralc-300">
                 <Clock className="w-4 h-4 mr-2" />
                 Monday to Saturday, 9:00 AM – 6:00 PM IST
               </div>
@@ -55,12 +56,12 @@ const Footer = () => {
 
           {/* Shop Section */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#8b7355]">SHOP</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">SHOP</h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/"
-                  className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                  className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
                   Women
                 </Link>
@@ -68,7 +69,7 @@ const Footer = () => {
               {/* <li>
                 <Link
                   to="/"
-                  className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                  className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
                   Men
                 </Link>
@@ -76,7 +77,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                  className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
                   Kids
                 </Link>
@@ -84,7 +85,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                  className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
                   Accessories
                 </Link>
@@ -92,7 +93,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                  className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
                   Home & Living
                 </Link>
@@ -102,37 +103,37 @@ const Footer = () => {
 
           {/* Help & Support Section */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#8b7355]">
+            <h4 className="text-lg font-semibold mb-4 text-white">
               HELP & SUPPORT
             </h4>
             <ul className="flex flex-col space-y-2">
               <Link
                 to="/track-order"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Track Order
               </Link>
               <Link
                 to="/refund-policy"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Refund Policy
               </Link>
               <Link
                 to="/return-policy"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Return Policy
               </Link>
               <Link
                 to="/shipping-policy"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Shipping Policy
               </Link>
               <Link
                 to="/FAQs"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 FAQs
               </Link>
@@ -141,29 +142,29 @@ const Footer = () => {
 
           {/* Company Section */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#8b7355]">
+            <h4 className="text-lg font-semibold mb-4 text-white">
               COMPANY
             </h4>
             <ul className="flex flex-col space-y-2">
               <Link
                 to="our-story"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               ></Link>
               <Link
                 to="/career-page"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Careers
               </Link>
               <Link
                 to="/press"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Press
               </Link>
               <Link
                 to="contact-us"
-                className="text-sm text-gray-700 hover:text-[#8b7355] transition-colors"
+                className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Contact
               </Link>
@@ -172,7 +173,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media & Bottom Bar */}
-        <div className="pt-8 mt-12 border-t border-gray-300">
+        <div className="pt-8 mt-12 border-t border-neutralc-800">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             {/* Social Media Icons */}
             <div className="flex space-x-4">
@@ -180,7 +181,7 @@ const Footer = () => {
                 href=" https://www.instagram.com/ciyatakeofficial?igsh=MjlzYXhiMHcza2M1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#a08968] hover:bg-[#8b7355] hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-neutralc-800 flex items-center justify-center text-neutralc-300 hover:bg-primary-300 hover:text-neutralc-900 transition-all"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -188,7 +189,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#a08968] hover:bg-[#8b7355] hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-neutralc-800 flex items-center justify-center text-neutralc-300 hover:bg-primary-300 hover:text-neutralc-900 transition-all"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -196,7 +197,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#a08968] hover:bg-[#8b7355] hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-neutralc-800 flex items-center justify-center text-neutralc-300 hover:bg-primary-300 hover:text-neutralc-900 transition-all"
               >
                 <Twitter className="w-5 h-5" />
               </a>
@@ -204,31 +205,31 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#a08968] hover:bg-[#8b7355] hover:text-white transition-all"
+                className="w-10 h-10 rounded-full bg-neutralc-800 flex items-center justify-center text-neutralc-300 hover:bg-primary-300 hover:text-neutralc-900 transition-all"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
 
             {/* Legal Links */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-neutralc-600 md:justify-end">
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-neutralc-300 md:justify-end">
               <Link
                 to='/privacy-policy'
-                className="hover:text-[#8b7355] transition-colors"
+                className="hover:text-white transition-colors"
               >
                 Privacy Policy
               </Link>
               <span className="hidden sm:inline">•</span>
               <Link
                 to="/terms-of-service"
-                className="hover:text-[#8b7355] transition-colors"
+                className="hover:text-white transition-colors"
               >
                 Terms of Service
               </Link>
               <span className="hidden sm:inline">•</span>
               <Link
                 to="/cookie-policy"
-                className="hover:text-[#8b7355] transition-colors"
+                className="hover:text-white transition-colors"
               >
                 Cookie Policy
               </Link>
@@ -236,7 +237,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-6 text-sm text-center text-neutralc-600">
+          <div className="mt-6 text-sm text-center text-neutralc-300">
             © {new Date().getFullYear()} Polohigh. All rights reserved.
           </div>
         </div>
@@ -245,7 +246,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-[#8b7355] text-white shadow-lg hover:bg-[#a08968] transition-all flex items-center justify-center"
+        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-neutralc-800 border-2 border-primary-300 text-white shadow-lg hover:bg-primary-300 hover:text-neutralc-900 hover:border-neutralc-800 transition-all flex items-center justify-center z-50"
         aria-label="Scroll to top"
       >
         <svg

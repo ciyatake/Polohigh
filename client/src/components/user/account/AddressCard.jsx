@@ -22,7 +22,7 @@ const AddressCard = ({
   const showEdit = typeof onEdit === "function";
 
   return (
-    <div className="rounded-2xl border border-[neutralc-200] bg-white p-4">
+    <div className="rounded-2xl border border-neutralc-200 bg-white p-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-primary-500">

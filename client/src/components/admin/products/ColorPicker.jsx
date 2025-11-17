@@ -123,7 +123,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                   className={`relative h-10 w-full rounded-lg border-2 transition ${
                     isSelected
                       ? "cursor-not-allowed border-neutralc-200 opacity-60"
-                      : "border-transparent hover:scale-105 hover:border-[#cdae79]"
+                      : "border-transparent hover:scale-105 hover:border-[var(--color-primary-300)]"
                   }`}
                   style={{ backgroundColor: swatch.hex }}
                   title={swatch.label}
@@ -168,7 +168,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                     value={customName}
                     onChange={(event) => setCustomName(event.target.value)}
                     placeholder="e.g. Forest Green"
-                    className="w-full rounded-lg border border-neutralc-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                    className="w-full rounded-lg border border-neutralc-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                   />
                 </label>
                 <label className="flex items-center gap-2 text-sm">
@@ -187,7 +187,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
                     type="button"
                     onClick={addCustomColor}
                     disabled={!customName.trim()}
-                    className="rounded-lg bg-[primary-500] px-4 py-2 text-sm font-medium text-white transition hover:bg-[primary-700] disabled:cursor-not-allowed disabled:opacity-40"
+                    className="rounded-lg bg-primary-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     Add color
                   </button>
@@ -205,7 +205,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
             <button
               type="button"
               onClick={() => setShowCustom(true)}
-              className="text-sm font-medium text-[primary-700] transition hover:text-[#6a542b]"
+              className="text-sm font-medium text-primary-700 transition hover:text-[var(--color-primary-800)]"
             >
               + Add custom color
             </button>

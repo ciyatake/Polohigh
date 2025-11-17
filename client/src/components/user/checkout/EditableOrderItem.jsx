@@ -19,7 +19,7 @@ const EditableOrderItem = ({
 
   return (
     <article
-      className={`flex gap-4 rounded-2xl border border-[neutralc-200] bg-white p-4 ${className}`.trim()}
+      className={`flex gap-4 rounded-2xl border border-neutralc-200 bg-white p-4 ${className}`.trim()}
     >
       <div className="h-20 w-20 overflow-hidden rounded-2xl">
         {imageUrl ? (
@@ -29,7 +29,7 @@ const EditableOrderItem = ({
             className="h-full w-full object-cover"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-[neutralc-200] text-xs text-neutralc-400">
+          <div className="flex h-full w-full items-center justify-center bg-neutralc-200 text-xs text-neutralc-400">
             No image
           </div>
         )}
@@ -44,7 +44,7 @@ const EditableOrderItem = ({
         </div>
         
         <div className="flex items-center justify-between">
-          <p className="text-sm font-semibold text-[primary-500]">
+          <p className="text-sm font-semibold text-primary-500">
             {formatINR(price)} each
           </p>
           

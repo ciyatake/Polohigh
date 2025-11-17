@@ -555,8 +555,8 @@ We value your feedback and continuously work to improve our shipping services.
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-16 px-4">
+    <div className="min-h-screen bg-white">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Package className="w-16 h-16" />
@@ -575,10 +575,10 @@ We value your feedback and continuously work to improve our shipping services.
       <section className="sticky top-0 z-10 px-4 py-4 bg-white shadow-sm">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between md:hidden">
-            <span className="text-[#8b7355] font-semibold">Quick Navigation</span>
+            <span className="text-neutralc-900 font-semibold">Quick Navigation</span>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-[#8b7355] hover:bg-[#f5f1ed] rounded-lg transition-colors"
+              className="p-2 text-neutralc-900 hover:bg-white rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -590,7 +590,7 @@ We value your feedback and continuously work to improve our shipping services.
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className="text-sm text-[#8b7355] hover:text-[#6b5847] hover:bg-[#f5f1ed] px-4 py-2 rounded-lg transition-colors"
+                className="text-sm text-neutralc-900 hover:text-[var(--color-primary-700)] hover:bg-white px-4 py-2 rounded-lg transition-colors"
               >
                 {section.title}
               </button>
@@ -598,12 +598,12 @@ We value your feedback and continuously work to improve our shipping services.
           </div>
 
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 bg-[#f5f1ed] rounded-lg p-4 max-h-96 overflow-y-auto">
+            <div className="md:hidden mt-4 bg-white rounded-lg p-4 max-h-96 overflow-y-auto">
               {sections.map((section) => (
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className="w-full text-left text-[#8b7355] hover:text-[#6b5847] hover:bg-white px-4 py-3 rounded-lg transition-colors mb-2"
+                  className="w-full text-left text-neutralc-900 hover:text-[var(--color-primary-700)] hover:bg-white px-4 py-3 rounded-lg transition-colors mb-2"
                 >
                   <div className="flex items-center gap-3">
                     <section.icon className="flex-shrink-0 w-5 h-5" />
@@ -622,12 +622,12 @@ We value your feedback and continuously work to improve our shipping services.
             {shippingHighlights.map((highlight, index) => (
               <div key={index} className="p-6 text-center bg-white rounded-lg shadow-sm">
                 <div className="flex justify-center mb-3">
-                  <div className="bg-[#f5f1ed] p-3 rounded-lg">
-                    <highlight.icon className="w-8 h-8 text-[#8b7355]" />
+                  <div className="bg-white p-3 rounded-lg">
+                    <highlight.icon className="w-8 h-8 text-neutralc-900" />
                   </div>
                 </div>
-                <h3 className="font-semibold text-[#6b5847] mb-2">{highlight.title}</h3>
-                <p className="text-sm text-[#8b7355]">{highlight.description}</p>
+                <h3 className="font-semibold text-[var(--color-primary-700)] mb-2">{highlight.title}</h3>
+                <p className="text-sm text-neutralc-900">{highlight.description}</p>
               </div>
             ))}
           </div>
@@ -643,12 +643,12 @@ We value your feedback and continuously work to improve our shipping services.
               className="p-8 bg-white rounded-lg shadow-sm scroll-mt-24"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-[#f5f1ed] p-3 rounded-lg flex-shrink-0">
-                  <section.icon className="w-8 h-8 text-[#8b7355]" />
+                <div className="bg-white p-3 rounded-lg flex-shrink-0">
+                  <section.icon className="w-8 h-8 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-[#6b5847] mb-4">{section.title}</h2>
-                  <div className="text-[#6b5847] leading-relaxed whitespace-pre-line">
+                  <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-4">{section.title}</h2>
+                  <div className="text-[var(--color-primary-700)] leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 </div>
@@ -660,37 +660,37 @@ We value your feedback and continuously work to improve our shipping services.
 
       <section className="px-4 py-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#6b5847] text-center mb-8">Delivery Timeline Guide</h2>
-          <div className="bg-[#f5f1ed] p-8 rounded-lg">
+          <h2 className="text-3xl font-bold text-[var(--color-primary-700)] text-center mb-8">Delivery Timeline Guide</h2>
+          <div className="bg-white p-8 rounded-lg">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-white rounded-lg">
-                  <Clock className="w-6 h-6 text-[#8b7355]" />
+                  <Clock className="w-6 h-6 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Metro Cities</h3>
-                  <p className="text-[#8b7355] mb-2">Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune</p>
-                  <p className="text-[#6b5847] font-semibold">3-5 business days</p>
+                  <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Metro Cities</h3>
+                  <p className="text-neutralc-900 mb-2">Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune</p>
+                  <p className="text-[var(--color-primary-700)] font-semibold">3-5 business days</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-white rounded-lg">
-                  <Clock className="w-6 h-6 text-[#8b7355]" />
+                  <Clock className="w-6 h-6 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Tier 2 Cities</h3>
-                  <p className="text-[#8b7355] mb-2">Jaipur, Lucknow, Chandigarh, Indore, Nagpur, Coimbatore</p>
-                  <p className="text-[#6b5847] font-semibold">4-6 business days</p>
+                  <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Tier 2 Cities</h3>
+                  <p className="text-neutralc-900 mb-2">Jaipur, Lucknow, Chandigarh, Indore, Nagpur, Coimbatore</p>
+                  <p className="text-[var(--color-primary-700)] font-semibold">4-6 business days</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-white rounded-lg">
-                  <Clock className="w-6 h-6 text-[#8b7355]" />
+                  <Clock className="w-6 h-6 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Other Locations</h3>
-                  <p className="text-[#8b7355] mb-2">Tier 3 cities, towns, and remote areas</p>
-                  <p className="text-[#6b5847] font-semibold">5-10 business days</p>
+                  <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Other Locations</h3>
+                  <p className="text-neutralc-900 mb-2">Tier 3 cities, towns, and remote areas</p>
+                  <p className="text-[var(--color-primary-700)] font-semibold">5-10 business days</p>
                 </div>
               </div>
             </div>
@@ -700,7 +700,7 @@ We value your feedback and continuously work to improve our shipping services.
 
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white p-8 rounded-lg">
+          <div className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white p-8 rounded-lg">
             <h2 className="mb-4 text-3xl font-bold text-center">Need Help with Shipping?</h2>
             <p className="mb-8 text-center opacity-90">
               Our customer service team is here to help with any shipping-related questions or concerns.
@@ -742,7 +742,7 @@ We value your feedback and continuously work to improve our shipping services.
 
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#8b7355] text-sm">
+          <p className="text-neutralc-900 text-sm">
             This shipping policy is subject to change without prior notice. Please check this page regularly for updates. For any clarifications, contact our customer service team.
           </p>
         </div>

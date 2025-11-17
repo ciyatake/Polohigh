@@ -61,11 +61,11 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          <article className="rounded-2xl border border-[#e6dccb] bg-gradient-to-br from-white to-[#f6eedb] p-6 shadow-lg">
-            <div className="text-sm font-medium uppercase tracking-[0.2em] text-[primary-500]">
+          <article className="rounded-2xl border border-[var(--color-primary-200)] bg-gradient-to-br from-white to-[var(--color-primary-100)] p-6 shadow-lg">
+            <div className="text-sm font-medium uppercase tracking-[0.2em] text-primary-500">
               Total Sales
             </div>
-            <div className="mt-4 text-4xl font-semibold text-[primary-700]">
+            <div className="mt-4 text-4xl font-semibold text-primary-700">
               {loading ? "--" : formatINR(totalSales)}
             </div>
             <p className="mt-3 text-sm text-neutralc-400">
@@ -74,8 +74,8 @@ const Dashboard = () => {
                 : `${Math.round(salesTrend * 100)}% vs last month`}
             </p>
           </article>
-          <article className="rounded-2xl border border-[#e6dccb] bg-white p-6 shadow-lg">
-            <div className="text-sm font-medium uppercase tracking-[0.2em] text-[primary-500]">
+          <article className="rounded-2xl border border-[var(--color-primary-200)] bg-white p-6 shadow-lg">
+            <div className="text-sm font-medium uppercase tracking-[0.2em] text-primary-500">
               New Orders
             </div>
             <div className="mt-4 text-4xl font-semibold text-neutralc-900">
@@ -87,14 +87,14 @@ const Dashboard = () => {
                 : `${awaitingFulfilment} awaiting fulfilment`}
             </p>
           </article>
-          <article className="rounded-2xl border border-[#d9c6a4] bg-[primary-500] p-6 shadow-lg text-white">
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f5e8d3]">
+          <article className="rounded-2xl border border-[var(--color-primary-300)] bg-primary-500 p-6 shadow-lg text-white">
+            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-primary-100)]">
               Top Product
             </div>
             <div className="mt-4 text-2xl font-semibold">
               {loading ? "Updating..." : topProductName}
             </div>
-            <p className="mt-3 text-sm text-[#f5e8d3]">
+            <p className="mt-3 text-sm text-[var(--color-primary-100)]">
               {loading ? "--" : `${topProductUnits} units sold this week`}
             </p>
           </article>

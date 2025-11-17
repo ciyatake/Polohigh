@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 
 const baseInputStyles =
-  "w-full appearance-none rounded-full border border-[neutralc-200] bg-white px-4 py-2.5 text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[primary-500]/30 transition";
+  "w-full appearance-none rounded-full border border-neutralc-200 bg-white px-4 py-2.5 text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition";
 
 const SearchField = ({
   placeholder = "Search...",

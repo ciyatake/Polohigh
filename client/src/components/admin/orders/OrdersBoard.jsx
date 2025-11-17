@@ -14,7 +14,7 @@ const statusClassMap = {
   packed: "bg-neutralc-200 text-neutralc-600",
   shipped: "bg-blue-100 text-blue-700",
   "out-for-delivery": "bg-indigo-100 text-indigo-700",
-  delivered: "bg-[#e6f1e6] text-[#4f7a5a]",
+  delivered: "bg-[var(--color-primary-100)] text-[var(--color-primary-700)]",
   cancelled: "bg-rose-100 text-rose-700",
   refunded: "bg-neutralc-200 text-neutralc-600",
 };
@@ -114,7 +114,7 @@ const OrderStatusBadge = ({ status }) => (
 );
 
 const OrderListSkeleton = () => (
-  <tbody className="divide-y divide-[primary-100] text-sm">
+  <tbody className="divide-y divide-primary-100 text-sm">
     {Array.from({ length: 6 }).map((_, index) => (
       <tr key={`orders-skeleton-${index}`} className="animate-pulse">
         <td className="px-5 py-4">
@@ -140,10 +140,10 @@ const OrderListSkeleton = () => (
 );
 
 const OrdersList = ({ orders, loading, error, selectedId, onSelect }) => (
-  <div className="overflow-hidden rounded-2xl border border-[#e6dccb] bg-white shadow-2xl">
+  <div className="overflow-hidden rounded-2xl border border-[var(--color-primary-200)] bg-white shadow-2xl">
     <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-[primary-100]">
-        <thead className="bg-[primary-500] text-left text-xs font-semibold uppercase tracking-wide text-white">
+      <table className="min-w-full divide-y divide-primary-100">
+        <thead className="bg-primary-500 text-left text-xs font-semibold uppercase tracking-wide text-white">
           <tr>
             <th className="px-5 py-4">Order</th>
             <th className="px-5 py-4">Customer</th>
@@ -166,19 +166,19 @@ const OrdersList = ({ orders, loading, error, selectedId, onSelect }) => (
         ) : loading ? (
           <OrderListSkeleton />
         ) : orders.length ? (
-          <tbody className="divide-y divide-[primary-100] text-sm">
+          <tbody className="divide-y divide-primary-100 text-sm">
             {orders.map((order) => {
               const isSelected = order.id === selectedId;
               return (
                 <tr
                   key={order.id ?? order.orderNumber}
-                  className={`cursor-pointer transition hover:bg-[primary-100] ${
-                    isSelected ? "bg-[#f6efe3]" : ""
+                  className={`cursor-pointer transition hover:bg-primary-100 ${
+                    isSelected ? "bg-[var(--color-primary-100)]" : ""
                   }`}
                   onClick={() => onSelect(order.id)}
                 >
                   <td className="px-5 py-4">
-                    <div className="font-semibold text-[primary-700]">
+                    <div className="font-semibold text-primary-700">
                       {order.orderNumber || order.id || "—"}
                     </div>
                     {typeof order.itemsCount === "number" && (
@@ -232,17 +232,17 @@ const OrdersList = ({ orders, loading, error, selectedId, onSelect }) => (
 const OrderItemsTable = ({ items }) => {
   if (!items?.length) {
     return (
-      <div className="rounded-xl border border-dashed border-[#e6dccb] bg-[#fdf8ee] px-5 py-4 text-sm text-neutralc-400">
+      <div className="rounded-xl border border-dashed border-[var(--color-primary-200)] bg-[#fdf8ee] px-5 py-4 text-sm text-neutralc-400">
         No products attached to this order yet.
       </div>
     );
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-[#e6dccb]">
+    <div className="overflow-hidden rounded-xl border border-[var(--color-primary-200)]">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-[primary-100]">
-          <thead className="bg-[#f9f1e3] text-left text-xs font-semibold uppercase tracking-wide text-[primary-700]">
+        <table className="min-w-full divide-y divide-primary-100">
+          <thead className="bg-[var(--color-primary-100)] text-left text-xs font-semibold uppercase tracking-wide text-primary-700">
             <tr>
               <th className="px-5 py-3">Item</th>
               <th className="px-5 py-3">Variant</th>
@@ -251,7 +251,7 @@ const OrderItemsTable = ({ items }) => {
               <th className="px-5 py-3 text-right">Subtotal</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[primary-100] text-sm">
+          <tbody className="divide-y divide-primary-100 text-sm">
             {items.map((item) => (
               <tr key={item.id ?? `${item.productId}-${item.variantSku}`}>
                 <td className="px-5 py-4">
@@ -313,7 +313,7 @@ const StatusUpdateForm = ({ order, onSubmit, isUpdating, submitError }) => {
 
   if (!options.length) {
     return (
-      <div className="rounded-xl border border-[#e6dccb] bg-[#fdf8ee] px-5 py-4 text-sm text-neutralc-400">
+      <div className="rounded-xl border border-[var(--color-primary-200)] bg-[#fdf8ee] px-5 py-4 text-sm text-neutralc-400">
         No further manual status updates available for this order.
       </div>
     );
@@ -331,16 +331,16 @@ const StatusUpdateForm = ({ order, onSubmit, isUpdating, submitError }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-xl border border-[#e6dccb] bg-[#fdf8ee] px-5 py-5"
+      className="space-y-4 rounded-xl border border-[var(--color-primary-200)] bg-[#fdf8ee] px-5 py-5"
     >
       <div>
-        <label className="text-xs font-semibold uppercase tracking-wide text-[primary-700]">
+        <label className="text-xs font-semibold uppercase tracking-wide text-primary-700">
           Progress Order Status
         </label>
         <select
           value={nextStatus}
           onChange={(event) => setNextStatus(event.target.value)}
-          className="mt-2 w-full rounded-lg border border-[#e6dccb] bg-white px-3 py-2 text-sm text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e5d3b4]"
+          className="mt-2 w-full rounded-lg border border-[var(--color-primary-200)] bg-white px-3 py-2 text-sm text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[#e5d3b4]"
           disabled={isUpdating}
         >
           {options.map((status) => (
@@ -353,27 +353,27 @@ const StatusUpdateForm = ({ order, onSubmit, isUpdating, submitError }) => {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="text-xs font-semibold uppercase tracking-wide text-[primary-700]">
+          <label className="text-xs font-semibold uppercase tracking-wide text-primary-700">
             Tracking Number
           </label>
           <input
             type="text"
             value={trackingNumber}
             onChange={(event) => setTrackingNumber(event.target.value)}
-            className="mt-2 w-full rounded-lg border border-[#e6dccb] px-3 py-2 text-sm text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e5d3b4]"
+            className="mt-2 w-full rounded-lg border border-[var(--color-primary-200)] px-3 py-2 text-sm text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[#e5d3b4]"
             placeholder="Optional"
             disabled={isUpdating}
           />
         </div>
         <div>
-          <label className="text-xs font-semibold uppercase tracking-wide text-[primary-700]">
+          <label className="text-xs font-semibold uppercase tracking-wide text-primary-700">
             Courier Service
           </label>
           <input
             type="text"
             value={courierService}
             onChange={(event) => setCourierService(event.target.value)}
-            className="mt-2 w-full rounded-lg border border-[#e6dccb] px-3 py-2 text-sm text-neutralc-600 focus:border-[primary-500] focus:outline-none focus:ring-2 focus:ring-[#e5d3b4]"
+            className="mt-2 w-full rounded-lg border border-[var(--color-primary-200)] px-3 py-2 text-sm text-neutralc-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[#e5d3b4]"
             placeholder="Optional"
             disabled={isUpdating}
           />
@@ -388,7 +388,7 @@ const StatusUpdateForm = ({ order, onSubmit, isUpdating, submitError }) => {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-lg bg-[primary-700] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#7b6636] disabled:cursor-not-allowed disabled:bg-[#d4c5a6]"
+        className="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--color-primary-800)] disabled:cursor-not-allowed disabled:bg-[var(--color-primary-300)]"
         disabled={isUpdating || !nextStatus}
       >
         {isUpdating ? "Updating status..." : "Update Status"}
@@ -405,15 +405,15 @@ const OrderDetailsPanel = ({
 }) => {
   if (!order) {
     return (
-      <div className="flex h-full items-center justify-center rounded-2xl border border-[#e6dccb] bg-white px-6 py-10 text-sm text-neutralc-400 shadow-2xl">
+      <div className="flex h-full items-center justify-center rounded-2xl border border-[var(--color-primary-200)] bg-white px-6 py-10 text-sm text-neutralc-400 shadow-2xl">
         Select an order to view full details.
       </div>
     );
   }
 
   return (
-    <div className="flex max-h-[calc(100vh-300px)] flex-col gap-5 overflow-y-auto rounded-2xl border border-[#e6dccb] bg-white p-6 shadow-2xl">
-      <div className="flex flex-col gap-2 border-b border-[primary-100] pb-4">
+    <div className="flex max-h-[calc(100vh-300px)] flex-col gap-5 overflow-y-auto rounded-2xl border border-[var(--color-primary-200)] bg-white p-6 shadow-2xl">
+      <div className="flex flex-col gap-2 border-b border-primary-100 pb-4">
         <div className="flex flex-wrap items-center gap-3">
           <h3 className="text-2xl font-semibold text-neutralc-900">
             Order {order.orderNumber || order.id}
@@ -426,7 +426,7 @@ const OrderDetailsPanel = ({
             <span>Payment: {formatStatusLabel(order.payment.method)}</span>
           )}
           {order.payment?.status && (
-            <span className="inline-flex items-center rounded-full bg-[primary-100] px-2 py-0.5 text-xs font-semibold text-[primary-700]">
+            <span className="inline-flex items-center rounded-full bg-primary-100 px-2 py-0.5 text-xs font-semibold text-primary-700">
               {formatStatusLabel(order.payment.status)}
             </span>
           )}
@@ -434,8 +434,8 @@ const OrderDetailsPanel = ({
       </div>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        <div className="space-y-3 rounded-xl border border-[primary-100] bg-[#fefaf3] p-4">
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-[primary-700]">
+        <div className="space-y-3 rounded-xl border border-primary-100 bg-[var(--color-primary-50)] p-4">
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-primary-700">
             Customer
           </h4>
           <div className="text-sm text-neutralc-600">
@@ -450,8 +450,8 @@ const OrderDetailsPanel = ({
             ) : null}
           </div>
         </div>
-        <div className="space-y-3 rounded-xl border border-[primary-100] bg-[#fefaf3] p-4">
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-[primary-700]">
+        <div className="space-y-3 rounded-xl border border-primary-100 bg-[var(--color-primary-50)] p-4">
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-primary-700">
             Shipping Address
           </h4>
           <pre className="whitespace-pre-wrap break-words text-sm text-neutralc-600">
@@ -467,7 +467,7 @@ const OrderDetailsPanel = ({
 
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-[primary-700]">
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-primary-700">
             Order Items
           </h4>
           <div className="text-sm text-neutralc-400">
@@ -481,15 +481,15 @@ const OrderDetailsPanel = ({
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold uppercase tracking-wide text-[primary-700]">
+        <h4 className="text-sm font-semibold uppercase tracking-wide text-primary-700">
           Delivery Progress
         </h4>
-        <div className="space-y-2 rounded-xl border border-[primary-100] bg-[#fefaf3] p-4 text-sm text-neutralc-600">
+        <div className="space-y-2 rounded-xl border border-primary-100 bg-[var(--color-primary-50)] p-4 text-sm text-neutralc-600">
           {order.timeline?.length ? (
             order.timeline.map((entry) => (
               <div
                 key={entry.id ?? `${entry.title}-${entry.timestamp}`}
-                className="flex flex-col gap-1 rounded-lg border border-[primary-100] bg-white px-3 py-2"
+                className="flex flex-col gap-1 rounded-lg border border-primary-100 bg-white px-3 py-2"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="font-medium text-neutralc-900">
@@ -507,7 +507,7 @@ const OrderDetailsPanel = ({
           ) : (
             <div>No timeline updates logged for this order yet.</div>
           )}
-          <div className="rounded-lg border border-dashed border-[#e6dccb] bg-white px-3 py-2 text-xs text-neutralc-400">
+          <div className="rounded-lg border border-dashed border-[var(--color-primary-200)] bg-white px-3 py-2 text-xs text-neutralc-400">
             Tracking: {order.delivery?.trackingNumber || "Not assigned"} ·
             Courier: {order.delivery?.courierService || "Not set"}
           </div>
@@ -698,7 +698,7 @@ const OrdersBoard = () => {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-lg border border-[#e6dccb] px-4 py-2 text-sm font-semibold text-[primary-700] shadow-sm transition hover:border-[primary-500] hover:bg-[#fff8ec] disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-primary-200)] px-4 py-2 text-sm font-semibold text-primary-700 shadow-sm transition hover:border-primary-500 hover:bg-[var(--color-primary-50)] disabled:cursor-not-allowed disabled:opacity-60"
             onClick={handleRefresh}
             disabled={loading || refreshing}
           >
@@ -708,8 +708,8 @@ const OrdersBoard = () => {
       </header>
 
       {/* Filter Section */}
-      <div className="rounded-2xl border border-[#e6dccb] bg-white p-5 shadow-lg">
-        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-[primary-700]">
+      <div className="rounded-2xl border border-[var(--color-primary-200)] bg-white p-5 shadow-lg">
+        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary-700">
           Filter by Status
         </h3>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
@@ -717,11 +717,11 @@ const OrdersBoard = () => {
             onClick={() => setStatusFilter("all")}
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "all"
-                ? "border-[primary-500] bg-[#fff8ec] shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-[#d4c5a6] hover:bg-[#fefaf3]"
+                ? "border-primary-500 bg-[var(--color-primary-50)] shadow-md"
+                : "border-[var(--color-primary-200)] bg-white hover:border-[var(--color-primary-300)] hover:bg-[var(--color-primary-50)]"
             }`}
           >
-            <span className="text-2xl font-bold text-[primary-700]">
+            <span className="text-2xl font-bold text-primary-700">
               {statusCounts.all}
             </span>
             <span className="mt-1 text-xs font-semibold text-neutralc-600">
@@ -734,7 +734,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "pending"
                 ? "border-amber-400 bg-amber-50 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-amber-200 hover:bg-amber-50"
+                : "border-[var(--color-primary-200)] bg-white hover:border-amber-200 hover:bg-amber-50"
             }`}
           >
             <span className="text-2xl font-bold text-amber-600">
@@ -750,7 +750,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "confirmed"
                 ? "border-sky-400 bg-sky-50 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-sky-200 hover:bg-sky-50"
+                : "border-[var(--color-primary-200)] bg-white hover:border-sky-200 hover:bg-sky-50"
             }`}
           >
             <span className="text-2xl font-bold text-sky-600">
@@ -766,7 +766,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "processing"
                 ? "border-amber-400 bg-amber-50 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-amber-200 hover:bg-amber-50"
+                : "border-[var(--color-primary-200)] bg-white hover:border-amber-200 hover:bg-amber-50"
             }`}
           >
             <span className="text-2xl font-bold text-amber-600">
@@ -782,7 +782,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "shipped"
                 ? "border-blue-400 bg-blue-50 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-blue-200 hover:bg-blue-50"
+                : "border-[var(--color-primary-200)] bg-white hover:border-blue-200 hover:bg-blue-50"
             }`}
           >
             <span className="text-2xl font-bold text-blue-600">
@@ -798,7 +798,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "delivered"
                 ? "border-green-400 bg-green-50 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-green-200 hover:bg-green-50"
+                : "border-[var(--color-primary-200)] bg-white hover:border-green-200 hover:bg-green-50"
             }`}
           >
             <span className="text-2xl font-bold text-green-600">
@@ -814,7 +814,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "cancelled"
                 ? "border-rose-400 bg-rose-50 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-rose-200 hover:bg-rose-50"
+                : "border-[var(--color-primary-200)] bg-white hover:border-rose-200 hover:bg-rose-50"
             }`}
           >
             <span className="text-2xl font-bold text-rose-600">
@@ -830,7 +830,7 @@ const OrdersBoard = () => {
             className={`flex flex-col items-center justify-center rounded-xl border-2 px-4 py-3 transition-all duration-200 ${
               statusFilter === "refunded"
                 ? "border-neutralc-400 bg-neutralc-100 shadow-md"
-                : "border-[#e6dccb] bg-white hover:border-neutralc-200 hover:bg-neutralc-100"
+                : "border-[var(--color-primary-200)] bg-white hover:border-neutralc-200 hover:bg-neutralc-100"
             }`}
           >
             <span className="text-2xl font-bold text-neutralc-600">

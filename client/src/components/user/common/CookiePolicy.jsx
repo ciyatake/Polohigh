@@ -455,9 +455,9 @@ We welcome your feedback about our cookie practices and privacy policies.`
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f1ed]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white py-16 px-4">
+      <section className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Cookie className="w-16 h-16" />
@@ -481,7 +481,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
               <a
                 key={section.id}
                 href={`#section-${section.id}`}
-                className="text-sm text-[#8b7355] hover:text-[#6b5847] hover:bg-[#f5f1ed] px-4 py-2 rounded-lg transition-colors"
+                className="text-sm text-neutralc-900 hover:text-[var(--color-primary-700)] hover:bg-white px-4 py-2 rounded-lg transition-colors"
               >
                 {section.title}
               </a>
@@ -494,8 +494,8 @@ We welcome your feedback about our cookie practices and privacy policies.`
       <section className="px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="p-8 bg-white rounded-lg shadow-md">
-            <h2 className="text-3xl font-bold text-[#6b5847] mb-6 text-center">Manage Cookie Preferences</h2>
-            <p className="text-[#8b7355] text-center mb-8">
+            <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-6 text-center">Manage Cookie Preferences</h2>
+            <p className="text-neutralc-900 text-center mb-8">
               Control which cookies you want to allow. Essential cookies cannot be disabled as they are necessary for the website to function.
             </p>
             <div className="space-y-6">
@@ -503,20 +503,20 @@ We welcome your feedback about our cookie practices and privacy policies.`
                 <div key={category.name} className="p-6 border border-neutralc-200 rounded-lg">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-start flex-1 gap-4">
-                      <div className="bg-[#f5f1ed] p-3 rounded-lg">
-                        <category.icon className="w-6 h-6 text-[#8b7355]" />
+                      <div className="bg-white p-3 rounded-lg">
+                        <category.icon className="w-6 h-6 text-neutralc-900" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-[#6b5847] mb-2">{category.title}</h3>
-                        <p className="text-[#8b7355] mb-2">{category.description}</p>
-                        <p className="text-sm text-[#8b7355]">
+                        <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">{category.title}</h3>
+                        <p className="text-neutralc-900 mb-2">{category.description}</p>
+                        <p className="text-sm text-neutralc-900">
                           <span className="font-semibold">Examples:</span> {category.examples}
                         </p>
                       </div>
                     </div>
                     <div className="ml-4">
                       {category.required ? (
-                        <div className="flex items-center gap-2 text-[#8b7355]">
+                        <div className="flex items-center gap-2 text-neutralc-900">
                           <CheckCircle className="w-5 h-5" />
                           <span className="text-sm font-semibold">Always Active</span>
                         </div>
@@ -525,7 +525,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
                           onClick={() => handleToggle(category.name)}
                           className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
                             cookieSettings[category.name]
-                              ? 'bg-[#8b7355]'
+                              ? 'bg-neutralc-900'
                               : 'bg-gray-300'
                           }`}
                         >
@@ -546,7 +546,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
             <div className="mt-8 text-center">
               <button
                 onClick={handleSavePreferences}
-                className="bg-[#8b7355] text-white px-8 py-4 rounded-lg hover:bg-[#6b5847] transition-colors font-semibold text-lg"
+                className="bg-neutralc-900 text-white px-8 py-4 rounded-lg hover:bg-neutralc-800 transition-colors font-semibold text-lg"
               >
                 Save Preferences
               </button>
@@ -565,12 +565,12 @@ We welcome your feedback about our cookie practices and privacy policies.`
               className="p-8 bg-white rounded-lg shadow-sm scroll-mt-24"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-[#f5f1ed] p-3 rounded-lg flex-shrink-0">
-                  <section.icon className="w-8 h-8 text-[#8b7355]" />
+                <div className="bg-white p-3 rounded-lg flex-shrink-0">
+                  <section.icon className="w-8 h-8 text-neutralc-900" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-[#6b5847] mb-4">{section.title}</h2>
-                  <div className="text-[#6b5847] leading-relaxed whitespace-pre-line">
+                  <h2 className="text-3xl font-bold text-[var(--color-primary-700)] mb-4">{section.title}</h2>
+                  <div className="text-[var(--color-primary-700)] leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 </div>
@@ -583,33 +583,33 @@ We welcome your feedback about our cookie practices and privacy policies.`
       {/* Quick Summary */}
       <section className="px-4 py-16 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#6b5847] text-center mb-12">Cookie Policy Summary</h2>
+          <h2 className="text-3xl font-bold text-[var(--color-primary-700)] text-center mb-12">Cookie Policy Summary</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Transparency</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Transparency</h3>
+              <p className="text-neutralc-900">
                 We clearly explain what cookies we use, why we use them, and how they benefit you.
               </p>
             </div>
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Your Control</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Your Control</h3>
+              <p className="text-neutralc-900">
                 Manage your cookie preferences anytime through our settings panel or browser controls.
               </p>
             </div>
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Privacy Protection</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Privacy Protection</h3>
+              <p className="text-neutralc-900">
                 We respect your privacy and only use cookies that improve your shopping experience.
               </p>
             </div>
-            <div className="bg-[#f5f1ed] p-6 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-[#8b7355] mb-3" />
-              <h3 className="text-xl font-semibold text-[#6b5847] mb-2">Regular Updates</h3>
-              <p className="text-[#8b7355]">
+            <div className="bg-white p-6 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-neutralc-900 mb-3" />
+              <h3 className="text-xl font-semibold text-[var(--color-primary-700)] mb-2">Regular Updates</h3>
+              <p className="text-neutralc-900">
                 We keep this policy current and notify you of any significant changes to our practices.
               </p>
             </div>
@@ -620,7 +620,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
       {/* Contact Section */}
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-[#8b7355] to-[#6b5847] text-white p-8 rounded-lg text-center">
+          <div className="bg-gradient-to-br from-[var(--color-primary-700)] to-[var(--color-primary-700)] text-white p-8 rounded-lg text-center">
             <Cookie className="w-12 h-12 mx-auto mb-4" />
             <h2 className="mb-4 text-3xl font-bold">Questions About Cookies?</h2>
             <p className="mb-6 opacity-90">
@@ -628,7 +628,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
             </p>
             <a
               href="mailto:privacy@ciyatake.com"
-              className="bg-white text-[#6b5847] px-8 py-3 rounded-lg hover:bg-[#f5f1ed] transition-colors font-semibold inline-flex items-center gap-2"
+              className="bg-white text-[var(--color-primary-700)] px-8 py-3 rounded-lg hover:bg-white transition-colors font-semibold inline-flex items-center gap-2"
             >
               <Info className="w-5 h-5" />
               privacy@ciyatake.com
@@ -640,7 +640,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
       {/* Footer Note */}
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#8b7355] text-sm">
+          <p className="text-neutralc-900 text-sm">
             By continuing to use Ciyatake, you consent to our use of cookies as described in this Cookie Policy.
           </p>
         </div>

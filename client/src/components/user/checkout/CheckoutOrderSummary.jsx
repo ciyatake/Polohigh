@@ -16,7 +16,7 @@ const CheckoutOrderSummary = ({
   const total = subtotal; // Only product price, no shipping or tax
 
   return (
-    <aside className="space-y-4 sm:space-y-6 rounded-2xl sm:rounded-3xl border border-[neutralc-200] bg-white p-4 sm:p-6 shadow-[0_28px_64px_rgba(15,23,42,0.12)]">
+    <aside className="space-y-4 sm:space-y-6 rounded-2xl sm:rounded-3xl border border-neutralc-200 bg-white p-4 sm:p-6 shadow-[0_28px_64px_rgba(15,23,42,0.12)]">
       <header className="space-y-1 sm:space-y-2">
         <p className="text-[0.65rem] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-neutralc-400">
           Your order
@@ -47,8 +47,8 @@ const CheckoutOrderSummary = ({
           disabled={isPlacingOrder}
           className={`flex w-full items-center justify-center gap-2 rounded-full px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold transition ${
             isPlacingOrder
-              ? "cursor-not-allowed border border-[neutralc-200] bg-[primary-100] text-neutralc-400"
-              : "border border-transparent bg-[primary-500] text-white shadow-lg shadow-[primary-500]/25 hover:bg-[primary-700]"
+              ? "cursor-not-allowed border border-neutralc-200 bg-primary-100 text-neutralc-400"
+              : "border border-transparent bg-primary-500 text-white shadow-lg shadow-primary-500/25 hover:bg-primary-700"
           }`}
         >
           {isPlacingOrder ? "Processing order..." : "Place Order"}

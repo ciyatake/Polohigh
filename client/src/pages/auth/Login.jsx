@@ -198,7 +198,7 @@ const Login = () => {
   const loaderLabel = "Signing you in";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f2ee] via-[#faf8f5] to-[#f0ede8]">
+    <div className="min-h-screen bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-primary-50)] to-[var(--color-primary-100)]">
       <UserNavbar />
       <AuthForm
         title="Welcome back"

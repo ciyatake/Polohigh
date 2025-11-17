@@ -17,7 +17,7 @@ const Breadcrumbs = ({ items = [], homeLabel = "Home" }) => {
             return (
               <li
                 key={label}
-                className="font-semibold text-[primary-500]"
+                className="font-semibold text-primary-500"
                 aria-current="page"
               >
                 {label}
@@ -27,7 +27,7 @@ const Breadcrumbs = ({ items = [], homeLabel = "Home" }) => {
 
           return (
             <li key={label} className="flex items-center gap-1">
-              <Link to={path} className="transition hover:text-[primary-500]">
+              <Link to={path} className="transition hover:text-primary-500">
                 {label}
               </Link>
               <span aria-hidden className="text-neutralc-400">

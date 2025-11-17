@@ -39,12 +39,12 @@ const RecentActivities = () => {
   }, []);
 
   return (
-    <aside className="w-full max-w-sm rounded-2xl border border-[#e6dccb] bg-white shadow-xl">
-      <header className="flex items-center justify-between border-b border-[#e6dccb] px-6 py-4">
+    <aside className="w-full max-w-sm rounded-2xl border border-[var(--color-primary-200)] bg-white shadow-xl">
+      <header className="flex items-center justify-between border-b border-[var(--color-primary-200)] px-6 py-4">
         <h3 className="text-lg font-semibold text-neutralc-900">
           Recent Activity
         </h3>
-        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500]">
+        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-500">
           Feed
         </span>
       </header>
@@ -54,7 +54,7 @@ const RecentActivities = () => {
             Unable to load activity feed.
           </p>
         ) : loading ? (
-          <p className="rounded-2xl bg-[#f7f1e4] p-4 text-center text-sm text-[primary-700]">
+          <p className="rounded-2xl bg-[var(--color-primary-100)] p-4 text-center text-sm text-primary-700">
             Loading activity...
           </p>
         ) : activities.length ? (
@@ -63,7 +63,7 @@ const RecentActivities = () => {
               key={`${activity.message}-${index}`}
               className="flex items-start gap-3"
             >
-              <span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[primary-100] text-[primary-700]">
+              <span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-700">
                 {activity.icon ?? "📝"}
               </span>
               <div className="flex-1">
@@ -80,8 +80,8 @@ const RecentActivities = () => {
           </p>
         )}
       </div>
-      <div className="border-t border-[#e6dccb] p-6">
-        <button className="inline-flex w-full items-center justify-center rounded-full bg-[primary-500] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[primary-700]">
+      <div className="border-t border-[var(--color-primary-200)] p-6">
+        <button className="inline-flex w-full items-center justify-center rounded-full bg-primary-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-700">
           View all activity
         </button>
       </div>

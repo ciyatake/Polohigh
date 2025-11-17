@@ -28,7 +28,7 @@ const Loader = ({
 
   const spinner = (
     <span
-      className={`inline-block animate-spin rounded-full border-[#dec9a4] border-solid border-t-transparent ${spinnerSizing} ${spinnerClassName}`.trim()}
+      className={`inline-block animate-spin rounded-full border-[var(--color-primary-200)] border-solid border-t-transparent ${spinnerSizing} ${spinnerClassName}`.trim()}
     >
       <span className="sr-only">Loading</span>
     </span>
@@ -48,7 +48,7 @@ const Loader = ({
 
   return (
     <div
-      className={`flex flex-col items-center justify-center ${spacing} text-[primary-700] ${className}`.trim()}
+      className={`flex flex-col items-center justify-center ${spacing} text-primary-700 ${className}`.trim()}
       role="status"
       aria-live="polite"
     >

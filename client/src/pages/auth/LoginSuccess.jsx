@@ -68,7 +68,7 @@ const LoginSuccess = () => {
   }, [navigate]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#f5f2ee]">
+    <div className="flex min-h-screen items-center justify-center bg-[var(--color-primary-50)]">
       <div className="space-y-3 text-center">
         <Loader label="Completing Google sign-in" />
         <p className="text-sm text-neutralc-600">

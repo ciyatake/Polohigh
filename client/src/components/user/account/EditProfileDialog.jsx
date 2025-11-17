@@ -128,7 +128,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutralc-900/40 p-4"
       onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
@@ -136,7 +136,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md rounded-3xl border border-[neutralc-200] bg-white p-6 text-neutralc-600 shadow-[0_32px_56px_rgba(15,23,42,0.12)]"
+        className="w-full max-w-md rounded-3xl border border-neutralc-200 bg-white p-6 text-neutralc-600 shadow-[0_32px_56px_rgba(15,23,42,0.12)]"
       >
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -153,7 +153,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
           <button
             type="button"
             onClick={() => onClose?.()}
-            className="rounded-full border border-neutralc-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-600 transition hover:border-[primary-500] hover:text-[primary-500]"
+            className="rounded-full border border-neutralc-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-600 transition hover:border-primary-500 hover:text-primary-500"
           >
             Close
           </button>
@@ -167,7 +167,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
               name="fullName"
               value={formValues.fullName}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-[neutralc-200] bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               placeholder="Your name"
               required
             />
@@ -180,7 +180,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
               name="email"
               value={formValues.email}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-[neutralc-200] bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               placeholder="name@example.com"
             />
           </label>
@@ -192,7 +192,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
               name="mobileNumber"
               value={formValues.mobileNumber}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-[neutralc-200] bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               placeholder="10-digit mobile"
               pattern="[0-9]{10}"
               inputMode="numeric"
@@ -207,7 +207,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
               name="birthday"
               value={formValues.birthday}
               onChange={handleChange}
-              className="w-full rounded-2xl border border-[neutralc-200] bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
             />
           </label>
         </div>
@@ -221,7 +221,7 @@ const EditProfileDialog = ({ open, profile, onClose, onSubmit }) => {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex min-w-[8rem] items-center justify-center rounded-full border border-[primary-500] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white disabled:opacity-60"
+            className="inline-flex min-w-[8rem] items-center justify-center rounded-full border border-primary-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white disabled:opacity-60"
           >
             {saving ? "Saving..." : "Save changes"}
           </button>

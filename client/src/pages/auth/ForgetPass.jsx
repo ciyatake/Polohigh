@@ -171,7 +171,7 @@ const ForgetPass = () => {
   };
 
   const inputClasses =
-    "w-full rounded-xl border-2 border-[neutralc-200] bg-white px-4 py-3 text-base text-neutralc-600 placeholder:text-neutralc-400 transition-all duration-200 focus:border-[primary-500] focus:outline-none focus:ring-4 focus:ring-[primary-500]/20 hover:border-[primary-500]/40";
+    "w-full rounded-xl border-2 border-neutralc-200 bg-white px-4 py-3 text-base text-neutralc-600 placeholder:text-neutralc-400 transition-all duration-200 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/20 hover:border-primary-500/40";
 
   const showRefreshLoader = isSendingOtp || isVerifyingOtp;
   const loaderLabel = isVerifyingOtp
@@ -220,8 +220,8 @@ const ForgetPass = () => {
     return (
       <div>
         <UserNavbar />
-        <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[#f5f2ee] via-[#faf8f5] to-[#f0ede8] px-4 py-8 sm:px-6 lg:px-8">
-          <div className="w-full max-w-md rounded-3xl border-2 border-[neutralc-200] bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8">
+        <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-primary-50)] to-[var(--color-primary-100)] px-4 py-8 sm:px-6 lg:px-8">
+          <div className="w-full max-w-md rounded-3xl border-2 border-neutralc-200 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8">
             <div className="space-y-2 text-center">
               <Skeleton className="mx-auto h-8 w-56" />
               <Skeleton className="mx-auto h-4 w-72" />
@@ -255,8 +255,8 @@ const ForgetPass = () => {
   return (
     <div>
       <UserNavbar />
-      <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[#f5f2ee] via-[#faf8f5] to-[#f0ede8] px-4 py-8 sm:px-6 lg:px-8">
-        <form className="w-full max-w-md rounded-3xl border-2 border-[neutralc-200] bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8 animate-slide-in-from-bottom-4">
+      <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-primary-50)] to-[var(--color-primary-100)] px-4 py-8 sm:px-6 lg:px-8">
+        <form className="w-full max-w-md rounded-3xl border-2 border-neutralc-200 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8 animate-slide-in-from-bottom-4">
           <div className="text-center">
             <h2 className="bg-gradient-to-r from-neutralc-900 to-neutralc-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
               Reset Your Password
@@ -290,7 +290,7 @@ const ForgetPass = () => {
               <button
                 type="button"
                 disabled={tel.length !== 10 || isSendingOtp}
-                className={`font-semibold text-[primary-500] transition-all duration-200 hover:text-[primary-700] hover:underline underline-offset-2 ${
+                className={`font-semibold text-primary-500 transition-all duration-200 hover:text-primary-700 hover:underline underline-offset-2 ${
                   tel.length !== 10 || isSendingOtp
                     ? "cursor-not-allowed opacity-40"
                     : ""
@@ -339,7 +339,7 @@ const ForgetPass = () => {
                 handleVerifyOtp();
               }}
               disabled={otp.length < 6 || isVerifyingOtp}
-              className="mt-2 w-full h-12 text-base font-semibold shadow-lg shadow-[primary-500]/30 hover:shadow-xl hover:shadow-[primary-500]/40 transition-all duration-200"
+              className="mt-2 w-full h-12 text-base font-semibold shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transition-all duration-200"
             >
               {isVerifyingOtp
                 ? "Verifying..."
@@ -353,7 +353,7 @@ const ForgetPass = () => {
           <div className="mt-6 text-right text-sm">
             <Link
               to="/login"
-              className="font-semibold text-[primary-500] transition-all duration-200 hover:text-[primary-700] hover:underline underline-offset-2"
+              className="font-semibold text-primary-500 transition-all duration-200 hover:text-primary-700 hover:underline underline-offset-2"
             >
               Back to login
             </Link>

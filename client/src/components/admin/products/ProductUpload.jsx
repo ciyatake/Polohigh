@@ -932,11 +932,11 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
   }, [form.price, form.discountPercentage]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f6eedb] via-white to-[primary-100]/60 pb-16">
+    <div className="min-h-screen bg-gradient-to-br from-[var(--color-primary-100)] via-white to-primary-100/60 pb-16">
       <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pt-10">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[primary-700]">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary-700">
               Catalog
             </p>
             <h1 className="mt-2 text-3xl font-bold text-neutralc-900">
@@ -948,7 +948,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                 : "Provide detailed information so shoppers understand the product instantly."}
             </p>
             {mode === "edit" && (existingProductId || productId) ? (
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500]">
+              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500">
                 Editing {existingProductId || productId}
               </p>
             ) : null}
@@ -956,7 +956,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
           <div className="flex items-center gap-3">
             <Button
               type="button"
-              className="border border-[#dec9a4] bg-white text-[#6a542b]"
+              className="border border-[var(--color-primary-200)] bg-white text-[var(--color-primary-800)]"
               onClick={resetForm}
               disabled={
                 saving ||
@@ -968,10 +968,10 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
             </Button>
             <Button
               type="button"
-              className={`border border-[#dec9a4] ${
+              className={`border border-[var(--color-primary-200)] ${
                 form.visibility === "draft"
-                  ? "bg-white text-[#6a542b]"
-                  : "bg-[primary-500] text-white"
+                  ? "bg-white text-[var(--color-primary-800)]"
+                  : "bg-primary-500 text-white"
               }`}
               disabled={
                 saving ||
@@ -991,7 +991,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
         </div>
 
         {mode === "edit" && loadingExisting ? (
-          <div className="rounded-2xl border border-[#dec9a4] bg-[primary-100] px-4 py-3 text-sm text-[primary-700]">
+          <div className="rounded-2xl border border-[var(--color-primary-200)] bg-primary-100 px-4 py-3 text-sm text-primary-700">
             Loading product details…
           </div>
         ) : null}
@@ -1007,7 +1007,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
             className={`rounded-2xl border px-4 py-3 text-sm ${
               feedback.type === "error"
                 ? "border-rose-200 bg-rose-50 text-rose-700"
-                : "border-[#dec9a4] bg-[primary-100] text-[primary-700]"
+                : "border-[var(--color-primary-200)] bg-primary-100 text-primary-700"
             }`}
           >
             {feedback.text}
@@ -1033,7 +1033,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   value={form.title}
                   onChange={(event) => updateForm("title", event.target.value)}
                   placeholder="e.g. Organic cotton oversized tee"
-                  className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1055,7 +1055,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   value={form.brand}
                   onChange={(event) => updateForm("brand", event.target.value)}
                   placeholder="Brand name"
-                  className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1063,7 +1063,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                 <select
                   value={form.gender}
                   onChange={(event) => selectGender(event.target.value)}
-                  className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                   <option value="">Select audience</option>
                   <option value="Men">Men</option>
@@ -1078,7 +1078,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   value={form.category}
                   onChange={(event) => selectCategory(event.target.value)}
                   disabled={loadingCategories}
-                  className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20 disabled:cursor-not-allowed disabled:bg-neutralc-100"
+                  className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:bg-neutralc-100"
                 >
                   <option value="">
                     {loadingCategories
@@ -1119,7 +1119,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     }
                     placeholder="e.g. Festive Wear"
                     maxLength={60}
-                    className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                    className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                   />
                 </FormField>
               ) : null}
@@ -1135,7 +1135,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     !availableSubCategories.length ||
                     !form.category
                   }
-                  className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20 disabled:cursor-not-allowed disabled:bg-neutralc-100"
+                  className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:bg-neutralc-100"
                 >
                   <option value="">
                     {loadingCategories
@@ -1168,7 +1168,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     updateForm("productType", event.target.value)
                   }
                   placeholder="e.g. Crew neck"
-                  className="w-full rounded-xl border border-[#dec9a4] bg-white px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-[var(--color-primary-200)] bg-white px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
             </div>
@@ -1216,7 +1216,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   value={form.price}
                   onChange={(event) => updateForm("price", event.target.value)}
                   placeholder="0.00"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1230,7 +1230,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     updateForm("discountPercentage", event.target.value)
                   }
                   placeholder="0"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1247,7 +1247,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     updateForm("stockQuantity", event.target.value)
                   }
                   placeholder="0"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1257,7 +1257,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   value={form.sku}
                   onChange={(event) => updateForm("sku", event.target.value)}
                   placeholder="Unique SKU code"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
             </div>
@@ -1273,13 +1273,13 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                       key={size}
                       className={`flex items-center gap-2 rounded-full border px-3 py-1 text-sm transition ${
                         form.availableSizes.includes(size)
-                          ? "border-[#dec9a4] bg-[primary-100] text-[primary-700]"
-                          : "border-neutralc-200 bg-white text-neutralc-600 hover:border-[#dec9a4]"
+                          ? "border-[var(--color-primary-200)] bg-primary-100 text-primary-700"
+                          : "border-neutralc-200 bg-white text-neutralc-600 hover:border-[var(--color-primary-200)]"
                       }`}
                     >
                       <input
                         type="checkbox"
-                        className="accent-[primary-500]"
+                        className="accent-primary-500"
                         checked={form.availableSizes.includes(size)}
                         onChange={() => toggleSize(size)}
                       />
@@ -1297,7 +1297,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
               </FormField>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-[#dec9a4] bg-[primary-100] px-4 py-3 text-sm text-[primary-700]">
+            <div className="mt-6 rounded-2xl border border-[var(--color-primary-200)] bg-primary-100 px-4 py-3 text-sm text-primary-700">
               Expected selling price:{" "}
               <span className="font-semibold">
                 ₹{discountedPrice.toLocaleString("en-IN")}
@@ -1318,7 +1318,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   onChange={(event) =>
                     updateForm("material", event.target.value)
                   }
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                   <option value="">Select material</option>
                   {MATERIAL_OPTIONS.map((material) => (
@@ -1335,7 +1335,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   onChange={(event) =>
                     updateForm("fitType", event.target.value)
                   }
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                   <option value="">Select fit</option>
                   {FIT_TYPES.map((fit) => (
@@ -1354,7 +1354,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   }
                   rows={3}
                   placeholder="Machine wash cold, tumble dry low…"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1362,7 +1362,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                 <select
                   value={form.madeIn}
                   onChange={(event) => updateForm("madeIn", event.target.value)}
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                   {COUNTRY_OPTIONS.map((country) => (
                     <option key={country} value={country}>
@@ -1380,7 +1380,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     updateForm("warranty", event.target.value)
                   }
                   placeholder="e.g. 6 months manufacturing warranty"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
             </div>
@@ -1401,7 +1401,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     updateForm("metaTitle", event.target.value)
                   }
                   placeholder="Title shown in search engines"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1413,7 +1413,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     updateForm("metaDescription", event.target.value)
                   }
                   placeholder="Short pitch about the product for search previews"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1447,7 +1447,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   onChange={(event) =>
                     updateForm("shippingTime", event.target.value)
                   }
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </FormField>
 
@@ -1460,7 +1460,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                       updateForm("returnPolicy", !form.returnPolicy)
                     }
                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition ${
-                      form.returnPolicy ? "bg-[primary-500]" : "bg-neutralc-200"
+                      form.returnPolicy ? "bg-primary-500" : "bg-neutralc-200"
                     }`}
                     aria-pressed={form.returnPolicy}
                   >
@@ -1488,7 +1488,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                   onChange={(event) =>
                     updateForm("visibility", event.target.value)
                   }
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-[primary-500] focus:ring-2 focus:ring-[primary-500]/20"
+                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                   <option value="draft">Draft</option>
                   <option value="published">Published</option>
@@ -1505,7 +1505,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                     type="button"
                     onClick={() => updateForm("featured", !form.featured)}
                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition ${
-                      form.featured ? "bg-[primary-500]" : "bg-neutralc-200"
+                      form.featured ? "bg-primary-500" : "bg-neutralc-200"
                     }`}
                     aria-pressed={form.featured}
                   >
@@ -1520,7 +1520,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
             </div>
           </FormSection>
 
-          <div className="sticky bottom-6 z-10 flex flex-col gap-3 rounded-3xl border border-[#dec9a4] bg-white/90 p-4 shadow-xl backdrop-blur">
+          <div className="sticky bottom-6 z-10 flex flex-col gap-3 rounded-3xl border border-[var(--color-primary-200)] bg-white/90 p-4 shadow-xl backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-neutralc-900">
@@ -1547,7 +1547,7 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-[primary-500] px-6 py-2 text-white shadow-lg hover:bg-[primary-700]"
+                  className="bg-primary-500 px-6 py-2 text-white shadow-lg hover:bg-primary-700"
                   disabled={
                     saving ||
                     loadingExisting ||

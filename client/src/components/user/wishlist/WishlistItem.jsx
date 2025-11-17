@@ -6,12 +6,12 @@ import trashIcon from "../../../assets/icons/trash.svg";
 const WishlistBadge = ({ inStock }) => (
   <span
     className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${
-      inStock ? "bg-[#c3dedd] text-[#2f4a55]" : "bg-[#F6C7B3] text-[#8a4b3c]"
+      inStock ? "bg-[var(--color-primary-200)] text-[var(--color-primary-800)]" : "bg-[var(--color-primary-300)] text-[var(--color-primary-700)]"
     }`}
   >
     <span
       className={`h-2 w-2 rounded-full ${
-        inStock ? "bg-[#82B2C0]" : "bg-[#F6C7B3]"
+        inStock ? "bg-[#82B2C0]" : "bg-[var(--color-primary-300)]"
       }`}
     />
     {inStock ? "In stock" : "Back soon"}

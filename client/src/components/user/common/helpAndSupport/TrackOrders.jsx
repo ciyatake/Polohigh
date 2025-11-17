@@ -105,17 +105,17 @@ const TrackOrder = () => {
 }, []);
 
   return (
-    <div className="min-h-screen bg-[#faf8f5]">
+    <div className="min-h-screen bg-[var(--color-primary-50)]">
       <div className="max-w-5xl px-4 py-8 mx-auto sm:px-6 lg:px-8 sm:py-12">
         <a
           href="/"
-          className="inline-flex items-center text-[#8b7355] hover:text-[#a08968] mb-6 sm:mb-8 transition-colors"
+          className="inline-flex items-center text-neutralc-900 hover:text-[var(--color-primary-500)] mb-6 sm:mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </a>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#8b7355] mb-6 sm:mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold text-neutralc-900 mb-6 sm:mb-8">
           Track Your Order
         </h1>
 
@@ -140,7 +140,7 @@ const TrackOrder = () => {
                   value={orderNumber}
                   onChange={(e) => setOrderNumber(e.target.value)}
                   placeholder="e.g., CYT123456789"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8b7355] focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-700)] focus:border-transparent transition-all"
                   required
                 />
               </div>
@@ -158,14 +158,14 @@ const TrackOrder = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="e.g., your.email@example.com"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8b7355] focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-700)] focus:border-transparent transition-all"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#8b7355] text-white py-3 px-6 rounded-lg hover:bg-[#a08968] transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 font-medium"
+                className="w-full bg-neutralc-900 text-white py-3 px-6 rounded-lg hover:bg-[var(--color-primary-500)] transition-all shadow-md hover:shadow-lg flex items-center justify-center space-x-2 font-medium"
               >
                 <Search className="w-5 h-5" />
                 <span>Track Order</span>
@@ -179,7 +179,7 @@ const TrackOrder = () => {
           <div className="space-y-6">
             {/* Order Summary Card */}
             <div className="p-6 bg-white shadow-md rounded-xl sm:p-8">
-              <h2 className="text-2xl font-semibold text-[#8b7355] mb-6">
+              <h2 className="text-2xl font-semibold text-neutralc-900 mb-6">
                 Order Summary
               </h2>
 
@@ -197,7 +197,7 @@ const TrackOrder = () => {
                   <p className="mb-2 text-neutralc-600">
                     Quantity: {mockOrderData.product.quantity}
                   </p>
-                  <p className="text-lg font-semibold text-[#8b7355]">
+                  <p className="text-lg font-semibold text-neutralc-900">
                     {mockOrderData.product.price} each
                   </p>
                 </div>
@@ -219,7 +219,7 @@ const TrackOrder = () => {
                 </div>
                 <div>
                   <p className="mb-1 text-sm text-neutralc-400">Total Amount</p>
-                  <p className="font-semibold text-[#8b7355] text-xl">
+                  <p className="font-semibold text-neutralc-900 text-xl">
                     {mockOrderData.totalAmount}
                   </p>
                 </div>
@@ -242,7 +242,7 @@ const TrackOrder = () => {
 
             {/* Progress Tracker */}
             <div className="p-6 bg-white shadow-md rounded-xl sm:p-8">
-              <h2 className="text-2xl font-semibold text-[#8b7355] mb-8">
+              <h2 className="text-2xl font-semibold text-neutralc-900 mb-8">
                 Order Status
               </h2>
               /* Mobile View - Vertical Timeline */
@@ -339,13 +339,13 @@ const TrackOrder = () => {
 
             {/* Shipment Details */}
             <div className="p-6 bg-white shadow-md rounded-xl sm:p-8">
-              <h2 className="text-2xl font-semibold text-[#8b7355] mb-6">
+              <h2 className="text-2xl font-semibold text-neutralc-900 mb-6">
                 Shipment Details
               </h2>
 
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="flex items-start space-x-3">
-                  <Truck className="w-6 h-6 text-[#8b7355] flex-shrink-0 mt-1" />
+                  <Truck className="w-6 h-6 text-neutralc-900 flex-shrink-0 mt-1" />
                   <div>
                     <p className="mb-1 text-sm text-neutralc-400">
                       Courier Partner
@@ -357,7 +357,7 @@ const TrackOrder = () => {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <Package className="w-6 h-6 text-[#8b7355] flex-shrink-0 mt-1" />
+                  <Package className="w-6 h-6 text-neutralc-900 flex-shrink-0 mt-1" />
                   <div>
                     <p className="mb-1 text-sm text-neutralc-400">
                       Tracking Number
@@ -369,7 +369,7 @@ const TrackOrder = () => {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <MapPin className="w-6 h-6 text-[#8b7355] flex-shrink-0 mt-1" />
+                  <MapPin className="w-6 h-6 text-neutralc-900 flex-shrink-0 mt-1" />
                   <div>
                     <p className="mb-1 text-sm text-neutralc-400">
                       Expected Delivery
@@ -382,7 +382,7 @@ const TrackOrder = () => {
               </div>
 
               <div className="pt-6 mt-6 border-t border-neutralc-200">
-                <div className="bg-[#f5f1e8] rounded-lg p-4">
+                <div className="bg-neutralc-100 rounded-lg p-4">
                   <p className="text-sm leading-relaxed text-gray-700">
                     <span className="font-semibold">Note:</span> Delivery times
                     are estimates and may vary based on location and courier
@@ -396,7 +396,7 @@ const TrackOrder = () => {
             <div className="flex justify-center">
               <button
                 onClick={() => setShowTracking(false)}
-                className="bg-[#8b7355] text-white py-3 px-8 rounded-lg hover:bg-[#a08968] transition-all shadow-md hover:shadow-lg font-medium"
+                className="bg-neutralc-900 text-white py-3 px-8 rounded-lg hover:bg-[var(--color-primary-500)] transition-all shadow-md hover:shadow-lg font-medium"
               >
                 Track Another Order
               </button>

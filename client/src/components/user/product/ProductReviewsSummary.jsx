@@ -391,7 +391,7 @@ const ProductReviewsSummary = ({
               {Array.from({ length: 3 }).map((_, index) => (
                 <div
                   key={index}
-                  className="animate-pulse rounded-3xl border border-[neutralc-200] bg-[primary-100]/80 p-5"
+                  className="animate-pulse rounded-3xl border border-neutralc-200 bg-primary-100/80 p-5"
                 >
                   <div className="mb-4 h-4 w-1/3 rounded bg-white/60" />
                   <div className="mb-2 h-4 rounded bg-white/60" />
@@ -415,7 +415,7 @@ const ProductReviewsSummary = ({
           ) : null}
 
           {!loading && !error && !hasFilteredReviews ? (
-            <div className="rounded-3xl border border-dashed border-[#c3dedd] bg-[primary-100] p-6 text-center text-sm text-neutralc-600">
+            <div className="rounded-3xl border border-dashed border-[var(--color-primary-200)] bg-primary-100 p-6 text-center text-sm text-neutralc-600">
               {hasAnyReviews
                 ? "No reviews match those filters right now."
                 : "No reviews yet. Be the first to share your thoughts."}
@@ -429,11 +429,11 @@ const ProductReviewsSummary = ({
             return (
               <article
                 key={review.id}
-                className="rounded-3xl border border-[neutralc-200] bg-white p-5 shadow-[0_20px_42px_rgba(15,23,42,0.08)]"
+                className="rounded-3xl border border-neutralc-200 bg-white p-5 shadow-[0_20px_42px_rgba(15,23,42,0.08)]"
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div className="flex gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#c3dedd] text-sm font-semibold text-[#2f4a55]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary-200)] text-sm font-semibold text-[var(--color-primary-800)]">
                       {getInitials(review.user?.name || "")}
                     </div>
                     <div className="space-y-2">
@@ -446,12 +446,12 @@ const ProductReviewsSummary = ({
                             {formatDate(review.createdAt) || "Recently"}
                           </span>
                           {review.isVerifiedPurchase ? (
-                            <span className="rounded-full border border-[primary-500]/40 px-2 py-0.5 text-[0.65rem] text-[primary-500]">
+                            <span className="rounded-full border border-primary-500/40 px-2 py-0.5 text-[0.65rem] text-primary-500">
                               Verified purchase
                             </span>
                           ) : null}
                           {isPending ? (
-                            <span className="rounded-full border border-[#F6C7B3] px-2 py-0.5 text-[0.65rem] text-[#8a4b3c]">
+                            <span className="rounded-full border border-[var(--color-primary-300)] px-2 py-0.5 text-[0.65rem] text-[var(--color-primary-700)]">
                               Awaiting approval
                             </span>
                           ) : null}
@@ -474,7 +474,7 @@ const ProductReviewsSummary = ({
                       </p>
 
                       {review.adminResponse?.message ? (
-                        <div className="rounded-2xl border border-[neutralc-200] bg-[primary-100] p-3 text-xs text-neutralc-600">
+                        <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-3 text-xs text-neutralc-600">
                           <p className="font-semibold text-neutralc-900">
                             Ciyatake team
                           </p>
@@ -499,7 +499,7 @@ const ProductReviewsSummary = ({
                     <button
                       type="button"
                       onClick={() => handleHelpfulToggle(review.id)}
-                      className="inline-flex items-center gap-2 rounded-full border border-[primary-500] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-primary-500 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
                       disabled={busy || isPending}
                     >
                       {busy
@@ -525,7 +525,7 @@ const ProductReviewsSummary = ({
                 type="button"
                 onClick={handleLoadMore}
                 disabled={loading}
-                className="inline-flex items-center justify-center rounded-full border border-[primary-500] px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[primary-500] transition hover:bg-[primary-500] hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-full border border-primary-500 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? "Loading..." : "Load more"}
               </button>

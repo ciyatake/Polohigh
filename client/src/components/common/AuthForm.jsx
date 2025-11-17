@@ -5,7 +5,7 @@ import Button from "./Button";
 import Skeleton from "./Skeleton";
 
 const defaultInputClasses =
-  "w-full rounded-xl border-2 border-[neutralc-200] bg-white px-4 py-3 text-base text-neutralc-600 placeholder:text-neutralc-400 transition-all duration-200 focus:border-[primary-500] focus:outline-none focus:ring-4 focus:ring-[primary-500]/20 hover:border-[primary-500]/40 disabled:cursor-not-allowed disabled:bg-neutralc-100 disabled:text-neutralc-400";
+  "w-full rounded-xl border-2 border-neutralc-200 bg-white px-4 py-3 text-base text-neutralc-600 placeholder:text-neutralc-400 transition-all duration-200 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/20 hover:border-primary-500/40 disabled:cursor-not-allowed disabled:bg-neutralc-100 disabled:text-neutralc-400";
 
 const AuthForm = ({
   title = "Welcome back",
@@ -161,7 +161,7 @@ const AuthForm = ({
             <button
               type="button"
               onClick={() => toggleVisibility(fieldName)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-3 py-1 text-xs font-bold uppercase tracking-wider text-[primary-500] transition-all duration-200 hover:bg-[primary-500]/10 hover:text-[primary-700]"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-500 transition-all duration-200 hover:bg-primary-500/10 hover:text-primary-700"
               tabIndex={-1}
             >
               {visibleFields[fieldName] ? "Hide" : "Show"}
@@ -250,8 +250,8 @@ const AuthForm = ({
 
   if (loading) {
     return (
-      <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[#f5f2ee] via-[#faf8f5] to-[#f0ede8] px-4 py-8 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md overflow-hidden rounded-3xl border-2 border-[neutralc-200] bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8">
+      <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-primary-50)] to-[var(--color-primary-100)] px-4 py-8 sm:px-6 lg:px-8">
+        <div className="w-full max-w-md overflow-hidden rounded-3xl border-2 border-neutralc-200 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8">
           <div className="space-y-2 text-center">
             <Skeleton className="mx-auto h-8 w-48" />
             <Skeleton className="mx-auto h-4 w-64" />
@@ -305,8 +305,8 @@ const AuthForm = ({
   }
 
   return (
-    <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[#f5f2ee] via-[#faf8f5] to-[#f0ede8] px-4 py-8 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md overflow-y-auto rounded-3xl border-2 border-[neutralc-200] bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8 animate-slide-in-from-bottom-4">
+    <div className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-gradient-to-br from-[var(--color-primary-50)] via-[var(--color-primary-50)] to-[var(--color-primary-100)] px-4 py-8 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md overflow-y-auto rounded-3xl border-2 border-neutralc-200 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-8 animate-slide-in-from-bottom-4">
         <div className="text-center">
           <h2 className="bg-gradient-to-r from-neutralc-900 to-neutralc-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
             {title}
@@ -321,7 +321,7 @@ const AuthForm = ({
             <div className="text-right text-sm">
               <button
                 type="button"
-                className="font-semibold text-[primary-500] transition-all duration-200 hover:text-[primary-700] hover:underline underline-offset-2"
+                className="font-semibold text-primary-500 transition-all duration-200 hover:text-primary-700 hover:underline underline-offset-2"
                 onClick={() => navigate("/forget-password")}
               >
                 {forgetPasswordText}
@@ -329,7 +329,7 @@ const AuthForm = ({
             </div>
           ) : null}
 
-          <Button type="submit" disabled={isSubmitDisabled} className="w-full h-12 text-base font-semibold shadow-lg shadow-[primary-500]/30 hover:shadow-xl hover:shadow-[primary-500]/40 transition-all duration-200">
+          <Button type="submit" disabled={isSubmitDisabled} className="w-full h-12 text-base font-semibold shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transition-all duration-200">
             {buttonLabel}
           </Button>
           {statusMessage}
@@ -338,16 +338,16 @@ const AuthForm = ({
         {socialProviders.length ? (
           <>
             <div className="my-6 flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-neutralc-400">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[neutralc-200] to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutralc-200 to-transparent" />
               <span>Or continue with</span>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[neutralc-200] to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutralc-200 to-transparent" />
             </div>
             <div className="flex flex-wrap gap-3">
               {socialProviders.map((provider, index) => (
                 <Button
                   key={`${provider.label}-${index}`}
                   variant="outline"
-                  className="flex-1 h-12 border-2 border-[neutralc-200] text-neutralc-600 font-semibold hover:border-[primary-500] hover:bg-[primary-500]/5 hover:text-[primary-500] transition-all duration-200"
+                  className="flex-1 h-12 border-2 border-neutralc-200 text-neutralc-600 font-semibold hover:border-primary-500 hover:bg-primary-500/5 hover:text-primary-500 transition-all duration-200"
                   onClick={provider.onClick}
                 >
                   <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24">
@@ -367,7 +367,7 @@ const AuthForm = ({
           {footerText}{" "}
           <Link
             to={footerLinkHref}
-            className="font-semibold text-[primary-500] transition-all duration-200 hover:text-[primary-700] hover:underline underline-offset-2"
+            className="font-semibold text-primary-500 transition-all duration-200 hover:text-primary-700 hover:underline underline-offset-2"
           >
             {footerLinkText}
           </Link>

@@ -56,7 +56,7 @@ const Reports = () => {
             (report, index) => (
               <li
                 key={report?.id ?? index}
-                className="rounded-2xl border border-[#e6dccb] bg-white/95 p-6 shadow-2xl ring-1 ring-[primary-100] transition hover:-translate-y-1 hover:shadow-[#dec9a4]"
+                className="rounded-2xl border border-[var(--color-primary-200)] bg-white/95 p-6 shadow-2xl ring-1 ring-primary-100 transition hover:-translate-y-1 hover:shadow-[var(--color-primary-200)]"
               >
                 <h3 className="text-xl font-semibold text-neutralc-900">
                   {loading ? "Loading..." : report.title}
@@ -64,7 +64,7 @@ const Reports = () => {
                 <p className="mt-3 text-sm leading-relaxed text-neutralc-600">
                   {loading ? "--" : report.summary}
                 </p>
-                <button className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[primary-700] transition hover:text-[#6a542b]">
+                <button className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-700 transition hover:text-[var(--color-primary-800)]">
                   View full report
                   <span aria-hidden>→</span>
                 </button>
