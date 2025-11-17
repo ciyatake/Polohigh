@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { fetchCategoryTree } from "../../api/categories.js";
+import { COMMON_COLORS } from "../../constants/colors.js";
 
 const GENDER_OPTIONS = [
   { value: "all", label: "All" },
-  { value: "Women", label: "Women" },
-  // { value: "Men", label: "Men" },
+  // { value: "Women", label: "Women" },
+  { value: "Men", label: "Men" },
   // { value: "Kids", label: "Kids" },
   // { value: "Unisex", label: "Unisex" },
 ];
@@ -25,23 +26,6 @@ const PRICE_RANGES = [
   { label: "₹5000 - ₹10000", min: 5000, max: 10000 },
   { label: "Above ₹10000", min: 10000, max: 999999 },
 ];
-
-const COMMON_COLORS = [
-  { name: "black", hex: "#000000" },
-  { name: "white", hex: "#FFFFFF" },
-  { name: "red", hex: "#DC2626" },
-  { name: "blue", hex: "#2563EB" },
-  { name: "green", hex: "#059669" },
-  { name: "pink", hex: "#EC4899" },
-  { name: "purple", hex: "#7C3AED" },
-  { name: "yellow", hex: "#EAB308" },
-  { name: "orange", hex: "#EA580C" },
-  { name: "brown", hex: "#92400E" },
-  { name: "grey", hex: "#6B7280" },
-  { name: "navy", hex: "#1E3A8A" },
-];
-
-const COMMON_SIZES = ["XS", "S", "M", "L", "XL", "XXL", "3XL"];
 
 const RATING_OPTIONS = [
   { label: "4★ & above", value: 4 },
@@ -89,7 +73,6 @@ const AdvancedFilters = ({
     category: true,
     subcategory: false,
     color: false,
-    size: false,
     price: false,
     rating: false,
   });
@@ -379,22 +362,19 @@ const AdvancedFilters = ({
               isOpen={openSections.color}
               onToggle={() => toggleSection("color")}
             >
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-3 gap-4">
                 {COMMON_COLORS.map((color) => (
                   <button
                     key={color.name}
                     onClick={() => toggleArrayFilter("colors", color.name)}
-                    className={`group relative flex h-12 w-12 items-center justify-center rounded-lg border-2 transition-all hover:scale-105 ${
+                    className={`group relative flex flex-col items-center justify-center rounded-lg border-2 p-2 transition-all hover:scale-105 ${
                       filters.colors?.includes(color.name)
                         ? "border-primary-500 ring-2 ring-primary-500/30"
                         : "border-neutralc-200 hover:border-primary-500/60"
                     }`}
-                    title={
-                      color.name.charAt(0).toUpperCase() + color.name.slice(1)
-                    }
                   >
                     <div
-                      className={`h-8 w-8 rounded-md ${
+                      className={`h-10 w-10 rounded-md ${
                         color.name === "white"
                           ? "border-2 border-neutralc-200"
                           : "border border-neutralc-200"
@@ -403,7 +383,7 @@ const AdvancedFilters = ({
                     />
                     {filters.colors?.includes(color.name) && (
                       <svg
-                        className={`absolute h-5 w-5 ${
+                        className={`absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5 w-5 ${
                           color.name === "white" || color.name === "yellow"
                             ? "text-neutralc-600"
                             : "text-white"
@@ -418,29 +398,9 @@ const AdvancedFilters = ({
                         />
                       </svg>
                     )}
-                  </button>
-                ))}
-              </div>
-            </FilterSection>
-
-            {/* Size Filter */}
-            <FilterSection
-              title="Size"
-              isOpen={openSections.size}
-              onToggle={() => toggleSection("size")}
-            >
-              <div className="grid grid-cols-4 gap-2">
-                {COMMON_SIZES.map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => toggleArrayFilter("sizes", size)}
-                    className={`rounded-lg border py-2.5 px-3 text-sm font-semibold transition-all hover:scale-105 ${
-                      filters.sizes?.includes(size)
-                        ? "border-primary-500 bg-primary-500/10 text-primary-500 shadow-sm"
-                        : "border-neutralc-200 text-neutralc-600 hover:border-primary-500 hover:bg-primary-100"
-                    }`}
-                  >
-                    {size}
+                    <span className="mt-2 text-xs font-medium text-neutralc-600 capitalize">
+                      {color.name}
+                    </span>
                   </button>
                 ))}
               </div>

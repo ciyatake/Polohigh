@@ -1,19 +1,5 @@
 import { useMemo, useState } from "react";
-
-const DEFAULT_SWATCHES = [
-  { label: "Black", value: "black", hex: "#000000" },
-  { label: "White", value: "white", hex: "#ffffff" },
-  { label: "Red", value: "red", hex: "#ef4444" },
-  { label: "Blue", value: "blue", hex: "#3b82f6" },
-  { label: "Green", value: "green", hex: "#10b981" },
-  { label: "Yellow", value: "yellow", hex: "#f59e0b" },
-  { label: "Purple", value: "purple", hex: "#8b5cf6" },
-  { label: "Pink", value: "pink", hex: "#ec4899" },
-  { label: "Orange", value: "orange", hex: "#f97316" },
-  { label: "Gray", value: "gray", hex: "#6b7280" },
-  { label: "Navy", value: "navy", hex: "#1e3a8a" },
-  { label: "Brown", value: "brown", hex: "#92400e" },
-];
+import { COMMON_COLORS } from "../../../constants/colors.js";
 
 const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
   const [showCustom, setShowCustom] = useState(false);
@@ -112,7 +98,7 @@ const ColorPicker = ({ colors = [], onChange, maxColors = 10 }) => {
         <div className="space-y-3">
           <p className="text-sm font-medium text-neutralc-600">Quick add</p>
           <div className="grid grid-cols-6 gap-2 sm:grid-cols-8">
-            {DEFAULT_SWATCHES.map((swatch) => {
+            {COMMON_COLORS.map((swatch) => {
               const isSelected = usedHexes.has(swatch.hex);
               return (
                 <button

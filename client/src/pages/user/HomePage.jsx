@@ -9,6 +9,7 @@ import Skeleton from "../../components/common/Skeleton.jsx";
 import { fetchProducts } from "../../api/catalog.js";
 import { fetchCategories } from "../../api/categories.js";
 import Carousel from "../../components/common/Carousel.jsx";
+import { COMMON_COLORS } from "../../constants/colors.js";
 
 const toTitleCase = (value = "") =>
   value
@@ -629,20 +630,7 @@ const HomePage = ({ isLoggedIn }) => {
                         )}
                         {mobileFilterTab === "Color" && (
                           <>
-                            {[
-                              { name: "black" },
-                              { name: "white" },
-                              { name: "red" },
-                              { name: "blue" },
-                              { name: "green" },
-                              { name: "pink" },
-                              { name: "purple" },
-                              { name: "yellow" },
-                              { name: "orange" },
-                              { name: "brown" },
-                              { name: "grey" },
-                              { name: "navy" },
-                            ]
+                            {COMMON_COLORS
                               .filter(
                                 (opt) =>
                                   !mobileFilterSearch ||
@@ -681,7 +669,7 @@ const HomePage = ({ isLoggedIn }) => {
                         )}
                         {mobileFilterTab === "Size" && (
                           <>
-                            {["XS", "S", "M", "L", "XL", "XXL", "3XL"]
+                            {["xs", "s", "m", "l", "xl", "xxl", "3xl"]
                               .filter(
                                 (opt) =>
                                   !mobileFilterSearch ||
@@ -709,7 +697,7 @@ const HomePage = ({ isLoggedIn }) => {
                                     }
                                     className="mr-3 h-4 w-4 border-gray-300 text-primary-500 focus:ring-primary-500"
                                   />
-                                  <span className="text-sm">{opt}</span>
+                                  <span className="text-sm">{opt.toUpperCase()}</span>
                                 </label>
                               ))}
                           </>
