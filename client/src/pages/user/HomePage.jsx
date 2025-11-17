@@ -450,7 +450,7 @@ const HomePage = ({ isLoggedIn }) => {
 
       <main className="mx-auto max-w-7xl px-2 py-4 sm:px-6 sm:py-10 lg:px-8">
 
-        <Carousel slides={posters} />;
+        <Carousel slides={posters} />
 
         {/* Header Section */}
         <div className="mb-6 text-center sm:mb-10">

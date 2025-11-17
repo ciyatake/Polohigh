@@ -54,15 +54,15 @@ const sendOTPEmail = async (email, otp) => {
       to: email,
       from: {
         email: senderEmail,
-        name: process.env.APP_NAME || 'CiyaTake'
+        name: process.env.APP_NAME || 'Polohigh'
       },
       subject: 'Your OTP for Account Verification',
-      text: `Your OTP for ${process.env.APP_NAME || 'CiyaTake'} account verification is: ${otp}. This OTP is valid for 10 minutes. Don't share this with anyone.`,
+      text: `Your OTP for ${process.env.APP_NAME || 'Polohigh'} account verification is: ${otp}. This OTP is valid for 10 minutes. Don't share this with anyone.`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
           <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 30px;">
-              <h1 style="color: #b8985b; font-size: 28px; margin: 0;">${process.env.APP_NAME || 'CiyaTake'}</h1>
+              <h1 style="color: #b8985b; font-size: 28px; margin: 0;">${process.env.APP_NAME || 'Polohigh'}</h1>
             </div>
             
             <h2 style="color: #333; text-align: center; margin-bottom: 20px;">Verify Your Account</h2>
@@ -89,7 +89,7 @@ const sendOTPEmail = async (email, otp) => {
                 This is an automated email. Please do not reply to this email.
               </p>
               <p style="color: #999; font-size: 12px; text-align: center; margin: 5px 0 0 0;">
-                © ${new Date().getFullYear()} ${process.env.APP_NAME || 'CiyaTake'}. All rights reserved.
+                © ${new Date().getFullYear()} ${process.env.APP_NAME || 'Polohigh'}. All rights reserved.
               </p>
             </div>
           </div>
