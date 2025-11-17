@@ -27,8 +27,8 @@ const PORT = process.env.PORT || 4000;
 
 //middleware - Enable CORS for frontend communication
 const allowedOrigins = [
-  "https://ciyatake.shop",
-  "https://www.ciyatake.shop",
+  "https://polohigh.shop",
+  "https://www.polohigh.shop",
   "http://localhost:5173"
 ];
 app.use(cors({
