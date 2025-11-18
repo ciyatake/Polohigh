@@ -143,7 +143,7 @@ export const processPayment = async ({
       key,
       amount: amount * 100, // Convert to paise (AMOUNT IS LOCKED)
       currency: "INR",
-      name: "Ciyatake",
+      name: "Polohigh",
       description: `Order Payment - ${items.length} item(s)`,
       order_id: orderId,
       prefill: {
@@ -155,7 +155,7 @@ export const processPayment = async ({
         color: "#B58A31", // Brand color - primary-500
       },
       notes: {
-        address: "Ciyatake Corporate Office",
+        address: "Polohigh Corporate Office",
         itemCount: items.length,
       },
       // Disable editing of amount (SECURITY FEATURE)
