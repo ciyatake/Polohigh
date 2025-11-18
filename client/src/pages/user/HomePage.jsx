@@ -529,7 +529,7 @@ const HomePage = ({ isLoggedIn }) => {
                         />
                       </div>
                       {/* Options List */}
-                      <div className="flex-1 overflow-y-auto px-4 py-2">
+                      <div className="flex-1 overflow-y-auto px-4 py-2 pb-20">
                         {/* Render options for the selected tab */}
                         {mobileFilterTab === "Category" && (
                           <>
