@@ -11,6 +11,14 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="bg-neutralc-900 text-white border-t border-neutralc-800">
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-16">
@@ -61,6 +69,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
+                  onClick={scrollToTop}
                   className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
                   Men
@@ -101,30 +110,35 @@ const Footer = () => {
             <ul className="flex flex-col space-y-2">
               <Link
                 to="/track-order"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Track Order
               </Link>
               <Link
                 to="/refund-policy"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Refund Policy
               </Link>
               <Link
                 to="/return-policy"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Return Policy
               </Link>
               <Link
                 to="/shipping-policy"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Shipping Policy
               </Link>
               <Link
                 to="/FAQs"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 FAQs
@@ -140,22 +154,26 @@ const Footer = () => {
             <ul className="flex flex-col space-y-2">
               <Link
                 to="our-story"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               ></Link>
               <Link
                 to="/career-page"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Careers
               </Link>
               <Link
                 to="/press"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Press
               </Link>
               <Link
                 to="contact-us"
+                onClick={scrollToTop}
                 className="text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 Contact
@@ -207,6 +225,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-neutralc-300 md:justify-end">
               <Link
                 to='/privacy-policy'
+                onClick={scrollToTop}
                 className="hover:text-white transition-colors"
               >
                 Privacy Policy
@@ -214,6 +233,7 @@ const Footer = () => {
               <span className="hidden sm:inline">•</span>
               <Link
                 to="/terms-of-service"
+                onClick={scrollToTop}
                 className="hover:text-white transition-colors"
               >
                 Terms of Service
@@ -221,6 +241,7 @@ const Footer = () => {
               <span className="hidden sm:inline">•</span>
               <Link
                 to="/cookie-policy"
+                onClick={scrollToTop}
                 className="hover:text-white transition-colors"
               >
                 Cookie Policy
