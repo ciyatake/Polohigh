@@ -330,8 +330,8 @@ const UserNavbar = ({
   const hoverTimeoutRef = useRef(null);
 
   const genderLinks = [
-    { label: "Women", value: "Women", to: "/women" },
-    // { label: "Men", value: "Men", to: "/men" },
+    // { label: "Women", value: "Women", to: "/women" },
+    { label: "Men", value: "Men", to: "/men" },
     // { label: "Kids", value: "Kids", to: "/kids" },
   ];
 
