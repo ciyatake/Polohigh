@@ -160,7 +160,7 @@ exports.getAllProducts = async (req, res) => {
     // Size filter (check if any variant has the size)
     if (sizes) {
       const sizeArray = typeof sizes === 'string' ? sizes.split(',') : (Array.isArray(sizes) ? sizes : [sizes]);
-      filter["variants.size"] = { $in: sizeArray.map(s => s.toUpperCase()) };
+      filter["variants.size"] = { $in: sizeArray.map(s => s.toLowerCase()) };
     }
 
     // Color filter (check if any variant has the color)

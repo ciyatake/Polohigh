@@ -71,33 +71,38 @@ exports.createReview = async (req, res) => {
       });
     }
 
-    // 3. Verify purchase if orderId provided
+    // 3. Verify purchase - REQUIRED for review submission
     let isVerifiedPurchase = false;
     let effectiveOrderId = orderId;
+    let purchaseOrder = null;
+
     if (effectiveOrderId) {
-      const order = await Order.findOne({
+      purchaseOrder = await Order.findOne({
         _id: effectiveOrderId,
         userId,
         "items.productId": resolvedProductId,
         status: { $in: ["delivered", "completed"] },
       });
-
-      if (order) {
-        isVerifiedPurchase = true;
-      }
     } else {
-      // Check if user has purchased this product in any order
-      const purchaseOrder = await Order.findOne({
+      // Check if user has purchased this product in any delivered order
+      purchaseOrder = await Order.findOne({
         userId,
         "items.productId": resolvedProductId,
         status: { $in: ["delivered", "completed"] },
       });
-
-      if (purchaseOrder) {
-        isVerifiedPurchase = true;
-        effectiveOrderId = purchaseOrder._id;
-      }
     }
+
+    // ENFORCE: User must have purchased and received the product to review
+    if (!purchaseOrder) {
+      return res.status(403).json({
+        success: false,
+        message: "You can only review products that you have purchased and received.",
+        reason: "not_purchased_or_not_delivered",
+      });
+    }
+
+    isVerifiedPurchase = true;
+    effectiveOrderId = purchaseOrder._id;
 
     // 4. Create review
     const review = new Review({
@@ -858,7 +863,7 @@ exports.canReviewProduct = async (req, res) => {
       });
     }
 
-    // Check if user has purchased this product
+    // Check if user has purchased this product and it's delivered
     const purchaseOrder = await Order.findOne({
       userId,
       "items.productId": resolvedProductId,
@@ -869,9 +874,10 @@ exports.canReviewProduct = async (req, res) => {
       return res.json({
         success: true,
         data: {
-          canReview: true,
+          canReview: false,
           hasPurchased: false,
-          message: "You can review this product, but it won't be marked as verified purchase",
+          reason: "not_purchased_or_not_delivered",
+          message: "You can only review products that you have purchased and received.",
         },
       });
     }
