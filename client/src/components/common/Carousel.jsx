@@ -29,7 +29,7 @@ function ImageWithSkeleton({ slide, navigate }) {
         src={slide.img}
         loading="lazy"
         onLoad={() => setLoaded(true)}
-        className={`w-full h-full object-contain transition-all duration-700 ${
+        className={`w-full h-full object-fit md:object-contain transition-all duration-700 ${
           loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
         alt="Carousel Slide"
@@ -42,11 +42,11 @@ function ImageWithSkeleton({ slide, navigate }) {
             e.stopPropagation(); // Don't trigger the div's click
             handleClick();
           }}
-          className="absolute bottom-8 left-8 bg-gradient-to-r from-primary-500 to-primary-700 text-white font-bold px-8 py-3.5 rounded-full shadow-2xl hover:scale-105 hover:shadow-primary-500/50 transition-all duration-300 flex items-center gap-2 group"
+          className="absolute bottom-4 left-4 md:bottom-8 md:left-8 bg-gradient-to-r from-primary-500 to-primary-700 text-white font-bold px-4 py-2 md:px-8 md:py-3.5 rounded-full shadow-2xl hover:scale-105 hover:shadow-primary-500/50 transition-all duration-300 flex items-center gap-2 group text-sm md:text-base"
         >
           <span>{slide.cta}</span>
           <svg 
-            className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
+            className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -103,7 +103,7 @@ export default function Carousel({ slides, autoplayDelay = 5000 }) {
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="min-w-full h-[300px] md:h-[420px] lg:h-[500px] flex-shrink-0"
+              className="min-w-full h-[250px] sm:h-[350px] md:h-[420px] lg:h-[500px] flex-shrink-0"
             >
               <ImageWithSkeleton slide={slide} navigate={navigate} />
             </div>
@@ -142,15 +142,15 @@ export default function Carousel({ slides, autoplayDelay = 5000 }) {
         </button>
 
         {/* MODERN PAGINATION DOTS */}
-        <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2.5">
+        <div className="absolute bottom-3 md:bottom-6 left-0 right-0 z-20 flex justify-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               className={`transition-all duration-300 rounded-full ${
                 i === current 
-                  ? "bg-white w-8 h-2.5 shadow-lg" 
-                  : "bg-white/60 hover:bg-white/80 w-2.5 h-2.5"
+                  ? "bg-white w-6 md:w-8 h-2 md:h-2.5 shadow-lg" 
+                  : "bg-white/60 hover:bg-white/80 w-2 md:w-2.5 h-2 md:h-2.5"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             ></button>

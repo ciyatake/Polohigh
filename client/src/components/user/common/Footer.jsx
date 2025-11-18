@@ -63,18 +63,10 @@ const Footer = () => {
                   to="/"
                   className="text-sm text-neutralc-300 hover:text-white transition-colors"
                 >
-                  Women
-                </Link>
-              </li>
-              {/* <li>
-                <Link
-                  to="/"
-                  className="text-sm text-neutralc-300 hover:text-white transition-colors"
-                >
                   Men
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/"
                   className="text-sm text-neutralc-300 hover:text-white transition-colors"

@@ -18,17 +18,6 @@ const toTitleCase = (value = "") =>
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-const DEFAULT_CATEGORY_OPTIONS = [
-  { label: "All Products", value: "all" },
-  { label: "Sarees", value: "sarees" },
-  { label: "Kurtis", value: "kurtis" },
-  { label: "Kurta Sets", value: "kurta-sets" },
-  { label: "Dupatta Sets", value: "dupatta-sets" },
-  { label: "Suits & Dress Material", value: "suits-dress-material" },
-  { label: "Lehengas", value: "lehengas" },
-  { label: "Other Ethnic", value: "other-ethnic" },
-];
-
 const posters = [
   {
     img: "/polohighbanner.png",
@@ -82,9 +71,9 @@ const HomePage = ({ isLoggedIn }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [categoryOptions, setCategoryOptions] = useState(
-    DEFAULT_CATEGORY_OPTIONS
-  );
+  const [categoryOptions, setCategoryOptions] = useState([
+    { label: "All Products", value: "all" }
+  ]);
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [productsLimit, setProductsLimit] = useState(48);
   const [totalProducts, setTotalProducts] = useState(0);
@@ -150,29 +139,14 @@ const HomePage = ({ isLoggedIn }) => {
       setCategoryOptions(() => {
         const map = new Map();
 
-        DEFAULT_CATEGORY_OPTIONS.forEach((option) => {
-          map.set(option.value, option);
-        });
+        // Always include "All Products" option
+        map.set("all", { value: "all", label: "All Products" });
 
+        // Only add categories from API (no defaults)
         apiOptions.forEach((option) => {
-          if (option.value === "all") {
-            map.set("all", {
-              value: "all",
-              label: option.label ?? "All Products",
-            });
-            return;
-          }
-
-          if (!map.has(option.value)) {
+          if (option.value !== "all") {
             map.set(option.value, option);
-            return;
           }
-
-          const existing = map.get(option.value);
-          map.set(option.value, {
-            ...existing,
-            label: option.label ?? existing.label,
-          });
         });
 
         return Array.from(map.values());
@@ -290,21 +264,24 @@ const HomePage = ({ isLoggedIn }) => {
             setCategoryOptions((current) => {
               const map = new Map();
 
-              DEFAULT_CATEGORY_OPTIONS.forEach((option) => {
-                map.set(option.value, option);
-              });
-
+              // Start with current categories (which should already have "all" from API)
               current.forEach((option) => {
-                if (option?.value && !map.has(option.value)) {
+                if (option?.value) {
                   map.set(option.value, option);
                 }
               });
 
+              // Add derived categories from products
               derivedMap.forEach((option, key) => {
                 if (!map.has(key)) {
                   map.set(key, option);
                 }
               });
+
+              // Ensure "all" option is always present
+              if (!map.has("all")) {
+                map.set("all", { value: "all", label: "All Products" });
+              }
 
               return Array.from(map.values());
             });
@@ -508,7 +485,6 @@ const HomePage = ({ isLoggedIn }) => {
                         "Category",
                         "Gender",
                         "Color",
-                        "Size",
                         "Price",
                         "Rating",
                       ].map((tab) => (
@@ -593,10 +569,7 @@ const HomePage = ({ isLoggedIn }) => {
                           <>
                             {[
                               { value: "all", label: "All" },
-                              { value: "Women", label: "Women" },
-                              // { value: "Men", label: "Men" },
-                              // { value: "Kids", label: "Kids" },
-                              { value: "Unisex", label: "Unisex" },
+                              { value: "Men", label: "Men" },
                             ]
                               .filter(
                                 (opt) =>
@@ -629,7 +602,7 @@ const HomePage = ({ isLoggedIn }) => {
                           </>
                         )}
                         {mobileFilterTab === "Color" && (
-                          <>
+                          <div className="grid grid-cols-2 gap-3 py-2">
                             {COMMON_COLORS
                               .filter(
                                 (opt) =>
@@ -639,68 +612,55 @@ const HomePage = ({ isLoggedIn }) => {
                                     .includes(mobileFilterSearch.toLowerCase())
                               )
                               .map((opt) => (
-                                <label
+                                <button
                                   key={opt.name}
-                                  className="flex items-center py-2 cursor-pointer"
+                                  onClick={() =>
+                                    setMobileFilterDraft((draft) => ({
+                                      ...draft,
+                                      colors: draft.colors?.includes(opt.name)
+                                        ? draft.colors.filter(
+                                            (c) => c !== opt.name
+                                          )
+                                        : [...(draft.colors || []), opt.name],
+                                    }))
+                                  }
+                                  className={`group relative flex flex-col items-center justify-center rounded-lg border-2 p-3 transition-all hover:scale-105 ${
+                                    mobileFilterDraft.colors?.includes(opt.name)
+                                      ? "border-primary-500 ring-2 ring-primary-500/30"
+                                      : "border-neutralc-200 hover:border-primary-500/60"
+                                  }`}
                                 >
-                                  <input
-                                    type="checkbox"
-                                    checked={mobileFilterDraft.colors?.includes(
-                                      opt.name
-                                    )}
-                                    onChange={() =>
-                                      setMobileFilterDraft((draft) => ({
-                                        ...draft,
-                                        colors: draft.colors?.includes(opt.name)
-                                          ? draft.colors.filter(
-                                              (c) => c !== opt.name
-                                            )
-                                          : [...(draft.colors || []), opt.name],
-                                      }))
-                                    }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-primary-500 focus:ring-primary-500"
+                                  <div
+                                    className={`h-12 w-12 rounded-md ${
+                                      opt.name === "white"
+                                        ? "border-2 border-neutralc-200"
+                                        : "border border-neutralc-200"
+                                    }`}
+                                    style={{ backgroundColor: opt.hex }}
                                   />
-                                  <span className="text-sm capitalize">
+                                  {mobileFilterDraft.colors?.includes(opt.name) && (
+                                    <svg
+                                      className={`absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5 w-5 ${
+                                        opt.name === "white" || opt.name === "yellow"
+                                          ? "text-neutralc-600"
+                                          : "text-white"
+                                      } drop-shadow-lg`}
+                                      fill="currentColor"
+                                      viewBox="0 0 20 20"
+                                    >
+                                      <path
+                                        fillRule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clipRule="evenodd"
+                                      />
+                                    </svg>
+                                  )}
+                                  <span className="mt-2 text-xs font-medium text-neutralc-600 capitalize">
                                     {opt.name}
                                   </span>
-                                </label>
+                                </button>
                               ))}
-                          </>
-                        )}
-                        {mobileFilterTab === "Size" && (
-                          <>
-                            {["xs", "s", "m", "l", "xl", "xxl", "3xl"]
-                              .filter(
-                                (opt) =>
-                                  !mobileFilterSearch ||
-                                  opt
-                                    .toLowerCase()
-                                    .includes(mobileFilterSearch.toLowerCase())
-                              )
-                              .map((opt) => (
-                                <label
-                                  key={opt}
-                                  className="flex items-center py-2 cursor-pointer"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    checked={mobileFilterDraft.sizes?.includes(
-                                      opt
-                                    )}
-                                    onChange={() =>
-                                      setMobileFilterDraft((draft) => ({
-                                        ...draft,
-                                        sizes: draft.sizes?.includes(opt)
-                                          ? draft.sizes.filter((s) => s !== opt)
-                                          : [...(draft.sizes || []), opt],
-                                      }))
-                                    }
-                                    className="mr-3 h-4 w-4 border-gray-300 text-primary-500 focus:ring-primary-500"
-                                  />
-                                  <span className="text-sm">{opt.toUpperCase()}</span>
-                                </label>
-                              ))}
-                          </>
+                          </div>
                         )}
                         {mobileFilterTab === "Price" && (
                           <>
