@@ -352,13 +352,23 @@ const prepareProductPayload = (form) => {
       ? "other"
       : form.category || "general";
 
+  // Calculate base price from MRP and discount percentage
+  const mrp = Math.max(0, Number(form.price) || 0);
+  const discountPercentage = Math.max(0, Math.min(100, Number(form.discountPercentage) || 0));
+  const basePrice = discountPercentage > 0 
+    ? Math.round(mrp * (1 - discountPercentage / 100))
+    : mrp;
+
   return {
     slug,
     title,
     description: form.description ?? "",
+    brand: form.brand?.trim() || "Polohigh",
     category: categoryValue,
     targetGender: form.targetGender || form.gender || "Unisex",
-    basePrice: Math.max(0, Number(form.price) || 0),
+    basePrice,
+    mrp,
+    discountPercentage,
     media: buildMediaPayload(form),
     benefits: tags.slice(0, 4),
     details: buildDetails(form),
@@ -381,11 +391,14 @@ const mapProductToForm = (product) => {
 
   next.title = product.title ?? next.title;
   next.description = product.description ?? next.description;
+  next.brand = product.brand ?? next.brand;
   next.category = product.category ?? next.category;
   next.subCategory = product.subCategory ?? next.subCategory;
   next.gender = product.targetGender ?? next.gender;
   next.targetGender = product.targetGender ?? "Unisex";
-  next.price = product.basePrice ?? product.price ?? next.price;
+  // Map MRP to price field (since form uses price for MRP)
+  next.price = product.mrp ?? product.basePrice ?? product.price ?? next.price;
+  next.discountPercentage = product.discountPercentage ?? next.discountPercentage;
   next.stockQuantity = product.totalStock ?? next.stockQuantity;
   next.sku = product.variants?.[0]?.sku ?? product.id ?? next.sku;
   next.tags = ensureArray(product.tags);

@@ -21,8 +21,8 @@ const Footer = () => {
               <img
                 src="/ciyatakeLogo.png"
                 alt="POLOHIGH"
-                className="h-8 w-auto filter brightness-0 invert"
-                style={{ filter: 'brightness(0) invert(1)' }}
+                className="h-8 w-auto filter brightness-0 invert bg-yellow-100 rounded p-1"
+                style={{ filter: 'invert(0)' }}
               />
               <h3 className="text-2xl font-semibold text-white">
                 Polohigh

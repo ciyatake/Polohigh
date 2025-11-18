@@ -265,6 +265,27 @@ const ProductSummary = ({
     return Number.isFinite(Number(numeric)) ? Number(numeric) : 0;
   }, [product?.basePrice, product?.price, product?.salePrice, selectedVariant]);
 
+  const displayedMrp = useMemo(() => {
+    const mrpValue = product?.mrp;
+    return Number.isFinite(Number(mrpValue)) && Number(mrpValue) > 0 
+      ? Number(mrpValue) 
+      : null;
+  }, [product?.mrp]);
+
+  const discountPercentage = useMemo(() => {
+    // First check if discount percentage is provided
+    if (Number.isFinite(Number(product?.discountPercentage)) && Number(product.discountPercentage) > 0) {
+      return Math.round(Number(product.discountPercentage));
+    }
+    
+    // Calculate from MRP and price if available
+    if (displayedMrp && displayedPrice && displayedMrp > displayedPrice) {
+      return Math.round(((displayedMrp - displayedPrice) / displayedMrp) * 100);
+    }
+    
+    return null;
+  }, [product?.discountPercentage, displayedMrp, displayedPrice]);
+
   const hasExistingReview = Boolean(reviewEligibility?.existingReview);
   const reviewButtonLabel = hasExistingReview
     ? "Edit your review"
@@ -325,16 +346,32 @@ const ProductSummary = ({
         dangerouslySetInnerHTML={{ __html: summaryText }}
       />
 
-      <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-4 text-lg font-semibold text-primary-500">
+      <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-4">
         <span className="text-sm uppercase tracking-[0.2em] text-neutralc-600">
           Price
         </span>
-        <p className="text-3xl text-primary-500">{formatINR(displayedPrice)}</p>
-        {product.discount ? (
-          <p className="text-sm text-neutralc-600">
-            {product.discount}% off today
+        <div className="flex items-baseline gap-3">
+          <p className="text-3xl font-semibold text-primary-500">
+            {formatINR(displayedPrice)}
           </p>
-        ) : null}
+          {displayedMrp && displayedMrp > displayedPrice && (
+            <>
+              <p className="text-lg font-medium text-neutralc-400 line-through">
+                {formatINR(displayedMrp)}
+              </p>
+              {discountPercentage && (
+                <span className="rounded-full bg-primary-500 px-3 py-1 text-sm font-bold text-white">
+                  {discountPercentage}% OFF
+                </span>
+              )}
+            </>
+          )}
+        </div>
+        {discountPercentage && (
+          <p className="mt-1 text-sm text-neutralc-600">
+            You save {formatINR(displayedMrp - displayedPrice)}
+          </p>
+        )}
       </div>
 
       {sizeOptions.length ? (
