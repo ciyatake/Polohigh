@@ -69,6 +69,13 @@ const WriteReviewDialog = ({
       setFormValues(buildInitialForm(existingReview));
       setError("");
       setSaving(false);
+      // Scroll to form when it opens
+      setTimeout(() => {
+        const formElement = document.getElementById('review-form-container');
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   }, [open, existingReview]);
 
@@ -82,12 +89,6 @@ const WriteReviewDialog = ({
   if (!open) {
     return null;
   }
-
-  const handleOverlayClick = (event) => {
-    if (event.target === event.currentTarget) {
-      onClose?.();
-    }
-  };
 
   const handleRatingChange = (value) => {
     if (saving) {
@@ -166,59 +167,65 @@ const WriteReviewDialog = ({
       onClose?.();
     } catch (apiError) {
       setSaving(false);
-      setError(
-        getApiErrorMessage(
-          apiError,
-          mode === "edit"
-            ? "We couldn't update your review just yet."
-            : "We couldn't submit your review right now."
-        )
-      );
+      
+      // Handle specific error for purchase requirement
+      if (apiError instanceof ApiError && apiError.status === 403) {
+        setError(
+          apiError.payload?.message || 
+          "You can only review products that you have purchased and received."
+        );
+      } else {
+        setError(
+          getApiErrorMessage(
+            apiError,
+            mode === "edit"
+              ? "We couldn't update your review just yet."
+              : "We couldn't submit your review right now."
+          )
+        );
+      }
     }
   };
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-neutralc-900/45 p-4"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="write-review-title"
-      onClick={handleOverlayClick}
+      id="review-form-container"
+      className="w-full max-w-4xl mx-auto my-6 px-2 sm:px-4 animate-in fade-in slide-in-from-top-2 duration-300"
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl rounded-3xl border border-neutralc-200 bg-white p-6 text-neutralc-600 shadow-[0_36px_72px_rgba(15,23,42,0.12)]"
+        className="w-full rounded-lg sm:rounded-xl border border-neutralc-300 bg-white p-3 sm:p-6 shadow-md"
       >
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
-              Share your experience
-            </p>
-            <h2
-              id="write-review-title"
-              className="mt-2 text-2xl font-semibold text-neutralc-900"
-            >
+        {/* Header with Close Button */}
+        <div className="flex items-start sm:items-center justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-neutralc-200">
+          <div className="flex-1 min-w-0 pr-2 sm:pr-4">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-neutralc-900 mb-1">
               {dialogTitle}
-            </h2>
-            {productName ? (
-              <p className="mt-1 text-sm text-neutralc-400">{productName}</p>
-            ) : null}
+            </h3>
+            {productName && (
+              <p className="text-xs sm:text-sm text-neutralc-600 truncate">{productName}</p>
+            )}
           </div>
           <button
             type="button"
             onClick={() => onClose?.()}
-            className="self-start rounded-full border border-neutralc-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-600 transition hover:border-primary-500 hover:text-primary-500"
+            className="flex-shrink-0 p-1.5 sm:p-2 rounded-lg hover:bg-neutralc-100 text-neutralc-600 hover:text-neutralc-900 transition-colors"
+            aria-label="Close"
           >
-            Close
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
         </div>
 
-        <div className="mt-6 space-y-6">
+        {/* Form Fields */}
+        <div className="space-y-4 sm:space-y-5">
+          {/* Rating */}
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-neutralc-400">
-              Rating
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <label className="block text-xs sm:text-sm font-semibold text-neutralc-900 mb-2 sm:mb-3">
+              Rating *
+            </label>
+            <div className="flex gap-1.5 sm:gap-2">
               {ratingOptions.map((value) => {
                 const active = formValues.rating >= value;
                 return (
@@ -226,12 +233,11 @@ const WriteReviewDialog = ({
                     key={value}
                     type="button"
                     onClick={() => handleRatingChange(value)}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${
+                    className={`flex h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 items-center justify-center rounded-lg border-2 text-sm sm:text-base font-semibold transition-all ${
                       active
-                        ? "border-primary-500 bg-primary-500/15 text-primary-500"
-                        : "border-neutralc-200 bg-white text-neutralc-400 hover:border-primary-500/40"
+                        ? "border-primary-500 bg-primary-500 text-white"
+                        : "border-neutralc-300 bg-white text-neutralc-600 hover:border-primary-300"
                     }`}
-                    aria-label={`Rate ${value} star${value > 1 ? "s" : ""}`}
                   >
                     {value}
                   </button>
@@ -240,85 +246,111 @@ const WriteReviewDialog = ({
             </div>
           </div>
 
-          <label className="block text-sm">
-            <span className="mb-2 block text-neutralc-600">Review title</span>
+          {/* Review Title */}
+          <div>
+            <label className="block text-xs sm:text-sm font-semibold text-neutralc-900 mb-1.5 sm:mb-2">
+              Review Title
+            </label>
             <input
               type="text"
               name="title"
               value={formValues.title}
               onChange={handleChange}
               maxLength={200}
-              placeholder="A quick headline for your review (optional)"
-              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+              placeholder="Sum up your experience"
+              className="w-full rounded-lg border border-neutralc-300 bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none"
             />
-          </label>
+          </div>
 
-          <label className="block text-sm">
-            <span className="mb-2 block text-neutralc-600">Tell us more</span>
+          {/* Review Comment */}
+          <div>
+            <label className="block text-xs sm:text-sm font-semibold text-neutralc-900 mb-1.5 sm:mb-2">
+              Your Review *
+            </label>
             <textarea
               name="comment"
               value={formValues.comment}
               onChange={handleChange}
-              rows={5}
+              rows={4}
               minLength={10}
               maxLength={2000}
-              placeholder="How does it fit, feel, and hold up in everyday use?"
-              className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+              placeholder="Share your thoughts about this product..."
+              className="w-full rounded-lg border border-neutralc-300 bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none resize-none"
               required
             />
-            <span className="mt-2 block text-xs text-neutralc-400">
-              {formValues.comment.length} / 2000 characters
-            </span>
-          </label>
+            <div className="flex justify-between mt-1 text-[10px] sm:text-xs text-neutralc-500">
+              <span>Minimum 10 characters</span>
+              <span className={formValues.comment.length > 1900 ? 'text-orange-500 font-medium' : ''}>
+                {formValues.comment.length} / 2000
+              </span>
+            </div>
+          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block text-sm">
-              <span className="mb-2 block text-neutralc-600">Size</span>
+          {/* Product Details */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div>
+              <label className="block text-xs sm:text-sm font-semibold text-neutralc-900 mb-1.5 sm:mb-2">
+                Size (Optional)
+              </label>
               <input
                 type="text"
                 name="variantSize"
                 value={formValues.variantSize}
                 onChange={handleChange}
-                placeholder="Size you picked (optional)"
-                className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                placeholder="e.g., M, L, XL"
+                className="w-full rounded-lg border border-neutralc-300 bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none"
               />
-            </label>
+            </div>
 
-            <label className="block text-sm">
-              <span className="mb-2 block text-neutralc-600">Colour</span>
+            <div>
+              <label className="block text-xs sm:text-sm font-semibold text-neutralc-900 mb-1.5 sm:mb-2">
+                Color (Optional)
+              </label>
               <input
                 type="text"
                 name="variantColor"
                 value={formValues.variantColor}
                 onChange={handleChange}
-                placeholder="Colour you chose (optional)"
-                className="w-full rounded-2xl border border-neutralc-200 bg-white px-4 py-3 text-sm text-neutralc-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                placeholder="e.g., Navy Blue"
+                className="w-full rounded-lg border border-neutralc-300 bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-neutralc-900 placeholder:text-neutralc-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none"
               />
-            </label>
+            </div>
           </div>
-
-          <p className="rounded-2xl border border-[var(--color-primary-200)] bg-[var(--color-primary-200)]/30 px-4 py-3 text-xs text-[var(--color-primary-800)]">
-            Reviews help other shoppers make confident decisions. Keep your
-            feedback honest, constructive, and focused on the product
-            experience.
-          </p>
         </div>
 
-        {error ? <p className="mt-4 text-sm text-rose-500">{error}</p> : null}
+        {/* Error Message */}
+        {error && (
+          <div className="mt-4 sm:mt-5 p-2.5 sm:p-3 rounded-lg bg-rose-50 border border-rose-200">
+            <p className="text-xs sm:text-sm text-rose-700">{error}</p>
+          </div>
+        )}
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-          {defaultOrderId ? (
-            <span className="text-xs uppercase tracking-[0.25em] text-neutralc-400">
-              Verified purchase
-            </span>
-          ) : null}
-          <button
-            type="submit"
-            disabled={saving}
-            className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-primary-500 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {saving ? "Saving..." : actionLabel}
-          </button>
+        {/* Action Buttons */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-neutralc-200">
+          {defaultOrderId && (
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-green-700 bg-green-50 px-2.5 sm:px-3 py-1.5 rounded-lg border border-green-200 w-fit">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="font-medium">Verified Purchase</span>
+            </div>
+          )}
+          <div className="flex gap-2 sm:gap-3 sm:ml-auto">
+            <button
+              type="button"
+              onClick={() => onClose?.()}
+              className="flex-1 sm:flex-none px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-neutralc-300 bg-white text-neutralc-700 font-semibold hover:bg-neutralc-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={saving}
+              className="flex-1 sm:flex-none px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg bg-primary-500 text-white font-semibold hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {saving ? "Submitting..." : actionLabel}
+            </button>
+          </div>
         </div>
       </form>
     </div>

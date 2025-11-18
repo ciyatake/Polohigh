@@ -1,7 +1,7 @@
 import SectionCard from "./SectionCard.jsx";
 import OrderCard from "./OrderCard.jsx";
 
-const OrdersSection = ({ orders }) => {
+const OrdersSection = ({ orders, onRequestReview }) => {
   const hasOrders = Array.isArray(orders) && orders.length > 0;
 
   return (
@@ -12,7 +12,7 @@ const OrdersSection = ({ orders }) => {
       {hasOrders ? (
         <>
           {orders.map((order) => (
-            <OrderCard key={order.id} order={order} />
+            <OrderCard key={order.id} order={order} onRequestReview={onRequestReview} />
           ))}
           <p className="text-xs text-neutralc-400">
             Return requests stay open for {orders?.[0]?.returnWindowDays ?? 7}{" "}

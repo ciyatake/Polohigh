@@ -19,8 +19,6 @@ import {
   checkProductInWishlist,
   removeWishlistItem,
 } from "../../api/wishlist.js";
-import { checkReviewEligibility } from "../../api/reviews.js";
-import WriteReviewDialog from "../../components/user/reviews/WriteReviewDialog.jsx";
 
 const normalizeMedia = (media = [], fallbackAlt = "") =>
   media
@@ -187,21 +185,6 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
     totalReviews: 0,
   });
   const [reviewsRefreshToken, setReviewsRefreshToken] = useState(0);
-  const [reviewEligibility, setReviewEligibility] = useState({
-    status: "idle",
-    canReview: false,
-    hasPurchased: false,
-    message: "",
-    reason: "",
-    orderId: null,
-    existingReview: null,
-  });
-  const [reviewDialogState, setReviewDialogState] = useState({
-    open: false,
-    mode: "create",
-    review: null,
-    orderId: null,
-  });
   const [pendingReviews, setPendingReviews] = useState([]);
 
   const loadProduct = useCallback(async (targetProductId, { signal } = {}) => {
@@ -541,66 +524,6 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
     ]
   );
 
-  useEffect(() => {
-    if (!productDocumentId || !isLoggedIn) {
-      setReviewEligibility({
-        status: isLoggedIn ? "ready" : "idle",
-        canReview: false,
-        hasPurchased: false,
-        message: "",
-        reason: "",
-        orderId: null,
-        existingReview: null,
-      });
-      return;
-    }
-
-    const controller = new AbortController();
-    setReviewEligibility((current) => ({
-      ...current,
-      status: "loading",
-      message: "",
-      reason: "",
-    }));
-
-    checkReviewEligibility(productDocumentId, { signal: controller.signal })
-      .then((result) => {
-        if (controller.signal.aborted) {
-          return;
-        }
-
-        setReviewEligibility({
-          status: "ready",
-          canReview: Boolean(result.canReview),
-          hasPurchased: Boolean(result.hasPurchased),
-          message: result.message ?? "",
-          reason: result.reason ?? "",
-          orderId: result.orderId ?? null,
-          existingReview: result.existingReview,
-        });
-      })
-      .catch((apiError) => {
-        if (controller.signal.aborted) {
-          return;
-        }
-
-        setReviewEligibility({
-          status: "error",
-          canReview: false,
-          hasPurchased: false,
-          message: resolveErrorMessage(
-            apiError,
-            "We couldn't verify your review eligibility right now."
-          ),
-          reason: "",
-          orderId: null,
-          existingReview: null,
-        });
-      });
-
-    return () => controller.abort();
-  }, [productDocumentId, isLoggedIn]);
-
   const handleReviewSummaryChange = useCallback((summary) => {
     if (!summary) {
       return;
@@ -609,65 +532,6 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
     setReviewMeta({
       averageRating: Number(summary.averageRating ?? 0),
       totalReviews: Number(summary.totalReviews ?? 0),
-    });
-  }, []);
-
-  const handleRequestReview = useCallback(
-    (intent = "create") => {
-      if (!isLoggedIn) {
-        navigate("/login", {
-          replace: false,
-          state: { redirectTo: location.pathname },
-        });
-        return;
-      }
-
-      if (intent === "edit" && reviewEligibility.existingReview) {
-        setReviewDialogState({
-          open: true,
-          mode: "edit",
-          review: reviewEligibility.existingReview,
-          orderId: reviewEligibility.orderId,
-        });
-        return;
-      }
-
-      if (!reviewEligibility.canReview) {
-        const message =
-          reviewEligibility.reason ||
-          reviewEligibility.message ||
-          "You can only review products you've purchased.";
-
-        setToastMessage(message);
-        window.setTimeout(() => setToastMessage(""), 2800);
-        return;
-      }
-
-      setReviewDialogState({
-        open: true,
-        mode: "create",
-        review: null,
-        orderId: reviewEligibility.orderId,
-      });
-    },
-    [
-      isLoggedIn,
-      navigate,
-      location.pathname,
-      reviewEligibility.canReview,
-      reviewEligibility.existingReview,
-      reviewEligibility.message,
-      reviewEligibility.orderId,
-      reviewEligibility.reason,
-    ]
-  );
-
-  const handleReviewDialogClose = useCallback(() => {
-    setReviewDialogState({
-      open: false,
-      mode: "create",
-      review: null,
-      orderId: null,
     });
   }, []);
 
@@ -818,8 +682,6 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
                 actionStatus={actionNotice}
                 onToggleWishlist={handleToggleWishlist}
                 wishlistState={wishlistStatus}
-                onRequestReview={handleRequestReview}
-                reviewEligibility={reviewEligibility}
               />
             </div>
 
@@ -834,8 +696,6 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
             <ProductReviewsSummary
               productId={productDocumentId}
               isLoggedIn={isLoggedIn}
-              onRequestReview={handleRequestReview}
-              eligibility={reviewEligibility}
               onSummaryChange={handleReviewSummaryChange}
               refreshToken={reviewsRefreshToken}
               pendingReviews={pendingReviews}
@@ -860,17 +720,6 @@ const ProductDetailsPage = ({ isLoggedIn = false }) => {
           </div>
         </div>
       ) : null}
-
-      <WriteReviewDialog
-        open={reviewDialogState.open}
-        mode={reviewDialogState.mode}
-        productId={productDocumentId}
-        productName={productDetail?.title}
-        defaultOrderId={reviewDialogState.orderId}
-        existingReview={reviewDialogState.review}
-        onClose={handleReviewDialogClose}
-        onSuccess={handleReviewSaved}
-      />
     </div>
   );
 };

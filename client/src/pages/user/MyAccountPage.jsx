@@ -30,6 +30,7 @@ import EditProfileDialog from "../../components/user/account/EditProfileDialog.j
 import AddressDialog from "../../components/user/account/AddressDialog.jsx";
 import MyReviewsSection from "../../components/user/account/reviews/MyReviewsSection.jsx";
 import WriteReviewDialog from "../../components/user/reviews/WriteReviewDialog.jsx";
+import OrderReviewsDialog from "../../components/user/account/OrderReviewsDialog.jsx";
 import {
   accountSections,
   preferenceLabels,
@@ -88,6 +89,10 @@ const MyAccountPage = ({ isLoggedIn }) => {
     open: false,
     review: null,
     mode: "edit",
+  });
+  const [orderReviewsDialogState, setOrderReviewsDialogState] = useState({
+    open: false,
+    order: null,
   });
   const successTimeoutRef = useRef();
   const addressStatusTimeoutRef = useRef();
@@ -574,6 +579,38 @@ const MyAccountPage = ({ isLoggedIn }) => {
     loadAddresses();
   };
 
+  const handleRequestOrderReview = useCallback((order) => {
+    setOrderReviewsDialogState({
+      open: true,
+      order,
+    });
+  }, []);
+
+  const handleCloseOrderReviewsDialog = useCallback(() => {
+    setOrderReviewsDialogState({
+      open: false,
+      order: null,
+    });
+  }, []);
+
+  const handleSelectProductForReview = useCallback((productData) => {
+    // Close the order products dialog
+    setOrderReviewsDialogState({
+      open: false,
+      order: null,
+    });
+
+    // Open the review dialog for the selected product
+    setAccountReviewDialogState({
+      open: true,
+      mode: productData.existingReview ? "edit" : "create",
+      review: productData.existingReview || null,
+      productId: productData.productId,
+      productName: productData.productName,
+      orderId: productData.orderId,
+    });
+  }, []);
+
   const orders = useMemo(
     () => (Array.isArray(summary?.recentOrders) ? summary.recentOrders : []),
     [summary]
@@ -705,7 +742,7 @@ const MyAccountPage = ({ isLoggedIn }) => {
               ) : null}
 
               {selectedSection === "orders" ? (
-                <OrdersSection orders={orders} />
+                <OrdersSection orders={orders} onRequestReview={handleRequestOrderReview} />
               ) : null}
 
               {selectedSection === "addresses" ? (
@@ -782,12 +819,18 @@ const MyAccountPage = ({ isLoggedIn }) => {
       <WriteReviewDialog
         open={accountReviewDialogState.open}
         mode={accountReviewDialogState.mode}
-        productId={accountReviewDialogState.review?.product?.id}
-        productName={accountReviewDialogState.review?.product?.title}
+        productId={accountReviewDialogState.productId || accountReviewDialogState.review?.product?.id}
+        productName={accountReviewDialogState.productName || accountReviewDialogState.review?.product?.title}
         existingReview={accountReviewDialogState.review}
-        defaultOrderId={accountReviewDialogState.review?.orderId}
+        defaultOrderId={accountReviewDialogState.orderId || accountReviewDialogState.review?.orderId}
         onClose={handleCloseReviewDialog}
         onSuccess={handleReviewUpdated}
+      />
+      <OrderReviewsDialog
+        open={orderReviewsDialogState.open}
+        order={orderReviewsDialogState.order}
+        onClose={handleCloseOrderReviewsDialog}
+        onSelectProduct={handleSelectProductForReview}
       />
     </div>
   );

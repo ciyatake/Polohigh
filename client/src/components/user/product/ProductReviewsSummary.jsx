@@ -340,22 +340,7 @@ const ProductReviewsSummary = ({
           </div>
         </div>
         <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-end">
-          {eligibility?.existingReview ? (
-            <button
-              type="button"
-              onClick={() => onRequestReview?.("edit")}
-              className="inline-flex items-center justify-center rounded-full border border-primary-500 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
-            >
-              Edit your review
-            </button>
-          ) : null}
-          <button
-            type="button"
-            onClick={() => onRequestReview?.("create")}
-            className="inline-flex items-center justify-center rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-700"
-          >
-            Write a review
-          </button>
+          {/* Review button removed - users can write reviews from their order history in account dashboard */}
         </div>
       </div>
 

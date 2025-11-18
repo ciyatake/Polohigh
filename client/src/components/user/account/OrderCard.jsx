@@ -65,7 +65,7 @@ const OrderTimeline = ({ timeline }) => {
   );
 };
 
-const OrderCard = ({ order }) => {
+const OrderCard = ({ order, onRequestReview }) => {
   if (!order) {
     return null;
   }
@@ -225,6 +225,24 @@ const OrderCard = ({ order }) => {
               Request a return
             </a>
           </div>
+
+          {deliveredStatus && onRequestReview ? (
+            <div className="rounded-xl border border-primary-500/20 bg-primary-50 px-4 py-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutralc-400">
+                Product Reviews
+              </p>
+              <p className="mt-2 text-xs text-neutralc-600">
+                Share your experience with the products from this order
+              </p>
+              <button
+                type="button"
+                onClick={() => onRequestReview?.(order)}
+                className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-primary-500 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
+              >
+                Write Reviews
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

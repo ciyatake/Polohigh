@@ -303,17 +303,6 @@ const ProductSummary = ({
           </h1>
           <div className="flex flex-wrap items-center gap-3 text-sm text-neutralc-600">
             <RatingDisplay rating={ratingValue} count={reviewCountValue} />
-            {onRequestReview ? (
-              <button
-                type="button"
-                onClick={() =>
-                  onRequestReview(hasExistingReview ? "edit" : "create")
-                }
-                className="rounded-full border border-primary-500 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500 transition hover:bg-primary-500 hover:text-white"
-              >
-                {reviewButtonLabel}
-              </button>
-            ) : null}
           </div>
         </header>
 
