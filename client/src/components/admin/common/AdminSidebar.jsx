@@ -6,7 +6,7 @@ const AdminSidebar = () => (
     <div className="custom-scrollbar flex h-full flex-col gap-10 overflow-y-auto px-7 py-7">
       <div className="rounded-2xl border border-[var(--color-primary-200)] bg-white p-5 shadow-inner shadow-primary-500/10">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary-500">
-          Ciyatake
+          PoloHigh
         </p>
         <h2 className="mt-3 text-2xl font-semibold text-neutralc-900">
           Admin Console
