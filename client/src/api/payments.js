@@ -152,7 +152,7 @@ export const processPayment = async ({
         contact: customerDetails?.phone ?? "",
       },
       theme: {
-        color: "#B58A31", // Brand color - primary-500
+        color: "#78909c", // Brand color - primary-500 (blue-gray)
       },
       notes: {
         address: "Polohigh Corporate Office",
