@@ -136,7 +136,7 @@ const productSchema = new mongoose.Schema(
     brand: {
       type: String,
       trim: true,
-      default: "Ciyatake",
+      default: "Polohigh",
     },
 
     // Category reference (can be ObjectId or string enum)
@@ -325,7 +325,7 @@ productSchema.methods.toFrontendFormat = function () {
     price: this.basePrice,
     mrp: effectiveMrp,
     discountPercentage: computedDiscount,
-    brand: this.brand ?? "Ciyatake",
+    brand: this.brand ?? "Polohigh",
     category: this.category,
     targetGender: this.targetGender,
     sizes: this.getAvailableSizes(),

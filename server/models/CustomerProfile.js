@@ -191,11 +191,11 @@ const customerProfileSchema = new mongoose.Schema(
       concierge: {
         name: {
           type: String,
-          default: "Ciyatake Care",
+          default: "Polohigh Care",
         },
         email: {
           type: String,
-          default: "support@ciyatake.com",
+          default: "support@polohigh.com",
         },
         phone: {
           type: String,

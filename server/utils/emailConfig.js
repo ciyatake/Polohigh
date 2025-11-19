@@ -16,25 +16,25 @@ const emailConfig = {
   // Recommended production setup
   production: {
     provider: 'SendGrid',
-    senderEmail: 'noreply@ciyatake.shop', // Use this after domain authentication
-    senderName: 'Ciyatake',
+    senderEmail: 'noreply@polohigh.shop', // Use this after domain authentication
+    senderName: 'Polohigh',
     domainAuthentication: 'REQUIRED', // This is the ONLY way to avoid spam
     
     steps: [
       '1. Go to SendGrid → Settings → Sender Authentication',
       '2. Click "Authenticate Your Domain"',
-      '3. Enter domain: ciyatake.shop',
+      '3. Enter domain: polohigh.shop',
       '4. Add DNS records to your domain provider',
       '5. Verify in SendGrid',
-      '6. Update EMAIL_USER to noreply@ciyatake.shop',
+      '6. Update EMAIL_USER to noreply@polohigh.shop',
     ],
   },
 
   // Current development setup
   development: {
     provider: 'SendGrid with Gmail fallback',
-    senderEmail: process.env.EMAIL_USER || 'dumbledore932@gmail.com',
-    senderName: process.env.APP_NAME || 'Ciyatake',
+    senderEmail: process.env.EMAIL_USER || 'polohigh.shop@gmail.com',
+    senderName: process.env.APP_NAME || 'Polohigh',
     limitations: [
       '⚠️ Emails may go to spam',
       '⚠️ No SPF/DKIM authentication',
@@ -58,7 +58,7 @@ const emailConfig = {
       name: 'Domain Authentication',
       effectiveness: '95%',
       difficulty: 'Medium',
-      description: 'Authenticate ciyatake.shop in SendGrid and use noreply@ciyatake.shop',
+      description: 'Authenticate polohigh.shop in SendGrid and use noreply@polohigh.shop',
       required: true,
     },
     {
@@ -113,19 +113,19 @@ const emailConfig = {
       records: [
         {
           type: 'CNAME',
-          name: 'em1234.ciyatake.shop',
+          name: 'em1234.polohigh.shop',
           value: 'u1234567.wl123.sendgrid.net',
           purpose: 'Email routing',
         },
         {
           type: 'CNAME',
-          name: 's1._domainkey.ciyatake.shop',
+          name: 's1._domainkey.polohigh.shop',
           value: 's1.domainkey.u1234567.wl123.sendgrid.net',
           purpose: 'DKIM authentication (prevents spoofing)',
         },
         {
           type: 'CNAME',
-          name: 's2._domainkey.ciyatake.shop',
+          name: 's2._domainkey.polohigh.shop',
           value: 's2.domainkey.u1234567.wl123.sendgrid.net',
           purpose: 'DKIM authentication (backup)',
         },

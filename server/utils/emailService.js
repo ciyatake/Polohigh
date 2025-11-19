@@ -48,7 +48,7 @@ const sendOTPEmail = async (email, otp) => {
     initializeSendGrid();
 
     // Use Gmail address as sender since it's already verified
-    const senderEmail = process.env.EMAIL_USER || 'ciyatake@gmail.com';
+    const senderEmail = process.env.EMAIL_USER || 'polohigh.shop@gmail.com';
 
     const msg = {
       to: email,

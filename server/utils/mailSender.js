@@ -82,13 +82,13 @@ const mailSender = async (to, subject, text, html = null) => {
       console.log("🔄 Attempting SendGrid delivery...");
       console.log("API Key prefix:", apiKey.substring(0, 10) + "...");
 
-      const senderEmail = process.env.EMAIL_USER || 'dumbledore932@gmail.com';
+      const senderEmail = process.env.EMAIL_USER || 'polohigh.shop@gmail.com';
       
       const msg = {
         to,
         from: {
           email: senderEmail,
-          name: process.env.APP_NAME || 'CiyaTake'
+          name: process.env.APP_NAME || 'Polohigh'
         },
         subject,
         text,

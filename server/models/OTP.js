@@ -35,10 +35,10 @@ OTPSchema.index({ createdAt: 1 }, { expireAfterSeconds: 900 });
 // Define a function to send the email using SendGrid
 async function sendVerificationEmail(email, otp) {
   try {
-    const subject = `Verify your ${process.env.APP_NAME || 'CiyaTake'} account - OTP inside`;
+    const subject = `Verify your ${process.env.APP_NAME || 'Polohigh'} account - OTP inside`;
     const text = `Hello,
 
-Thank you for signing up with ${process.env.APP_NAME || 'CiyaTake'}!
+Thank you for signing up with ${process.env.APP_NAME || 'Polohigh'}!
 
 Your verification code is: ${otp}
 
@@ -52,7 +52,7 @@ For your security:
 Need help? Contact our support team.
 
 Best regards,
-The ${process.env.APP_NAME || 'CiyaTake'} Team`;
+The ${process.env.APP_NAME || 'Polohigh'} Team`;
 
     // HTML version with anti-spam best practices
     const html = `
@@ -71,7 +71,7 @@ The ${process.env.APP_NAME || 'CiyaTake'} Team`;
           <!-- Header -->
           <tr>
             <td style="padding: 40px 40px 20px 40px; text-align: center;">
-              <h1 style="margin: 0; color: #b8985b; font-size: 32px; font-weight: 600;">${process.env.APP_NAME || 'CiyaTake'}</h1>
+              <h1 style="margin: 0; color: #b8985b; font-size: 32px; font-weight: 600;">${process.env.APP_NAME || 'Polohigh'}</h1>
             </td>
           </tr>
           
@@ -85,7 +85,7 @@ The ${process.env.APP_NAME || 'CiyaTake'} Team`;
               </p>
               
               <p style="margin: 0 0 30px 0; color: #555555; font-size: 16px; line-height: 1.6;">
-                Thank you for signing up with ${process.env.APP_NAME || 'CiyaTake'}! To complete your registration, please use the verification code below:
+                Thank you for signing up with ${process.env.APP_NAME || 'Polohigh'}! To complete your registration, please use the verification code below:
               </p>
               
               <!-- OTP Box -->
@@ -129,7 +129,7 @@ The ${process.env.APP_NAME || 'CiyaTake'} Team`;
                 This is an automated message, please do not reply to this email.
               </p>
               <p style="margin: 0; color: #888888; font-size: 13px; text-align: center;">
-                © ${new Date().getFullYear()} ${process.env.APP_NAME || 'CiyaTake'}. All rights reserved.
+                © ${new Date().getFullYear()} ${process.env.APP_NAME || 'Polohigh'}. All rights reserved.
               </p>
             </td>
           </tr>

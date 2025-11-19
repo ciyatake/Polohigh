@@ -274,11 +274,11 @@ const orderSchema = new mongoose.Schema(
     support: {
       email: {
         type: String,
-        default: "support@ciyatake.com",
+        default: "support@polohigh.com",
       },
       phone: {
         type: String,
-        default: "+91 1800-123-456",
+        default: "+917054290808",
       },
       hours: {
         type: String,

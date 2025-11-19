@@ -13,7 +13,7 @@ const sanitizeFolderName = (segment = "") =>
     .replace(/^-+|-+$/g, "");
 
 const buildFolderPath = (slug, explicitFolder) => {
-  const base = sanitizeFolderName(process.env.CLOUDINARY_ASSET_BASE_FOLDER || "ciyatake");
+  const base = sanitizeFolderName(process.env.CLOUDINARY_ASSET_BASE_FOLDER || "polohigh");
   const folderSegments = [base, "products"];
 
   if (explicitFolder) {
