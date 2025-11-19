@@ -95,7 +95,7 @@ const OverviewSection = ({
 
         <SectionCard
           title="Quick stats"
-          description="A snapshot of your activity on Ciyatake."
+          description="A snapshot of your activity on Polohigh."
           className="h-full"
         >
           <div className="grid gap-4 md:grid-cols-2">

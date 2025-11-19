@@ -195,11 +195,11 @@ const customerProfileSchema = new mongoose.Schema(
         },
         email: {
           type: String,
-          default: "support@polohigh.com",
+          default: "polohigh.shop@gmail.com",
         },
         phone: {
           type: String,
-          default: "+91 90876 54321",
+          default: "+917054290808",
         },
         hours: {
           type: String,

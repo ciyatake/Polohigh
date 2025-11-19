@@ -154,7 +154,7 @@ We do not sell your personal information to third parties for their marketing pu
 **Withdraw Consent:**
 - Withdraw your consent at any time (where processing is based on consent)
 
-To exercise these rights, contact us at privacy@ciyatake.com. We will respond within 30 days.`
+To exercise these rights, contact us at privacy@polohigh.com. We will respond within 30 days.`
     },
     {
       id: 7,
@@ -307,19 +307,19 @@ We encourage you to review this privacy policy regularly to stay informed about 
     {
       icon: Mail,
       title: "Email Us",
-      content: "privacy@ciyatake.com",
-      link: "mailto:privacy@ciyatake.com"
+      content: "privacy@polohigh.com",
+      link: "mailto:privacy@polohigh.com"
     },
     {
       icon: Mail,
       title: "General Inquiries",
-      content: "care@ciyatake.com",
-      link: "mailto:care@ciyatake.com"
+      content: "care@polohigh.com",
+      link: "mailto:care@polohigh.com"
     },
     {
       icon: FileText,
       title: "Mailing Address",
-      content: "123 Fashion Street, Andheri East, Mumbai, Maharashtra 400069"
+      content: "ALB-701, Sukriti Apartment, Eldico City, Mubarakpur, Lucknow, 226013"
     }
   ];
 

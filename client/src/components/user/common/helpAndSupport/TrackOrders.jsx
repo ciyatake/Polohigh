@@ -22,7 +22,7 @@ const TrackOrder = () => {
     totalAmount: "₹3,499",
     paymentMethod: "Credit Card (****1234)",
     deliveryAddress:
-      "123 Fashion Street, Andheri West, Mumbai, Maharashtra - 400058",
+      "ALB-701, Sukriti Apartment, Eldico City, Mubarakpur, Lucknow - 226013",
     currentStatus: "shipped",
     courierPartner: "BlueDart Express",
     trackingNumber: "BD987654321",

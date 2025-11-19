@@ -100,7 +100,7 @@ const MyReviewsSection = ({
 
             {review.adminResponse?.message ? (
               <div className="rounded-2xl border border-neutralc-200 bg-primary-100 p-3 text-xs text-neutralc-600">
-                <p className="font-semibold text-neutralc-900">Ciyatake team</p>
+                <p className="font-semibold text-neutralc-900">Polohigh team</p>
                 <p className="mt-1 leading-relaxed">
                   {review.adminResponse.message}
                 </p>

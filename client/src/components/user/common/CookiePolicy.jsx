@@ -321,7 +321,7 @@ You have rights regarding your data regardless of where it is processed:
 - Withdraw consent
 
 **Questions:**
-Contact us at privacy@ciyatake.com for information about specific data transfers and safeguards in place.`
+Contact us at privacy@polohigh.com for information about specific data transfers and safeguards in place.`
     },
     {
       id: 10,
@@ -342,7 +342,7 @@ Contact us at privacy@ciyatake.com for information about specific data transfers
 
 **If You're a Parent:**
 If you believe we have collected information from a child under 13:
-- Contact us immediately at privacy@ciyatake.com
+- Contact us immediately at privacy@polohigh.com
 - We will promptly delete the information
 - We will take steps to prevent future collection
 
@@ -389,22 +389,22 @@ Previous versions of this policy may be available upon request for reference pur
       content: `If you have questions about our use of cookies:
 
 **Privacy Team:**
-- Email: privacy@ciyatake.com
+- Email: privacy@polohigh.com
 - Response time: Within 2-3 business days
 
 **Customer Service:**
-- Email: care@ciyatake.com
-- Phone: +91 98765 43210
+- Email: care@polohigh.com
+- Phone: +917054290808
 - Hours: Monday-Saturday, 9:00 AM - 6:00 PM IST
 
 **Mailing Address:**
-Ciyatake
-123 Fashion Street, Andheri East
-Mumbai, Maharashtra 400069
+Polohigh
+ALB-701, Sukriti Apartment, Eldico City
+Mubarakpur, Lucknow, 226013
 India
 
 **Data Protection Officer:**
-For data protection inquiries, contact our Data Protection Officer at dpo@ciyatake.com
+For data protection inquiries, contact our Data Protection Officer at polohigh.shop@gmail.com
 
 **Your Rights:**
 We will help you exercise your rights regarding cookies and data:

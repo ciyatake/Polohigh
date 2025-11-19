@@ -111,7 +111,7 @@ const OrderCard = ({ order, onRequestReview }) => {
   const returnSubject = encodeURIComponent(
     `Return request for order ${order.orderNumber ?? order.id}`
   );
-  const returnMailto = `mailto:support@ciyatake.com?subject=${returnSubject}`;
+  const returnMailto = `mailto:support@polohigh.com?subject=${returnSubject}`;
   const returnButtonClasses = order.returnEligible
     ? "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white"
     : "border-neutralc-200 text-neutralc-400 pointer-events-none";

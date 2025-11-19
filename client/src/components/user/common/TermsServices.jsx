@@ -452,7 +452,7 @@ Sections regarding payment, intellectual property, disclaimers, and dispute reso
 - Assignment does not release original party from obligations
 
 **Contact:**
-For questions about these Terms, contact us at legal@ciyatake.com or through our customer service channels.`
+For questions about these Terms, contact us at legal@polohigh.com or through our customer service channels.`
     }
   ];
 
@@ -564,7 +564,7 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
               <div>
                 <h3 className="text-xl font-bold text-[var(--color-primary-700)] mb-2">Important Notice</h3>
                 <p className="text-[var(--color-primary-700)] leading-relaxed">
-                  These Terms of Service constitute a legally binding agreement. By using Ciyatake, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree to these terms, please do not use our services. For any questions or concerns, please contact our legal team at legal@ciyatake.com.
+                  These Terms of Service constitute a legally binding agreement. By using Polohigh, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree to these terms, please do not use our services. For any questions or concerns, please contact our legal team at legal@polohigh.com.
                 </p>
               </div>
             </div>
@@ -589,7 +589,7 @@ For questions about these Terms, contact us at legal@ciyatake.com or through our
                 legal@ciyatake.com
               </a>
               <a
-                href="mailto:care@ciyatake.com"
+                href="mailto:polohigh.shop@gmail.com"
                 className="bg-transparent border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[var(--color-primary-700)] transition-colors font-semibold inline-flex items-center justify-center gap-2"
               >
                 <User className="w-5 h-5" />

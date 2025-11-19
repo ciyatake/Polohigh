@@ -294,7 +294,7 @@ exports.getProductById = async (req, res) => {
       basePrice: product.basePrice,
       mrp: effectiveMrp,
       discountPercentage: computedDiscount,
-      brand: product.brand ?? "Ciyatake",
+      brand: product.brand ?? "Polohigh",
       media: product.media,
       colors: product.getAvailableColors(),
       sizes: product.getAvailableSizes(),

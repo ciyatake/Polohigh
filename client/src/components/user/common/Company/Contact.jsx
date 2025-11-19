@@ -85,8 +85,8 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Fashion Street, Andheri East",
-      subContent: "Mumbai, Maharashtra 400069",
+      content: "ALB-701, Sukriti Apartment, Eldico City",
+      subContent: "Mubarakpur, Lucknow, 226013",
     },
   ];
 
@@ -449,9 +449,9 @@ const Contact = () => {
               <div className="text-center text-neutralc-900">
                 <MapPin className="w-12 h-12 mx-auto mb-4" />
                 <p className="font-semibold">
-                  123 Fashion Street, Andheri East
+                  ALB-701, Sukriti Apartment, Eldico City
                 </p>
-                <p>Mumbai, Maharashtra 400069</p>
+                <p>Mubarakpur, Lucknow, 226013</p>
                 <p className="mt-2 text-sm">
                   (Google Maps integration can be added here)
                 </p>

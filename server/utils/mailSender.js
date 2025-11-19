@@ -150,7 +150,7 @@ const mailSender = async (to, subject, text, html = null) => {
     });
 
     const mailOptions = {
-      from: `"${process.env.APP_NAME || 'CiyaTake'}" <${process.env.EMAIL_USER}>`,
+      from: `"${process.env.APP_NAME || 'Polohigh'}" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       text,
