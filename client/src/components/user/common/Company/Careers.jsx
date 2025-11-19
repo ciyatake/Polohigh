@@ -532,11 +532,11 @@ const Careers = () => {
               careers@polohigh.com
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+917054290808"
               className="flex items-center gap-2 text-lg"
             >
               <Phone className="w-5 h-5" />
-              +91 98765 43210
+              +917054290808
             </a>
           </div>
           <button

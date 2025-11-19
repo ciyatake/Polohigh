@@ -354,10 +354,10 @@ const Faqs = () => {
               Email: care@Polohigh.com
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+917054290808"
               className="bg-white text-neutralc-900 px-6 py-3 rounded-lg font-semibold hover:bg-neutralc-200 transition-colors duration-200"
             >
-              Call: +91 98765 43210
+              Call: +917054290808
             </a>
           </div>
           <p className="text-neutralc-300 text-sm mt-4">

@@ -49,11 +49,11 @@ const Footer = () => {
                 care@polohigh.com
               </a>
               <a
-                href="tel:+919876543210"
+                href="tel:+917054290808"
                 className="flex items-center text-sm text-neutralc-300 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                +91 98765 43210
+                +917054290808
               </a>
               <div className="flex items-center text-sm text-neutralc-300">
                 <Clock className="w-4 h-4 mr-2" />

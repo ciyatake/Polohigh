@@ -580,10 +580,10 @@ const Press = () => {
                   <div>
                     <p className="mb-1 font-semibold">Phone</p>
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+917054290808"
                       className="transition-opacity opacity-90 hover:opacity-100"
                     >
-                      +91 98765 43210
+                      +917054290808
                     </a>
                   </div>
                 </div>

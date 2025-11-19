@@ -72,9 +72,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+91 98765 43210",
-      subContent: "+91 98765 43211",
-      link: "tel:+919876543210",
+      content: "+917054290808",
+      subContent: "+917054290808",
+      link: "tel:+917054290808",
     },
     {
       icon: Clock,
@@ -479,7 +479,7 @@ const Contact = () => {
               Email Us
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+917054290808"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[var(--color-primary-700)] transition-colors font-semibold text-lg inline-flex items-center justify-center gap-2"
             >
               <Phone className="w-5 h-5" />

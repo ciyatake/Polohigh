@@ -1,5 +1,5 @@
-const AUTH_TOKEN_STORAGE_KEY = "ciyatake.auth.token";
-const AUTH_USER_STORAGE_KEY = "ciyatake.auth.user";
+const AUTH_TOKEN_STORAGE_KEY = "polohigh.auth.token";
+const AUTH_USER_STORAGE_KEY = "polohigh.auth.user";
 export const AUTH_SESSION_EVENT = "auth:session-changed";
 
 const isBrowser = typeof window !== "undefined" && typeof window.localStorage !== "undefined";
