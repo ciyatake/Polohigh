@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 cursor-pointer" onClick={()=>navigate("/")}>
               <img
-                src="/ciyatakeLogo.png"
+                src="/polohighLogo.png"
                 alt="POLOHIGH"
                 className="h-8 w-auto filter brightness-0 invert bg-yellow-100 rounded p-1"
                 style={{ filter: 'invert(0)' }}
@@ -188,7 +188,7 @@ const Footer = () => {
             {/* Social Media Icons */}
             <div className="flex space-x-4">
               <a
-                href=" https://www.instagram.com/ciyatakeofficial?igsh=MjlzYXhiMHcza2M1"
+                href=" https://www.instagram.com/polohighofficial?igsh=MjlzYXhiMHcza2M1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-neutralc-800 flex items-center justify-center text-neutralc-300 hover:bg-primary-300 hover:text-neutralc-900 transition-all"

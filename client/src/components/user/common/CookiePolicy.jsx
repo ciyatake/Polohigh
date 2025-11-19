@@ -190,7 +190,7 @@ While marketing cookies track behavior, they do not store personally identifiabl
 - Content delivery networks (faster page loading)
 
 **Independent Control:**
-Third-party cookies are controlled by the respective third parties, not by Ciyatake. They have their own privacy and cookie policies.
+Third-party cookies are controlled by the respective third parties, not by Polohigh. They have their own privacy and cookie policies.
 
 **Common Third Parties:**
 - Google (Analytics, Ads, YouTube)
@@ -256,7 +256,7 @@ Consider using privacy-focused browsers (Brave, Firefox Focus) or browser extens
       id: 8,
       icon: Info,
       title: "Cookies We Use",
-      content: `Here is a detailed list of cookies used on Ciyatake:
+      content: `Here is a detailed list of cookies used on Polohigh:
 
 **Essential Cookies:**
 - _session: Maintains your login session (Session)
@@ -464,7 +464,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
           </div>
           <h1 className="mb-4 text-5xl font-bold">Cookie Policy</h1>
           <p className="mb-4 text-xl opacity-90">
-            Learn about how we use cookies and similar technologies to improve your experience on Ciyatake.
+            Learn about how we use cookies and similar technologies to improve your experience on Polohigh.
           </p>
           <div className="flex items-center justify-center gap-2 text-sm opacity-80">
             <Calendar className="w-4 h-4" />
@@ -627,11 +627,11 @@ We welcome your feedback about our cookie practices and privacy policies.`
               If you have any questions about our use of cookies or this Cookie Policy, please contact our privacy team.
             </p>
             <a
-              href="mailto:privacy@ciyatake.com"
+              href="mailto:privacy@polohigh.com"
               className="bg-white text-[var(--color-primary-700)] px-8 py-3 rounded-lg hover:bg-white transition-colors font-semibold inline-flex items-center gap-2"
             >
               <Info className="w-5 h-5" />
-              privacy@ciyatake.com
+              privacy@polohigh.com
             </a>
           </div>
         </div>
@@ -641,7 +641,7 @@ We welcome your feedback about our cookie practices and privacy policies.`
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-neutralc-900 text-sm">
-            By continuing to use Ciyatake, you consent to our use of cookies as described in this Cookie Policy.
+            By continuing to use Polohigh, you consent to our use of cookies as described in this Cookie Policy.
           </p>
         </div>
       </section>

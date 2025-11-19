@@ -120,20 +120,20 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: Facebook,
-      link: "https://facebook.com/ciyatake",
+      link: "https://facebook.com/polohigh",
       label: "Facebook",
     },
     {
       icon: Instagram,
-      link: "https://instagram.com/ciyatake",
+      link: "https://instagram.com/polohigh",
       label: "Instagram",
     },
     {
       icon: Linkedin,
-      link: "https://linkedin.com/company/ciyatake",
+      link: "https://linkedin.com/company/polohigh",
       label: "LinkedIn",
     },
-    { icon: Twitter, link: "https://twitter.com/ciyatake", label: "Twitter" },
+    { icon: Twitter, link: "https://twitter.com/polohigh", label: "Twitter" },
   ];
 
   const subjectOptions = [

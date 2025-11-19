@@ -8,11 +8,11 @@ const PrivacyPolicy = () => {
       id: 1,
       icon: FileText,
       title: "Introduction",
-      content: `Welcome to Ciyatake. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+      content: `Welcome to Polohigh. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
 
 This privacy policy applies to information we collect about you when you use our website, mobile application, or interact with us through customer service, social media, or other channels.
 
-By using Ciyatake, you agree to the collection and use of information in accordance with this policy.`
+By using Polohigh, you agree to the collection and use of information in accordance with this policy.`
     },
     {
       id: 2,
@@ -130,7 +130,7 @@ We do not sell your personal information to third parties for their marketing pu
       title: "Your Privacy Rights",
       content: `You have several rights regarding your personal data:
 
-**Access and Portability:**
+**Access and Portability:**https://www.polohigh.shop/account
 - Request access to your personal data
 - Receive a copy of your data in a portable format
 
@@ -212,7 +212,7 @@ You can control cookies through your browser settings. Disabling certain cookies
       id: 9,
       icon: Shield,
       title: "Children's Privacy",
-      content: `Ciyatake does not knowingly collect personal information from children under 13 years of age.
+      content: `Polohigh does not knowingly collect personal information from children under 13 years of age.
 
 **Our Commitment:**
 - We do not direct our services to children
@@ -456,7 +456,7 @@ We encourage you to review this privacy policy regularly to stay informed about 
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-neutralc-900 text-sm">
-            By using Ciyatake, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
+            By using Polohigh, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
           </p>
         </div>
       </section>

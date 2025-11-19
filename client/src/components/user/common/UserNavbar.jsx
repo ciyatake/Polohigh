@@ -501,7 +501,7 @@ const UserNavbar = ({
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <img
-              src="/ciyatakeLogo.png"
+              src="/polohighLogo.png"
               alt="POLOHIGH"
               className="h-8 w-auto md:h-10"
             />

@@ -8,12 +8,12 @@ const TermsServices = () => {
       id: 1,
       icon: FileText,
       title: "Agreement to Terms",
-      content: `Welcome to Ciyatake. These Terms of Service ("Terms") govern your access to and use of our website, mobile application, products, and services (collectively, the "Services").
+      content: `Welcome to Polohigh. These Terms of Service ("Terms") govern your access to and use of our website, mobile application, products, and services (collectively, the "Services").
 
 **By accessing or using our Services, you agree to be bound by these Terms.** If you do not agree to these Terms, you may not access or use our Services.
 
 **Key Points:**
-- These Terms constitute a legally binding agreement between you and Ciyatake
+- These Terms constitute a legally binding agreement between you and Polohigh
 - You must be at least 18 years old to use our Services
 - If you are using our Services on behalf of an organization, you represent that you have authority to bind that organization
 - We may modify these Terms at any time by posting revised Terms on our website
@@ -201,8 +201,8 @@ Notify us within 48 hours of delivery for damaged or defective items. We will ar
       content: `All content and materials on our Services are protected by intellectual property laws:
 
 **Our Rights:**
-- Ciyatake owns or licenses all content, including text, images, logos, graphics, and software
-- The Ciyatake name, logo, and trademarks are our property
+- Polohigh owns or licenses all content, including text, images, logos, graphics, and software
+- The Polohigh name, logo, and trademarks are our property
 - All product descriptions, images, and materials are protected by copyright
 - Website design, layout, and functionality are our intellectual property
 
@@ -240,7 +240,7 @@ Unauthorized use of our intellectual property may result in legal action and ter
 - We are not liable for product defects beyond our return policy
 
 **Limitation of Liability:**
-- To the fullest extent permitted by law, Ciyatake is not liable for any indirect, incidental, special, or consequential damages
+- To the fullest extent permitted by law, Polohigh is not liable for any indirect, incidental, special, or consequential damages
 - Our total liability is limited to the amount you paid for the product
 - We are not liable for delays, failures, or disruptions of Services
 - We are not liable for third-party services or content
@@ -432,7 +432,7 @@ Sections regarding payment, intellectual property, disclaimers, and dispute reso
       content: `Additional terms that apply to your use of our Services:
 
 **Entire Agreement:**
-- These Terms constitute the entire agreement between you and Ciyatake
+- These Terms constitute the entire agreement between you and Polohigh
 - These Terms supersede all prior agreements and understandings
 - No other representations or warranties are binding
 
@@ -452,7 +452,7 @@ Sections regarding payment, intellectual property, disclaimers, and dispute reso
 - Assignment does not release original party from obligations
 
 **Contact:**
-For questions about these Terms, contact us at legal@polohigh.com or through our customer service channels.`
+For questions about these Terms, contact us at polohigh.shop@gmail.com or through our customer service channels.`
     }
   ];
 
@@ -460,7 +460,7 @@ For questions about these Terms, contact us at legal@polohigh.com or through our
     {
       icon: CheckCircle,
       title: "Fair & Transparent",
-      description: "Clear terms that protect both you and Ciyatake"
+      description: "Clear terms that protect both you and Polohigh"
     },
     {
       icon: Shield,
@@ -489,7 +489,7 @@ For questions about these Terms, contact us at legal@polohigh.com or through our
           </div>
           <h1 className="mb-4 text-5xl font-bold">Terms of Service</h1>
           <p className="mb-4 text-xl opacity-90">
-            Please read these terms carefully before using Ciyatake. By using our services, you agree to these terms.
+            Please read these terms carefully before using Polohigh. By using our services, you agree to these terms.
           </p>
           <div className="flex items-center justify-center gap-2 text-sm opacity-80">
             <Calendar className="w-4 h-4" />
@@ -564,7 +564,7 @@ For questions about these Terms, contact us at legal@polohigh.com or through our
               <div>
                 <h3 className="text-xl font-bold text-[var(--color-primary-700)] mb-2">Important Notice</h3>
                 <p className="text-[var(--color-primary-700)] leading-relaxed">
-                  These Terms of Service constitute a legally binding agreement. By using Polohigh, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree to these terms, please do not use our services. For any questions or concerns, please contact our legal team at legal@polohigh.com.
+                  These Terms of Service constitute a legally binding agreement. By using Polohigh, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree to these terms, please do not use our services. For any questions or concerns, please contact our legal team at polohigh.shop@gmail.com.
                 </p>
               </div>
             </div>
@@ -582,11 +582,11 @@ For questions about these Terms, contact us at legal@polohigh.com or through our
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a
-                href="mailto:legal@ciyatake.com"
+                href="mailto:legal@polohigh.com"
                 className="bg-white text-[var(--color-primary-700)] px-6 py-3 rounded-lg hover:bg-white transition-colors font-semibold inline-flex items-center justify-center gap-2"
               >
                 <FileText className="w-5 h-5" />
-                legal@ciyatake.com
+                polohigh.shop@gmail.com
               </a>
               <a
                 href="mailto:polohigh.shop@gmail.com"
@@ -604,7 +604,7 @@ For questions about these Terms, contact us at legal@polohigh.com or through our
       <section className="px-4 py-8 bg-white border-t border-neutralc-200">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-neutralc-900 text-sm">
-            By continuing to use Ciyatake, you acknowledge your acceptance of these Terms of Service and any future modifications.<br />
+            By continuing to use Polohigh, you acknowledge your acceptance of these Terms of Service and any future modifications.<br />
             This website is owned by Sudarshan Singh.
           </p>
         </div>
