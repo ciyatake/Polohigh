@@ -8,6 +8,7 @@ import CheckoutField from "../../components/user/checkout/CheckoutField.jsx";
 import CheckoutOrderSummary from "../../components/user/checkout/CheckoutOrderSummary.jsx";
 import Loader from "../../components/common/Loader.jsx";
 import Skeleton from "../../components/common/Skeleton.jsx";
+import AddressDialog from "../../components/user/account/AddressDialog.jsx";
 import {
   fetchCart,
   validateCart,
@@ -141,6 +142,8 @@ const CheckoutPage = () => {
     email: "",
   });
   const [isSavingAddress, setIsSavingAddress] = useState(false);
+  const [showAddressDialog, setShowAddressDialog] = useState(false);
+  const [addressDialogError, setAddressDialogError] = useState("");
 
   const selectedAddress = useMemo(
     () => addresses.find((address) => address.id === selectedAddressId) ?? null,
@@ -237,7 +240,7 @@ const CheckoutPage = () => {
         setUseNewAddress(false);
       } else {
         setSelectedAddressId("");
-        setUseNewAddress(true);
+        setUseNewAddress(false);
         setAddressForm({ ...EMPTY_ADDRESS_FORM });
       }
 
@@ -763,36 +766,22 @@ const CheckoutPage = () => {
                       onChange={handleAddressSelection}
                     />
                   ) : (
-                    <>
-                    <div className="rounded-xl sm:rounded-2xl text-center border border-amber-200 bg-amber-50 p-3 sm:p-4 text-xs sm:text-sm text-amber-700">
-                      You don't have a saved address yet. Add a new one below to
-                      continue.
-                    </div>
-                    <div className="flex flex-col items-center justify-center bg-gradient-to-br from-amber-50 to-amber-100 p-3 sm:p-4 rounded-xl sm:rounded-2xl">
-                      <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-primary-500 p-4 sm:p-8 w-full max-w-md text-center">
-                        <h1 className="text-lg sm:text-2xl font-bold text-primary-500 mb-4 sm:mb-6">Save Address Navigation Guide</h1>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 text-xs sm:text-sm font-medium">
-                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-primary-500 bg-primary-500 text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
-                            <span>Account</span>
-                          </div>
-                          <span className="text-primary-500 rotate-90 sm:rotate-0">→</span>
-                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-primary-500 bg-primary-500 text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
-                            <span>Address</span>
-                          </div>
-                          <span className="text-primary-500 rotate-90 sm:rotate-0">→</span>
-                          <div className="flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-4 py-2 sm:py-3 transition border-primary-500 bg-primary-500 text-white shadow-[0_14px_28px_rgba(184,152,91,0.3)] w-full sm:w-auto justify-center">
-                            <span>Add New Address</span>
-                          </div>
-                        </div>
-
-                        <p className="mt-4 sm:mt-6 text-gray-700 text-xs sm:text-sm">Follow the steps above to add a new address to your account.</p>
+                    <div className="space-y-4">
+                      <div className="rounded-xl sm:rounded-2xl text-center border border-amber-200 bg-amber-50 p-3 sm:p-4 text-xs sm:text-sm text-amber-700">
+                        You don't have a saved address yet. Add one now to continue with checkout.
                       </div>
+                      <button
+                        type="button"
+                        onClick={() => setShowAddressDialog(true)}
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-primary-500 bg-primary-500 px-4 sm:px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-primary-600 hover:border-primary-600 hover:shadow-lg hover:shadow-primary-500/30"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        Add Shipping Address
+                      </button>
                     </div>
-
-                    </>
                   )}
-                <button disabled={isSavingAddress} onClick={()=>navigate('/account')} className="bg-primary-500 text-white font-semibold rounded-2xl sm:rounded-3xl py-2 cursor-pointer text-xs sm:text-sm w-full sm:w-auto px-4 sm:px-6">Go Save address</button>
                 </CheckoutSection>
               </form>
 
@@ -825,6 +814,35 @@ const CheckoutPage = () => {
           </div>
         ) : null}
       </main>
+
+      <AddressDialog
+        open={showAddressDialog}
+        mode="create"
+        onClose={() => {
+          setShowAddressDialog(false);
+          setAddressDialogError("");
+        }}
+        onSubmit={async (addressData) => {
+          setIsSavingAddress(true);
+          setAddressDialogError("");
+          try {
+            const newAddress = await createAddress(addressData);
+            setAddresses((prev) => [newAddress, ...prev]);
+            setSelectedAddressId(newAddress.id);
+            setShowAddressDialog(false);
+            setAddressDialogError("");
+          } catch (error) {
+            console.error("Failed to create address:", error);
+            setAddressDialogError(
+              error?.message || "Failed to save address. Please try again."
+            );
+          } finally {
+            setIsSavingAddress(false);
+          }
+        }}
+        saving={isSavingAddress}
+        error={addressDialogError}
+      />
     </div>
   );
 };
