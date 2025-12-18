@@ -39,6 +39,11 @@ const ProductSummary = ({
     }
 
     if (variants.length) {
+      // Find first variant with stock
+      const availableVariant = variants.find(v => v.stockLevel > 0);
+      if (availableVariant?.size) {
+        return availableVariant.size;
+      }
       return variants[0]?.size ?? null;
     }
 
@@ -77,14 +82,28 @@ const ProductSummary = ({
     setQuantity(1);
   }, [defaultColor, defaultSize, product?.id]);
 
-  const sizeOptions = useMemo(
-    () =>
-      (product.sizes ?? []).map((value) => ({
+  const sizeOptions = useMemo(() => {
+    // Create a map to track stock for each size
+    const sizeStockMap = new Map();
+    
+    // Aggregate stock levels by size from variants
+    variants.forEach((variant) => {
+      if (variant.size) {
+        const currentStock = sizeStockMap.get(variant.size) || 0;
+        sizeStockMap.set(variant.size, currentStock + (variant.stockLevel || 0));
+      }
+    });
+
+    return (product.sizes ?? []).map((value) => {
+      const stock = sizeStockMap.get(value) || 0;
+      return {
         label: value.toUpperCase(),
         value,
-      })),
-    [product.sizes]
-  );
+        stockLevel: stock,
+        isOutOfStock: stock === 0,
+      };
+    });
+  }, [product.sizes, variants]);
 
   const colorOptions = useMemo(() => {
     const options = new Map();

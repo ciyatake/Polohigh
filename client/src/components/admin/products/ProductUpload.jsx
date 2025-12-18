@@ -27,6 +27,7 @@ const DEFAULT_FORM = {
   price: "",
   discountPercentage: "",
   stockQuantity: "",
+  sizeStock: {},
   sku: "",
   availableSizes: [],
   colors: [],
@@ -273,7 +274,11 @@ const buildVariants = (form, slug) => {
     });
   });
 
-  const totalStock = Math.max(0, Number.parseInt(form.stockQuantity, 10) || 0);
+  // Calculate total stock from sizeStock if available
+  const sizeStock = form.sizeStock || {};
+  const totalStock = form.availableSizes.length > 0
+    ? form.availableSizes.reduce((sum, size) => sum + (Number(sizeStock[size]) || 0), 0)
+    : Math.max(0, Number.parseInt(form.stockQuantity, 10) || 0);
 
   const baseSku = (form.sku || slug || generateId())
     .toString()
@@ -301,12 +306,18 @@ const buildVariants = (form, slug) => {
     ];
   }
 
+  // Build variants with individual size stock levels
   const variants = combinations.map(({ size, color }, index) => {
-    const allocation =
-      Math.floor(totalStock / combinations.length) +
-      (index < totalStock % combinations.length ? 1 : 0);
-
     const colorValue = color.value ?? color.name ?? `color-${index + 1}`;
+    
+    // Get stock for this size
+    const sizeStockLevel = Number(sizeStock[size]) || 0;
+    
+    // Distribute stock across colors for this size
+    const numColors = colors.length;
+    const stockPerColor = Math.floor(sizeStockLevel / numColors);
+    const colorIndex = index % numColors;
+    const extraStock = colorIndex < (sizeStockLevel % numColors) ? 1 : 0;
 
     return {
       sku: `${baseSku}-${size}-${colorValue}`.replace(/-+/g, "-").slice(0, 64),
@@ -315,7 +326,7 @@ const buildVariants = (form, slug) => {
         name: colorValue,
         hex: color.hex ?? "",
       },
-      stockLevel: allocation,
+      stockLevel: stockPerColor + extraStock,
       isActive: form.visibility !== "archived",
       images: imageUrls,
     };
@@ -403,6 +414,23 @@ const mapProductToForm = (product) => {
   next.sku = product.variants?.[0]?.sku ?? product.id ?? next.sku;
   next.tags = ensureArray(product.tags);
   next.availableSizes = ensureArray(product.sizes);
+  
+  // Map variant stock levels to sizeStock
+  next.sizeStock = {};
+  if (Array.isArray(product.variants) && product.variants.length > 0) {
+    const sizeStockMap = {};
+    product.variants.forEach((variant) => {
+      const size = variant.size;
+      if (size && size !== 'standard') {
+        if (!sizeStockMap[size]) {
+          sizeStockMap[size] = 0;
+        }
+        sizeStockMap[size] += variant.stockLevel || 0;
+      }
+    });
+    next.sizeStock = sizeStockMap;
+  }
+  
   next.colors = ensureArray(product.colors).map((color) => ({
     id: generateId(),
     name: color.label ?? color.name ?? color.value ?? "Color",
@@ -757,12 +785,26 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
   };
 
   const toggleSize = (size) => {
-    updateForm(
-      "availableSizes",
-      form.availableSizes.includes(size)
-        ? form.availableSizes.filter((item) => item !== size)
-        : [...form.availableSizes, size]
-    );
+    updateForm((prev) => {
+      const currentSizes = prev.availableSizes;
+      const isSelected = currentSizes.includes(size);
+      let newSizes;
+      let newSizeStock = { ...prev.sizeStock };
+
+      if (isSelected) {
+        newSizes = currentSizes.filter((item) => item !== size);
+        delete newSizeStock[size];
+      } else {
+        newSizes = [...currentSizes, size];
+        newSizeStock[size] = "";
+      }
+
+      return {
+        ...prev,
+        availableSizes: newSizes,
+        sizeStock: newSizeStock,
+      };
+    });
   };
 
   useEffect(() => {
@@ -841,7 +883,16 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
       nextErrors.price = "Price must be positive";
     }
 
-    if (form.stockQuantity === "" || form.stockQuantity === null) {
+    // Validate stock: check if sizes are selected and have stock
+    if (form.availableSizes.length > 0) {
+      const totalStock = form.availableSizes.reduce(
+        (sum, size) => sum + (Number(form.sizeStock?.[size]) || 0),
+        0
+      );
+      if (totalStock === 0) {
+        nextErrors.stockQuantity = "At least one size must have stock";
+      }
+    } else if (form.stockQuantity === "" || form.stockQuantity === null) {
       nextErrors.stockQuantity = "Stock quantity is required";
     } else if (Number(form.stockQuantity) < 0) {
       nextErrors.stockQuantity = "Stock cannot be negative";
@@ -1248,20 +1299,15 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
               </FormField>
 
               <FormField
-                label="Stock quantity"
-                required
-                error={errors.stockQuantity}
+                label="Total Stock"
+                helpText="Calculated from size stocks"
               >
-                <input
-                  type="number"
-                  min="0"
-                  value={form.stockQuantity}
-                  onChange={(event) =>
-                    updateForm("stockQuantity", event.target.value)
-                  }
-                  placeholder="0"
-                  className="w-full rounded-xl border border-neutralc-200 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-                />
+                <div className="w-full rounded-xl border border-neutralc-200 bg-neutralc-50 px-4 py-3 text-sm text-neutralc-600">
+                  {Object.values(form.sizeStock || {}).reduce(
+                    (sum, val) => sum + (Number(val) || 0),
+                    0
+                  )}
+                </div>
               </FormField>
 
               <FormField label="SKU" required error={errors.sku}>
@@ -1280,25 +1326,59 @@ const ProductUpload = ({ mode = "create", productId, onSuccess }) => {
                 label="Available sizes"
                 helpText="Choose every size variant that can be purchased."
               >
-                <div className="flex flex-wrap gap-2">
-                  {availableSizes.map((size) => (
-                    <label
-                      key={size}
-                      className={`flex items-center gap-2 rounded-full border px-3 py-1 text-sm transition ${
-                        form.availableSizes.includes(size)
-                          ? "border-[var(--color-primary-200)] bg-primary-100 text-primary-700"
-                          : "border-neutralc-200 bg-white text-neutralc-600 hover:border-[var(--color-primary-200)]"
-                      }`}
-                    >
-                      <input
-                        type="checkbox"
-                        className="accent-primary-500"
-                        checked={form.availableSizes.includes(size)}
-                        onChange={() => toggleSize(size)}
-                      />
-                      <span>{size.toUpperCase()}</span>
-                    </label>
-                  ))}
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap gap-2">
+                    {availableSizes.map((size) => (
+                      <label
+                        key={size}
+                        className={`flex items-center gap-2 rounded-full border px-3 py-1 text-sm transition cursor-pointer ${
+                          form.availableSizes.includes(size)
+                            ? "border-[var(--color-primary-200)] bg-primary-100 text-primary-700"
+                            : "border-neutralc-200 bg-white text-neutralc-600 hover:border-[var(--color-primary-200)]"
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          className="accent-primary-500"
+                          checked={form.availableSizes.includes(size)}
+                          onChange={() => toggleSize(size)}
+                        />
+                        <span>{size.toUpperCase()}</span>
+                      </label>
+                    ))}
+                  </div>
+
+                  {form.availableSizes.length > 0 && (
+                    <div className="mt-2 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+                      {form.availableSizes.map((size) => (
+                        <div
+                          key={`stock-${size}`}
+                          className="flex flex-col gap-1"
+                        >
+                          <label className="text-xs font-medium text-neutralc-600">
+                            Stock for {size.toUpperCase()}
+                          </label>
+                          <input
+                            type="number"
+                            min="0"
+                            placeholder="0"
+                            value={form.sizeStock?.[size] ?? ""}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              updateForm((prev) => ({
+                                ...prev,
+                                sizeStock: {
+                                  ...prev.sizeStock,
+                                  [size]: val,
+                                },
+                              }));
+                            }}
+                            className="w-full rounded-lg border border-neutralc-200 px-3 py-2 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </FormField>
 
