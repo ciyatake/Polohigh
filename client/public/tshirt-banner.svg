@@ -1,0 +1,55 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tshirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3182ce;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4299e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2b6cb0;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="tshirtLight" cx="40%" cy="25%" r="60%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="600" fill="url(#tshirtGrad)"/>
+  <rect width="400" height="600" fill="url(#tshirtLight)"/>
+  
+  <!-- T-Shirt illustration -->
+  <g transform="translate(200, 280)">
+    <!-- Main t-shirt body -->
+    <rect x="-75" y="0" width="150" height="180" rx="8" fill="#63b3ed"/>
+    
+    <!-- Neckline -->
+    <path d="M -25 0 Q 0 -15 25 0 L 25 20 Q 0 25 -25 20 Z" fill="#3182ce"/>
+    
+    <!-- Short sleeves -->
+    <ellipse cx="-85" cy="25" rx="20" ry="35" fill="#63b3ed"/>
+    <ellipse cx="85" cy="25" rx="20" ry="35" fill="#63b3ed"/>
+    
+    <!-- Sleeve details -->
+    <rect x="-105" y="55" width="40" height="6" rx="3" fill="#3182ce"/>
+    <rect x="65" y="55" width="40" height="6" rx="3" fill="#3182ce"/>
+    
+    <!-- Side seams */
+    <line x1="-75" y1="0" x2="-75" y2="180" stroke="#3182ce" stroke-width="2" opacity="0.7"/>
+    <line x1="75" y1="0" x2="75" y2="180" stroke="#3182ce" stroke-width="2" opacity="0.7"/>
+    
+    <!-- Bottom hem -->
+    <rect x="-75" y="174" width="150" height="6" rx="3" fill="#3182ce"/>
+    
+    <!-- Chest detail/logo area -->
+    <circle cx="-30" cy="60" r="8" fill="#3182ce" opacity="0.5"/>
+    <rect x="-35" y="55" width="10" height="10" fill="#ffffff" opacity="0.8"/>
+  </g>
+  
+  <!-- Fabric texture -->
+  <g opacity="0.1">
+    <circle cx="100" cy="180" r="1.5" fill="#ffffff"/>
+    <circle cx="320" cy="320" r="2" fill="#ffffff"/>
+    <circle cx="80" cy="420" r="1" fill="#ffffff"/>
+    <circle cx="350" cy="200" r="1.5" fill="#ffffff"/>
+    <circle cx="60" cy="350" r="1" fill="#ffffff"/>
+    <circle cx="300" cy="450" r="2" fill="#ffffff"/>
+  </g>
+</svg>

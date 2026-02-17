@@ -2,6 +2,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/user/HomePage.jsx";
+import HoodiesPage from "./pages/user/HoodiesPage.jsx";
+import ComingSoonPage from "./pages/user/ComingSoonPage.jsx";
 import ProductDetailsPage from "./pages/user/ProductDetailsPage.jsx";
 import CartPage from "./pages/user/CartPage.jsx";
 import WishlistPage from "./pages/user/WishlistPage.jsx";
@@ -90,6 +92,10 @@ function App() {
       <div className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage isLoggedIn={isLoggedIn} />} />
+          <Route path="/hoodies" element={<HoodiesPage isLoggedIn={isLoggedIn} />} />
+          <Route path="/coming-soon/:productType" element={<ComingSoonPage isLoggedIn={isLoggedIn} />} />
+          <Route path="/tshirts" element={<ComingSoonPage isLoggedIn={isLoggedIn} productType="T-Shirt" />} />
+          <Route path="/pants" element={<ComingSoonPage isLoggedIn={isLoggedIn} productType="Pants" />} />
           <Route path="/track-order" element={<TrackOrder />} />
           {/* <Route path="/return-and-refund-policy" element={<RefundPolicy />} /> */}
           <Route path="/refund-policy" element={<RefundPolicy />} />

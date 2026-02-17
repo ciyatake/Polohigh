@@ -1,0 +1,61 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="600" fill="url(#hoodieGrad)"/>
+  <rect width="400" height="600" fill="url(#spotlight)"/>
+  
+  <!-- Hoodie illustration -->
+  <g transform="translate(200, 300)">
+    <!-- Main hoodie body -->
+    <ellipse cx="0" cy="60" rx="85" ry="120" fill="#718096" opacity="0.9"/>
+    
+    <!-- Hood -->
+    <path d="M -60 -40 Q 0 -80 60 -40 Q 45 -20 30 0 L -30 0 Q -45 -20 -60 -40 Z" fill="#4a5568"/>
+    
+    <!-- Hood opening -->
+    <ellipse cx="0" cy="-25" rx="25" ry="35" fill="#2d3748"/>
+    
+    <!-- Hoodie body detail -->
+    <rect x="-80" y="0" width="160" height="140" rx="80" fill="#4a5568"/>
+    
+    <!-- Kangaroo pocket -->
+    <ellipse cx="0" cy="80" rx="50" ry="25" fill="#2d3748" opacity="0.7"/>
+    
+    <!-- Sleeves -->
+    <ellipse cx="-90" cy="40" rx="25" ry="60" fill="#4a5568" transform="rotate(-20)"/>
+    <ellipse cx="90" cy="40" rx="25" ry="60" fill="#4a5568" transform="rotate(20)"/>
+    
+    <!-- Cuffs -->
+    <rect x="-105" y="85" width="30" height="8" rx="4" fill="#2d3748"/>
+    <rect x="75" y="85" width="30" height="8" rx="4" fill="#2d3748"/>
+    
+    <!-- Bottom hem -->
+    <rect x="-80" y="135" width="160" height="8" rx="4" fill="#2d3748"/>
+    
+    <!-- Drawstrings -->
+    <circle cx="-15" cy="-25" r="3" fill="#cbd5e1"/>
+    <circle cx="15" cy="-25" r="3" fill="#cbd5e1"/>
+    <line x1="-15" y1="-22" x2="-8" y2="5" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="15" y1="-22" x2="8" y2="5" stroke="#cbd5e1" stroke-width="2"/>
+  </g>
+  
+  <!-- Fabric texture -->
+  <g opacity="0.1">
+    <circle cx="150" cy="200" r="2" fill="#ffffff"/>
+    <circle cx="280" cy="350" r="1.5" fill="#ffffff"/>
+    <circle cx="120" cy="450" r="1" fill="#ffffff"/>
+    <circle cx="320" cy="180" r="2.5" fill="#ffffff"/>
+    <circle cx="80" cy="380" r="1" fill="#ffffff"/>
+  </g>
+</svg>

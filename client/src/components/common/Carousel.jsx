@@ -29,7 +29,7 @@ function ImageWithSkeleton({ slide, navigate }) {
         src={slide.img}
         loading="lazy"
         onLoad={() => setLoaded(true)}
-        className={`w-full h-full object-fit md:object-contain transition-all duration-700 ${
+        className={`w-full h-full object-fit md:object-contain transition-all duration-1200 ease-in-out ${
           loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
         alt="Carousel Slide"
@@ -69,7 +69,7 @@ function ImageWithSkeleton({ slide, navigate }) {
       - Custom arrows
       - Clickable pagination
 ----------------------------------- */
-export default function Carousel({ slides, autoplayDelay = 5000 }) {
+export default function Carousel({ slides, autoplayDelay = 6000 }) {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
@@ -89,21 +89,21 @@ export default function Carousel({ slides, autoplayDelay = 5000 }) {
   }, [current, autoplayDelay, slides.length]); // Reset timer on slide change
 
   return (
-    <div className="w-full relative group">
+    <div className="w-3/4 mx-auto relative group">
       {/* Main Carousel Container with elegant styling */}
       <div className="relative rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-gray-50 to-gray-100">
         {/* This is the "track" that moves. 
           We use CSS transform to slide it left or right.
         */}
         <div
-          className="flex transition-transform duration-700 ease-out"
+          className="flex transition-transform duration-1000 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {/* All slides are rendered, but only the current one is visible */}
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="min-w-full h-[250px] sm:h-[350px] md:h-[420px] lg:h-[500px] flex-shrink-0"
+              className="min-w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] flex-shrink-0"
             >
               <ImageWithSkeleton slide={slide} navigate={navigate} />
             </div>

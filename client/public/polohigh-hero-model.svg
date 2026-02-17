@@ -1,0 +1,162 @@
+<svg width="1400" height="600" viewBox="0 0 1400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cbd5e1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Text gradients -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Button gradient -->
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d69e2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b7791f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="600" fill="url(#heroBg)"/>
+  
+  <!-- Model silhouette on the right -->
+  <g transform="translate(850, 80)">
+    <!-- Model figure -->
+    <ellipse cx="200" cy="400" rx="120" ry="40" fill="#94a3b8" opacity="0.2"/>
+    
+    <!-- Body -->
+    <rect x="150" y="200" width="100" height="200" rx="15" fill="#334155" opacity="0.8"/>
+    
+    <!-- Head -->
+    <circle cx="200" cy="150" r="40" fill="#64748b" opacity="0.7"/>
+    
+    <!-- Polo shirt -->
+    <rect x="160" y="200" width="80" height="120" rx="8" fill="#1e293b"/>
+    
+    <!-- Polo collar -->
+    <path d="M 180 200 L 180 220 Q 200 230 220 220 L 220 200 Q 200 195 180 200 Z" fill="#475569"/>
+    
+    <!-- Shirt buttons -->
+    <circle cx="200" cy="220" r="2" fill="#e2e8f0"/>
+    <circle cx="200" cy="235" r="2" fill="#e2e8f0"/>
+    
+    <!-- Arms -->
+    <ellipse cx="140" cy="240" rx="15" ry="35" fill="#1e293b"/>
+    <ellipse cx="260" cy="240" rx="15" ry="35" fill="#1e293b"/>
+    
+    <!-- Pants -->
+    <rect x="170" y="320" width="60" height="120" fill="#a3a3a3"/>
+    
+    <!-- Professional pose elements -->
+    <rect x="120" y="220" width="8" height="40" rx="4" fill="#64748b" opacity="0.6"/>
+  </g>
+  
+  <!-- Main content -->
+  <g transform="translate(80, 120)">
+    <!-- Brand title -->
+    <text x="0" y="80" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="72" font-weight="800" fill="url(#titleGrad)" letter-spacing="-2px">
+      PoloHigh
+    </text>
+    
+    <!-- Main tagline -->
+    <text x="0" y="130" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="32" font-weight="600" fill="#475569">
+      Where premium quality meets contemporary style
+    </text>
+    
+    <!-- Description -->
+    <text x="0" y="170" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="18" font-weight="400" fill="#64748b" opacity="0.9">
+      Discover our carefully curated collection designed for the modern
+    </text>
+    <text x="0" y="195" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="18" font-weight="400" fill="#64748b" opacity="0.9">
+      lifestyle
+    </text>
+    
+    <!-- CTA Buttons -->
+    <g transform="translate(0, 240)">
+      <!-- Primary button -->
+      <rect width="200" height="56" rx="28" fill="url(#btnGrad)"/>
+      <text x="100" y="36" text-anchor="middle" font-family="Inter, sans-serif" 
+            font-size="16" font-weight="600" fill="#ffffff">
+        Shop Collection
+      </text>
+      
+      <!-- Secondary button -->
+      <g transform="translate(220, 0)">
+        <rect width="180" height="56" rx="28" fill="none" stroke="#64748b" stroke-width="2"/>
+        <text x="90" y="36" text-anchor="middle" font-family="Inter, sans-serif" 
+              font-size="16" font-weight="500" fill="#64748b">
+          View New Arrivals
+        </text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Feature cards section -->
+  <g transform="translate(80, 420)">
+    <!-- Card 1: Fast Delivery -->
+    <g>
+      <rect width="260" height="90" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" opacity="0.9"/>
+      
+      <!-- Delivery truck icon -->
+      <g transform="translate(20, 25)">
+        <rect x="0" y="20" width="25" height="15" rx="2" fill="#64748b"/>
+        <rect x="20" y="10" width="15" height="25" rx="2" fill="#64748b"/>
+        <circle cx="8" cy="40" r="4" fill="#475569"/>
+        <circle cx="27" cy="40" r="4" fill="#475569"/>
+        <path d="M5 15 L10 10 L15 15" stroke="#64748b" stroke-width="2" fill="none"/>
+      </g>
+      
+      <text x="70" y="35" font-family="Inter, sans-serif" 
+            font-size="16" font-weight="600" fill="#1e293b">Fast Delivery</text>
+      <text x="70" y="55" font-family="Inter, sans-serif" 
+            font-size="13" font-weight="400" fill="#64748b">Delivery in 2-3 days</text>
+    </g>
+    
+    <!-- Card 2: Location -->
+    <g transform="translate(280, 0)">
+      <rect width="240" height="90" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" opacity="0.9"/>
+      
+      <!-- Location icon -->
+      <g transform="translate(20, 25)">
+        <path d="M20 5 Q30 0 35 10 Q35 20 20 35 Q5 20 5 10 Q10 0 20 5 Z" fill="#64748b"/>
+        <circle cx="20" cy="15" r="5" fill="#ffffff"/>
+      </g>
+      
+      <text x="70" y="35" font-family="Inter, sans-serif" 
+            font-size="16" font-weight="600" fill="#1e293b">Location</text>
+      <text x="70" y="55" font-family="Inter, sans-serif" 
+            font-size="13" font-weight="400" fill="#64748b">Pan India delivery</text>
+    </g>
+    
+    <!-- Card 3: Special Offer -->
+    <g transform="translate(540, 0)">
+      <rect width="320" height="90" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" opacity="0.9"/>
+      
+      <!-- Gift icon -->
+      <g transform="translate(20, 25)">
+        <rect x="5" y="20" width="30" height="25" rx="3" fill="#64748b"/>
+        <rect x="18" y="15" width="4" height="35" fill="#475569"/>
+        <rect x="10" y="20" width="20" height="4" fill="#475569"/>
+        <path d="M15 15 Q10 10 15 5 Q20 10 20 15" fill="#64748b"/>
+        <path d="M25 15 Q20 10 25 5 Q30 10 25 15" fill="#64748b"/>
+      </g>
+      
+      <text x="70" y="35" font-family="Inter, sans-serif" 
+            font-size="16" font-weight="600" fill="#1e293b">Special Offer</text>
+      <text x="70" y="55" font-family="Inter, sans-serif" 
+            font-size="13" font-weight="400" fill="#64748b">Free shipping on orders above Rs 999</text>
+    </g>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="1250" cy="150" r="60" fill="#e2e8f0" opacity="0.3"/>
+  <circle cx="1320" cy="300" r="40" fill="#cbd5e1" opacity="0.4"/>
+</svg>
